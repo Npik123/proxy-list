@@ -1,7 +1,7 @@
 # Proxy List
 > [!NOTE]
 > v7.4.3 | Released: October 5, 2026
-> r307 | Last Updated: October 11, 2026
+> r308 | Last Updated: October 11, 2026
 > Total onsite links: 52981 (52100 sorted + 881 unsorted)\
 > https://yourworstnightmare1.github.io/proxy-list/
 <br>
@@ -38910,7 +38910,6 @@ Try out my newest project, the [Proxy Development Toolkit](https://github.com/yo
 |  | https://setting-up-linux.raspberryip.com/ | 10/5/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 |  | https://sdk.developer.li/ | 10/5/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 |  | https://info.wookieebag.com/ | 10/5/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-|  | https://infographics.wiki.gd/ | 10/5/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 |  | https://how-to-set-up-linux-on-a-raspberry-pi.notatestsite.com/ | 10/5/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 |  | https://how-to-use-linux.losguiados.com/ | 10/5/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 |  | https://6th-grade-bio-class-and-math-with-a-10-piece-mcchicken-that-wil.deledao.workers.dev/ | 10/5/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
@@ -48314,13 +48313,12 @@ Try out my newest project, the [Proxy Development Toolkit](https://github.com/yo
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Proxy/Games | libcurl, epoxy | Scramjet | 1089 |
+> | Proxy/Games | libcurl, epoxy | Scramjet | 1088 |
 | Locked | Link | Found Date | Username | Password | Contributor |
 | - | - | - | - | - | - |
 | | https://catclass.brtk.eu | 8/1/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://catclass.oucrunp.org.np | 8/1/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://catclass.prima-bel-canto.com | 8/1/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://catclass.tranhaihau.com | 8/1/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://editor.p5js.org/task4z/full/-Y-7dDH3W | 8/1/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://catclass.w3spaces.com | 8/1/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://cdn.jsdelivr.net/gh/task4z/classroom-15x@main/images/2026-07-25/catclass/logo.svg | 8/1/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)

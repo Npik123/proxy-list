@@ -1,6 +1,6 @@
 {
   "version": "v7.4.3",
-  "revision": "r306",
+  "revision": "r307",
   "keys": [
     "http://auon00.xhost.ro",
     "http://brepsacodi.roostish.com",
@@ -4791,7 +4791,6 @@
     "https://ilovemaths.s3.amazonaws.com/index.html",
     "https://ilovemaths.s3.dualstack.us-east-1.amazonaws.com/index.html",
     "https://ilovemaths.s3.us-east-1.amazonaws.com/index.html",
-    "https://ilovenirbytes.savequeechylake.org/",
     "https://iloveschool.regularitz.ch/",
     "https://ilovevoidnetwork.pisi.cat",
     "https://ilovevoidnetwork.seanbrogan.xyz",

@@ -1,7 +1,7 @@
 # Proxy List
 > [!NOTE]
 > v7.4.3 | Released: October 5, 2026
-> r306 | Last Updated: October 5, 2026
+> r307 | Last Updated: October 11, 2026
 > Total onsite links: 52981 (52100 sorted + 881 unsorted)\
 > https://yourworstnightmare1.github.io/proxy-list/
 <br>
@@ -595,7 +595,7 @@ Try out my newest project, the [Proxy Development Toolkit](https://github.com/yo
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Proxy/Games | epoxy, libcurl, wisp, GDB:space | Scramjet, Ultraviolet | 23 |
+> | Proxy/Games | epoxy, libcurl, wisp, GDB:space | Scramjet, Ultraviolet | 22 |
 
 > [!IMPORTANT]
 > some space links have a similar problem like daydream where it will be very slow for some reason. if you are on a link and nothing loads or loads very slowly, try another link and make sure that if it is a jsdelivr domain, you choose the fastest option based on your location.
@@ -603,7 +603,6 @@ Try out my newest project, the [Proxy Development Toolkit](https://github.com/yo
 | Locked | Link | Found Date | Username | Password | Contributor |
 | - | - | - | - | - | - |
 | | https://places.vjason.com/ | 4/18/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://ilovenirbytes.savequeechylake.org/ | 4/18/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://edu.rawr.africa.com/ | 4/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://15-204-247-166.anyip.dev/ | 4/18/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://blog.free-dyndns.org/ | 4/18/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)

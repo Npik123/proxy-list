@@ -38920,16 +38920,6 @@ Try out my newest project, the [Proxy Development Toolkit](https://github.com/yo
 |  | https://quiz.numbercraftacademy.com/ | 10/5/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 |  | https://the-revolutionary-war.wikilegia.org/ | 10/5/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 
-# 🌕 MoonPie
-> [!NOTE]
-> | Category | Capabilities | Protocol(s) | Links |
-> | - | - | - | - |
-> | Proxy/Games | unknown | unknown | 1 |
-
-| Locked | Link | Found Date | Username | Password | Contributor |
-| - | - | - | - | - | - |
-| | https://business-worldwide-solutions.notariamelipilla.cl | 5/4/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
-
 # 🔥 Flamed Lite
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |

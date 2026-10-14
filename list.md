@@ -1694,7 +1694,7 @@ Try out my newest project, the [Proxy Development Toolkit](https://github.com/yo
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Proxy/Games | wisp, GDB:dogeub | Scramjet, Ultraviolet | 157 |
+> | Proxy/Games | wisp, GDB:dogeub | Scramjet, Ultraviolet | 155 |
 
 > [!IMPORTANT]
 > when visiting dogeub on a google script (script.google.com) domain, the proxy won't load and if it does it's just a white screen. most games are unaffected
@@ -1707,8 +1707,6 @@ Try out my newest project, the [Proxy Development Toolkit](https://github.com/yo
 | | https://f.schoology.lat/ | 4/18/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://fontonwonton.github.io/ | 4/18/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://dogeub.github.io/ | 4/18/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://file.vise.best/ | 4/18/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://api-services.vise.best/ | 4/18/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://dwfo7z3f9nigf.cloudfront.net/index.html | 4/18/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://storage.googleapis.com/canvas-lms/index.html | 3/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://mathcow.mooo.com/ | 3/27/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
@@ -48316,7 +48314,7 @@ Try out my newest project, the [Proxy Development Toolkit](https://github.com/yo
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Proxy/Games | libcurl, epoxy | Scramjet | 1088 |
+> | Proxy/Games | libcurl, epoxy | Scramjet | 1087 |
 | Locked | Link | Found Date | Username | Password | Contributor |
 | - | - | - | - | - | - |
 | | https://catclass.brtk.eu | 8/1/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
@@ -49052,7 +49050,6 @@ Try out my newest project, the [Proxy Development Toolkit](https://github.com/yo
 | | https://equation-thesis98.becasuniversitarias.org | 8/29/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://essay-purrfect65.becasuniversitarias.org | 8/29/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://faculty-tab20.becasuniversitarias.org | 8/29/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://feline-lit99.becasuniversitarias.org | 8/29/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://force-claw44.becasuniversitarias.org | 8/29/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://force-feline99.becasuniversitarias.org | 8/29/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://force-series89.becasuniversitarias.org | 8/29/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
@@ -49800,7 +49797,6 @@ Try out my newest project, the [Proxy Development Toolkit](https://github.com/yo
 | | https://newdropsdaily.gifga.com/ | 8/29/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://summerschooleducation.cfd/ | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 |  | https://l.educationabroad.online/ | 10/5/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-|  | https://spanishlakeapitest.xyloraeducation.store/ | 10/5/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 
 # ⚡ PGIS 3
 > [!NOTE]

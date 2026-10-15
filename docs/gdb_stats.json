@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-10-15T03:04:52Z",
+  "generated_at": "2026-10-15T11:08:44Z",
   "snapshot_date": "2026-10-15",
   "catalog_count": 33,
-  "total_entries": 35846,
-  "unique_games": 28686,
+  "total_entries": 35847,
+  "unique_games": 28687,
   "catalogs": [
     {
       "tag": "gdb:unblockedzone",
@@ -74,7 +74,7 @@
     {
       "tag": "gdb:ccported",
       "label": "CCPorted",
-      "count": 21,
+      "count": 22,
       "empty": false
     },
     {
@@ -1576,7 +1576,7 @@
         "gdb:lucide": 837,
         "gdb:sdxp": 0,
         "gdb:duckmath": 498,
-        "gdb:ccported": 21,
+        "gdb:ccported": 22,
         "gdb:selenite": 266,
         "gdb:radon": 302,
         "gdb:truffled": 0,
@@ -1599,8 +1599,8 @@
         "gdb:diesmos": 1175,
         "gdb:fyinx": 0
       },
-      "total_entries": 35846,
-      "unique_games": 28686
+      "total_entries": 35847,
+      "unique_games": 28687
     }
   ],
   "latest_changes": {
@@ -1712,11 +1712,9 @@
           "Bloons Tower Defense 2",
           "Escape Road"
         ],
-        "removed": [
-          "Dance of Fire and Ice"
-        ],
+        "removed": [],
         "added_count": 2,
-        "removed_count": 1,
+        "removed_count": 0,
         "added_truncated": 0,
         "removed_truncated": 0
       },
@@ -2514,15 +2512,9 @@
           "label": "Greenis"
         }
       ],
-      "removed": [
-        {
-          "name": "Dance of Fire and Ice",
-          "tag": "gdb:ccported",
-          "label": "CCPorted"
-        }
-      ],
+      "removed": [],
       "added_count": 210,
-      "removed_count": 1,
+      "removed_count": 0,
       "added_truncated": 110,
       "removed_truncated": 0
     }
@@ -2536,7 +2528,7 @@
         "gdb:ccported"
       ],
       "added": 210,
-      "removed": 1,
+      "removed": 0,
       "by_catalog": [
         {
           "tag": "gdb:greenis",
@@ -2548,7 +2540,7 @@
           "tag": "gdb:ccported",
           "label": "CCPorted",
           "added": 2,
-          "removed": 1
+          "removed": 0
         }
       ]
     },

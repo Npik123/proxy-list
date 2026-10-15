@@ -3593,7 +3593,6 @@ Try out my newest project, the [Proxy Development Toolkit](https://github.com/yo
 | | https://edu-tutor.pdacorp.ru/ | 8/29/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://math-tutor.priestella.xyz/ | 8/29/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://edu-tutor.priestella.xyz/ | 8/29/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-|  | https://education.kchcs.org/ | 10/5/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 |  | https://d283k641vp536n.cloudfront.net/ | 10/5/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 
 # 🧡 Nexora

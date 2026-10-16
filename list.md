@@ -49888,7 +49888,7 @@ Try out my newest project, the [Proxy Development Toolkit](https://github.com/yo
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Proxy/Games | panic, tab-cloak | Scramjet, Ultraviolet | 4 |
+> | Proxy/Games | panic, tab-cloak | Scramjet, Ultraviolet | 2 |
 > [!IMPORTANT]
 > you may get taken to a google docs homepage, this is fake. stay on the site and do not click anything until you get taken to the actual site with the games
 >
@@ -49898,8 +49898,6 @@ Try out my newest project, the [Proxy Development Toolkit](https://github.com/yo
 | - | - | - | - | - | - |
 | | https://banks.onlinequickpayday.loan/ | 8/29/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://banking.onlinequickpayday.loan/ | 8/29/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://learning.12monthloans.net/ | 8/29/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://banking.12monthloans.net/ | 8/29/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 
 # 🖤 Void Network
 > [!NOTE]

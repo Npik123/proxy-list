@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-10-15T21:09:09Z",
-  "snapshot_date": "2026-10-15",
+  "generated_at": "2026-10-16T02:57:08Z",
+  "snapshot_date": "2026-10-16",
   "catalog_count": 33,
   "total_entries": 35847,
   "unique_games": 28687,
@@ -1601,10 +1601,50 @@
       },
       "total_entries": 35847,
       "unique_games": 28687
+    },
+    {
+      "date": "2026-10-16",
+      "counts": {
+        "gdb:unblockedzone": 0,
+        "gdb:gn-math": 837,
+        "gdb:luminsdk": 837,
+        "gdb:noahs-tutoring": 0,
+        "gdb:elite-games": 325,
+        "gdb:ultimate-game-stash": 2446,
+        "gdb:seraph": 500,
+        "gdb:chicken-kings-vault": 821,
+        "gdb:lucide": 837,
+        "gdb:sdxp": 0,
+        "gdb:duckmath": 498,
+        "gdb:ccported": 22,
+        "gdb:selenite": 266,
+        "gdb:radon": 302,
+        "gdb:truffled": 0,
+        "gdb:totally-science": 0,
+        "gdb:petezah": 1121,
+        "gdb:frogies-arcade": 0,
+        "gdb:space": 0,
+        "gdb:boredom": 11,
+        "gdb:dogeub": 20739,
+        "gdb:utopia": 275,
+        "gdb:flux": 1741,
+        "gdb:greenis": 208,
+        "gdb:melonsoda": 42,
+        "gdb:edurocks": 0,
+        "gdb:timmy": 0,
+        "gdb:zane": 382,
+        "gdb:3kh0": 145,
+        "gdb:alexr": 676,
+        "gdb:hydra": 1641,
+        "gdb:diesmos": 1175,
+        "gdb:fyinx": 0
+      },
+      "total_entries": 35847,
+      "unique_games": 28687
     }
   ],
   "latest_changes": {
-    "date": "2026-10-15",
+    "date": "2026-10-16",
     "is_baseline": false,
     "by_catalog": {
       "gdb:unblockedzone": {
@@ -1708,12 +1748,9 @@
       },
       "gdb:ccported": {
         "label": "CCPorted",
-        "added": [
-          "Bloons Tower Defense 2",
-          "Escape Road"
-        ],
+        "added": [],
         "removed": [],
-        "added_count": 2,
+        "added_count": 0,
         "removed_count": 0,
         "added_truncated": 0,
         "removed_truncated": 0
@@ -1819,112 +1856,11 @@
       },
       "gdb:greenis": {
         "label": "Greenis",
-        "added": [
-          "12 Minigame Battles",
-          "3Dash",
-          "A Dance of Fire and Ice (Scratch)",
-          "A Koopas Revenge",
-          "A Koopas Revenge 2",
-          "Angry Birds",
-          "Angry Birds Chrome",
-          "Angry Birds RIO",
-          "Angry Birds Showdown",
-          "Angry Birds Space",
-          "Animator Vs Animation",
-          "Apple Knight: Mini Dungeons",
-          "Bad Piggies",
-          "Baldis Basics",
-          "Bank Robbery 2",
-          "Baseball Bros",
-          "Basket Bros",
-          "Basket Random",
-          "Basketball Legends 2020",
-          "Basketball Stars",
-          "Battle Racing Stars",
-          "Battle Simulator",
-          "Battle Starr",
-          "BFDIA 5B",
-          "BitLife",
-          "Block Blast",
-          "Bloxorz",
-          "Bouncemasters",
-          "Boxing Random",
-          "Brawl Simulator 3D",
-          "Brotato",
-          "Buckshot Roulette",
-          "Candy Crush",
-          "Cat Mario (Sybon Action)",
-          "Catch the Candy",
-          "Chicken CS",
-          "Clover Pit",
-          "Cluster Rush",
-          "Criminal Russia 3D",
-          "Crossy Road",
-          "Cut The Rope",
-          "Dan The Man",
-          "Death Run 3D",
-          "Deltarune",
-          "Destroy The Car 3D",
-          "Diggy",
-          "Donkey Kong Country",
-          "Dragon Ball Z Devolution",
-          "Dragon vs Icy Bricks",
-          "Draw Jousting",
-          "Drift Boss",
-          "DTA6",
-          "Duck Life",
-          "Escape Road",
-          "Flash Sonic",
-          "FNAF",
-          "FNAF 3D",
-          "Football Bros",
-          "Four Colors",
-          "Friday Night Funkin",
-          "Friday Night Funkin Mods",
-          "Fruit Ninja",
-          "G-Switch",
-          "G-Switch 2",
-          "G-Switch 3",
-          "Geometry Dash",
-          "Getting Over It",
-          "Gladihoppers",
-          "Grand Action Simulator: New York",
-          "Granny",
-          "Granny 2",
-          "Granny 3",
-          "Grindcraft",
-          "GTA III",
-          "GTA: Vice City",
-          "Gun Spin",
-          "Henry Stickmin",
-          "House Of Hazards",
-          "Infinite Mario Bros",
-          "Javelin Fighting",
-          "Jelly Mario",
-          "Jetpack Joyride",
-          "Johnny Trigger",
-          "Knife Hit",
-          "KS2 Teams",
-          "Level Devil",
-          "Level UP - Mario's Minigames Mayhem",
-          "Magic Tiles 3",
-          "Mari0",
-          "Mario Kart 64",
-          "Monkey Mart",
-          "MotoX3M",
-          "Mr. Dude King of the Hill",
-          "Mutilate-a-Doll 2",
-          "New Super Mario Bros",
-          "New Super Mario Bros 2",
-          "NZP",
-          "Om Nom Bounce",
-          "OneShot",
-          "Orange Roulette"
-        ],
+        "added": [],
         "removed": [],
-        "added_count": 208,
+        "added_count": 0,
         "removed_count": 0,
-        "added_truncated": 108,
+        "added_truncated": 0,
         "removed_truncated": 0
       },
       "gdb:melonsoda": {
@@ -2010,516 +1946,23 @@
       }
     },
     "all": {
-      "added": [
-        {
-          "name": "12 Minigame Battles",
-          "tag": "gdb:greenis",
-          "label": "Greenis"
-        },
-        {
-          "name": "3Dash",
-          "tag": "gdb:greenis",
-          "label": "Greenis"
-        },
-        {
-          "name": "A Dance of Fire and Ice (Scratch)",
-          "tag": "gdb:greenis",
-          "label": "Greenis"
-        },
-        {
-          "name": "A Koopas Revenge",
-          "tag": "gdb:greenis",
-          "label": "Greenis"
-        },
-        {
-          "name": "A Koopas Revenge 2",
-          "tag": "gdb:greenis",
-          "label": "Greenis"
-        },
-        {
-          "name": "Angry Birds",
-          "tag": "gdb:greenis",
-          "label": "Greenis"
-        },
-        {
-          "name": "Angry Birds Chrome",
-          "tag": "gdb:greenis",
-          "label": "Greenis"
-        },
-        {
-          "name": "Angry Birds RIO",
-          "tag": "gdb:greenis",
-          "label": "Greenis"
-        },
-        {
-          "name": "Angry Birds Showdown",
-          "tag": "gdb:greenis",
-          "label": "Greenis"
-        },
-        {
-          "name": "Angry Birds Space",
-          "tag": "gdb:greenis",
-          "label": "Greenis"
-        },
-        {
-          "name": "Animator Vs Animation",
-          "tag": "gdb:greenis",
-          "label": "Greenis"
-        },
-        {
-          "name": "Apple Knight: Mini Dungeons",
-          "tag": "gdb:greenis",
-          "label": "Greenis"
-        },
-        {
-          "name": "Bad Piggies",
-          "tag": "gdb:greenis",
-          "label": "Greenis"
-        },
-        {
-          "name": "Baldis Basics",
-          "tag": "gdb:greenis",
-          "label": "Greenis"
-        },
-        {
-          "name": "Bank Robbery 2",
-          "tag": "gdb:greenis",
-          "label": "Greenis"
-        },
-        {
-          "name": "Baseball Bros",
-          "tag": "gdb:greenis",
-          "label": "Greenis"
-        },
-        {
-          "name": "Basket Bros",
-          "tag": "gdb:greenis",
-          "label": "Greenis"
-        },
-        {
-          "name": "Basket Random",
-          "tag": "gdb:greenis",
-          "label": "Greenis"
-        },
-        {
-          "name": "Basketball Legends 2020",
-          "tag": "gdb:greenis",
-          "label": "Greenis"
-        },
-        {
-          "name": "Basketball Stars",
-          "tag": "gdb:greenis",
-          "label": "Greenis"
-        },
-        {
-          "name": "Battle Racing Stars",
-          "tag": "gdb:greenis",
-          "label": "Greenis"
-        },
-        {
-          "name": "Battle Simulator",
-          "tag": "gdb:greenis",
-          "label": "Greenis"
-        },
-        {
-          "name": "Battle Starr",
-          "tag": "gdb:greenis",
-          "label": "Greenis"
-        },
-        {
-          "name": "BFDIA 5B",
-          "tag": "gdb:greenis",
-          "label": "Greenis"
-        },
-        {
-          "name": "BitLife",
-          "tag": "gdb:greenis",
-          "label": "Greenis"
-        },
-        {
-          "name": "Block Blast",
-          "tag": "gdb:greenis",
-          "label": "Greenis"
-        },
-        {
-          "name": "Bloons Tower Defense 2",
-          "tag": "gdb:ccported",
-          "label": "CCPorted"
-        },
-        {
-          "name": "Bloxorz",
-          "tag": "gdb:greenis",
-          "label": "Greenis"
-        },
-        {
-          "name": "Bouncemasters",
-          "tag": "gdb:greenis",
-          "label": "Greenis"
-        },
-        {
-          "name": "Boxing Random",
-          "tag": "gdb:greenis",
-          "label": "Greenis"
-        },
-        {
-          "name": "Brawl Simulator 3D",
-          "tag": "gdb:greenis",
-          "label": "Greenis"
-        },
-        {
-          "name": "Brotato",
-          "tag": "gdb:greenis",
-          "label": "Greenis"
-        },
-        {
-          "name": "Buckshot Roulette",
-          "tag": "gdb:greenis",
-          "label": "Greenis"
-        },
-        {
-          "name": "Candy Crush",
-          "tag": "gdb:greenis",
-          "label": "Greenis"
-        },
-        {
-          "name": "Cat Mario (Sybon Action)",
-          "tag": "gdb:greenis",
-          "label": "Greenis"
-        },
-        {
-          "name": "Catch the Candy",
-          "tag": "gdb:greenis",
-          "label": "Greenis"
-        },
-        {
-          "name": "Chicken CS",
-          "tag": "gdb:greenis",
-          "label": "Greenis"
-        },
-        {
-          "name": "Clover Pit",
-          "tag": "gdb:greenis",
-          "label": "Greenis"
-        },
-        {
-          "name": "Cluster Rush",
-          "tag": "gdb:greenis",
-          "label": "Greenis"
-        },
-        {
-          "name": "Criminal Russia 3D",
-          "tag": "gdb:greenis",
-          "label": "Greenis"
-        },
-        {
-          "name": "Crossy Road",
-          "tag": "gdb:greenis",
-          "label": "Greenis"
-        },
-        {
-          "name": "Cut The Rope",
-          "tag": "gdb:greenis",
-          "label": "Greenis"
-        },
-        {
-          "name": "Dan The Man",
-          "tag": "gdb:greenis",
-          "label": "Greenis"
-        },
-        {
-          "name": "Death Run 3D",
-          "tag": "gdb:greenis",
-          "label": "Greenis"
-        },
-        {
-          "name": "Deltarune",
-          "tag": "gdb:greenis",
-          "label": "Greenis"
-        },
-        {
-          "name": "Destroy The Car 3D",
-          "tag": "gdb:greenis",
-          "label": "Greenis"
-        },
-        {
-          "name": "Diggy",
-          "tag": "gdb:greenis",
-          "label": "Greenis"
-        },
-        {
-          "name": "Donkey Kong Country",
-          "tag": "gdb:greenis",
-          "label": "Greenis"
-        },
-        {
-          "name": "Dragon Ball Z Devolution",
-          "tag": "gdb:greenis",
-          "label": "Greenis"
-        },
-        {
-          "name": "Dragon vs Icy Bricks",
-          "tag": "gdb:greenis",
-          "label": "Greenis"
-        },
-        {
-          "name": "Draw Jousting",
-          "tag": "gdb:greenis",
-          "label": "Greenis"
-        },
-        {
-          "name": "Drift Boss",
-          "tag": "gdb:greenis",
-          "label": "Greenis"
-        },
-        {
-          "name": "DTA6",
-          "tag": "gdb:greenis",
-          "label": "Greenis"
-        },
-        {
-          "name": "Duck Life",
-          "tag": "gdb:greenis",
-          "label": "Greenis"
-        },
-        {
-          "name": "Escape Road",
-          "tag": "gdb:ccported",
-          "label": "CCPorted"
-        },
-        {
-          "name": "Escape Road",
-          "tag": "gdb:greenis",
-          "label": "Greenis"
-        },
-        {
-          "name": "Flash Sonic",
-          "tag": "gdb:greenis",
-          "label": "Greenis"
-        },
-        {
-          "name": "FNAF",
-          "tag": "gdb:greenis",
-          "label": "Greenis"
-        },
-        {
-          "name": "FNAF 3D",
-          "tag": "gdb:greenis",
-          "label": "Greenis"
-        },
-        {
-          "name": "Football Bros",
-          "tag": "gdb:greenis",
-          "label": "Greenis"
-        },
-        {
-          "name": "Four Colors",
-          "tag": "gdb:greenis",
-          "label": "Greenis"
-        },
-        {
-          "name": "Friday Night Funkin",
-          "tag": "gdb:greenis",
-          "label": "Greenis"
-        },
-        {
-          "name": "Friday Night Funkin Mods",
-          "tag": "gdb:greenis",
-          "label": "Greenis"
-        },
-        {
-          "name": "Fruit Ninja",
-          "tag": "gdb:greenis",
-          "label": "Greenis"
-        },
-        {
-          "name": "G-Switch",
-          "tag": "gdb:greenis",
-          "label": "Greenis"
-        },
-        {
-          "name": "G-Switch 2",
-          "tag": "gdb:greenis",
-          "label": "Greenis"
-        },
-        {
-          "name": "G-Switch 3",
-          "tag": "gdb:greenis",
-          "label": "Greenis"
-        },
-        {
-          "name": "Geometry Dash",
-          "tag": "gdb:greenis",
-          "label": "Greenis"
-        },
-        {
-          "name": "Getting Over It",
-          "tag": "gdb:greenis",
-          "label": "Greenis"
-        },
-        {
-          "name": "Gladihoppers",
-          "tag": "gdb:greenis",
-          "label": "Greenis"
-        },
-        {
-          "name": "Grand Action Simulator: New York",
-          "tag": "gdb:greenis",
-          "label": "Greenis"
-        },
-        {
-          "name": "Granny",
-          "tag": "gdb:greenis",
-          "label": "Greenis"
-        },
-        {
-          "name": "Granny 2",
-          "tag": "gdb:greenis",
-          "label": "Greenis"
-        },
-        {
-          "name": "Granny 3",
-          "tag": "gdb:greenis",
-          "label": "Greenis"
-        },
-        {
-          "name": "Grindcraft",
-          "tag": "gdb:greenis",
-          "label": "Greenis"
-        },
-        {
-          "name": "GTA III",
-          "tag": "gdb:greenis",
-          "label": "Greenis"
-        },
-        {
-          "name": "GTA: Vice City",
-          "tag": "gdb:greenis",
-          "label": "Greenis"
-        },
-        {
-          "name": "Gun Spin",
-          "tag": "gdb:greenis",
-          "label": "Greenis"
-        },
-        {
-          "name": "Henry Stickmin",
-          "tag": "gdb:greenis",
-          "label": "Greenis"
-        },
-        {
-          "name": "House Of Hazards",
-          "tag": "gdb:greenis",
-          "label": "Greenis"
-        },
-        {
-          "name": "Infinite Mario Bros",
-          "tag": "gdb:greenis",
-          "label": "Greenis"
-        },
-        {
-          "name": "Javelin Fighting",
-          "tag": "gdb:greenis",
-          "label": "Greenis"
-        },
-        {
-          "name": "Jelly Mario",
-          "tag": "gdb:greenis",
-          "label": "Greenis"
-        },
-        {
-          "name": "Jetpack Joyride",
-          "tag": "gdb:greenis",
-          "label": "Greenis"
-        },
-        {
-          "name": "Johnny Trigger",
-          "tag": "gdb:greenis",
-          "label": "Greenis"
-        },
-        {
-          "name": "Knife Hit",
-          "tag": "gdb:greenis",
-          "label": "Greenis"
-        },
-        {
-          "name": "KS2 Teams",
-          "tag": "gdb:greenis",
-          "label": "Greenis"
-        },
-        {
-          "name": "Level Devil",
-          "tag": "gdb:greenis",
-          "label": "Greenis"
-        },
-        {
-          "name": "Level UP - Mario's Minigames Mayhem",
-          "tag": "gdb:greenis",
-          "label": "Greenis"
-        },
-        {
-          "name": "Magic Tiles 3",
-          "tag": "gdb:greenis",
-          "label": "Greenis"
-        },
-        {
-          "name": "Mari0",
-          "tag": "gdb:greenis",
-          "label": "Greenis"
-        },
-        {
-          "name": "Mario Kart 64",
-          "tag": "gdb:greenis",
-          "label": "Greenis"
-        },
-        {
-          "name": "Monkey Mart",
-          "tag": "gdb:greenis",
-          "label": "Greenis"
-        },
-        {
-          "name": "MotoX3M",
-          "tag": "gdb:greenis",
-          "label": "Greenis"
-        },
-        {
-          "name": "Mr. Dude King of the Hill",
-          "tag": "gdb:greenis",
-          "label": "Greenis"
-        },
-        {
-          "name": "Mutilate-a-Doll 2",
-          "tag": "gdb:greenis",
-          "label": "Greenis"
-        },
-        {
-          "name": "New Super Mario Bros",
-          "tag": "gdb:greenis",
-          "label": "Greenis"
-        },
-        {
-          "name": "New Super Mario Bros 2",
-          "tag": "gdb:greenis",
-          "label": "Greenis"
-        },
-        {
-          "name": "NZP",
-          "tag": "gdb:greenis",
-          "label": "Greenis"
-        },
-        {
-          "name": "Om Nom Bounce",
-          "tag": "gdb:greenis",
-          "label": "Greenis"
-        }
-      ],
+      "added": [],
       "removed": [],
-      "added_count": 210,
+      "added_count": 0,
       "removed_count": 0,
-      "added_truncated": 110,
+      "added_truncated": 0,
       "removed_truncated": 0
     }
   },
   "modifications": [
+    {
+      "date": "2026-10-16",
+      "kind": "diff",
+      "catalogs_touched": [],
+      "added": 0,
+      "removed": 0,
+      "by_catalog": []
+    },
     {
       "date": "2026-10-15",
       "kind": "diff",

@@ -11,6 +11,7 @@ vsce-debug.log
 deploy/webhook/.env
 .venv/proxy-list/
 scripts/batch_links_*.txt
+scripts/_migrate_out/
 link_check_abort.json
 commit_info.json
 commit_info.txt

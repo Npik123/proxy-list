@@ -188,7 +188,7 @@
       case "links_approved":
         return (
           n.count +
-          " links were approved and added from your request on " +
+          " links were approved and will appear on the list shortly from your request on " +
           formatYymd(n.date)
         );
       case "feature_approved":

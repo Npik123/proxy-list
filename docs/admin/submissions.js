@@ -237,15 +237,17 @@
   }
 
   async function requestPublishSync() {
+    var base =
+      (window.__PROXY_LIST_API_BASE__ || "https://proxy-list.jasonthegamer48.workers.dev").replace(
+        /\/$/,
+        ""
+      );
     try {
-      var base =
-        (window.__PROXY_LIST_API_BASE__ || "https://proxy-list.jasonthegamer48.workers.dev").replace(
-          /\/$/,
-          ""
-        );
       var token = currentUser && (await currentUser.getIdToken());
-      if (!token) return;
-      await fetch(base + "/api/submissions/sync", {
+      if (!token) {
+        return { ok: false, error: "missing_token" };
+      }
+      var res = await fetch(base + "/api/submissions/sync", {
         method: "POST",
         headers: {
           Authorization: "Bearer " + token,
@@ -253,9 +255,59 @@
         },
         body: "{}",
       });
-    } catch (_) {
-      /* optional kick; scheduled sync still picks approvals up */
+      var data = {};
+      try {
+        data = await res.json();
+      } catch (_) {
+        data = {};
+      }
+      if (!res.ok) {
+        return {
+          ok: false,
+          error: data.error || "http_" + res.status,
+          status: res.status,
+        };
+      }
+      return {
+        ok: true,
+        queued: !!data.queued,
+        warning: data.warning || "",
+      };
+    } catch (err) {
+      return {
+        ok: false,
+        error: (err && err.message) || "network_error",
+      };
     }
+  }
+
+  function setPublishStatus(syncResult) {
+    var el = document.getElementById("publishStatus");
+    if (!el) return;
+    if (!syncResult) {
+      el.textContent = "";
+      el.hidden = true;
+      return;
+    }
+    el.hidden = false;
+    if (syncResult.ok && syncResult.queued) {
+      el.textContent =
+        "Publish sync queued — the link should appear on the site within a few minutes.";
+      el.style.color = "";
+      return;
+    }
+    if (syncResult.ok && !syncResult.queued) {
+      el.textContent =
+        (syncResult.warning || "Immediate sync is not configured.") +
+        " The daily scheduled sync will still publish this approval.";
+      el.style.color = "#b45309";
+      return;
+    }
+    el.textContent =
+      "Could not kick publish sync (" +
+      (syncResult.error || "unknown") +
+      "). Approval is saved; the daily scheduled job should still pick it up. You can also paste the row below manually.";
+    el.style.color = "#b45309";
   }
 
   function askApprovalComment() {
@@ -277,7 +329,8 @@
     var row = SU.formatListMdRow(sub.url, contributorMd(sub));
     if (copyBox) copyBox.value = row;
     if (copySection) copySection.hidden = false;
-    await requestPublishSync();
+    var syncResult = await requestPublishSync();
+    setPublishStatus(syncResult);
     var approvedNotice = {
       kind: "links_approved",
       count: 1,

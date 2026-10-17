@@ -3,20 +3,27 @@
  *
  * POST /api/link-click  { "url": "https://..." }
  *   - Rate limit: 40 clicks / hour / IP (Cache API)
- *   - Increments Firestore link_clicks/{sha256(normUrl)} via Admin REST when
+ *   - When env.DB (D1) is bound (Worker Previews): increments link_clicks by
+ *     sha256(normUrl) — same hash IDs as Firestore — and skips Firestore writes.
+ *   - Else increments Firestore link_clicks/{sha256(normUrl)} via Admin REST when
  *     FIREBASE_PROJECT_ID + FIREBASE_CLIENT_EMAIL + FIREBASE_PRIVATE_KEY are set.
  *   - Also increments click_daily/{yyyy-mm-dd}.counts.{hash}, plus click_monthly/
- *     click_yearly totals for long-term archives.
- *   - Without Firebase secrets, increments an in-edge Cache counter (Cloudflare-only).
+ *     click_yearly totals for long-term archives (Firestore path only).
+ *   - Without D1 or Firebase secrets, increments an in-edge Cache counter.
  *
  * POST /api/link-clicks/get  { "urls": ["https://..."] }
- *   - Returns { counts: { [normUrl]: number } } from edge-cached Firestore reads.
+ *   - Returns { counts: { [normUrl]: number } } from D1 (if bound) and/or
+ *     edge-cached Firestore reads. Hash IDs stay sha256(norm).
  *   - Sums distinct hash docs across URL-key variants (legacy vs modern keys).
- *   - Omits keys when Firestore is unavailable so clients keep disk cache.
+ *   - Omits keys when no store has a value so clients keep disk cache.
  *
  * POST /api/link-ratings/get  { "urls": ["https://..."] }
- *   - Returns { ratings: { [normUrl]: { up, down } } } via Admin Firestore.
+ *   - Returns { ratings: { [normUrl]: { up, down } } } from D1 and/or Admin Firestore.
+ *   - Optional Authorization: Bearer <Firebase ID token> adds { self: { [norm]: vote } }.
  *   - Used when client Firebase Auth is blocked (e.g. workers.dev referrer).
+ *
+ * POST /api/link-rating  { "url", "vote": 1|-1|0 }  (Bearer Firebase ID token)
+ *   - D1-only vote write (aggregates + per-uid vote). Auth/folders stay on Firebase.
  *
  * GET /api/top-opens
  *   - Cached top link_clicks by count (5 min) for the Most opened section.
@@ -152,6 +159,12 @@ export default {
     if (url.pathname === "/api/link-ratings/get" && request.method === "OPTIONS") {
       return cors(new Response(null, { status: 204 }));
     }
+    if (url.pathname === "/api/link-rating" && request.method === "POST") {
+      return handleLinkRatingVote(request, env, ctx);
+    }
+    if (url.pathname === "/api/link-rating" && request.method === "OPTIONS") {
+      return cors(new Response(null, { status: 204 }));
+    }
     if (url.pathname === "/api/top-opens" && request.method === "GET") {
       return handleTopOpens(request, env, ctx);
     }
@@ -200,7 +213,8 @@ function cors(res) {
   const headers = new Headers(res.headers);
   headers.set("Access-Control-Allow-Origin", "*");
   headers.set("Access-Control-Allow-Methods", "GET, POST, OPTIONS");
-  headers.set("Access-Control-Allow-Headers", "Content-Type");
+  // Authorization is required for admin kicks (e.g. POST /api/submissions/sync from GitHub Pages).
+  headers.set("Access-Control-Allow-Headers", "Content-Type, Authorization");
   headers.set("Access-Control-Max-Age", "86400");
   return new Response(res.body, { status: res.status, headers });
 }
@@ -491,6 +505,279 @@ function secondsUntilNextUtcYear(now = new Date()) {
 
 function hasFirebaseAdmin(env) {
   return !!(env.FIREBASE_PROJECT_ID && env.FIREBASE_CLIENT_EMAIL && env.FIREBASE_PRIVATE_KEY);
+}
+
+function hasD1(env) {
+  return !!(env && env.DB && typeof env.DB.prepare === "function");
+}
+
+function preferD1Stats(env) {
+  return hasD1(env) && String(env.STATS_STORE || "").toLowerCase() === "d1";
+}
+
+function firebaseProjectIdPublic(env) {
+  return String(env.FIREBASE_PROJECT_ID || env.FIREBASE_PROJECT_ID_PUBLIC || "").trim();
+}
+
+/**
+ * Verify a Firebase ID token via Google's tokeninfo endpoint (no admin SDK needed).
+ * Returns { uid } or null.
+ */
+async function verifyFirebaseIdToken(env, rawToken) {
+  const token = String(rawToken || "").trim();
+  if (!token) return null;
+  try {
+    const tip = await fetch(
+      "https://oauth2.googleapis.com/tokeninfo?id_token=" + encodeURIComponent(token)
+    );
+    if (!tip.ok) return null;
+    const info = await tip.json();
+    const uid = String(info.user_id || info.sub || "").trim();
+    if (!uid) return null;
+    const aud = String(info.aud || "");
+    const expected = firebaseProjectIdPublic(env);
+    if (expected && aud && aud !== expected) return null;
+    // Reject anonymous Firebase sessions (sign_in_provider not always on tokeninfo).
+    const firebaseClaim = info.firebase;
+    if (firebaseClaim && typeof firebaseClaim === "object") {
+      const provider = String(firebaseClaim.sign_in_provider || "");
+      if (provider === "anonymous") return null;
+    }
+    return { uid, email: String(info.email || "") };
+  } catch (err) {
+    console.error("verify_firebase_id_token", err);
+    return null;
+  }
+}
+
+function bearerToken(request) {
+  const auth = String(request.headers.get("Authorization") || "");
+  const m = /^Bearer\s+(.+)$/i.exec(auth);
+  return m ? m[1].trim() : "";
+}
+
+async function d1IncrementClick(env, hash, displayUrl) {
+  const now = Date.now();
+  const row = await env.DB.prepare(
+    `INSERT INTO link_clicks (hash, url, count, updated) VALUES (?, ?, 1, ?)
+     ON CONFLICT(hash) DO UPDATE SET
+       count = link_clicks.count + 1,
+       url = COALESCE(NULLIF(excluded.url, ''), link_clicks.url),
+       updated = excluded.updated
+     RETURNING count`
+  )
+    .bind(hash, displayUrl || "", now)
+    .first();
+  return Number(row && row.count) || 1;
+}
+
+async function d1GetClickCounts(env, norms) {
+  const out = {};
+  if (!hasD1(env) || !norms.length) return out;
+
+  const allIds = [];
+  const seenId = new Set();
+  const normVariants = new Map();
+  for (const norm of norms) {
+    const variants = clickUrlVariants(norm);
+    normVariants.set(norm, variants);
+    for (const variant of variants) {
+      const id = await sha256Hex(variant);
+      if (seenId.has(id)) continue;
+      seenId.add(id);
+      allIds.push(id);
+    }
+  }
+  if (!allIds.length) return out;
+
+  const idToCount = new Map();
+  for (let i = 0; i < allIds.length; i += 80) {
+    const chunk = allIds.slice(i, i + 80);
+    const placeholders = chunk.map(() => "?").join(",");
+    const rows = await env.DB.prepare(
+      `SELECT hash, count FROM link_clicks WHERE hash IN (${placeholders})`
+    )
+      .bind(...chunk)
+      .all();
+    for (const row of (rows && rows.results) || []) {
+      idToCount.set(String(row.hash), Number(row.count) || 0);
+    }
+  }
+
+  for (const norm of norms) {
+    let sum = 0;
+    let saw = false;
+    const used = new Set();
+    for (const variant of normVariants.get(norm) || []) {
+      const id = await sha256Hex(variant);
+      if (used.has(id)) continue;
+      used.add(id);
+      if (!idToCount.has(id)) continue;
+      sum += idToCount.get(id);
+      saw = true;
+    }
+    if (saw) out[norm] = sum;
+  }
+  return out;
+}
+
+async function d1GetRatings(env, norms) {
+  const out = {};
+  if (!hasD1(env) || !norms.length) return out;
+
+  const allIds = [];
+  const seenId = new Set();
+  const normVariants = new Map();
+  for (const norm of norms) {
+    const variants = clickUrlVariants(norm);
+    normVariants.set(norm, variants);
+    for (const variant of variants) {
+      const id = await sha256Hex(variant);
+      if (seenId.has(id)) continue;
+      seenId.add(id);
+      allIds.push(id);
+    }
+  }
+
+  const idToRating = new Map();
+  for (let i = 0; i < allIds.length; i += 80) {
+    const chunk = allIds.slice(i, i + 80);
+    const placeholders = chunk.map(() => "?").join(",");
+    const rows = await env.DB.prepare(
+      `SELECT hash, up, down FROM link_ratings WHERE hash IN (${placeholders})`
+    )
+      .bind(...chunk)
+      .all();
+    for (const row of (rows && rows.results) || []) {
+      idToRating.set(String(row.hash), {
+        up: Number(row.up) || 0,
+        down: Number(row.down) || 0,
+      });
+    }
+  }
+
+  for (const norm of norms) {
+    let best = { up: 0, down: 0 };
+    let sawAny = false;
+    const used = new Set();
+    for (const variant of normVariants.get(norm) || []) {
+      const id = await sha256Hex(variant);
+      if (used.has(id)) continue;
+      used.add(id);
+      if (!idToRating.has(id)) continue;
+      const ag = idToRating.get(id);
+      if (!sawAny || ag.up > best.up || ag.down > best.down) {
+        best = ag;
+        sawAny = true;
+      }
+    }
+    // Omit missing keys so clients can fall back to Firestore / disk cache
+    // instead of treating "not migrated yet" as a confirmed 0/0.
+    if (sawAny) out[norm] = best;
+  }
+  return out;
+}
+
+async function d1GetSelfVotes(env, uid, norms) {
+  const out = {};
+  if (!hasD1(env) || !uid || !norms.length) return out;
+  const hashes = [];
+  const hashToNorm = new Map();
+  for (const norm of norms) {
+    const hash = await sha256Hex(norm);
+    hashes.push(hash);
+    hashToNorm.set(hash, norm);
+  }
+  for (let i = 0; i < hashes.length; i += 80) {
+    const chunk = hashes.slice(i, i + 80);
+    const placeholders = chunk.map(() => "?").join(",");
+    const rows = await env.DB.prepare(
+      `SELECT hash, vote FROM link_rating_votes WHERE uid = ? AND hash IN (${placeholders})`
+    )
+      .bind(uid, ...chunk)
+      .all();
+    for (const row of (rows && rows.results) || []) {
+      const norm = hashToNorm.get(String(row.hash));
+      if (norm) out[norm] = Number(row.vote) || 0;
+    }
+  }
+  return out;
+}
+
+async function d1ApplyRatingVote(env, uid, norm, nextVote) {
+  const hash = await sha256Hex(norm);
+  const now = Date.now();
+  const vote = nextVote === 1 || nextVote === -1 ? nextVote : 0;
+
+  const existing = await env.DB.prepare(
+    `SELECT vote FROM link_rating_votes WHERE uid = ? AND hash = ?`
+  )
+    .bind(uid, hash)
+    .first();
+  const old = existing ? Number(existing.vote) || 0 : 0;
+
+  const agg = await env.DB.prepare(`SELECT up, down FROM link_ratings WHERE hash = ?`)
+    .bind(hash)
+    .first();
+  let up = agg ? Number(agg.up) || 0 : 0;
+  let down = agg ? Number(agg.down) || 0 : 0;
+
+  if (old === 1) up = Math.max(0, up - 1);
+  if (old === -1) down = Math.max(0, down - 1);
+  if (vote === 1) up++;
+  if (vote === -1) down++;
+
+  const stmts = [];
+  if (vote === 0) {
+    if (existing) {
+      stmts.push(env.DB.prepare(`DELETE FROM link_rating_votes WHERE uid = ? AND hash = ?`).bind(uid, hash));
+    }
+  } else {
+    stmts.push(
+      env.DB.prepare(
+        `INSERT INTO link_rating_votes (uid, hash, vote, norm, updated) VALUES (?, ?, ?, ?, ?)
+         ON CONFLICT(uid, hash) DO UPDATE SET vote = excluded.vote, norm = excluded.norm, updated = excluded.updated`
+      ).bind(uid, hash, vote, norm, now)
+    );
+  }
+  if (vote !== 0 || old !== 0) {
+    stmts.push(
+      env.DB.prepare(
+        `INSERT INTO link_ratings (hash, norm, up, down, updated) VALUES (?, ?, ?, ?, ?)
+         ON CONFLICT(hash) DO UPDATE SET norm = excluded.norm, up = excluded.up, down = excluded.down, updated = excluded.updated`
+      ).bind(hash, norm, up, down, now)
+    );
+  }
+  if (stmts.length) await env.DB.batch(stmts);
+  return { hash, up, down, vote, old };
+}
+
+async function d1TopOpens(env, limit) {
+  if (!hasD1(env)) return [];
+  const cap = Math.max(1, Math.min(limit || TOP_OPENS_LIMIT, 100));
+  const fetchCap = Math.min(150, Math.max(Math.ceil(cap * 1.5), 60));
+  const rows = await env.DB.prepare(
+    `SELECT url, count FROM link_clicks WHERE count > 0 ORDER BY count DESC LIMIT ?`
+  )
+    .bind(fetchCap)
+    .all();
+  const byNorm = new Map();
+  for (const row of (rows && rows.results) || []) {
+    const urlVal = String(row.url || "").trim();
+    const count = Number(row.count) || 0;
+    if (!urlVal || count <= 0) continue;
+    const norm = normalizeUrl(urlVal) || legacyNormalizeUrl(urlVal);
+    if (!norm) continue;
+    const prev = byNorm.get(norm);
+    if (!prev) {
+      byNorm.set(norm, { url: normalizeUrl(urlVal) || urlVal, count });
+    } else {
+      prev.count += count;
+      const modern = normalizeUrl(urlVal);
+      if (modern) prev.url = modern;
+    }
+  }
+  return [...byNorm.values()].sort((a, b) => b.count - a.count).slice(0, cap);
 }
 
 function pemFromEnv(raw) {
@@ -1170,6 +1457,19 @@ async function handleRecordClick(request, env, ctx) {
 
   const docId = await sha256Hex(norm);
   try {
+    if (preferD1Stats(env)) {
+      const count = await d1IncrementClick(env, docId, displayUrl || norm);
+      memSet("c:" + norm, count, FS_CLICK_CACHE_TTL_SEC);
+      await cachePutClickNorm(norm, count, ctx);
+      return json({
+        ok: true,
+        via: "d1",
+        norm,
+        hash: docId,
+        count,
+        rate: { count: rate.count, limit: rate.limit },
+      });
+    }
     if (hasFirebaseAdmin(env)) {
       const result = await firestoreIncrementClick(env, docId, displayUrl || norm);
       let count = Number.isFinite(result.count) ? result.count : null;
@@ -1219,23 +1519,28 @@ async function handleGetClicks(request, env, ctx) {
   const norms = [...new Set(urls.map(normalizeUrl).filter((u) => u && u.length >= 10))];
   try {
     let counts = {};
-    if (hasFirebaseAdmin(env) || env.FIREBASE_PROJECT_ID) {
+    let via = "none";
+    if (preferD1Stats(env)) {
+      counts = await d1GetClickCounts(env, norms);
+      via = "d1";
+    } else if (hasFirebaseAdmin(env) || env.FIREBASE_PROJECT_ID) {
       counts = await firestoreGetCounts(env, norms, ctx);
+      via = "firestore";
     }
     const edgeCounts = await edgeGetCounts(norms);
     const out = {};
     for (const norm of norms) {
-      const hasFs = Object.prototype.hasOwnProperty.call(counts, norm);
-      const fs = hasFs ? Number(counts[norm]) || 0 : null;
+      const hasStore = Object.prototype.hasOwnProperty.call(counts, norm);
+      const store = hasStore ? Number(counts[norm]) || 0 : null;
       const edge = Number(edgeCounts[norm]) || 0;
-      if (hasFs) {
-        out[norm] = Math.max(fs, edge);
+      if (hasStore) {
+        out[norm] = Math.max(store, edge);
       } else if (edge > 0) {
         out[norm] = edge;
       }
-      // If neither FS nor edge has a value, omit the key so clients keep disk cache.
+      // If neither store nor edge has a value, omit the key so clients keep disk cache.
     }
-    return json({ ok: true, counts: out });
+    return json({ ok: true, counts: out, via });
   } catch (err) {
     console.error("get_clicks_failed", err);
     return json({ ok: false, error: "internal_error" }, 500);
@@ -1375,13 +1680,80 @@ async function handleGetRatings(request, env, ctx) {
   const urls = Array.isArray(body && body.urls) ? body.urls.slice(0, 40) : [];
   const norms = [...new Set(urls.map(normalizeUrl).filter((u) => u && u.length >= 10))];
   try {
-    if (!hasFirebaseAdmin(env)) {
-      return json({ ok: true, ratings: {}, warning: "firebase_admin_unavailable" });
+    let ratings = {};
+    let via = "none";
+    if (preferD1Stats(env)) {
+      ratings = await d1GetRatings(env, norms);
+      via = "d1";
+    } else if (hasFirebaseAdmin(env)) {
+      ratings = await firestoreGetRatings(env, norms, ctx);
+      via = "firestore";
+    } else {
+      return json({ ok: true, ratings: {}, warning: "stats_store_unavailable" });
     }
-    const ratings = await firestoreGetRatings(env, norms, ctx);
-    return json({ ok: true, ratings });
+    const payload = { ok: true, ratings, via };
+    const token = bearerToken(request);
+    if (token && preferD1Stats(env)) {
+      const user = await verifyFirebaseIdToken(env, token);
+      if (user && user.uid) {
+        payload.self = await d1GetSelfVotes(env, user.uid, norms);
+      }
+    }
+    return json(payload);
   } catch (err) {
     console.error("get_ratings_failed", err);
+    return json({ ok: false, error: "internal_error" }, 500);
+  }
+}
+
+async function handleLinkRatingVote(request, env, ctx) {
+  if (!preferD1Stats(env)) {
+    return json({ ok: false, error: "d1_required" }, 503);
+  }
+  const user = await verifyFirebaseIdToken(env, bearerToken(request));
+  if (!user || !user.uid) {
+    return json({ ok: false, error: "unauthorized" }, 401);
+  }
+
+  let body;
+  try {
+    body = await request.json();
+  } catch (_) {
+    return json({ ok: false, error: "invalid_json" }, 400);
+  }
+  const displayUrl = String((body && body.url) || "").trim().slice(0, MAX_URL_LEN);
+  const norm = normalizeUrl(displayUrl);
+  if (!norm || norm.length < 10) {
+    return json({ ok: false, error: "invalid_url" }, 400);
+  }
+  let nextVote = Number(body && body.vote);
+  if (nextVote !== 1 && nextVote !== -1 && nextVote !== 0) {
+    return json({ ok: false, error: "invalid_vote" }, 400);
+  }
+
+  const ip = clientIp(request);
+  const rate = await rateLimitOk(ip, ctx, { max: 120, prefix: "rating" });
+  if (!rate.ok) {
+    return json(
+      { ok: false, error: "rate_limited", limit: rate.limit, windowSec: RATE_LIMIT_WINDOW_SEC },
+      429
+    );
+  }
+
+  try {
+    const result = await d1ApplyRatingVote(env, user.uid, norm, nextVote);
+    memSet("r:" + norm, { up: result.up, down: result.down }, FS_RATING_CACHE_TTL_SEC);
+    return json({
+      ok: true,
+      via: "d1",
+      norm,
+      hash: result.hash,
+      up: result.up,
+      down: result.down,
+      vote: result.vote,
+    });
+  } catch (err) {
+    console.error("link_rating_vote_failed", err);
     return json({ ok: false, error: "internal_error" }, 500);
   }
 }
@@ -1401,7 +1773,8 @@ async function handleTopOpens(request, env, ctx) {
     );
   }
   const cache = caches.default;
-  const cacheKey = new Request("https://top-opens.proxy-list.internal/v4");
+  // v5: D1 preview seeds store per-hash counts (not legacy+modern sums).
+  const cacheKey = new Request("https://top-opens.proxy-list.internal/v5");
   try {
     const hit = await cache.match(cacheKey);
     if (hit) {
@@ -1420,8 +1793,15 @@ async function handleTopOpens(request, env, ctx) {
   } catch (_) {}
 
   try {
-    const links = await firestoreTopOpens(env, TOP_OPENS_LIMIT);
-    let payload = JSON.stringify({ ok: true, links });
+    let links = [];
+    let via = "firestore";
+    if (preferD1Stats(env)) {
+      links = await d1TopOpens(env, TOP_OPENS_LIMIT);
+      via = "d1";
+    } else {
+      links = await firestoreTopOpens(env, TOP_OPENS_LIMIT);
+    }
+    let payload = JSON.stringify({ ok: true, links, via });
     // Cache failures briefly too, so a quota outage isn't re-queried on every page view.
     const ttl = links.length > 0 ? TOP_OPENS_CACHE_TTL_SEC : TOP_OPENS_FAIL_TTL_SEC;
     if (links.length > 0) {

@@ -2,9 +2,15 @@
   "_note": "Archived site update notices. Regenerate history with: python3 scripts/build_update_changelog.py",
   "entries": [
     {
+      "version": "v7.5",
+      "revision": "r309",
+      "released": "October 17, 2026",
+      "update_notice": "### New\n- Moved link clicks/ratings to Cloudflare Workers backend to fix quota issues with Firebase (authentication and folders are still handled using Firebase and user data/community folders are also still hosted with Firebase)\n- Added 3.1K+ links to the list with filter data currently processing for all links that currently exist\n\n### Fixed\n- Fixed a bug where trying to reset data using the site's \"Reset saved data\" setting did nothing\n- Fixed a bug where approving links for submission to the list were not actually contributed and were just approved in backend; links should now appear when approved within an hour"
+    },
+    {
       "version": "v7.4.3",
-      "revision": "r306",
-      "released": "October 5, 2026",
+      "revision": "r308",
+      "released": "October 11, 2026",
       "update_notice": "### Fixed\n- Fixed a bug where new databases weren't appearing in statistics\n- Fixed a bug where user counts wouldn't load"
     },
     {

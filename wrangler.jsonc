@@ -20,5 +20,34 @@
   },
   "compatibility_flags": [
     "nodejs_compat"
-  ]
+  ],
+  "vars": {
+    "ENVIRONMENT": "production",
+    "FIREBASE_PROJECT_ID_PUBLIC": "proxy-list-c06ea"
+  },
+  // Bound for wrangler d1 CLI / future cutover. Production code only uses D1 when
+  // STATS_STORE=d1 (set under previews below). Auth + saved folders stay on Firebase.
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "proxy-list-stats-preview",
+      "database_id": "81a9f279-4608-4901-af44-09cc806357cb",
+      "migrations_dir": "migrations"
+    }
+  ],
+  "previews": {
+    "vars": {
+      "ENVIRONMENT": "preview",
+      "FIREBASE_PROJECT_ID_PUBLIC": "proxy-list-c06ea",
+      "STATS_STORE": "d1"
+    },
+    "d1_databases": [
+      {
+        "binding": "DB",
+        "database_name": "proxy-list-stats-preview",
+        "database_id": "81a9f279-4608-4901-af44-09cc806357cb",
+        "migrations_dir": "migrations"
+      }
+    ]
+  }
 }

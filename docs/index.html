@@ -2760,6 +2760,34 @@
       font-weight: 600;
       font-variant-numeric: tabular-nums;
     }
+    #linkCheckCountdown {
+      margin: 0;
+      padding: 0.35rem 0.65rem;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      background: rgba(20, 20, 20, 0.92);
+      color: var(--muted);
+      font-size: 0.78rem;
+      line-height: 1.2;
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+      white-space: nowrap;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+    }
+    #linkCheckCountdown .link-check-countdown-icon {
+      flex-shrink: 0;
+      fill: none;
+      stroke: currentColor;
+      stroke-width: 2.4;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+    #linkCheckCountdown .link-check-countdown-time {
+      color: #f4f4f5;
+      font-weight: 600;
+      font-variant-numeric: tabular-nums;
+    }
     @media (max-width: 640px) {
       .floating-corner-actions {
         right: 0.75rem;
@@ -2769,6 +2797,12 @@
       #activeUsersFooterLine {
         font-size: 0.74rem;
         max-width: min(18rem, calc(100vw - 8rem));
+      }
+      #linkCheckCountdown {
+        font-size: 0.74rem;
+      }
+      #linkCheckCountdown .link-check-countdown-label {
+        display: none;
       }
     }
     .quick-search-palette-hint {
@@ -4293,6 +4327,16 @@
     <kbd>Ctrl</kbd><kbd>Y</kbd> Quick Search Palette
   </button>
   <div class="floating-corner-actions" aria-label="Page tools">
+    <p id="linkCheckCountdown" title="Time until possibly dead links are auto-removed from the list">
+      <svg class="link-check-countdown-icon" viewBox="0 0 24 24" width="14" height="14" aria-hidden="true" focusable="false">
+        <path d="M12 21A9 9 0 1 1 18.36 5.64" />
+        <path d="M14.9 5.7h3.6V2.1" />
+        <path d="M20.6 8.8A9 9 0 0 1 15.2 20.4" stroke-dasharray="2 2.6" />
+        <path d="M12 7.5V12l3 2" />
+      </svg>
+      <span class="link-check-countdown-label">Next link check in</span>
+      <span class="link-check-countdown-time" id="linkCheckCountdownTime">--:--:--</span>
+    </p>
     <p id="activeUsersFooterLine" aria-live="polite" hidden></p>
     <button class="btn" id="backToTopBtn" type="button" aria-label="Back to top">Back to top</button>
   </div>
@@ -5133,8 +5177,20 @@
       btn.dataset.wired = "1";
       btn.addEventListener("click", () => {
         if (!window.confirm("Reset this site's saved settings, filters, and caches, then reload? Your saved links are kept.")) return;
+        try {
+          clickCountCache.clear();
+          clickCountFetchedAt.clear();
+          topOpenedDocsCache = { at: 0, docs: null };
+          localStorage.removeItem("proxyList_clickCountDisk_v1");
+          localStorage.removeItem("proxyList_clickCountDisk_v2");
+          localStorage.removeItem("proxyList_topOpensDisk_v1");
+          localStorage.removeItem("proxyList_topOpensDisk_v2");
+        } catch (_) {}
         if (window.__proxyListBootGuard) window.__proxyListBootGuard.reset({ all: false });
-        location.reload();
+        // Hard navigation so bfcache / in-memory maps cannot restore inflated counts.
+        const u = new URL(location.href);
+        u.searchParams.set("_reset", String(Date.now()));
+        location.replace(u.toString());
       });
     }
 
@@ -7843,7 +7899,8 @@
 
     const LS_CLICK_KEY = "proxyList_link_clicks_v1";
     const LS_SAVED_LINKS_KEY = "proxyList_saved_links_v1";
-    const LS_CLICK_COUNT_DISK = "proxyList_clickCountDisk_v1";
+    // v2: ignore inflated v1 caches from the D1 preview seed that stored merged legacy+modern totals.
+    const LS_CLICK_COUNT_DISK = "proxyList_clickCountDisk_v2";
     /** Latest counts returned by POST /api/link-click (before read quota catches up). */
     const clickCountCache = new Map();
 
@@ -8203,7 +8260,8 @@
         for (const n of norms) {
           const c = clickCountCache.get(n);
           if (!Number.isFinite(c) || c < 0) continue;
-          byNorm[n] = Math.max(Number(byNorm[n]) || 0, c);
+          // Overwrite for norms we just refreshed — do not ratchet upward forever.
+          byNorm[n] = c;
           const at = clickCountFetchedAt.get(n);
           if (Number.isFinite(at)) t[n] = Math.floor(at / 60000);
         }
@@ -8464,9 +8522,17 @@
       for (let offset = 0; offset < rawNorms.length; offset += WORKER_RATING_BATCH) {
         const batch = rawNorms.slice(offset, offset + WORKER_RATING_BATCH);
         try {
+          const headers = { "Content-Type": "application/json" };
+          try {
+            const u = firebase.auth && firebase.auth().currentUser;
+            if (u && !u.isAnonymous) {
+              const tok = await u.getIdToken();
+              if (tok) headers.Authorization = "Bearer " + tok;
+            }
+          } catch (_) {}
           const res = await fetch(window.ProxyListPresence.apiUrl("/api/link-ratings/get"), {
             method: "POST",
-            headers: { "Content-Type": "application/json" },
+            headers,
             body: JSON.stringify({ urls: batch }),
             mode: "cors",
           });
@@ -8477,6 +8543,18 @@
           // Empty object usually means Worker Firebase read failed (quota/token) — don't treat as success.
           if (!ratingKeys.length) continue;
           fetchedAny = true;
+          if (data.self && typeof data.self === "object") {
+            for (const [selfNorm, voteRaw] of Object.entries(data.self)) {
+              const vote = Number(voteRaw) || 0;
+              let h = normToHashCache.get(selfNorm);
+              if (!h) {
+                h = await sha256Hex(selfNorm);
+                normToHashCache.set(selfNorm, h);
+                hashToNormMap.set(h, selfNorm);
+              }
+              linkRatingSelfByHash.set(h, vote);
+            }
+          }
           for (const n of batch) {
             const workerKey = normalizeUrlKeyForClicks(n);
             let best = null;
@@ -8755,9 +8833,54 @@
       );
     }
 
+    async function applyLinkRatingVoteViaWorker(norm, nextVote, user) {
+      const sharedApiAvailable =
+        typeof window.ProxyListPresence !== "undefined" &&
+        typeof window.ProxyListPresence.apiUrl === "function";
+      if (!sharedApiAvailable) return { handled: false };
+      let idToken = "";
+      try {
+        idToken = await user.getIdToken();
+      } catch (_) {
+        return { handled: false };
+      }
+      if (!idToken) return { handled: false };
+      try {
+        const res = await fetch(window.ProxyListPresence.apiUrl("/api/link-rating"), {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: "Bearer " + idToken,
+          },
+          body: JSON.stringify({ url: norm, vote: nextVote }),
+          mode: "cors",
+        });
+        if (res.status === 503) {
+          const data = await res.json().catch(() => ({}));
+          if (data && data.error === "d1_required") return { handled: false };
+        }
+        const data = await res.json().catch(() => ({}));
+        if (!res.ok || !(data && data.ok)) {
+          return {
+            handled: true,
+            error: new Error((data && data.error) || "worker_rating_failed"),
+          };
+        }
+        return {
+          handled: true,
+          hash: data.hash || (await sha256Hex(norm)),
+          up: Number(data.up) || 0,
+          down: Number(data.down) || 0,
+          vote: data.vote === 0 ? 0 : Number(data.vote) || nextVote,
+        };
+      } catch (err) {
+        return { handled: false, softError: err };
+      }
+    }
+
     async function applyLinkRatingVote(norm, nextVote) {
       const user = await ensureAuthForFirestore();
-      if (!user || user.isAnonymous || !firebaseDb) {
+      if (!user || user.isAnonymous) {
         openSignInRequiredModal("You need to be signed in to rate links.");
         return;
       }
@@ -8765,6 +8888,27 @@
       const hash = await sha256Hex(norm);
       normToHashCache.set(norm, hash);
       hashToNormMap.set(hash, norm);
+
+      // Prefer Worker D1 when available (preview / cutover); Firebase Auth still identifies the voter.
+      const viaWorker = await applyLinkRatingVoteViaWorker(norm, nextVote, user);
+      if (viaWorker.handled && !viaWorker.error) {
+        const h = viaWorker.hash || hash;
+        linkRatingAggByHash.set(h, { up: viaWorker.up, down: viaWorker.down });
+        linkRatingSelfByHash.set(h, viaWorker.vote === 0 ? 0 : viaWorker.vote);
+        patchLinkRatingAggDiskCacheOne(h, viaWorker.up, viaWorker.down);
+        repaintLinkRatingCellsForHash(h);
+        return;
+      }
+      if (viaWorker.handled && viaWorker.error) {
+        console.warn("[proxy-list] Link rating (Worker) failed", viaWorker.error);
+        window.alert("Could not save that rating. Try again in a moment.");
+        return;
+      }
+
+      if (!firebaseDb) {
+        openSignInRequiredModal("You need to be signed in to rate links.");
+        return;
+      }
       const voteRef = firebaseDb.collection("linkRatingVotes").doc(user.uid + "_" + hash);
       const aggRef = firebaseDb.collection("linkRatings").doc(hash);
       let finalUp = 0;
@@ -8818,7 +8962,7 @@
         } catch (err) {
           lastErr = err;
           if (isFirestoreResourceExhausted(err)) {
-            tripFirestoreReadCooldown(2 * 60 * 1000);
+            tripFirestoreReadQuota(2 * 60 * 1000);
             if (attempt < maxAttempts - 1) {
               await sleepMs(700 * (attempt + 1));
               continue;
@@ -8856,7 +9000,7 @@
 
     async function handleLinkRatingButtonClick(url, clickedVal) {
       const norm = normalizeUrlKeyForClicks(url);
-      if (!norm || !firebaseDb) return;
+      if (!norm) return;
       const user = await ensureAuthForFirestore();
       if (!user || user.isAnonymous) {
         openSignInRequiredModal("You need to be signed in to rate links.");
@@ -9200,6 +9344,23 @@
         "Approximate browsers with a heartbeat in the last few minutes (Cloudflare Worker). Proxied and direct tabs for the same signed-in account count once.";
     }
 
+    const LINK_CHECK_INTERVAL_MS = 6 * 60 * 60 * 1000;
+
+    function startLinkCheckCountdown() {
+      const timeEl = $("linkCheckCountdownTime");
+      if (!timeEl) return;
+      const pad = (v) => String(v).padStart(2, "0");
+      const tick = () => {
+        const left = LINK_CHECK_INTERVAL_MS - (Date.now() % LINK_CHECK_INTERVAL_MS);
+        const total = Math.ceil(left / 1000);
+        timeEl.textContent =
+          pad(Math.floor(total / 3600)) + ":" + pad(Math.floor((total % 3600) / 60)) + ":" + pad(total % 60);
+      };
+      tick();
+      setInterval(tick, 1000);
+    }
+    startLinkCheckCountdown();
+
     function countActivePresenceSessions(snap) {
       const val = snap && typeof snap.val === "function" ? snap.val() : null;
       if (!val || typeof val !== "object") return 0;
@@ -9533,16 +9694,12 @@
                 best = v;
               }
             }
-            // Worker omits keys when Firestore is unavailable — keep disk/cache.
+            // Worker omits keys when the store is unavailable — keep disk/cache.
+            // When it does return a key, trust it (allows counts to drop after a bad seed).
             if (!sawWorker) return;
             clickCountFetchedAt.set(n, Date.now());
-            const merged = Math.max(
-              Number(clickCountCache.get(n)) || 0,
-              Number(map.get(n)) || 0,
-              best
-            );
-            map.set(n, merged);
-            clickCountCache.set(n, merged);
+            map.set(n, best);
+            clickCountCache.set(n, best);
           });
           if (onProgress) {
             onProgress(Math.min(offset + displayUrls.length, toFetch.length), toFetch.length);
@@ -9598,7 +9755,8 @@
     const TOP_OPENS_DISPLAY = 10;
     const TOP_OPENS_FETCH_CAP = 80;
     const TOP_OPENS_CACHE_MS = 30 * 60 * 1000;
-    const LS_TOP_OPENS_DISK = "proxyList_topOpensDisk_v1";
+    // v2: same bust as clickCountDisk — old Most opened rows carried doubled counts.
+    const LS_TOP_OPENS_DISK = "proxyList_topOpensDisk_v2";
     let topOpenedDocsCache = (() => {
       try {
         const o = JSON.parse(localStorage.getItem(LS_TOP_OPENS_DISK) || "null");

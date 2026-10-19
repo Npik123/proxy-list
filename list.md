@@ -21223,16 +21223,6 @@ Try out my newest project, the [Proxy Development Toolkit](https://github.com/yo
 | | https://mathbull.democrata.ar | 5/22/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://equal.bulls.ferrosider.com.ar/ | 5/22/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 
-# 🌕 Luna
-> [!NOTE]
-> | Category | Capabilities | Protocol(s) | Links |
-> | - | - | - | - |
-> | Proxy/Games | tab-cloak | Ultraviolet | 1 |
-
-| Locked | Link | Found Date | Username | Password | Contributor |
-| - | - | - | - | - | - |
-| | https://finleyisabum.vixenlights.com/ | 4/30/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
-
 # 🧊 Arctic
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |

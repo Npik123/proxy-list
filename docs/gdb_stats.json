@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-10-20T03:13:55Z",
+  "generated_at": "2026-10-20T11:02:10Z",
   "snapshot_date": "2026-10-20",
   "catalog_count": 33,
-  "total_entries": 35847,
+  "total_entries": 35846,
   "unique_games": 28687,
   "catalogs": [
     {
@@ -74,7 +74,7 @@
     {
       "tag": "gdb:ccported",
       "label": "CCPorted",
-      "count": 22,
+      "count": 21,
       "empty": false
     },
     {
@@ -1776,7 +1776,7 @@
         "gdb:lucide": 837,
         "gdb:sdxp": 0,
         "gdb:duckmath": 498,
-        "gdb:ccported": 22,
+        "gdb:ccported": 21,
         "gdb:selenite": 266,
         "gdb:radon": 302,
         "gdb:truffled": 0,
@@ -1799,7 +1799,7 @@
         "gdb:diesmos": 1175,
         "gdb:fyinx": 0
       },
-      "total_entries": 35847,
+      "total_entries": 35846,
       "unique_games": 28687
     }
   ],
@@ -1909,9 +1909,11 @@
       "gdb:ccported": {
         "label": "CCPorted",
         "added": [],
-        "removed": [],
+        "removed": [
+          "Solitaire"
+        ],
         "added_count": 0,
-        "removed_count": 0,
+        "removed_count": 1,
         "added_truncated": 0,
         "removed_truncated": 0
       },
@@ -2107,9 +2109,15 @@
     },
     "all": {
       "added": [],
-      "removed": [],
+      "removed": [
+        {
+          "name": "Solitaire",
+          "tag": "gdb:ccported",
+          "label": "CCPorted"
+        }
+      ],
       "added_count": 0,
-      "removed_count": 0,
+      "removed_count": 1,
       "added_truncated": 0,
       "removed_truncated": 0
     }
@@ -2118,10 +2126,19 @@
     {
       "date": "2026-10-20",
       "kind": "diff",
-      "catalogs_touched": [],
+      "catalogs_touched": [
+        "gdb:ccported"
+      ],
       "added": 0,
-      "removed": 0,
-      "by_catalog": []
+      "removed": 1,
+      "by_catalog": [
+        {
+          "tag": "gdb:ccported",
+          "label": "CCPorted",
+          "added": 0,
+          "removed": 1
+        }
+      ]
     },
     {
       "date": "2026-10-19",

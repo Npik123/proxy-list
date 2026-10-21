@@ -2957,12 +2957,11 @@ Try out my newest project, the [Proxy Development Toolkit](https://github.com/yo
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Proxy/Games | libcurl, epoxy, bare, captcha | Ultraviolet, Scramjet | 2 |
+> | Proxy/Games | libcurl, epoxy, bare, captcha | Ultraviolet, Scramjet | 1 |
 
 | Locked | Link | Found Date | Username | Password | Contributor |
 | - | - | - | - | - | - |
 | | https://learn.savequeechylake.org/ | 4/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://viper.thevideobay.org/ | 4/25/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 
 # 🤍 Lucide
 > [!NOTE]

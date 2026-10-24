@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-10-24T10:19:15Z",
+  "generated_at": "2026-10-24T15:26:28Z",
   "snapshot_date": "2026-10-24",
   "catalog_count": 33,
-  "total_entries": 35846,
+  "total_entries": 35847,
   "unique_games": 28687,
   "catalogs": [
     {
@@ -74,7 +74,7 @@
     {
       "tag": "gdb:ccported",
       "label": "CCPorted",
-      "count": 21,
+      "count": 22,
       "empty": false
     },
     {
@@ -1936,7 +1936,7 @@
         "gdb:lucide": 837,
         "gdb:sdxp": 0,
         "gdb:duckmath": 498,
-        "gdb:ccported": 21,
+        "gdb:ccported": 22,
         "gdb:selenite": 266,
         "gdb:radon": 302,
         "gdb:truffled": 0,
@@ -1959,7 +1959,7 @@
         "gdb:diesmos": 1175,
         "gdb:fyinx": 0
       },
-      "total_entries": 35846,
+      "total_entries": 35847,
       "unique_games": 28687
     }
   ],
@@ -2071,11 +2071,9 @@
         "added": [
           "Riddle Transfer 2"
         ],
-        "removed": [
-          "Moto X3M"
-        ],
+        "removed": [],
         "added_count": 1,
-        "removed_count": 1,
+        "removed_count": 0,
         "added_truncated": 0,
         "removed_truncated": 0
       },
@@ -2277,15 +2275,9 @@
           "label": "CCPorted"
         }
       ],
-      "removed": [
-        {
-          "name": "Moto X3M",
-          "tag": "gdb:ccported",
-          "label": "CCPorted"
-        }
-      ],
+      "removed": [],
       "added_count": 1,
-      "removed_count": 1,
+      "removed_count": 0,
       "added_truncated": 0,
       "removed_truncated": 0
     }
@@ -2298,13 +2290,13 @@
         "gdb:ccported"
       ],
       "added": 1,
-      "removed": 1,
+      "removed": 0,
       "by_catalog": [
         {
           "tag": "gdb:ccported",
           "label": "CCPorted",
           "added": 1,
-          "removed": 1
+          "removed": 0
         }
       ]
     },

@@ -1,14 +1,8 @@
 {
-  "checked_at": "2026-10-23T21:14:20Z",
-  "checked_at_display": "2026-10-23 21:14 UTC",
+  "checked_at": "2026-10-24T03:06:46Z",
+  "checked_at_display": "2026-10-24 03:06 UTC",
   "added_count": 0,
-  "removed_count": 5,
+  "removed_count": 0,
   "added_links": [],
-  "removed_links": [
-    "https://ideas.vjason.com",
-    "https://places.vjason.com",
-    "https://simplescience.loveyourselfbeauty.au",
-    "https://polariseradne.jumpingcrab.com",
-    "https://search.loveyourselfbeauty.au"
-  ]
+  "removed_links": []
 }

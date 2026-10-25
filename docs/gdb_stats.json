@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-10-24T20:15:53Z",
-  "snapshot_date": "2026-10-24",
+  "generated_at": "2026-10-25T10:53:00Z",
+  "snapshot_date": "2026-10-25",
   "catalog_count": 33,
-  "total_entries": 35847,
-  "unique_games": 28687,
+  "total_entries": 35874,
+  "unique_games": 28695,
   "catalogs": [
     {
       "tag": "gdb:unblockedzone",
@@ -14,13 +14,13 @@
     {
       "tag": "gdb:gn-math",
       "label": "gn-math",
-      "count": 837,
+      "count": 846,
       "empty": false
     },
     {
       "tag": "gdb:luminsdk",
       "label": "Lumin SDK",
-      "count": 837,
+      "count": 846,
       "empty": false
     },
     {
@@ -56,7 +56,7 @@
     {
       "tag": "gdb:lucide",
       "label": "Lucide",
-      "count": 837,
+      "count": 846,
       "empty": false
     },
     {
@@ -1961,35 +1961,95 @@
       },
       "total_entries": 35847,
       "unique_games": 28687
+    },
+    {
+      "date": "2026-10-25",
+      "counts": {
+        "gdb:unblockedzone": 0,
+        "gdb:gn-math": 846,
+        "gdb:luminsdk": 846,
+        "gdb:noahs-tutoring": 0,
+        "gdb:elite-games": 325,
+        "gdb:ultimate-game-stash": 2446,
+        "gdb:seraph": 500,
+        "gdb:chicken-kings-vault": 821,
+        "gdb:lucide": 846,
+        "gdb:sdxp": 0,
+        "gdb:duckmath": 498,
+        "gdb:ccported": 22,
+        "gdb:selenite": 266,
+        "gdb:radon": 302,
+        "gdb:truffled": 0,
+        "gdb:totally-science": 0,
+        "gdb:petezah": 1121,
+        "gdb:frogies-arcade": 0,
+        "gdb:space": 0,
+        "gdb:boredom": 11,
+        "gdb:dogeub": 20739,
+        "gdb:utopia": 275,
+        "gdb:flux": 1741,
+        "gdb:greenis": 208,
+        "gdb:melonsoda": 42,
+        "gdb:edurocks": 0,
+        "gdb:timmy": 0,
+        "gdb:zane": 382,
+        "gdb:3kh0": 145,
+        "gdb:alexr": 676,
+        "gdb:hydra": 1641,
+        "gdb:diesmos": 1175,
+        "gdb:fyinx": 0
+      },
+      "total_entries": 35874,
+      "unique_games": 28695
     }
   ],
   "latest_changes": {
-    "date": "2026-10-24",
+    "date": "2026-10-25",
     "is_baseline": false,
     "by_catalog": {
       "gdb:unblockedzone": {
         "label": "Unblockedzone",
-      "added": [],
-      "removed": [],
-      "added_count": 0,
+        "added": [],
+        "removed": [],
+        "added_count": 0,
         "removed_count": 0,
         "added_truncated": 0,
         "removed_truncated": 0
       },
       "gdb:gn-math": {
         "label": "gn-math",
-        "added": [],
+        "added": [
+          "Chain-Chillas",
+          "Five Nights at Freddy's: Into The Pit",
+          "Gamble With Friends",
+          "Pet The Cat",
+          "ROAM0120.EXE",
+          "Sally Face",
+          "Sugary Spire Exhibition Night: Pizzano's Awesome Night Mod",
+          "The One Fish",
+          "Wolfenstein 3D"
+        ],
         "removed": [],
-        "added_count": 0,
+        "added_count": 9,
         "removed_count": 0,
         "added_truncated": 0,
         "removed_truncated": 0
       },
       "gdb:luminsdk": {
         "label": "Lumin SDK",
-        "added": [],
+        "added": [
+          "Chain-Chillas",
+          "Five Nights at Freddy's: Into The Pit",
+          "Gamble With Friends",
+          "Pet The Cat",
+          "ROAM0120.EXE",
+          "Sally Face",
+          "Sugary Spire Exhibition Night: Pizzano's Awesome Night Mod",
+          "The One Fish",
+          "Wolfenstein 3D"
+        ],
         "removed": [],
-        "added_count": 0,
+        "added_count": 9,
         "removed_count": 0,
         "added_truncated": 0,
         "removed_truncated": 0
@@ -2041,9 +2101,19 @@
       },
       "gdb:lucide": {
         "label": "Lucide",
-        "added": [],
+        "added": [
+          "Chain-Chillas",
+          "Five Nights at Freddy's: Into The Pit",
+          "Gamble With Friends",
+          "Pet The Cat",
+          "ROAM0120.EXE",
+          "Sally Face",
+          "Sugary Spire Exhibition Night: Pizzano's Awesome Night Mod",
+          "The One Fish",
+          "Wolfenstein 3D"
+        ],
         "removed": [],
-        "added_count": 0,
+        "added_count": 9,
         "removed_count": 0,
         "added_truncated": 0,
         "removed_truncated": 0
@@ -2068,11 +2138,9 @@
       },
       "gdb:ccported": {
         "label": "CCPorted",
-        "added": [
-          "Riddle Transfer 2"
-        ],
+        "added": [],
         "removed": [],
-        "added_count": 1,
+        "added_count": 0,
         "removed_count": 0,
         "added_truncated": 0,
         "removed_truncated": 0
@@ -2270,19 +2338,180 @@
     "all": {
       "added": [
         {
-          "name": "Riddle Transfer 2",
-          "tag": "gdb:ccported",
-          "label": "CCPorted"
+          "name": "Chain-Chillas",
+          "tag": "gdb:gn-math",
+          "label": "gn-math"
+        },
+        {
+          "name": "Chain-Chillas",
+          "tag": "gdb:luminsdk",
+          "label": "Lumin SDK"
+        },
+        {
+          "name": "Chain-Chillas",
+          "tag": "gdb:lucide",
+          "label": "Lucide"
+        },
+        {
+          "name": "Five Nights at Freddy's: Into The Pit",
+          "tag": "gdb:gn-math",
+          "label": "gn-math"
+        },
+        {
+          "name": "Five Nights at Freddy's: Into The Pit",
+          "tag": "gdb:luminsdk",
+          "label": "Lumin SDK"
+        },
+        {
+          "name": "Five Nights at Freddy's: Into The Pit",
+          "tag": "gdb:lucide",
+          "label": "Lucide"
+        },
+        {
+          "name": "Gamble With Friends",
+          "tag": "gdb:gn-math",
+          "label": "gn-math"
+        },
+        {
+          "name": "Gamble With Friends",
+          "tag": "gdb:luminsdk",
+          "label": "Lumin SDK"
+        },
+        {
+          "name": "Gamble With Friends",
+          "tag": "gdb:lucide",
+          "label": "Lucide"
+        },
+        {
+          "name": "Pet The Cat",
+          "tag": "gdb:gn-math",
+          "label": "gn-math"
+        },
+        {
+          "name": "Pet The Cat",
+          "tag": "gdb:luminsdk",
+          "label": "Lumin SDK"
+        },
+        {
+          "name": "Pet The Cat",
+          "tag": "gdb:lucide",
+          "label": "Lucide"
+        },
+        {
+          "name": "ROAM0120.EXE",
+          "tag": "gdb:gn-math",
+          "label": "gn-math"
+        },
+        {
+          "name": "ROAM0120.EXE",
+          "tag": "gdb:luminsdk",
+          "label": "Lumin SDK"
+        },
+        {
+          "name": "ROAM0120.EXE",
+          "tag": "gdb:lucide",
+          "label": "Lucide"
+        },
+        {
+          "name": "Sally Face",
+          "tag": "gdb:gn-math",
+          "label": "gn-math"
+        },
+        {
+          "name": "Sally Face",
+          "tag": "gdb:luminsdk",
+          "label": "Lumin SDK"
+        },
+        {
+          "name": "Sally Face",
+          "tag": "gdb:lucide",
+          "label": "Lucide"
+        },
+        {
+          "name": "Sugary Spire Exhibition Night: Pizzano's Awesome Night Mod",
+          "tag": "gdb:gn-math",
+          "label": "gn-math"
+        },
+        {
+          "name": "Sugary Spire Exhibition Night: Pizzano's Awesome Night Mod",
+          "tag": "gdb:luminsdk",
+          "label": "Lumin SDK"
+        },
+        {
+          "name": "Sugary Spire Exhibition Night: Pizzano's Awesome Night Mod",
+          "tag": "gdb:lucide",
+          "label": "Lucide"
+        },
+        {
+          "name": "The One Fish",
+          "tag": "gdb:gn-math",
+          "label": "gn-math"
+        },
+        {
+          "name": "The One Fish",
+          "tag": "gdb:luminsdk",
+          "label": "Lumin SDK"
+        },
+        {
+          "name": "The One Fish",
+          "tag": "gdb:lucide",
+          "label": "Lucide"
+        },
+        {
+          "name": "Wolfenstein 3D",
+          "tag": "gdb:gn-math",
+          "label": "gn-math"
+        },
+        {
+          "name": "Wolfenstein 3D",
+          "tag": "gdb:luminsdk",
+          "label": "Lumin SDK"
+        },
+        {
+          "name": "Wolfenstein 3D",
+          "tag": "gdb:lucide",
+          "label": "Lucide"
         }
       ],
       "removed": [],
-      "added_count": 1,
+      "added_count": 27,
       "removed_count": 0,
       "added_truncated": 0,
       "removed_truncated": 0
     }
   },
   "modifications": [
+    {
+      "date": "2026-10-25",
+      "kind": "diff",
+      "catalogs_touched": [
+        "gdb:gn-math",
+        "gdb:lucide",
+        "gdb:luminsdk"
+      ],
+      "added": 27,
+      "removed": 0,
+      "by_catalog": [
+        {
+          "tag": "gdb:gn-math",
+          "label": "gn-math",
+          "added": 9,
+          "removed": 0
+        },
+        {
+          "tag": "gdb:lucide",
+          "label": "Lucide",
+          "added": 9,
+          "removed": 0
+        },
+        {
+          "tag": "gdb:luminsdk",
+          "label": "Lumin SDK",
+          "added": 9,
+          "removed": 0
+        }
+      ]
+    },
     {
       "date": "2026-10-24",
       "kind": "diff",

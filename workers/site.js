@@ -3,12 +3,12 @@
  *
  * POST /api/link-click  { "url": "https://..." }
  *   - Rate limit: 40 clicks / hour / IP (Cache API)
- *   - When env.DB (D1) is bound (Worker Previews): increments link_clicks by
- *     sha256(normUrl) — same hash IDs as Firestore — and skips Firestore writes.
+ *   - When STATS_STORE=d1 and env.DB is bound: increments D1 link_clicks by
+ *     sha256(normUrl) plus click_daily / click_period rollups, and skips Firestore.
  *   - Else increments Firestore link_clicks/{sha256(normUrl)} via Admin REST when
  *     FIREBASE_PROJECT_ID + FIREBASE_CLIENT_EMAIL + FIREBASE_PRIVATE_KEY are set.
- *   - Also increments click_daily/{yyyy-mm-dd}.counts.{hash}, plus click_monthly/
- *     click_yearly totals for long-term archives (Firestore path only).
+ *   - Firestore path also increments click_daily/{yyyy-mm-dd}.counts.{hash}, plus
+ *     click_monthly / click_yearly totals.
  *   - Without D1 or Firebase secrets, increments an in-edge Cache counter.
  *
  * POST /api/link-clicks/get  { "urls": ["https://..."] }
@@ -28,13 +28,27 @@
  * GET /api/top-opens
  *   - Cached top link_clicks by count (5 min) for the Most opened section.
  *
- * POST /api/presence-ping  { sessionId, uid?, anonymous?, displayName? }
+ * GET  /api/click-stats/daily?days=90
+ * POST /api/click-stats/daily  { hashes?, days? }
+ * GET  /api/click-stats/period?kind=month|year&lookback=36
+ *   - D1 rollups for /stats/ (replaces Firestore click_daily / monthly / yearly).
+ *
+ * POST /api/presence-ping  { sessionId, uid?, anonymous?, displayName?, os?, osVersion?, browser?, ram?, cores?, arch? }
  *   - Rate limit: 90 pings / hour / IP
- *   - Writes presence_daily / presence_monthly aggregates + optional user totals
- *     for the Statistics → Users panel (unique visitors, hour buckets, top users).
+ *   - When STATS_STORE=d1: writes D1 presence_daily / presence_hour / presence_period
+ *     (and optional user totals) for Statistics → Users.
+ *   - Coarse OS + version (allowlisted) go to presence_os_daily. Independent of Sentry.
+ *   - Coarse RAM (through 32 GB+) / CPU cores / arch go to presence_hw_daily.
+ *   - Else writes Firestore presence_daily / monthly / yearly when admin secrets exist.
  *   - Tracks ~3-minute live sessions in the edge Cache and returns { active }.
  *   - Signed-in users are keyed by uid (proxy + raw tabs count once); anonymous
  *     by session id (not anonymous Firebase uid — those churn under web proxies).
+ *
+ * GET /api/presence-stats/daily?days=32
+ * GET /api/presence-stats/period?kind=month|year&lookback=36
+ * GET /api/presence-stats/os?days=32
+ * GET /api/presence-stats/hardware?days=32
+ *   - D1 presence rollups for /stats/ (replaces client Firestore presence_* reads).
  *
  * GET  /api/presence-active
  *   - Returns { ok, active } for the live-session count (no Firebase required).
@@ -46,10 +60,18 @@
  * GET /api/steam/appdetails?appids=123
  *   - Proxies store.steampowered.com/api/appdetails (CORS + edge cache).
  *
+ * Auth / admin (see workers/auth-api.js):
+ *   GET  /api/admin/me
+ *   POST /api/auth/guard | /api/auth/password-check | /api/auth/reset
+ *   POST|DELETE /api/github/token
+ *   GET  /api/github/extras
+ *
  * /__/auth/* and /__/firebase/* → reverse-proxy to the Firebase Auth helper host
  *   so signInWithRedirect works when authDomain is this Worker origin (avoids
  *   third-party cookie blocking on GitHub Pages).
  */
+import { handleAuthApi, isSubmissionAdminUid } from "./auth-api.js";
+
 const RATE_LIMIT_MAX = 40;
 const RATE_LIMIT_WINDOW_SEC = 3600;
 const PRESENCE_RATE_LIMIT_MAX = 90;
@@ -171,6 +193,18 @@ export default {
     if (url.pathname === "/api/top-opens" && request.method === "OPTIONS") {
       return cors(new Response(null, { status: 204 }));
     }
+    if (url.pathname === "/api/click-stats/daily" && (request.method === "GET" || request.method === "POST")) {
+      return handleClickStatsDaily(request, env);
+    }
+    if (url.pathname === "/api/click-stats/daily" && request.method === "OPTIONS") {
+      return cors(new Response(null, { status: 204 }));
+    }
+    if (url.pathname === "/api/click-stats/period" && request.method === "GET") {
+      return handleClickStatsPeriod(request, env);
+    }
+    if (url.pathname === "/api/click-stats/period" && request.method === "OPTIONS") {
+      return cors(new Response(null, { status: 204 }));
+    }
     if (url.pathname === "/api/presence-ping" && request.method === "POST") {
       return handlePresencePing(request, env, ctx);
     }
@@ -181,6 +215,30 @@ export default {
       return handlePresenceActive(ctx);
     }
     if (url.pathname === "/api/presence-active" && request.method === "OPTIONS") {
+      return cors(new Response(null, { status: 204 }));
+    }
+    if (url.pathname === "/api/presence-stats/daily" && request.method === "GET") {
+      return handlePresenceStatsDaily(request, env);
+    }
+    if (url.pathname === "/api/presence-stats/daily" && request.method === "OPTIONS") {
+      return cors(new Response(null, { status: 204 }));
+    }
+    if (url.pathname === "/api/presence-stats/period" && request.method === "GET") {
+      return handlePresenceStatsPeriod(request, env);
+    }
+    if (url.pathname === "/api/presence-stats/period" && request.method === "OPTIONS") {
+      return cors(new Response(null, { status: 204 }));
+    }
+    if (url.pathname === "/api/presence-stats/os" && request.method === "GET") {
+      return handlePresenceStatsOs(request, env);
+    }
+    if (url.pathname === "/api/presence-stats/os" && request.method === "OPTIONS") {
+      return cors(new Response(null, { status: 204 }));
+    }
+    if (url.pathname === "/api/presence-stats/hardware" && request.method === "GET") {
+      return handlePresenceStatsHardware(request, env);
+    }
+    if (url.pathname === "/api/presence-stats/hardware" && request.method === "OPTIONS") {
       return cors(new Response(null, { status: 204 }));
     }
     if (url.pathname === "/api/steam/search" && request.method === "GET") {
@@ -201,6 +259,23 @@ export default {
     if (url.pathname === "/api/submissions/sync" && request.method === "OPTIONS") {
       return cors(new Response(null, { status: 204 }));
     }
+    if (url.pathname === "/api/sentry" && request.method === "POST") {
+      return handleSentryTunnel(request);
+    }
+    if (url.pathname === "/api/sentry" && request.method === "OPTIONS") {
+      return cors(new Response(null, { status: 204 }));
+    }
+
+    const authApi = await handleAuthApi(request, env, ctx, url, {
+      json,
+      cors,
+      clientIp,
+      rateLimitOk,
+      sha256Hex,
+      bearerToken,
+      verifyFirebaseIdToken,
+    });
+    if (authApi) return authApi;
 
     if (env.ASSETS) {
       return env.ASSETS.fetch(request);
@@ -212,9 +287,13 @@ export default {
 function cors(res) {
   const headers = new Headers(res.headers);
   headers.set("Access-Control-Allow-Origin", "*");
-  headers.set("Access-Control-Allow-Methods", "GET, POST, OPTIONS");
+  headers.set("Access-Control-Allow-Methods", "GET, POST, DELETE, OPTIONS");
   // Authorization is required for admin kicks (e.g. POST /api/submissions/sync from GitHub Pages).
-  headers.set("Access-Control-Allow-Headers", "Content-Type, Authorization");
+  // sentry-trace / baggage are injected by the browser SDK on instrumented fetch().
+  headers.set(
+    "Access-Control-Allow-Headers",
+    "Content-Type, Authorization, sentry-trace, baggage"
+  );
   headers.set("Access-Control-Max-Age", "86400");
   return new Response(res.body, { status: res.status, headers });
 }
@@ -558,16 +637,31 @@ function bearerToken(request) {
 
 async function d1IncrementClick(env, hash, displayUrl) {
   const now = Date.now();
-  const row = await env.DB.prepare(
-    `INSERT INTO link_clicks (hash, url, count, updated) VALUES (?, ?, 1, ?)
-     ON CONFLICT(hash) DO UPDATE SET
-       count = link_clicks.count + 1,
-       url = COALESCE(NULLIF(excluded.url, ''), link_clicks.url),
-       updated = excluded.updated
-     RETURNING count`
-  )
-    .bind(hash, displayUrl || "", now)
-    .first();
+  const day = utcDateId();
+  const month = utcMonthId();
+  const year = utcYearId();
+  await env.DB.batch([
+    env.DB.prepare(
+      `INSERT INTO link_clicks (hash, url, count, updated) VALUES (?, ?, 1, ?)
+       ON CONFLICT(hash) DO UPDATE SET
+         count = link_clicks.count + 1,
+         url = COALESCE(NULLIF(excluded.url, ''), link_clicks.url),
+         updated = excluded.updated`
+    ).bind(hash, displayUrl || "", now),
+    env.DB.prepare(
+      `INSERT INTO click_daily (date, hash, count) VALUES (?, ?, 1)
+       ON CONFLICT(date, hash) DO UPDATE SET count = click_daily.count + 1`
+    ).bind(day, hash),
+    env.DB.prepare(
+      `INSERT INTO click_period (kind, period, total, updated) VALUES ('month', ?, 1, ?)
+       ON CONFLICT(kind, period) DO UPDATE SET total = click_period.total + 1, updated = excluded.updated`
+    ).bind(month, now),
+    env.DB.prepare(
+      `INSERT INTO click_period (kind, period, total, updated) VALUES ('year', ?, 1, ?)
+       ON CONFLICT(kind, period) DO UPDATE SET total = click_period.total + 1, updated = excluded.updated`
+    ).bind(year, now),
+  ]);
+  const row = await env.DB.prepare(`SELECT count FROM link_clicks WHERE hash = ?`).bind(hash).first();
   return Number(row && row.count) || 1;
 }
 
@@ -986,6 +1080,576 @@ function utcMonthId(d = new Date()) {
 
 function utcYearId(d = new Date()) {
   return String(d.getUTCFullYear());
+}
+
+function utcDayIds(lookback, now = new Date()) {
+  const n = Math.max(1, Math.min(Number(lookback) || 90, 90));
+  const out = [];
+  for (let i = n - 1; i >= 0; i--) {
+    const d = new Date(Date.UTC(now.getUTCFullYear(), now.getUTCMonth(), now.getUTCDate() - i));
+    out.push(d.toISOString().slice(0, 10));
+  }
+  return out;
+}
+
+function utcMonthIds(lookback, now = new Date()) {
+  const n = Math.max(1, Math.min(Number(lookback) || 36, 36));
+  const out = [];
+  for (let i = n - 1; i >= 0; i--) {
+    const d = new Date(Date.UTC(now.getUTCFullYear(), now.getUTCMonth() - i, 1));
+    out.push(d.toISOString().slice(0, 7));
+  }
+  return out;
+}
+
+function utcYearIds(lookback, now = new Date()) {
+  const n = Math.max(1, Math.min(Number(lookback) || 10, 10));
+  const y = now.getUTCFullYear();
+  const out = [];
+  for (let i = n - 1; i >= 0; i--) out.push(String(y - i));
+  return out;
+}
+
+async function d1DailyTotals(env, lookback) {
+  const ids = utcDayIds(lookback);
+  if (!hasD1(env) || !ids.length) return ids.map((date) => ({ date, total: 0 }));
+  const rows = await env.DB.prepare(
+    `SELECT date, SUM(count) AS total FROM click_daily WHERE date >= ? GROUP BY date`
+  )
+    .bind(ids[0])
+    .all();
+  const byDate = new Map();
+  for (const row of (rows && rows.results) || []) {
+    byDate.set(String(row.date), Number(row.total) || 0);
+  }
+  return ids.map((date) => ({ date, total: byDate.get(date) || 0 }));
+}
+
+async function d1DailyCountsForHashes(env, lookback, hashes) {
+  const ids = utcDayIds(lookback);
+  const byDate = new Map(ids.map((d) => [d, {}]));
+  if (!hasD1(env) || !ids.length || !hashes.length) {
+    return ids.map((date) => ({ date, counts: byDate.get(date) || {} }));
+  }
+  for (let i = 0; i < hashes.length; i += 80) {
+    const chunk = hashes.slice(i, i + 80);
+    const placeholders = chunk.map(() => "?").join(",");
+    const rows = await env.DB.prepare(
+      `SELECT date, hash, count FROM click_daily WHERE date >= ? AND hash IN (${placeholders})`
+    )
+      .bind(ids[0], ...chunk)
+      .all();
+    for (const row of (rows && rows.results) || []) {
+      const date = String(row.date);
+      if (!byDate.has(date)) continue;
+      byDate.get(date)[String(row.hash)] = Number(row.count) || 0;
+    }
+  }
+  return ids.map((date) => ({ date, counts: byDate.get(date) || {} }));
+}
+
+async function d1PeriodTotals(env, kind, lookback) {
+  const periods = kind === "year" ? utcYearIds(lookback) : utcMonthIds(lookback);
+  if (!hasD1(env) || !periods.length) return periods.map((period) => ({ period, total: 0 }));
+  const placeholders = periods.map(() => "?").join(",");
+  const rows = await env.DB.prepare(
+    `SELECT period, total FROM click_period WHERE kind = ? AND period IN (${placeholders})`
+  )
+    .bind(kind, ...periods)
+    .all();
+  const byPeriod = new Map();
+  for (const row of (rows && rows.results) || []) {
+    byPeriod.set(String(row.period), Number(row.total) || 0);
+  }
+  return periods.map((period) => ({ period, total: byPeriod.get(period) || 0 }));
+}
+
+function parseLookback(raw, fallback, max) {
+  const n = Number(raw);
+  if (!Number.isFinite(n)) return fallback;
+  return Math.max(1, Math.min(Math.trunc(n), max));
+}
+
+async function handleClickStatsDaily(request, env) {
+  if (!preferD1Stats(env)) {
+    return json({ ok: true, via: "none", days: [] });
+  }
+  let lookback = 90;
+  let hashes = [];
+  if (request.method === "GET") {
+    const url = new URL(request.url);
+    lookback = parseLookback(url.searchParams.get("days"), 90, 90);
+  } else {
+    let body;
+    try {
+      body = await request.json();
+    } catch (_) {
+      return json({ ok: false, error: "invalid_json" }, 400);
+    }
+    lookback = parseLookback(body && body.days, 90, 90);
+    hashes = Array.isArray(body && body.hashes)
+      ? [...new Set(body.hashes.map((h) => String(h || "").trim().toLowerCase()).filter((h) => /^[a-f0-9]{64}$/.test(h)))].slice(
+          0,
+          400
+        )
+      : [];
+  }
+  try {
+    if (hashes.length) {
+      const days = await d1DailyCountsForHashes(env, lookback, hashes);
+      return json({ ok: true, via: "d1", days });
+    }
+    const days = await d1DailyTotals(env, lookback);
+    return json({ ok: true, via: "d1", days });
+  } catch (err) {
+    console.error("click_stats_daily_failed", err);
+    return json({ ok: false, error: "internal_error" }, 500);
+  }
+}
+
+async function handleClickStatsPeriod(request, env) {
+  if (!preferD1Stats(env)) {
+    return json({ ok: true, via: "none", kind: "month", periods: [] });
+  }
+  const url = new URL(request.url);
+  const kind = String(url.searchParams.get("kind") || "month").toLowerCase() === "year" ? "year" : "month";
+  const lookback = parseLookback(url.searchParams.get("lookback"), kind === "year" ? 10 : 36, kind === "year" ? 10 : 36);
+  try {
+    const periods = await d1PeriodTotals(env, kind, lookback);
+    return json({ ok: true, via: "d1", kind, periods });
+  } catch (err) {
+    console.error("click_stats_period_failed", err);
+    return json({ ok: false, error: "internal_error" }, 500);
+  }
+}
+
+const PRESENCE_OS_ALLOW = new Set(["windows", "macos", "ios", "android", "chromeos", "linux", "other"]);
+
+function sanitizePresenceOs(raw) {
+  const os = String(raw || "")
+    .toLowerCase()
+    .replace(/[^a-z]/g, "");
+  return PRESENCE_OS_ALLOW.has(os) ? os : "";
+}
+
+function sanitizePresenceOsVersion(raw) {
+  const v = String(raw || "")
+    .replace(/[^0-9A-Za-z._-]/g, "")
+    .slice(0, 24);
+  return v || "unknown";
+}
+
+const PRESENCE_RAM_ALLOW = new Set([
+  "under_1gb",
+  "1gb",
+  "2gb",
+  "4gb",
+  "8gb",
+  "8gb+",
+  "16gb",
+  "32gb",
+  "32gb+",
+  "unknown",
+]);
+const PRESENCE_ARCH_ALLOW = new Set(["x64", "x86", "arm64", "arm", "unknown"]);
+const PRESENCE_BROWSER_ALLOW = new Set([
+  "chrome",
+  "edge",
+  "firefox",
+  "safari",
+  "opera",
+  "samsung",
+  "brave",
+  "other",
+]);
+const PRESENCE_HW_KIND_ALLOW = new Set(["ram", "cores", "arch", "browser"]);
+
+function sanitizePresenceRam(raw) {
+  const v = String(raw || "").toLowerCase();
+  if (v === "32gb") return "32gb+";
+  return PRESENCE_RAM_ALLOW.has(v) ? v : "";
+}
+
+function sanitizePresenceCores(raw) {
+  const n = parseInt(String(raw || ""), 10);
+  if (Number.isFinite(n) && n >= 1 && n <= 128) return String(n);
+  if (String(raw || "").toLowerCase() === "unknown") return "unknown";
+  return "";
+}
+
+function sanitizePresenceArch(raw) {
+  const v = String(raw || "")
+    .toLowerCase()
+    .replace(/[^a-z0-9]/g, "");
+  if (v === "amd64" || v === "x8664") return "x64";
+  if (v === "aarch64") return "arm64";
+  if (v === "ia32") return "x86";
+  return PRESENCE_ARCH_ALLOW.has(v) ? v : "";
+}
+
+function sanitizePresenceBrowser(raw) {
+  const v = String(raw || "")
+    .toLowerCase()
+    .replace(/[^a-z]/g, "");
+  if (v === "msie" || v === "ie" || v === "internetexplorer") return "other";
+  if (v === "chromium" || v === "crios") return "chrome";
+  if (v === "fxios") return "firefox";
+  if (v === "edgios" || v === "msedge") return "edge";
+  return PRESENCE_BROWSER_ALLOW.has(v) ? v : "";
+}
+
+async function d1RecordPresence(env, opts) {
+  const now = opts.now || new Date();
+  const day = utcDateId(now);
+  const month = utcMonthId(now);
+  const year = utcYearId(now);
+  const hour = String(now.getUTCHours()).padStart(2, "0");
+  const ts = now.getTime();
+  const firstDay = opts.firstDay ? 1 : 0;
+  const firstHour = opts.firstHour ? 1 : 0;
+  const firstSigned = opts.firstSignedInDay ? 1 : 0;
+  const firstMonth = opts.firstMonth ? 1 : 0;
+  const firstYear = opts.firstYear ? 1 : 0;
+  const firstUserDay = opts.firstUserDay ? 1 : 0;
+  const os = sanitizePresenceOs(opts.os);
+  const osVersion = sanitizePresenceOsVersion(opts.osVersion);
+  const ram = sanitizePresenceRam(opts.ram);
+  const cores = sanitizePresenceCores(opts.cores);
+  const arch = sanitizePresenceArch(opts.arch);
+  const browser = sanitizePresenceBrowser(opts.browser);
+
+  const stmts = [
+    env.DB.prepare(
+      `INSERT INTO presence_daily (date, unique_visitors, heartbeats, signed_in_uniques, updated)
+       VALUES (?, ?, 1, ?, ?)
+       ON CONFLICT(date) DO UPDATE SET
+         unique_visitors = presence_daily.unique_visitors + excluded.unique_visitors,
+         heartbeats = presence_daily.heartbeats + 1,
+         signed_in_uniques = presence_daily.signed_in_uniques + excluded.signed_in_uniques,
+         updated = excluded.updated`
+    ).bind(day, firstDay, firstSigned, ts),
+    env.DB.prepare(
+      `INSERT INTO presence_hour (date, hour, heartbeats, uniques) VALUES (?, ?, 1, ?)
+       ON CONFLICT(date, hour) DO UPDATE SET
+         heartbeats = presence_hour.heartbeats + 1,
+         uniques = presence_hour.uniques + excluded.uniques`
+    ).bind(day, hour, firstHour),
+    env.DB.prepare(
+      `INSERT INTO presence_period (kind, period, unique_visitors, heartbeats, updated)
+       VALUES ('month', ?, ?, 1, ?)
+       ON CONFLICT(kind, period) DO UPDATE SET
+         unique_visitors = presence_period.unique_visitors + excluded.unique_visitors,
+         heartbeats = presence_period.heartbeats + 1,
+         updated = excluded.updated`
+    ).bind(month, firstMonth, ts),
+    env.DB.prepare(
+      `INSERT INTO presence_period (kind, period, unique_visitors, heartbeats, updated)
+       VALUES ('year', ?, ?, 1, ?)
+       ON CONFLICT(kind, period) DO UPDATE SET
+         unique_visitors = presence_period.unique_visitors + excluded.unique_visitors,
+         heartbeats = presence_period.heartbeats + 1,
+         updated = excluded.updated`
+    ).bind(year, firstYear, ts),
+  ];
+  if (opts.uidHash && opts.label) {
+    stmts.push(
+      env.DB.prepare(
+        `INSERT INTO presence_user_totals (uid_hash, label, heartbeats, days_active, last_seen, updated)
+         VALUES (?, ?, 1, ?, ?, ?)
+         ON CONFLICT(uid_hash) DO UPDATE SET
+           label = excluded.label,
+           heartbeats = presence_user_totals.heartbeats + 1,
+           days_active = presence_user_totals.days_active + excluded.days_active,
+           last_seen = excluded.last_seen,
+           updated = excluded.updated`
+      ).bind(opts.uidHash, opts.label, firstUserDay, ts, ts)
+    );
+  }
+  if (os) {
+    stmts.push(
+      env.DB.prepare(
+        `INSERT INTO presence_os_daily (date, os, os_version, unique_visitors, heartbeats, updated)
+         VALUES (?, ?, ?, ?, 1, ?)
+         ON CONFLICT(date, os, os_version) DO UPDATE SET
+           unique_visitors = presence_os_daily.unique_visitors + excluded.unique_visitors,
+           heartbeats = presence_os_daily.heartbeats + 1,
+           updated = excluded.updated`
+      ).bind(day, os, osVersion, firstDay, ts)
+    );
+  }
+  await env.DB.batch(stmts);
+  const hwStmts = [];
+  const hwRows = [
+    ["ram", ram],
+    ["cores", cores],
+    ["arch", arch],
+    ["browser", browser],
+  ];
+  for (const [kind, value] of hwRows) {
+    if (!value || !PRESENCE_HW_KIND_ALLOW.has(kind)) continue;
+    hwStmts.push(
+      env.DB.prepare(
+        `INSERT INTO presence_hw_daily (date, kind, value, unique_visitors, heartbeats, updated)
+         VALUES (?, ?, ?, ?, 1, ?)
+         ON CONFLICT(date, kind, value) DO UPDATE SET
+           unique_visitors = presence_hw_daily.unique_visitors + excluded.unique_visitors,
+           heartbeats = presence_hw_daily.heartbeats + 1,
+           updated = excluded.updated`
+      ).bind(day, kind, value, firstDay, ts)
+    );
+  }
+  if (hwStmts.length) {
+    try {
+      await env.DB.batch(hwStmts);
+    } catch (err) {
+      console.error("presence_hw_insert_failed", err);
+    }
+  }
+}
+
+function emptyHourMap() {
+  return {};
+}
+
+async function d1PresenceDaily(env, lookback) {
+  const ids = utcDayIds(lookback);
+  if (!hasD1(env) || !ids.length) {
+    return ids.map((date) => ({
+      date,
+      uniqueVisitors: 0,
+      heartbeats: 0,
+      signedInUniques: 0,
+      hourHeartbeats: emptyHourMap(),
+      hourUniques: emptyHourMap(),
+    }));
+  }
+  const dailyRows = await env.DB.prepare(
+    `SELECT date, unique_visitors, heartbeats, signed_in_uniques FROM presence_daily WHERE date >= ?`
+  )
+    .bind(ids[0])
+    .all();
+  const hourRows = await env.DB.prepare(
+    `SELECT date, hour, heartbeats, uniques FROM presence_hour WHERE date >= ?`
+  )
+    .bind(ids[0])
+    .all();
+  const byDate = new Map();
+  for (const row of (dailyRows && dailyRows.results) || []) {
+    byDate.set(String(row.date), {
+      uniqueVisitors: Number(row.unique_visitors) || 0,
+      heartbeats: Number(row.heartbeats) || 0,
+      signedInUniques: Number(row.signed_in_uniques) || 0,
+      hourHeartbeats: {},
+      hourUniques: {},
+    });
+  }
+  for (const row of (hourRows && hourRows.results) || []) {
+    const date = String(row.date);
+    let rec = byDate.get(date);
+    if (!rec) {
+      rec = {
+        uniqueVisitors: 0,
+        heartbeats: 0,
+        signedInUniques: 0,
+        hourHeartbeats: {},
+        hourUniques: {},
+      };
+      byDate.set(date, rec);
+    }
+    const hour = String(row.hour || "").padStart(2, "0");
+    rec.hourHeartbeats[hour] = Number(row.heartbeats) || 0;
+    rec.hourUniques[hour] = Number(row.uniques) || 0;
+  }
+  return ids.map((date) => {
+    const rec = byDate.get(date);
+    return {
+      date,
+      uniqueVisitors: rec ? rec.uniqueVisitors : 0,
+      heartbeats: rec ? rec.heartbeats : 0,
+      signedInUniques: rec ? rec.signedInUniques : 0,
+      hourHeartbeats: rec ? rec.hourHeartbeats : {},
+      hourUniques: rec ? rec.hourUniques : {},
+    };
+  });
+}
+
+async function d1PresencePeriod(env, kind, lookback) {
+  const periods = kind === "year" ? utcYearIds(lookback) : utcMonthIds(lookback);
+  if (!hasD1(env) || !periods.length) {
+    return periods.map((period) => ({ period, uniqueVisitors: 0, heartbeats: 0 }));
+  }
+  const placeholders = periods.map(() => "?").join(",");
+  const rows = await env.DB.prepare(
+    `SELECT period, unique_visitors, heartbeats FROM presence_period WHERE kind = ? AND period IN (${placeholders})`
+  )
+    .bind(kind, ...periods)
+    .all();
+  const byPeriod = new Map();
+  for (const row of (rows && rows.results) || []) {
+    byPeriod.set(String(row.period), {
+      uniqueVisitors: Number(row.unique_visitors) || 0,
+      heartbeats: Number(row.heartbeats) || 0,
+    });
+  }
+  return periods.map((period) => {
+    const rec = byPeriod.get(period);
+    return {
+      period,
+      uniqueVisitors: rec ? rec.uniqueVisitors : 0,
+      heartbeats: rec ? rec.heartbeats : 0,
+    };
+  });
+}
+
+async function handlePresenceStatsDaily(request, env) {
+  if (!preferD1Stats(env)) {
+    return json({ ok: true, via: "none", days: [] });
+  }
+  const url = new URL(request.url);
+  const lookback = parseLookback(url.searchParams.get("days"), 32, 32);
+  try {
+    const days = await d1PresenceDaily(env, lookback);
+    return json({ ok: true, via: "d1", days });
+  } catch (err) {
+    console.error("presence_stats_daily_failed", err);
+    return json({ ok: false, error: "internal_error" }, 500);
+  }
+}
+
+async function d1PresenceOs(env, lookback) {
+  const ids = utcDayIds(lookback);
+  if (!hasD1(env) || !ids.length) {
+    return { days: [], totals: [] };
+  }
+  const rows = await env.DB.prepare(
+    `SELECT date, os, os_version, unique_visitors, heartbeats
+     FROM presence_os_daily
+     WHERE date >= ?
+     ORDER BY date ASC, unique_visitors DESC`
+  )
+    .bind(ids[0])
+    .all();
+  const days = [];
+  const totalsMap = new Map();
+  for (const row of (rows && rows.results) || []) {
+    const os = String(row.os || "");
+    const osVersion = String(row.os_version || "unknown");
+    const uniqueVisitors = Number(row.unique_visitors) || 0;
+    const heartbeats = Number(row.heartbeats) || 0;
+    days.push({
+      date: String(row.date || ""),
+      os,
+      osVersion,
+      uniqueVisitors,
+      heartbeats,
+    });
+    const key = os + "\0" + osVersion;
+    const cur = totalsMap.get(key) || { os, osVersion, uniqueVisitors: 0, heartbeats: 0 };
+    cur.uniqueVisitors += uniqueVisitors;
+    cur.heartbeats += heartbeats;
+    totalsMap.set(key, cur);
+  }
+  const totals = Array.from(totalsMap.values()).sort(
+    (a, b) => b.uniqueVisitors - a.uniqueVisitors || String(a.os).localeCompare(String(b.os))
+  );
+  return { days, totals };
+}
+
+async function d1PresenceHardware(env, lookback) {
+  const ids = utcDayIds(lookback);
+  const empty = { ram: [], cores: [], arch: [], browser: [] };
+  if (!hasD1(env) || !ids.length) return empty;
+  const rows = await env.DB.prepare(
+    `SELECT kind, value, SUM(unique_visitors) AS unique_visitors, SUM(heartbeats) AS heartbeats
+     FROM presence_hw_daily
+     WHERE date >= ?
+     GROUP BY kind, value`
+  )
+    .bind(ids[0])
+    .all();
+  const out = { ram: [], cores: [], arch: [], browser: [] };
+  for (const row of (rows && rows.results) || []) {
+    const kind = String(row.kind || "");
+    if (!out[kind]) continue;
+    out[kind].push({
+      value: String(row.value || "unknown"),
+      uniqueVisitors: Number(row.unique_visitors) || 0,
+      heartbeats: Number(row.heartbeats) || 0,
+    });
+  }
+  const ramOrder = ["under_1gb", "1gb", "2gb", "4gb", "8gb", "8gb+", "16gb", "32gb+", "unknown"];
+  out.ram.sort((a, b) => ramOrder.indexOf(a.value) - ramOrder.indexOf(b.value) || b.uniqueVisitors - a.uniqueVisitors);
+  out.cores.sort((a, b) => {
+    const an = parseInt(a.value, 10);
+    const bn = parseInt(b.value, 10);
+    if (Number.isFinite(an) && Number.isFinite(bn)) return an - bn;
+    if (Number.isFinite(an)) return -1;
+    if (Number.isFinite(bn)) return 1;
+    return String(a.value).localeCompare(String(b.value));
+  });
+  const archOrder = ["x64", "arm64", "x86", "arm", "unknown"];
+  out.arch.sort((a, b) => archOrder.indexOf(a.value) - archOrder.indexOf(b.value) || b.uniqueVisitors - a.uniqueVisitors);
+  const browserOrder = ["chrome", "edge", "safari", "firefox", "opera", "brave", "samsung", "other"];
+  out.browser.sort(
+    (a, b) =>
+      b.uniqueVisitors - a.uniqueVisitors ||
+      browserOrder.indexOf(a.value) - browserOrder.indexOf(b.value) ||
+      String(a.value).localeCompare(String(b.value))
+  );
+  return out;
+}
+
+async function handlePresenceStatsHardware(request, env) {
+  if (!preferD1Stats(env)) {
+    return json({ ok: true, via: "none", ram: [], cores: [], arch: [], browser: [] });
+  }
+  const url = new URL(request.url);
+  const lookback = parseLookback(url.searchParams.get("days"), 32, 32);
+  try {
+    const data = await d1PresenceHardware(env, lookback);
+    return json({
+      ok: true,
+      via: "d1",
+      ram: data.ram,
+      cores: data.cores,
+      arch: data.arch,
+      browser: data.browser,
+    });
+  } catch (err) {
+    console.error("presence_stats_hardware_failed", err);
+    return json({ ok: false, error: "internal_error" }, 500);
+  }
+}
+
+async function handlePresenceStatsOs(request, env) {
+  if (!preferD1Stats(env)) {
+    return json({ ok: true, via: "none", days: [], totals: [] });
+  }
+  const url = new URL(request.url);
+  const lookback = parseLookback(url.searchParams.get("days"), 32, 32);
+  try {
+    const data = await d1PresenceOs(env, lookback);
+    return json({ ok: true, via: "d1", days: data.days, totals: data.totals });
+  } catch (err) {
+    console.error("presence_stats_os_failed", err);
+    return json({ ok: false, error: "internal_error" }, 500);
+  }
+}
+
+async function handlePresenceStatsPeriod(request, env) {
+  if (!preferD1Stats(env)) {
+    return json({ ok: true, via: "none", kind: "month", periods: [] });
+  }
+  const url = new URL(request.url);
+  const kind = String(url.searchParams.get("kind") || "month").toLowerCase() === "year" ? "year" : "month";
+  const lookback = parseLookback(url.searchParams.get("lookback"), kind === "year" ? 10 : 36, kind === "year" ? 10 : 36);
+  try {
+    const periods = await d1PresencePeriod(env, kind, lookback);
+    return json({ ok: true, via: "d1", kind, periods });
+  } catch (err) {
+    console.error("presence_stats_period_failed", err);
+    return json({ ok: false, error: "internal_error" }, 500);
+  }
 }
 
 /**
@@ -1537,8 +2201,10 @@ async function handleGetClicks(request, env, ctx) {
         out[norm] = Math.max(store, edge);
       } else if (edge > 0) {
         out[norm] = edge;
+      } else if (via === "d1") {
+        out[norm] = 0;
       }
-      // If neither store nor edge has a value, omit the key so clients keep disk cache.
+      // Firestore/edge: omit missing keys so clients keep disk cache.
     }
     return json({ ok: true, counts: out, via });
   } catch (err) {
@@ -1690,6 +2356,13 @@ async function handleGetRatings(request, env, ctx) {
       via = "firestore";
     } else {
       return json({ ok: true, ratings: {}, warning: "stats_store_unavailable" });
+    }
+    if (via === "d1") {
+      for (const norm of norms) {
+        if (!Object.prototype.hasOwnProperty.call(ratings, norm)) {
+          ratings[norm] = { up: 0, down: 0 };
+        }
+      }
     }
     const payload = { ok: true, ratings, via };
     const token = bearerToken(request);
@@ -2128,6 +2801,34 @@ async function handlePresencePing(request, env, ctx) {
   }
 
   try {
+    if (preferD1Stats(env)) {
+      await d1RecordPresence(env, {
+        now,
+        firstDay,
+        firstHour,
+        firstMonth,
+        firstYear,
+        firstSignedInDay,
+        firstUserDay,
+        uidHash: uidHash || "",
+        label,
+        os: body && body.os,
+        osVersion: body && body.osVersion,
+        ram: body && body.ram,
+        cores: body && body.cores,
+        arch: body && body.arch,
+        browser: body && body.browser,
+      });
+      return json({
+        ok: true,
+        via: "d1",
+        active,
+        day,
+        firstDay,
+        firstHour,
+        rate: { count: rate.count, limit: rate.limit },
+      });
+    }
     if (hasFirebaseAdmin(env)) {
       await firestoreRecordPresence(env, {
         now,
@@ -2162,7 +2863,65 @@ async function handlePresencePing(request, env, ctx) {
     });
   } catch (err) {
     console.error("presence_ping_failed", err);
-    return json({ ok: false, error: "internal_error" }, 500);
+    return json({
+      ok: true,
+      via: "edge",
+      active,
+      day,
+      firstDay,
+      firstHour,
+      warning: "presence_persist_failed",
+      rate: { count: rate.count, limit: rate.limit },
+    });
+  }
+}
+
+/** Forward Sentry envelopes so ad blockers that filter *.sentry.io still receive events. */
+async function handleSentryTunnel(request) {
+  let buf;
+  try {
+    buf = await request.arrayBuffer();
+  } catch (_) {
+    return json({ ok: false, error: "empty" }, 400);
+  }
+  if (!buf || buf.byteLength < 2 || buf.byteLength > 256000) {
+    return json({ ok: false, error: "bad_payload" }, 413);
+  }
+  const preview = new TextDecoder().decode(buf.slice(0, 2048));
+  const firstLine = String(preview.split("\n")[0] || "").trim();
+  let dsnHost = "";
+  let projectId = "";
+  try {
+    const header = JSON.parse(firstLine);
+    if (header && header.dsn) {
+      const u = new URL(String(header.dsn));
+      dsnHost = String(u.host || "");
+      projectId = String(u.pathname || "").replace(/^\//, "").split("/")[0];
+    }
+  } catch (_) {}
+  if (!dsnHost || !projectId) {
+    return json({ ok: false, error: "bad_dsn" }, 400);
+  }
+  if (!/\.ingest\.sentry\.io$/i.test(dsnHost) && !/\.ingest\.[a-z]+\.sentry\.io$/i.test(dsnHost)) {
+    return json({ ok: false, error: "bad_dsn_host" }, 400);
+  }
+  try {
+    const upstream = await fetch("https://" + dsnHost + "/api/" + encodeURIComponent(projectId) + "/envelope/", {
+      method: "POST",
+      headers: {
+        "Content-Type": request.headers.get("Content-Type") || "application/x-sentry-envelope",
+      },
+      body: buf,
+    });
+    return cors(
+      new Response(upstream.body, {
+        status: upstream.status,
+        headers: { "Content-Type": upstream.headers.get("Content-Type") || "application/json" },
+      })
+    );
+  } catch (err) {
+    console.warn("sentry_tunnel_failed", err && err.message ? err.message : err);
+    return json({ ok: false, error: "tunnel_failed" }, 502);
   }
 }
 
@@ -2313,11 +3072,7 @@ async function handleSubmissionsSync(request, env) {
     return json({ ok: false, error: "token_check_failed" }, 401);
   }
 
-  const adminCsv = String(env.SUBMISSION_ADMIN_UIDS || "").trim();
-  const admins = adminCsv
-    ? adminCsv.split(/[,\s]+/).map((s) => s.trim()).filter(Boolean)
-    : ["OiMY32eTKcSnEX73W6oBUKgT6pG3"];
-  if (!uid || !admins.includes(uid)) {
+  if (!uid || !isSubmissionAdminUid(env, uid)) {
     return json({ ok: false, error: "forbidden" }, 403);
   }
 

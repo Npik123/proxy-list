@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="utf-8" />
+    <script src="../sentry-init.js"></script>
     <script src="../data-loader.js"></script>
     <script src="../debug-overlays.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -334,6 +335,12 @@
       grid-template-columns: 1.4fr 1fr;
       gap: 1rem;
       margin-bottom: 1rem;
+    }
+    .charts-row.three {
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+    @media (max-width: 1100px) {
+      .charts-row.three { grid-template-columns: 1fr; }
     }
     @media (max-width: 800px) {
       .charts-row { grid-template-columns: 1fr; }
@@ -1273,6 +1280,86 @@
               <canvas id="usersMonthlyChart" aria-label="Active users per month"></canvas>
             </div>
           </section>
+
+          <div class="charts-row three">
+            <section class="card">
+              <h2>Operating systems</h2>
+              <p class="hint">
+                Share of unique visitors by OS over the last 32 UTC days. Collected from visitors
+                who opt into the Hardware Survey (not Sentry). Only the OS family and a coarse
+                version are stored.
+              </p>
+              <div class="chart-wrap is-loading donut">
+                <canvas id="usersOsChart" aria-label="Visitors by operating system"></canvas>
+              </div>
+            </section>
+            <section class="card">
+              <h2>Browsers</h2>
+              <p class="hint">
+                Coarse browser family from visitors who opt into the Hardware Survey (Chrome, Edge,
+                Safari, Firefox, and a few others). Chromium-based apps often count as Chrome.
+              </p>
+              <div class="chart-wrap is-loading donut">
+                <canvas id="usersBrowserChart" aria-label="Visitors by browser"></canvas>
+              </div>
+            </section>
+            <section class="card">
+              <h2>OS versions</h2>
+              <p class="hint">Unique visitors by OS version in the same window.</p>
+              <div style="overflow-x:auto">
+              <table>
+                <thead>
+                  <tr>
+                    <th>OS</th>
+                    <th>Version</th>
+                    <th class="num">Uniques</th>
+                    <th class="num">Heartbeats</th>
+                    <th class="num">Share</th>
+                  </tr>
+                </thead>
+                <tbody id="usersOsTableBody">
+                  <tr class="stats-row-skeleton" aria-hidden="true"><td><span class="sk-line" aria-hidden="true"></span></td><td><span class="sk-line" aria-hidden="true"></span></td><td class="num"><span class="sk-line" aria-hidden="true"></span></td><td class="num"><span class="sk-line" aria-hidden="true"></span></td><td class="num"><span class="sk-line" aria-hidden="true"></span></td></tr>
+                  <tr class="stats-row-skeleton" aria-hidden="true"><td><span class="sk-line" aria-hidden="true"></span></td><td><span class="sk-line" aria-hidden="true"></span></td><td class="num"><span class="sk-line" aria-hidden="true"></span></td><td class="num"><span class="sk-line" aria-hidden="true"></span></td><td class="num"><span class="sk-line" aria-hidden="true"></span></td></tr>
+                  <tr class="stats-row-skeleton" aria-hidden="true"><td><span class="sk-line" aria-hidden="true"></span></td><td><span class="sk-line" aria-hidden="true"></span></td><td class="num"><span class="sk-line" aria-hidden="true"></span></td><td class="num"><span class="sk-line" aria-hidden="true"></span></td><td class="num"><span class="sk-line" aria-hidden="true"></span></td></tr>
+                </tbody>
+              </table>
+              </div>
+            </section>
+          </div>
+
+          <div class="charts-row three">
+            <section class="card">
+              <h2>RAM</h2>
+              <p class="hint">
+                Browser-reported device memory buckets from Hardware Survey opt-ins (Chrome/Edge).
+                Safari and Firefox usually report unknown. Desktop Chrome can report up to 32 GB+
+                (the browser’s top bucket, not an exact size). Android still typically tops out at 8 GB.
+              </p>
+              <div class="chart-wrap is-loading tall">
+                <canvas id="usersRamChart" aria-label="Visitors by RAM bucket"></canvas>
+              </div>
+            </section>
+            <section class="card">
+              <h2>CPU cores</h2>
+              <p class="hint">
+                Logical processors from the browser (<code>hardwareConcurrency</code>). Common on
+                most browsers; not the physical core count.
+              </p>
+              <div class="chart-wrap is-loading tall">
+                <canvas id="usersCoresChart" aria-label="Visitors by CPU core count"></canvas>
+              </div>
+            </section>
+            <section class="card">
+              <h2>CPU architecture</h2>
+              <p class="hint">
+                Coarse ISA from Client Hints or the user-agent (x64, x86, arm64, arm). Safari on
+                Apple Silicon often still reports Intel.
+              </p>
+              <div class="chart-wrap is-loading tall">
+                <canvas id="usersArchChart" aria-label="Visitors by CPU architecture"></canvas>
+              </div>
+            </section>
+          </div>
         </div>
 
         <div class="panel" id="panel-games" data-panel="games" hidden>

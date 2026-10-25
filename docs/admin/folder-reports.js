@@ -56,7 +56,7 @@
   }
 
   async function ensureAdmin(user) {
-    if (!SU.isSignedInNonAnonymous(user) || !SU.isSubmissionAdminUser(user)) {
+    if (!SU.isSignedInNonAnonymous(user) || !(await SU.checkSubmissionAdmin(user))) {
       redirectToMainList();
       return false;
     }

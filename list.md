@@ -1,8 +1,8 @@
 # Proxy List
 > [!NOTE]
-> v7.5 | Released: October 17, 2026
-> r309 | Last Updated: October 17, 2026
-> Total onsite links: 55958 (55077 sorted + 881 unsorted)\
+> v8.0 | Released: October 24, 2026
+> r310 | Last Updated: October 24, 2026
+> Total onsite links: 56623 (55761 sorted + 862 unsorted)\
 > https://yourworstnightmare1.github.io/proxy-list/
 <br>
 Welcome to the official Proxy List! This has a running list of hundreds of unblocked websites and games that anyone is free to use. We have the most popular and reliable sites here, so you'll never run out!
@@ -24,10 +24,6 @@ I will be taking a break from adding new features for now, I will still be addin
 <!-- expires: 2026-10-10T19:30:00Z -->
 Fern’s AWS service is currently suspended by Amazon. All Fern s3.amazonaws.com links are currently offline (shows XML error). They should be back up within 48 hours or less. [Click to view Discord message](https://discord.com/channels/1353774986258808932/1511556186950996028/1557454997405306963)
 
-### Having Trouble Viewing The List?
-<!-- added: 2026-08-01T00:00:00Z -->
-If the list is appearing as a blank screen or throws an error message, [follow the steps on this page based on your browser to fix the issue](./fix-loading/index.html).
-
 ### Errors with Link Clicks and Ratings
 <!-- added: 2026-09-20T00:00:00Z -->
 <!-- expires: 2026-09-27T07:00:00Z -->
@@ -40,12 +36,16 @@ Try out my newest project, the [Proxy Development Toolkit](https://github.com/yo
 ## Update Notice
 
 ### New
-- Moved link clicks/ratings to Cloudflare Workers backend to fix quota issues with Firebase (authentication and folders are still handled using Firebase and user data/community folders are also still hosted with Firebase)
-- Added 3.1K+ links to the list with filter data currently processing for all links that currently exist
+- Increased security of accounts and logins/signups
+- Made changes to sign up flow to comply with legal regulations
+- Added analytic collection powered by Sentry to collect error logs
+- Added hardware data collection to improve development flow
+- Moved fonts locally instead of loading them directly from Google's servers
+- Added 600+ new links (no filter data yet)
 
 ### Fixed
-- Fixed a bug where trying to reset data using the site's "Reset saved data" setting did nothing
-- Fixed a bug where approving links for submission to the list were not actually contributed and were just approved in backend; links should now appear when approved within an hour
+- Fixed bug on Ultraviolet when using the libcurl transport method that caused the list data to not load, causing the site to time out and throw an error
+- Fixed bug where Noah's Tutoring GDB was throwing a 404 because its original jsDelivr mirror did not exist; it has now been replaced with a working domain
 
 # 💜 Selenite
 > [!NOTE]
@@ -469,7 +469,7 @@ Try out my newest project, the [Proxy Development Toolkit](https://github.com/yo
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Proxy/Games | epoxy, libcurl, wisp, captcha, reflux | Scramjet, Ultraviolet | 131 |
+> | Proxy/Games | epoxy, libcurl, wisp, captcha, reflux | Scramjet, Ultraviolet | 132 |
 
 > [!IMPORTANT]
 > this proxy seems to be very slow on some links. if you are on a link and nothing loads or loads very slowly, try another link and make sure that if it is a jsdelivr domain, you choose the fastest option based on your location.
@@ -607,12 +607,13 @@ Try out my newest project, the [Proxy Development Toolkit](https://github.com/yo
 | | https://cdn.jsdelivr.net/gh/TwiLabs/history/dist/index.svg?id=dFSpsKGXaD9pN6iDQna7YCgvs7BxFNsn | 9/13/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://ideekay.bostoncareercounselor.com/ | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://cdn.jsdelivr.net/gh/stockable/dd-static/dist/index.svg | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://s3.amazonaws.com/h7ww/index.html | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 
 # 🚀 Nebulo
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Proxy/Games | epoxy, libcurl, GDB:gn-math | Scramjet, Ultraviolet, Eclipse | 8 |
+> | Proxy/Games | epoxy, libcurl, GDB:gn-math | Scramjet, Ultraviolet, Eclipse | 16 |
 
 > [!IMPORTANT]
 > Nebulo does not have CAPTCHA support. Websites that require human verification (like YouTube) will not work or display properly.
@@ -628,12 +629,20 @@ Try out my newest project, the [Proxy Development Toolkit](https://github.com/yo
 | | https://cdn.jsdelivr.net/gh/Nebuli-OS/Nebuli-OS.github.io@latest/assets/mini/index.svg | 8/1/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://script.google.com/macros/s/AKfycbyuXz7H4piCfX_T7FdY3uuWfQ3sVg1VWZrqE_FGsQusWmZ7btRhWVOAYk59hx4i5G_7ZQ/exec | 8/1/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 |  | https://class.matheusarruda.com | 10/5/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://bull.education.drbijaytamang.com.np | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://bullde.drswright.ca | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://bull.has.no.noble-house.tk | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://67maths.pound4poundmma.ca | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://latvian-bull.rigaprecast.com.au | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://maybebull.scottbaptist.com | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://like.subscribe.thevoiceexchange.com | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://oscar-angel-vincent-johnny.thevoiceexchange.com | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 
 # 🌑 Space
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Proxy/Games | epoxy, libcurl, wisp, GDB:space | Scramjet, Ultraviolet | 23 |
+> | Proxy/Games | epoxy, libcurl, wisp, GDB:space | Scramjet, Ultraviolet | 26 |
 
 > [!IMPORTANT]
 > some space links have a similar problem like daydream where it will be very slow for some reason. if you are on a link and nothing loads or loads very slowly, try another link and make sure that if it is a jsdelivr domain, you choose the fastest option based on your location.
@@ -664,12 +673,15 @@ Try out my newest project, the [Proxy Development Toolkit](https://github.com/yo
 | | https://deeper.deepee.com | 8/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://try.deepee.com | 8/29/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://verityisnotthegoat.spencerisgay.zyf.govt.hu | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://s.tvlibre.st | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://s.rread.co.uk | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://s.casaskrater.cl | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 
 # 🪴 Fern
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Proxy/Games | GDB:luminsdk | Scramjet, Ultraviolet | 416 |
+> | Proxy/Games | GDB:luminsdk | Scramjet, Ultraviolet | 430 |
 > [!IMPORTANT]
 > site has a bunch of ad popup windows, you can close these. it's recommended you use uBlock Origin to view this site without those popups
 
@@ -1228,12 +1240,26 @@ Try out my newest project, the [Proxy Development Toolkit](https://github.com/yo
 |  | https://fnnx.s3.amazonaws.com/fnnx/index.html | 10/5/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 |  | https://fnnx.s3.us-east-1.amazonaws.com/fnnx/index.html | 10/5/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 |  | https://s3.dualstack.us-east-1.amazonaws.com/fnnx/index.html | 10/5/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://frnbk.s3.amazonaws.com/index.html | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://s3.amazonaws.com/frnbk/index.html | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://s3.amazonaws.com/frnbk/math.html | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://frnbk.s3.amazonaws.com/index.svg | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://s3.amazonaws.com/frnbk/index.svg | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://frnsobk.s3.amazonaws.com/index.html | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://s3.amazonaws.com/frnsobk/index.html | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://frnsobk.s3.amazonaws.com/math.html | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://s3.amazonaws.com/frnsobk/math.html | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://frnsobk.s3.amazonaws.com/index.svg | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://s3.amazonaws.com/frnsobk/index.svg | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://bullbk.s3.amazonaws.com/index.html | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://s3.amazonaws.com/bullbk/index.html | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://bullbk.s3.amazonaws.com/math.html | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 
 # 🍄 Truffled
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Proxy/Games | GDB:truffled | Scramjet | 266 |
+> | Proxy/Games | GDB:truffled | Scramjet | 269 |
 
 > [!IMPORTANT]
 > when visiting truffled on a google script (script.google.com) domain, the proxy likely won't work. most games are unaffected
@@ -1506,6 +1532,9 @@ Try out my newest project, the [Proxy Development Toolkit](https://github.com/yo
 | | https://plants.hotmarket.bg/ | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://eco.potomacriversafetycommittee.org/ | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://johnson-education.noopinionnetwork.com/ | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://funstudying.crum-family.com/ | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://random.ranftl.org/ | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://pls-work-now.b-cdn.net/s | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 
 # 🥱 Boredom
 > [!NOTE]
@@ -2295,7 +2324,7 @@ Try out my newest project, the [Proxy Development Toolkit](https://github.com/yo
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Proxy/Games | wisp, GDB:lucide | Scramjet, Ultraviolet | 44 |
+> | Proxy/Games | wisp, GDB:lucide | Scramjet, Ultraviolet | 47 |
 
 > [!IMPORTANT]
 > Lunar does not have CAPTCHA support. Websites that require human verification (like YouTube) will not work or display properly.
@@ -2353,6 +2382,9 @@ Try out my newest project, the [Proxy Development Toolkit](https://github.com/yo
 |  | https://lunar.record-point.com.au | 9/4/2026 | N/A | N/A | [Vexo-Sirramenboi](https://github.com/Vexo-Sirramenboi)
 |  | https://amazinging.krepche.com | 9/4/2026 | N/A | N/A | [Vexo-Sirramenboi](https://github.com/Vexo-Sirramenboi)
 |  | https://digit.rocketpride.com | 9/4/2026 | N/A | N/A | [Vexo-Sirramenboi](https://github.com/Vexo-Sirramenboi)
+| | https://l.tvlibre.st | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://l.rread.co.uk | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://l.casaskrater.cl | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 
 # 👻 Ghost
 > [!NOTE]
@@ -2491,7 +2523,7 @@ Try out my newest project, the [Proxy Development Toolkit](https://github.com/yo
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Proxy/Games | GDB:petezah | Scramjet | 23 |
+> | Proxy/Games | GDB:petezah | Scramjet | 35 |
 
 > [!IMPORTANT]
 > PetZah does not have CAPTCHA support. Websites that require human verification (like YouTube) will not work or display properly.
@@ -2588,6 +2620,18 @@ Try out my newest project, the [Proxy Development Toolkit](https://github.com/yo
 |  | https://cdn.jsdelivr.net/gh/obamamegagon/linkmaker@main/petezahedu.svg?17 | 10/5/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 |  | https://fastly.jsdelivr.net/gh/obamamegagon/linkmaker@main/petezahedu.svg?17 | 10/5/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 |  | https://gcore.jsdelivr.net/gh/obamamegagon/linkmaker@main/petezahedu.svg?17 | 10/5/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://petezah-cdns.b-cdn.net/ | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://petah.apexflightacademy.com/ | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://peatzah.cobos.mx/ | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://bulls.best.govt.hu/ | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://petezah.solidaritysafaris.com/ | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://petezah.tribeoftwo.com/ | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://auroramingle.cfd/ | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://awsedrftg.sbs/ | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://azino777-baee.sbs/ | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://azino777-baeq.sbs/ | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://azino777-fola.sbs/ | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://azino777-jola.sbs/ | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 
 # 🕳️ Rift
 > [!NOTE]
@@ -2607,7 +2651,7 @@ Try out my newest project, the [Proxy Development Toolkit](https://github.com/yo
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Proxy/Games | epoxy, libcurl, wisp, GDB:gn-math | Scramjet | 361 |
+> | Proxy/Games | epoxy, libcurl, wisp, GDB:gn-math | Scramjet | 366 |
 
 > [!IMPORTANT]
 > some of these links load a black screen
@@ -2984,6 +3028,11 @@ Try out my newest project, the [Proxy Development Toolkit](https://github.com/yo
 |  | https://jsd.onmicrosoft.cn/gh/boogli-moogly/meow-im-a-catboy/overcloakedsvg.svg | 10/5/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 |  | https://cdn.jsdmirror.com/gh/boogli-moogly/meow-im-a-catboy/overcloakedsvg.svg | 10/5/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://overagain.govt.hu/ | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://cloaked.mannzur.xyz/ | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://ontop.mannzur.xyz/ | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://over.mannzur.xyz/ | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://cloak.projectos3d.com/ | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://over.projectos3d.com/ | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 
 # 😈 Imp Proxy
 > [!NOTE]
@@ -3215,7 +3264,7 @@ Try out my newest project, the [Proxy Development Toolkit](https://github.com/yo
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Proxy/Games | GDB:gn-math | Scramjet | 26 |
+> | Proxy/Games | GDB:gn-math | Scramjet | 28 |
 
 > [!IMPORTANT]
 > Rosin does not have CAPTCHA support. Websites that require human verification (like YouTube) will not work or display properly.
@@ -3248,6 +3297,8 @@ Try out my newest project, the [Proxy Development Toolkit](https://github.com/yo
 | | https://domain.airlinemeals.net/verify | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://eatingood.airlinemeals.net/verify | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://flyerprogram.airlinemeals.net/verify | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://onemorebull.scottbaptist.com | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://sanbull.herbsbynorthdaysimage.ca | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 
 # ♈ Zodiac
 > [!NOTE]
@@ -3268,7 +3319,7 @@ Try out my newest project, the [Proxy Development Toolkit](https://github.com/yo
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Proxy/Games | GDB:gn-math, GDB:Seraph | unknown | 90 |
+> | Proxy/Games | GDB:gn-math, GDB:Seraph | unknown | 94 |
 
 > [!IMPORTANT]
 > StudyHub does not have CAPTCHA support. Websites that require human verification (like YouTube) will not work or display properly.
@@ -3369,12 +3420,16 @@ Try out my newest project, the [Proxy Development Toolkit](https://github.com/yo
 |  | https://new.robertschulze.name | 9/4/2026 | N/A | N/A | [Vexo-Sirramenboi](https://github.com/Vexo-Sirramenboi)
 |  | https://dt7z8lnu7fv0r.cloudfront.net/ | 10/5/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 |  | https://d12whv3rc86mrm.cloudfront.net | 10/5/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://d1bb3w1h8fhcci.cloudfront.net/ | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://hub.tvlibre.st | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://hub.rread.co.uk | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://hub.casaskrater.cl | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 
 # 🍓 Strawberri
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Proxy | tab-cloak, panic | Ultraviolet, Rammerhead | 33 |
+> | Proxy | tab-cloak, panic | Ultraviolet, Rammerhead | 38 |
 > [!IMPORTANT]
 > if you were looking for ford links, ford no longer exists and all of its links are now strawberri links
 
@@ -3419,6 +3474,11 @@ Try out my newest project, the [Proxy Development Toolkit](https://github.com/yo
 | | https://cooling.deepee.com | 8/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://strawberri-jam.deepee.com | 8/29/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://strawberri-jam.pdacorp.ru | 8/29/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://s3.amazonaws.com/strawberrii/index.html | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://strawberrii.s3.amazonaws.com/index.html | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://str.tvlibre.st | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://str.rread.co.uk | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://str.casaskrater.cl | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 
 # 🧱 Noblocc
 > [!NOTE]
@@ -3451,7 +3511,7 @@ Try out my newest project, the [Proxy Development Toolkit](https://github.com/yo
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Proxy/Games | GDB:utopia | Ultraviolet | 28 |
+> | Proxy/Games | GDB:utopia | Ultraviolet | 31 |
 > [!IMPORTANT]
 > this site uses highly detectable domains, very likely all of these are blocked for you
 
@@ -3486,6 +3546,9 @@ Try out my newest project, the [Proxy Development Toolkit](https://github.com/yo
 | | https://deeply.deepee.com/ | 8/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://coolme.deepee.com | 8/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 |  | https://s3.amazonaws.com/utopiaweb/index.html | 9/7/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://u.tvlibre.st | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://u.rread.co.uk | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://u.casaskrater.cl | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 
 # 🌘 Lunaar
 > [!NOTE]
@@ -3502,7 +3565,7 @@ Try out my newest project, the [Proxy Development Toolkit](https://github.com/yo
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Proxy/Games | captcha, GDB:lucide | Scramjet | 140 |
+> | Proxy/Games | captcha, GDB:lucide | Scramjet | 152 |
 
 | Locked | Link | Found Date | Username | Password | Contributor |
 | - | - | - | - | - | - |
@@ -3648,6 +3711,18 @@ Try out my newest project, the [Proxy Development Toolkit](https://github.com/yo
 | | https://cdn.jsdelivr.net/gh/applebeescheese16-glitch/sussy-city-boi@main/logo.svg#/ | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://cdn.jsdelivr.net/gh/Science-Math-2248/svg@main/logo.svg#/404 | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://topstargym.net/ | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://s3.amazonaws.com/bull33goat/index.html | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://s3.amazonaws.com/bull33goat/study.html | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://s3.amazonaws.com/englishtutoring/index.html | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://s3.amazonaws.com/englishtutoring/study.html | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://s3.amazonaws.com/nizika/study.html | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://s3.amazonaws.com/vopaso/study.html | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://s3.amazonaws.com/lotoso/study.html | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://s3.amazonaws.com/ridoti/study.html | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://s3.amazonaws.com/tabido/study.html | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://s3.amazonaws.com/dimisa/study.html | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://s3.amazonaws.com/lotoso/index.html | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://s3.amazonaws.com/ridoti/index.html | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 
 # 🔷 Celestial
 > [!NOTE]
@@ -4099,7 +4174,7 @@ Try out my newest project, the [Proxy Development Toolkit](https://github.com/yo
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Games | tab-cloak, GDB:noahs-tutoring | N/A | 152 |
+> | Games | tab-cloak, GDB:noahs-tutoring | N/A | 157 |
 
 | Locked | Link | Found Date | Username | Password | Contributor |
 | - | - | - | - | - | - |
@@ -4256,6 +4331,11 @@ Try out my newest project, the [Proxy Development Toolkit](https://github.com/yo
 | | https://rawcdn.jsdelivr.net/gh/username9927282/svg@main/svg.svg?11 | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://unpkg.com/username9927282/svg/svg.svg?11 | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://cdn.jsdelivr.net/gh/username9927282/svg@main/svg.svg?12 | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://cdn.kpores.ru/ | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://education.mannzur.xyz/ | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://edu.projectos3d.com/ | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://freetutoring.rread.co.uk/ | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://more-cdn.b-cdn.net/ | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 
 # 🧡 Nexora
 > [!NOTE]
@@ -21980,12 +22060,25 @@ Try out my newest project, the [Proxy Development Toolkit](https://github.com/yo
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Proxy/Games | tab-cloak | Ultraviolet | 2 |
+> | Proxy/Games | tab-cloak | Ultraviolet | 15 |
 
 | Locked | Link | Found Date | Username | Password | Contributor |
 | - | - | - | - | - | - |
 | | https://finleyisabum.vixenlights.com/ | 4/30/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
 | | https://luna.govt.hu/ | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://haven-learning.dikpalkc.com.np/ | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://essay-writing.govt.hu/ | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://essay-writing-test.govt.hu/ | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://learning-help-edu.edu.metropolitanstaffingsolutions.com/ | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://luna.rusticrivergear.com/ | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://luna.solidaritysafaris.com/ | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://luna.streetdirectory.sg/ | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://luna.tribeoftwo.com/ | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://luna.champagnewishesandrvdreams.com/ | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://luna.cobos.mx/ | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://luna.gatewaysuppliers.com.np/ | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://luna.lakeballs.fi/ | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://luna.thefilmdatabase.com/ | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 
 # 🧊 Arctic
 > [!NOTE]
@@ -40207,7 +40300,7 @@ Try out my newest project, the [Proxy Development Toolkit](https://github.com/yo
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Proxy/Games | wisp, epoxy, libcurl, user-agent | Unknown | 8896 |
+> | Proxy/Games | wisp, epoxy, libcurl, user-agent | Unknown | 8996 |
 | Locked | Link | Found Date | Username | Password | Contributor |
 | - | - | - | - | - | - |
 | | https://awidjawjfofaaa.educationlearningcollege.lovestoblog.com | 8/1/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
@@ -49194,12 +49287,112 @@ Try out my newest project, the [Proxy Development Toolkit](https://github.com/yo
 | | https://jsd.onmicrosoft.cn/gh/lurexh/svg@9db | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://objectstorage.us-sanjose-1.oraclecloud.com/n/axjcou67ax5a/b/mathlearning/o/index.svg | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://objectstorage.us-sanjose-1.oraclecloud.com/n/axjcou67ax5a/b/ilovecherri/o/index.svg | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://cdn.jsdelivr.net/gh/username9927282/cherrisvg@main/index.svg?1 | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://fastly.jsdelivr.net/gh/username9927282/cherrisvg@main/index.svg?1 | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://gcore.jsdelivr.net/gh/username9927282/cherrisvg@main/index.svg?1 | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://quantil.jsdelivr.net/gh/username9927282/cherrisvg@main/index.svg?1 | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://jsdelivr.b-cdn.net/gh/username9927282/cherrisvg@main/index.svg?1 | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://originfastly.jsdelivr.net/gh/username9927282/cherrisvg@main/index.svg?1 | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://testingcf.jsdelivr.net/gh/username9927282/cherrisvg@main/index.svg?1 | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://rawcdn.jsdelivr.net/gh/username9927282/cherrisvg@main/index.svg?1 | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://unpkg.com/username9927282/cherrisvg/index.svg?1 | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://cdn.jsdelivr.net/gh/username9927282/cherrisvg@main/index.svg?2 | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://fastly.jsdelivr.net/gh/username9927282/cherrisvg@main/index.svg?2 | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://gcore.jsdelivr.net/gh/username9927282/cherrisvg@main/index.svg?2 | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://quantil.jsdelivr.net/gh/username9927282/cherrisvg@main/index.svg?2 | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://jsdelivr.b-cdn.net/gh/username9927282/cherrisvg@main/index.svg?2 | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://originfastly.jsdelivr.net/gh/username9927282/cherrisvg@main/index.svg?2 | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://testingcf.jsdelivr.net/gh/username9927282/cherrisvg@main/index.svg?2 | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://rawcdn.jsdelivr.net/gh/username9927282/cherrisvg@main/index.svg?2 | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://unpkg.com/username9927282/cherrisvg/index.svg?2 | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://cdn.jsdelivr.net/gh/username9927282/cherrisvg@main/index.svg?3 | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://fastly.jsdelivr.net/gh/username9927282/cherrisvg@main/index.svg?3 | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://gcore.jsdelivr.net/gh/username9927282/cherrisvg@main/index.svg?3 | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://quantil.jsdelivr.net/gh/username9927282/cherrisvg@main/index.svg?3 | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://jsdelivr.b-cdn.net/gh/username9927282/cherrisvg@main/index.svg?3 | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://originfastly.jsdelivr.net/gh/username9927282/cherrisvg@main/index.svg?3 | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://testingcf.jsdelivr.net/gh/username9927282/cherrisvg@main/index.svg?3 | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://rawcdn.jsdelivr.net/gh/username9927282/cherrisvg@main/index.svg?3 | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://unpkg.com/username9927282/cherrisvg/index.svg?3 | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://cdn.jsdelivr.net/gh/username9927282/cherrisvg@main/index.svg?4 | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://fastly.jsdelivr.net/gh/username9927282/cherrisvg@main/index.svg?4 | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://gcore.jsdelivr.net/gh/username9927282/cherrisvg@main/index.svg?4 | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://quantil.jsdelivr.net/gh/username9927282/cherrisvg@main/index.svg?4 | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://jsdelivr.b-cdn.net/gh/username9927282/cherrisvg@main/index.svg?4 | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://originfastly.jsdelivr.net/gh/username9927282/cherrisvg@main/index.svg?4 | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://testingcf.jsdelivr.net/gh/username9927282/cherrisvg@main/index.svg?4 | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://rawcdn.jsdelivr.net/gh/username9927282/cherrisvg@main/index.svg?4 | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://unpkg.com/username9927282/cherrisvg/index.svg?4 | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://cdn.jsdelivr.net/gh/username9927282/cherrisvg@main/index.svg?5 | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://fastly.jsdelivr.net/gh/username9927282/cherrisvg@main/index.svg?5 | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://gcore.jsdelivr.net/gh/username9927282/cherrisvg@main/index.svg?5 | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://quantil.jsdelivr.net/gh/username9927282/cherrisvg@main/index.svg?5 | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://jsdelivr.b-cdn.net/gh/username9927282/cherrisvg@main/index.svg?5 | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://originfastly.jsdelivr.net/gh/username9927282/cherrisvg@main/index.svg?5 | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://testingcf.jsdelivr.net/gh/username9927282/cherrisvg@main/index.svg?5 | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://rawcdn.jsdelivr.net/gh/username9927282/cherrisvg@main/index.svg?5 | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://unpkg.com/username9927282/cherrisvg/index.svg?5 | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://cdn.jsdelivr.net/gh/username9927282/cherrisvg@main/index.svg?6 | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://fastly.jsdelivr.net/gh/username9927282/cherrisvg@main/index.svg?6 | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://gcore.jsdelivr.net/gh/username9927282/cherrisvg@main/index.svg?6 | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://quantil.jsdelivr.net/gh/username9927282/cherrisvg@main/index.svg?6 | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://jsdelivr.b-cdn.net/gh/username9927282/cherrisvg@main/index.svg?6 | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://originfastly.jsdelivr.net/gh/username9927282/cherrisvg@main/index.svg?6 | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://testingcf.jsdelivr.net/gh/username9927282/cherrisvg@main/index.svg?6 | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://rawcdn.jsdelivr.net/gh/username9927282/cherrisvg@main/index.svg?6 | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://unpkg.com/username9927282/cherrisvg/index.svg?6 | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://cdn.jsdelivr.net/gh/username9927282/cherrisvg@main/index.svg?7 | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://fastly.jsdelivr.net/gh/username9927282/cherrisvg@main/index.svg?7 | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://gcore.jsdelivr.net/gh/username9927282/cherrisvg@main/index.svg?7 | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://quantil.jsdelivr.net/gh/username9927282/cherrisvg@main/index.svg?7 | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://jsdelivr.b-cdn.net/gh/username9927282/cherrisvg@main/index.svg?7 | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://originfastly.jsdelivr.net/gh/username9927282/cherrisvg@main/index.svg?7 | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://testingcf.jsdelivr.net/gh/username9927282/cherrisvg@main/index.svg?7 | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://rawcdn.jsdelivr.net/gh/username9927282/cherrisvg@main/index.svg?7 | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://unpkg.com/username9927282/cherrisvg/index.svg?7 | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://cdn.jsdelivr.net/gh/username9927282/cherrisvg@main/index.svg?8 | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://fastly.jsdelivr.net/gh/username9927282/cherrisvg@main/index.svg?8 | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://gcore.jsdelivr.net/gh/username9927282/cherrisvg@main/index.svg?8 | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://quantil.jsdelivr.net/gh/username9927282/cherrisvg@main/index.svg?8 | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://jsdelivr.b-cdn.net/gh/username9927282/cherrisvg@main/index.svg?8 | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://originfastly.jsdelivr.net/gh/username9927282/cherrisvg@main/index.svg?8 | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://testingcf.jsdelivr.net/gh/username9927282/cherrisvg@main/index.svg?8 | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://rawcdn.jsdelivr.net/gh/username9927282/cherrisvg@main/index.svg?8 | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://unpkg.com/username9927282/cherrisvg/index.svg?8 | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://cdn.jsdelivr.net/gh/username9927282/cherrisvg@main/index.svg?9 | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://fastly.jsdelivr.net/gh/username9927282/cherrisvg@main/index.svg?9 | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://gcore.jsdelivr.net/gh/username9927282/cherrisvg@main/index.svg?9 | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://quantil.jsdelivr.net/gh/username9927282/cherrisvg@main/index.svg?9 | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://jsdelivr.b-cdn.net/gh/username9927282/cherrisvg@main/index.svg?9 | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://originfastly.jsdelivr.net/gh/username9927282/cherrisvg@main/index.svg?9 | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://testingcf.jsdelivr.net/gh/username9927282/cherrisvg@main/index.svg?9 | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://rawcdn.jsdelivr.net/gh/username9927282/cherrisvg@main/index.svg?9 | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://unpkg.com/username9927282/cherrisvg/index.svg?9 | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://cdn.jsdelivr.net/gh/username9927282/cherrisvg@main/index.svg?10 | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://fastly.jsdelivr.net/gh/username9927282/cherrisvg@main/index.svg?10 | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://gcore.jsdelivr.net/gh/username9927282/cherrisvg@main/index.svg?10 | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://quantil.jsdelivr.net/gh/username9927282/cherrisvg@main/index.svg?10 | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://jsdelivr.b-cdn.net/gh/username9927282/cherrisvg@main/index.svg?10 | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://originfastly.jsdelivr.net/gh/username9927282/cherrisvg@main/index.svg?10 | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://testingcf.jsdelivr.net/gh/username9927282/cherrisvg@main/index.svg?10 | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://rawcdn.jsdelivr.net/gh/username9927282/cherrisvg@main/index.svg?10 | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://unpkg.com/username9927282/cherrisvg/index.svg?10 | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://cdn.jsdelivr.net/gh/username9927282/cherrisvg@main/index.svg?11 | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://fastly.jsdelivr.net/gh/username9927282/cherrisvg@main/index.svg?11 | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://gcore.jsdelivr.net/gh/username9927282/cherrisvg@main/index.svg?11 | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://quantil.jsdelivr.net/gh/username9927282/cherrisvg@main/index.svg?11 | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://jsdelivr.b-cdn.net/gh/username9927282/cherrisvg@main/index.svg?11 | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://originfastly.jsdelivr.net/gh/username9927282/cherrisvg@main/index.svg?11 | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://testingcf.jsdelivr.net/gh/username9927282/cherrisvg@main/index.svg?11 | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://rawcdn.jsdelivr.net/gh/username9927282/cherrisvg@main/index.svg?11 | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://unpkg.com/username9927282/cherrisvg/index.svg?11 | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://8t14.s3.dualstack.us-east-1.amazonaws.com/index.html | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 
 # 🌠 Interstellar
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Proxy/Games | epoxy, libcurl, tab-cloak, panic | Scramjet, Ultraviolet | 13 |
+> | Proxy/Games | epoxy, libcurl, tab-cloak, panic | Scramjet, Ultraviolet | 18 |
 > [!IMPORTANT]
 > bunch of popups, be cautious
 
@@ -49218,6 +49411,11 @@ Try out my newest project, the [Proxy Development Toolkit](https://github.com/yo
 | | https://s3.amazonaws.com/brightloft/index.html | 9/2/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://s3.us-east-1.amazonaws.com/brightloft/index.html | 9/2/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://s3.dualstack.us-east-1.amazonaws.com/brightloft/index.html | 9/2/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://sz8p.z20.web.core.windows.net/ | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://xtiy.z14.web.core.windows.net/ | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://inter.tvlibre.st | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://inter.rread.co.uk | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://inter.casaskrater.cl | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 
 # ☁️ Xcloud
 > [!NOTE]
@@ -49247,7 +49445,7 @@ Try out my newest project, the [Proxy Development Toolkit](https://github.com/yo
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Proxy/Games | Unknown | Ultraviolet | 106 |
+> | Proxy/Games | Unknown | Ultraviolet | 125 |
 | Locked | Link | Found Date | Username | Password | Contributor |
 | - | - | - | - | - | - |
 | | https://cdn.jsdelivr.net/gh/AetherGamesOfficial/math@0ad1abf/studyhub.svg | 6/7/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
@@ -49357,6 +49555,25 @@ Try out my newest project, the [Proxy Development Toolkit](https://github.com/yo
 | | https://s3.amazonaws.com/chubbyverity/index.html | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://storage.googleapis.com/chubbyverity/index.html | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 |  | https://schoollearning-tabs.lervs.ro/ | 10/5/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://niigo.s3.amazonaws.com/index.html | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://niigo.s3.dualstack.us-east-1.amazonaws.com/index.html | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://niigo.s3.us-east-1.amazonaws.com/index.html | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://s3.us-east-1.amazonaws.com/niigo/index.html | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://niigo.s3-fips.dualstack.us-east-1.amazonaws.com/index.html | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://aetherk12.s3-fips.us-east-1.amazonaws.com/study.html | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://aetherk12.s3-fips.dualstack.us-east-1.amazonaws.com/study.html | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://advancedalg2.s3-fips.us-east-1.amazonaws.com/study.html | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://advancedalg2.s3-fips.dualstack.us-east-1.amazonaws.com/study.html | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://schoolcdn.s3-fips.us-east-1.amazonaws.com/study.html | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://schoolcdn.s3-fips.dualstack.us-east-1.amazonaws.com/study.html | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://satguide.s3-fips.us-east-1.amazonaws.com/study.html | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://satguide.s3-fips.dualstack.us-east-1.amazonaws.com/study.html | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://s3.dualstack.us-east-1.amazonaws.com/aetherk12/study.html | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://s3.dualstack.us-east-1.amazonaws.com/satguide/study.html | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://pencil236030-saugatr.dratify.com | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://storage.googleapis.com/yubico/study.html | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://storage.googleapis.com/synthv/study.html | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://caddyprep.s3.amazonaws.com/index.html | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 
 # ✨ BestSpark
 > [!NOTE]
@@ -49953,7 +50170,7 @@ Try out my newest project, the [Proxy Development Toolkit](https://github.com/yo
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Proxy/Games | epoxy, bare, tab-cloak, panic, captcha | Ultraviolet, Scramjet | 15 |
+> | Proxy/Games | epoxy, bare, tab-cloak, panic, captcha | Ultraviolet, Scramjet | 18 |
 
 | Locked | Link | Found Date | Username | Password | Contributor |
 | - | - | - | - | - | - |
@@ -49972,12 +50189,15 @@ Try out my newest project, the [Proxy Development Toolkit](https://github.com/yo
 | | https://hunter.berugy.hu/ | 8/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://questionu.deepee.com | 8/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://canbe.deepee.com | 8/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://voya.tvlibre.st | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://voya.mannzur.xyz | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://voya.casaskrater.cl | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 
 # 🐱 Cat Class
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Proxy/Games | libcurl, epoxy | Scramjet | 1418 |
+> | Proxy/Games | libcurl, epoxy | Scramjet | 1542 |
 | Locked | Link | Found Date | Username | Password | Contributor |
 | - | - | - | - | - | - |
 | | https://catclass.brtk.eu | 8/1/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
@@ -51560,6 +51780,130 @@ Try out my newest project, the [Proxy Development Toolkit](https://github.com/yo
 | | https://simplelab3400.whenagentsrule.org/ | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://smartfocus7703.whenagentsrule.org/ | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://testingcf.jsdelivr.net/gh/task4z/classroom-15x@69a5da3744441f0521212e0524bb88242388c1de/files/catclass/logo.svg | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://keensite4601.whenagentsrule.org/ | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://crispstudy7681.whenagentsrule.org/ | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://primemind8821.whenagentsrule.org/ | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://freshroom8438.whenagentsrule.org/ | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://deeplearn9323.whenagentsrule.org/ | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://quickmind8233.mannzur.xyz/ | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://puretutor1052.mannzur.xyz/ | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://solidpath2204.mannzur.xyz/ | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://quietzone3469.mannzur.xyz/ | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://boldroom5392.mannzur.xyz/ | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://cdn.esm.sh/gh/task4z/classroom-15x@9bcc6db6e5d4046811588d61ed0f1a6ed8d5dd9c/files/catclass/index.svg | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://cdn.jsdeliver.us/gh/task4z/classroom-15x@9bcc6db6e5d4046811588d61ed0f1a6ed8d5dd9c/files/catclass/index.svg | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://cdn.jsdelivr.net.cn/gh/task4z/classroom-15x@9bcc6db6e5d4046811588d61ed0f1a6ed8d5dd9c/files/catclass/index.svg | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://cdn.jsdelivr.net/gh/task4z/classroom-15x@9bcc6db6e5d4046811588d61ed0f1a6ed8d5dd9c/files/catclass/index.svg | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://cdn.statically.io/gh/task4z/classroom-15x@9bcc6db6e5d4046811588d61ed0f1a6ed8d5dd9c/files/catclass/index.svg | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://cdn.staticdelivr.com/gh/task4z/classroom-15x/9bcc6db6e5d4046811588d61ed0f1a6ed8d5dd9c/files/catclass/index.svg | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://esm.sh/gh/task4z/classroom-15x@9bcc6db6e5d4046811588d61ed0f1a6ed8d5dd9c/files/catclass/index.svg | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://fastly.jsdelivr.net/gh/task4z/classroom-15x@9bcc6db6e5d4046811588d61ed0f1a6ed8d5dd9c/files/catclass/index.svg | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://gcore.jsdelivr.net/gh/task4z/classroom-15x@9bcc6db6e5d4046811588d61ed0f1a6ed8d5dd9c/files/catclass/index.svg | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://jsd.cdn.zzko.cn/gh/task4z/classroom-15x@9bcc6db6e5d4046811588d61ed0f1a6ed8d5dd9c/files/catclass/index.svg | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://jsdelivr.b-cdn.net/gh/task4z/classroom-15x@9bcc6db6e5d4046811588d61ed0f1a6ed8d5dd9c/files/catclass/index.svg | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://jsdelivr.cdn.net/gh/task4z/classroom-15x@9bcc6db6e5d4046811588d61ed0f1a6ed8d5dd9c/files/catclass/index.svg | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://originfastly.jsdelivr.net/gh/task4z/classroom-15x@9bcc6db6e5d4046811588d61ed0f1a6ed8d5dd9c/files/catclass/index.svg | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://quantil.jsdelivr.net/gh/task4z/classroom-15x@9bcc6db6e5d4046811588d61ed0f1a6ed8d5dd9c/files/catclass/index.svg | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://raw.esm.sh/gh/task4z/classroom-15x@9bcc6db6e5d4046811588d61ed0f1a6ed8d5dd9c/files/catclass/index.svg | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://raw.githack.com/task4z/classroom-15x/9bcc6db6e5d4046811588d61ed0f1a6ed8d5dd9c/files/catclass/index.svg | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://rawcdn.githack.com/task4z/classroom-15x/9bcc6db6e5d4046811588d61ed0f1a6ed8d5dd9c/files/catclass/index.svg | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://testingcf.jsdelivr.net/gh/task4z/classroom-15x@9bcc6db6e5d4046811588d61ed0f1a6ed8d5dd9c/files/catclass/index.svg | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://cdn.esm.sh/gh/task4z/classroom-15x@9bcc6db6e5d4046811588d61ed0f1a6ed8d5dd9c/files/catclass/logo.svg | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://cdn.jsdeliver.us/gh/task4z/classroom-15x@9bcc6db6e5d4046811588d61ed0f1a6ed8d5dd9c/files/catclass/logo.svg | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://cdn.jsdelivr.net.cn/gh/task4z/classroom-15x@9bcc6db6e5d4046811588d61ed0f1a6ed8d5dd9c/files/catclass/logo.svg | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://cdn.jsdelivr.net/gh/task4z/classroom-15x@9bcc6db6e5d4046811588d61ed0f1a6ed8d5dd9c/files/catclass/logo.svg | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://cdn.statically.io/gh/task4z/classroom-15x@9bcc6db6e5d4046811588d61ed0f1a6ed8d5dd9c/files/catclass/logo.svg | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://cdn.staticdelivr.com/gh/task4z/classroom-15x/9bcc6db6e5d4046811588d61ed0f1a6ed8d5dd9c/files/catclass/logo.svg | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://esm.sh/gh/task4z/classroom-15x@9bcc6db6e5d4046811588d61ed0f1a6ed8d5dd9c/files/catclass/logo.svg | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://fastly.jsdelivr.net/gh/task4z/classroom-15x@9bcc6db6e5d4046811588d61ed0f1a6ed8d5dd9c/files/catclass/logo.svg | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://gcore.jsdelivr.net/gh/task4z/classroom-15x@9bcc6db6e5d4046811588d61ed0f1a6ed8d5dd9c/files/catclass/logo.svg | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://jsd.cdn.zzko.cn/gh/task4z/classroom-15x@9bcc6db6e5d4046811588d61ed0f1a6ed8d5dd9c/files/catclass/logo.svg | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://jsdelivr.b-cdn.net/gh/task4z/classroom-15x@9bcc6db6e5d4046811588d61ed0f1a6ed8d5dd9c/files/catclass/logo.svg | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://jsdelivr.cdn.net/gh/task4z/classroom-15x@9bcc6db6e5d4046811588d61ed0f1a6ed8d5dd9c/files/catclass/logo.svg | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://originfastly.jsdelivr.net/gh/task4z/classroom-15x@9bcc6db6e5d4046811588d61ed0f1a6ed8d5dd9c/files/catclass/logo.svg | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://quantil.jsdelivr.net/gh/task4z/classroom-15x@9bcc6db6e5d4046811588d61ed0f1a6ed8d5dd9c/files/catclass/logo.svg | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://raw.esm.sh/gh/task4z/classroom-15x@9bcc6db6e5d4046811588d61ed0f1a6ed8d5dd9c/files/catclass/logo.svg | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://raw.githack.com/task4z/classroom-15x/9bcc6db6e5d4046811588d61ed0f1a6ed8d5dd9c/files/catclass/logo.svg | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://rawcdn.githack.com/task4z/classroom-15x/9bcc6db6e5d4046811588d61ed0f1a6ed8d5dd9c/files/catclass/logo.svg | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://testingcf.jsdelivr.net/gh/task4z/classroom-15x@9bcc6db6e5d4046811588d61ed0f1a6ed8d5dd9c/files/catclass/logo.svg | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://cdn.esm.sh/gh/task4z/classroom-15x@79f6ae9010e5204726f3b85022e509449d939e1c/files/catclass/index.svg | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://cdn.jsdeliver.us/gh/task4z/classroom-15x@79f6ae9010e5204726f3b85022e509449d939e1c/files/catclass/index.svg | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://cdn.jsdelivr.net.cn/gh/task4z/classroom-15x@79f6ae9010e5204726f3b85022e509449d939e1c/files/catclass/index.svg | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://cdn.jsdelivr.net/gh/task4z/classroom-15x@79f6ae9010e5204726f3b85022e509449d939e1c/files/catclass/index.svg | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://cdn.statically.io/gh/task4z/classroom-15x@79f6ae9010e5204726f3b85022e509449d939e1c/files/catclass/index.svg | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://cdn.staticdelivr.com/gh/task4z/classroom-15x/79f6ae9010e5204726f3b85022e509449d939e1c/files/catclass/index.svg | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://esm.sh/gh/task4z/classroom-15x@79f6ae9010e5204726f3b85022e509449d939e1c/files/catclass/index.svg | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://fastly.jsdelivr.net/gh/task4z/classroom-15x@79f6ae9010e5204726f3b85022e509449d939e1c/files/catclass/index.svg | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://gcore.jsdelivr.net/gh/task4z/classroom-15x@79f6ae9010e5204726f3b85022e509449d939e1c/files/catclass/index.svg | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://jsd.cdn.zzko.cn/gh/task4z/classroom-15x@79f6ae9010e5204726f3b85022e509449d939e1c/files/catclass/index.svg | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://jsdelivr.b-cdn.net/gh/task4z/classroom-15x@79f6ae9010e5204726f3b85022e509449d939e1c/files/catclass/index.svg | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://jsdelivr.cdn.net/gh/task4z/classroom-15x@79f6ae9010e5204726f3b85022e509449d939e1c/files/catclass/index.svg | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://originfastly.jsdelivr.net/gh/task4z/classroom-15x@79f6ae9010e5204726f3b85022e509449d939e1c/files/catclass/index.svg | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://quantil.jsdelivr.net/gh/task4z/classroom-15x@79f6ae9010e5204726f3b85022e509449d939e1c/files/catclass/index.svg | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://raw.esm.sh/gh/task4z/classroom-15x@79f6ae9010e5204726f3b85022e509449d939e1c/files/catclass/index.svg | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://raw.githack.com/task4z/classroom-15x/79f6ae9010e5204726f3b85022e509449d939e1c/files/catclass/index.svg | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://rawcdn.githack.com/task4z/classroom-15x/79f6ae9010e5204726f3b85022e509449d939e1c/files/catclass/index.svg | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://testingcf.jsdelivr.net/gh/task4z/classroom-15x@79f6ae9010e5204726f3b85022e509449d939e1c/files/catclass/index.svg | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://cdn.esm.sh/gh/task4z/classroom-15x@79f6ae9010e5204726f3b85022e509449d939e1c/files/catclass/logo.svg | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://cdn.jsdeliver.us/gh/task4z/classroom-15x@79f6ae9010e5204726f3b85022e509449d939e1c/files/catclass/logo.svg | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://cdn.jsdelivr.net.cn/gh/task4z/classroom-15x@79f6ae9010e5204726f3b85022e509449d939e1c/files/catclass/logo.svg | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://cdn.jsdelivr.net/gh/task4z/classroom-15x@79f6ae9010e5204726f3b85022e509449d939e1c/files/catclass/logo.svg | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://cdn.statically.io/gh/task4z/classroom-15x@79f6ae9010e5204726f3b85022e509449d939e1c/files/catclass/logo.svg | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://cdn.staticdelivr.com/gh/task4z/classroom-15x/79f6ae9010e5204726f3b85022e509449d939e1c/files/catclass/logo.svg | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://esm.sh/gh/task4z/classroom-15x@79f6ae9010e5204726f3b85022e509449d939e1c/files/catclass/logo.svg | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://fastly.jsdelivr.net/gh/task4z/classroom-15x@79f6ae9010e5204726f3b85022e509449d939e1c/files/catclass/logo.svg | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://gcore.jsdelivr.net/gh/task4z/classroom-15x@79f6ae9010e5204726f3b85022e509449d939e1c/files/catclass/logo.svg | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://jsd.cdn.zzko.cn/gh/task4z/classroom-15x@79f6ae9010e5204726f3b85022e509449d939e1c/files/catclass/logo.svg | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://jsdelivr.b-cdn.net/gh/task4z/classroom-15x@79f6ae9010e5204726f3b85022e509449d939e1c/files/catclass/logo.svg | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://jsdelivr.cdn.net/gh/task4z/classroom-15x@79f6ae9010e5204726f3b85022e509449d939e1c/files/catclass/logo.svg | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://originfastly.jsdelivr.net/gh/task4z/classroom-15x@79f6ae9010e5204726f3b85022e509449d939e1c/files/catclass/logo.svg | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://quantil.jsdelivr.net/gh/task4z/classroom-15x@79f6ae9010e5204726f3b85022e509449d939e1c/files/catclass/logo.svg | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://raw.esm.sh/gh/task4z/classroom-15x@79f6ae9010e5204726f3b85022e509449d939e1c/files/catclass/logo.svg | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://raw.githack.com/task4z/classroom-15x/79f6ae9010e5204726f3b85022e509449d939e1c/files/catclass/logo.svg | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://rawcdn.githack.com/task4z/classroom-15x/79f6ae9010e5204726f3b85022e509449d939e1c/files/catclass/logo.svg | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://testingcf.jsdelivr.net/gh/task4z/classroom-15x@79f6ae9010e5204726f3b85022e509449d939e1c/files/catclass/logo.svg | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://cdn.esm.sh/gh/task4z/classroom-15x@6709e51a41b1e596ad9e8ee5d6309aee867ac765/files/catclass/index.svg | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://cdn.jsdeliver.us/gh/task4z/classroom-15x@6709e51a41b1e596ad9e8ee5d6309aee867ac765/files/catclass/index.svg | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://cdn.jsdelivr.net.cn/gh/task4z/classroom-15x@6709e51a41b1e596ad9e8ee5d6309aee867ac765/files/catclass/index.svg | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://cdn.jsdelivr.net/gh/task4z/classroom-15x@6709e51a41b1e596ad9e8ee5d6309aee867ac765/files/catclass/index.svg | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://cdn.statically.io/gh/task4z/classroom-15x@6709e51a41b1e596ad9e8ee5d6309aee867ac765/files/catclass/index.svg | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://cdn.staticdelivr.com/gh/task4z/classroom-15x/6709e51a41b1e596ad9e8ee5d6309aee867ac765/files/catclass/index.svg | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://esm.sh/gh/task4z/classroom-15x@6709e51a41b1e596ad9e8ee5d6309aee867ac765/files/catclass/index.svg | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://fastly.jsdelivr.net/gh/task4z/classroom-15x@6709e51a41b1e596ad9e8ee5d6309aee867ac765/files/catclass/index.svg | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://gcore.jsdelivr.net/gh/task4z/classroom-15x@6709e51a41b1e596ad9e8ee5d6309aee867ac765/files/catclass/index.svg | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://jsd.cdn.zzko.cn/gh/task4z/classroom-15x@6709e51a41b1e596ad9e8ee5d6309aee867ac765/files/catclass/index.svg | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://jsdelivr.b-cdn.net/gh/task4z/classroom-15x@6709e51a41b1e596ad9e8ee5d6309aee867ac765/files/catclass/index.svg | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://jsdelivr.cdn.net/gh/task4z/classroom-15x@6709e51a41b1e596ad9e8ee5d6309aee867ac765/files/catclass/index.svg | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://originfastly.jsdelivr.net/gh/task4z/classroom-15x@6709e51a41b1e596ad9e8ee5d6309aee867ac765/files/catclass/index.svg | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://quantil.jsdelivr.net/gh/task4z/classroom-15x@6709e51a41b1e596ad9e8ee5d6309aee867ac765/files/catclass/index.svg | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://raw.esm.sh/gh/task4z/classroom-15x@6709e51a41b1e596ad9e8ee5d6309aee867ac765/files/catclass/index.svg | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://raw.githack.com/task4z/classroom-15x/6709e51a41b1e596ad9e8ee5d6309aee867ac765/files/catclass/index.svg | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://rawcdn.githack.com/task4z/classroom-15x/6709e51a41b1e596ad9e8ee5d6309aee867ac765/files/catclass/index.svg | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://testingcf.jsdelivr.net/gh/task4z/classroom-15x@6709e51a41b1e596ad9e8ee5d6309aee867ac765/files/catclass/index.svg | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://cdn.esm.sh/gh/task4z/classroom-15x@6709e51a41b1e596ad9e8ee5d6309aee867ac765/files/catclass/index.html | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://esm.sh/gh/task4z/classroom-15x@6709e51a41b1e596ad9e8ee5d6309aee867ac765/files/catclass/index.html | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://raw.esm.sh/gh/task4z/classroom-15x@6709e51a41b1e596ad9e8ee5d6309aee867ac765/files/catclass/index.html | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://box-school98.fukushimastudy.org | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://dean-mew78.mathmatics.ccwu.cc | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://history-power94.bridgeportmath.org | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://stats-speech67.bridgeportmath.org | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://stem-learn51.becasuniversitarias.org | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://atom-degree49.mathmatics.ccwu.cc | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://civics-wave26.becasuniversitarias.org | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://factor-sum33.fukushimastudy.org | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://lit-decimal83.bridgeportmath.org | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://uni-journal99.fukushimastudy.org | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://cattitude-function91.mathmatics.ccwu.cc | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://cattitude-prime13.fukushimastudy.org | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://dean-stem68.bridgeportmath.org | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://exam-power51.becasuniversitarias.org | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://lit-energy88.becasuniversitarias.org | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://script.google.com/macros/s/AKfycbyACzDXCUqCxu8q0nEWFvx_tyK3bWdHM1_mVRvmk5aBE6x70P6gMaDThjZmz6xspHUy/exec?id=JJnAkr8557 | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://script.google.com/macros/s/AKfycbyACzDXCUqCxu8q0nEWFvx_tyK3bWdHM1_mVRvmk5aBE6x70P6gMaDThjZmz6xspHUy/exec?id=qChvNU4894 | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://script.google.com/macros/s/AKfycbyACzDXCUqCxu8q0nEWFvx_tyK3bWdHM1_mVRvmk5aBE6x70P6gMaDThjZmz6xspHUy/exec?id=c7XtDi4780 | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://script.google.com/macros/s/AKfycbyACzDXCUqCxu8q0nEWFvx_tyK3bWdHM1_mVRvmk5aBE6x70P6gMaDThjZmz6xspHUy/exec?id=ExJake7254 | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://script.google.com/macros/s/AKfycbyACzDXCUqCxu8q0nEWFvx_tyK3bWdHM1_mVRvmk5aBE6x70P6gMaDThjZmz6xspHUy/exec?id=N5LYaA4736 | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://script.google.com/macros/s/AKfycbyACzDXCUqCxu8q0nEWFvx_tyK3bWdHM1_mVRvmk5aBE6x70P6gMaDThjZmz6xspHUy/exec?id=oRLukG3292 | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 
 # 🧊 C00lkidtech
 > [!NOTE]
@@ -51689,7 +52033,7 @@ Try out my newest project, the [Proxy Development Toolkit](https://github.com/yo
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Games | - | N/A | 28 |
+> | Games | - | N/A | 34 |
 | Locked | Link | Found Date | Username | Password | Contributor |
 | - | - | - | - | - | - |
 | | https://cdn.imageurlgenerator.com/uploads/ca803644-49df-4030-81fc-6fe1748033c6.svg | 8/1/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
@@ -51778,6 +52122,12 @@ Try out my newest project, the [Proxy Development Toolkit](https://github.com/yo
 |  | https://raw.githubusercontent.com/seattleschools/media/main/batch/Linklet/hourly/20261001030014612/b6731b7bbc3fbb10.svg | 10/5/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 |  | https://cdn.jsdelivr.net/gh/seattleschools/media@main/batch/Linklet/hourly/20261001030014612/b6731b7bbc3fbb10.svg | 10/5/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://whatthesigmund.govt.hu/ | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://hfe8080.timechamber.cl/ | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://hf5948e.eclipsecastello.net/ | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://hf37beb.gsemma.com/ | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://h6b9916.crazyboulder.org/ | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://blooketassets.s3.us-east-2.amazonaws.com/index.html | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://saugatrnocturne-gtqb.ask4tree.com | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 
 # 🔮 Xylora
 > [!NOTE]
@@ -52015,7 +52365,7 @@ Try out my newest project, the [Proxy Development Toolkit](https://github.com/yo
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Proxy/Games | tab-cloak, panic, epoxy, libcurl | Scramjet, Ultraviolet | 6 |
+> | Proxy/Games | tab-cloak, panic, epoxy, libcurl | Scramjet, Ultraviolet | 9 |
 > [!IMPORTANT]
 > has popups, cursor is also laggy
 
@@ -52027,6 +52377,9 @@ Try out my newest project, the [Proxy Development Toolkit](https://github.com/yo
 | | https://hu.berugy.hu | 8/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://cow.deepee.com/ | 8/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://verymuch.deepee.com | 8/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://os.tvlibre.st | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://os.rread.co.uk | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://os.casaskrater.cl | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 
 # ⚡ Hyperion Hub
 > [!NOTE]
@@ -53869,7 +54222,7 @@ Try out my newest project, the [Proxy Development Toolkit](https://github.com/yo
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Proxy/Games | tab-cloak, panic, GDB:luminsdk | - | 12 |
+> | Proxy/Games | tab-cloak, panic, GDB:luminsdk | - | 118 |
 > [!IMPORTANT]
 > This section has not been categorized or checked for protocol(s) and capabilities.
 
@@ -53893,12 +54246,118 @@ Try out my newest project, the [Proxy Development Toolkit](https://github.com/yo
 |  | https://s3.amazonaws.com/ptnx/index.html | 10/5/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 |  | https://s3.us-east-1.amazonaws.com/ptnx/index.html | 10/5/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 |  | https://s3.dualstack.us-east-1.amazonaws.com/ptnx/index.html | 10/5/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://s3.amazonaws.com/gfdd/index.html | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://s3.us-east-1.amazonaws.com/gfdd/index.html | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://gfdd.s3.amazonaws.com/index.html | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://gfdd.s3.us-east-1.amazonaws.com/index.html | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://s3.dualstack.us-east-1.amazonaws.com/gfdd/index.html | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://gfdd.s3.dualstack.us-east-1.amazonaws.com/index.html | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://s3.amazonaws.com/jknb/index.html | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://s3.us-east-1.amazonaws.com/jknb/index.html | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://jknb.s3.amazonaws.com/index.html | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://jknb.s3.us-east-1.amazonaws.com/index.html | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://s3.dualstack.us-east-1.amazonaws.com/jknb/index.html | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://jknb.s3.dualstack.us-east-1.amazonaws.com/index.html | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://s3.amazonaws.com/fhyd/index.html | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://s3.us-east-1.amazonaws.com/fhyd/index.html | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://fhyd.s3.amazonaws.com/index.html | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://fhyd.s3.us-east-1.amazonaws.com/index.html | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://s3.dualstack.us-east-1.amazonaws.com/fhyd/index.html | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://fhyd.s3.dualstack.us-east-1.amazonaws.com/index.html | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://s3.amazonaws.com/jhds/index.html | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://s3.us-east-1.amazonaws.com/jhds/index.html | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://jhds.s3.amazonaws.com/index.html | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://jhds.s3.us-east-1.amazonaws.com/index.html | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://s3.dualstack.us-east-1.amazonaws.com/jhds/index.html | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://jhds.s3.dualstack.us-east-1.amazonaws.com/index.html | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://s3.amazonaws.com/kldh/index.html | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://s3.us-east-1.amazonaws.com/kldh/index.html | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://kldh.s3.amazonaws.com/index.html | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://kldh.s3.us-east-1.amazonaws.com/index.html | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://s3.dualstack.us-east-1.amazonaws.com/kldh/index.html | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://kldh.s3.dualstack.us-east-1.amazonaws.com/index.html | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://s3.amazonaws.com/rtnm/index.html | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://s3.us-east-1.amazonaws.com/rtnm/index.html | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://rtnm.s3.amazonaws.com/index.html | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://rtnm.s3.us-east-1.amazonaws.com/index.html | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://s3.dualstack.us-east-1.amazonaws.com/rtnm/index.html | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://rtnm.s3.dualstack.us-east-1.amazonaws.com/index.html | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://s3.amazonaws.com/kqrr/index.html | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://s3.us-east-1.amazonaws.com/kqrr/index.html | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://kqrr.s3.amazonaws.com/index.html | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://kqrr.s3.us-east-1.amazonaws.com/index.html | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://s3.dualstack.us-east-1.amazonaws.com/kqrr/index.html | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://kqrr.s3.dualstack.us-east-1.amazonaws.com/index.html | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://s3.amazonaws.com/8vec/index.html | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://s3.us-east-1.amazonaws.com/8vec/index.html | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://8vec.s3.amazonaws.com/index.html | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://8vec.s3.us-east-1.amazonaws.com/index.html | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://s3.dualstack.us-east-1.amazonaws.com/8vec/index.html | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://8vec.s3.dualstack.us-east-1.amazonaws.com/index.html | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://s3.amazonaws.com/pfco/index.html | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://s3.us-east-1.amazonaws.com/pfco/index.html | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://pfco.s3.amazonaws.com/index.html | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://pfco.s3.us-east-1.amazonaws.com/index.html | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://s3.dualstack.us-east-1.amazonaws.com/pfco/index.html | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://pfco.s3.dualstack.us-east-1.amazonaws.com/index.html | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://s3.amazonaws.com/pbtk/index.html | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://s3.us-east-1.amazonaws.com/pbtk/index.html | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://pbtk.s3.amazonaws.com/index.html | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://pbtk.s3.us-east-1.amazonaws.com/index.html | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://s3.dualstack.us-east-1.amazonaws.com/pbtk/index.html | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://pbtk.s3.dualstack.us-east-1.amazonaws.com/index.html | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://s3.amazonaws.com/pa9h/index.html | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://s3.us-east-1.amazonaws.com/pa9h/index.html | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://pa9h.s3.amazonaws.com/index.html | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://pa9h.s3.us-east-1.amazonaws.com/index.html | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://s3.dualstack.us-east-1.amazonaws.com/pa9h/index.html | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://pa9h.s3.dualstack.us-east-1.amazonaws.com/index.html | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://storage.googleapis.com/mathlearning/bull-33/gn-math_1/gn-math | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://storage.googleapis.com/mathlearning/bull-33/gn-math_2/gn-math | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://storage.googleapis.com/mathlearning/bull-33/gn-math_3/gn-math | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://storage.googleapis.com/mathlearning/bull-33/gn-math_4/gn-math | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://storage.googleapis.com/mathlearning/bull-33/gn-math_5/gn-math | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://storage.googleapis.com/mathlearning/bull-33/gn-math_6/gn-math | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://storage.googleapis.com/mathlearning/bull-33/gn-math_7/gn-math | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://storage.googleapis.com/mathlearning/bull-33/gn-math_8/gn-math | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://storage.googleapis.com/mathlearning/bull-33/gn-math_9/gn-math | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://storage.googleapis.com/mathlearning/bull-33/gn-math_10/gn-math | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://storage.googleapis.com/mathlearning/bull-33/gn-math_11/gn-math | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://storage.googleapis.com/mathlearning/bull-33/gn-math_12/gn-math | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://storage.googleapis.com/mathlearning/bull-33/gn-math_13/gn-math | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://storage.googleapis.com/mathlearning/bull-33/gn-math_14/gn-math | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://storage.googleapis.com/mathlearning/bull-33/gn-math_15/gn-math | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://storage.googleapis.com/mathlearning/bull-33/gn-math_16/gn-math | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://storage.googleapis.com/mathlearning/bull-33/gn-math_17/gn-math | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://storage.googleapis.com/mathlearning/bull-33/gn-math_18/gn-math | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://storage.googleapis.com/mathlearning/bull-33/gn-math_19/gn-math | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://storage.googleapis.com/mathlearning/bull-33/gn-math_20/gn-math | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://storage.googleapis.com/mathlearning/bull-33/gn-math_21/gn-math | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://storage.googleapis.com/mathlearning/bull-33/gn-math_22/gn-math | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://storage.googleapis.com/mathlearning/bull-33/gn-math_23/gn-math | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://storage.googleapis.com/mathlearning/bull-33/gn-math_24/gn-math | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://storage.googleapis.com/mathlearning/bull-33/gn-math_25/gn-math | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://storage.googleapis.com/mathlearning/bull-33/gn-math_26/gn-math | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://storage.googleapis.com/mathlearning/bull-33/gn-math_27/gn-math | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://storage.googleapis.com/mathlearning/bull-33/gn-math_28/gn-math | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://storage.googleapis.com/mathlearning/bull-33/gn-math_29/gn-math | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://storage.googleapis.com/mathlearning/bull-33/gn-math_30/gn-math | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://storage.googleapis.com/mathlearning/bull-33/gn-math_31/gn-math | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://storage.googleapis.com/mathlearning/bull-33/gn-math_32/gn-math | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://storage.googleapis.com/mathlearning/bull-33/gn-math_33/gn-math | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://storage.googleapis.com/mathlearning/bull-33/gn-math_34/gn-math | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://storage.googleapis.com/mathlearning/bull-33/gn-math_35/gn-math | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://storage.googleapis.com/mathlearning/bull-33/gn-math_36/gn-math | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://storage.googleapis.com/mathlearning/bull-33/gn-math_37/gn-math | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://storage.googleapis.com/mathlearning/bull-33/gn-math_38/gn-math | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://storage.googleapis.com/mathlearning/bull-33/gn-math_39/gn-math | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://storage.googleapis.com/mathlearning/bull-33/gn-math_40/gn-math | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 
 # 🪐 Galaxy
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Proxy/Games | epoxy, libcurl, bare, GDB:selenite | Scramjet, Ultraviolet | 60 |
+> | Proxy/Games | epoxy, libcurl, bare, GDB:selenite | Scramjet, Ultraviolet | 70 |
 > [!IMPORTANT]
 > This section has not been categorized or checked for protocol(s) and capabilities.
 
@@ -53972,6 +54431,16 @@ Try out my newest project, the [Proxy Development Toolkit](https://github.com/yo
 |  | https://substances.conduit.fyi/ | 10/5/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 |  | https://site-cxegpaxk.myoxypages.com/ | 10/5/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 |  | https://site-cxegpaxk.myoxypages.com/glalaxyyoutube | 10/5/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://sixseven.costasur.cl | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://democrat.govt.hu | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://lsbull.govt.hu | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://republican.govt.hu | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://galaxy-of-bulls.lamaisondesos.com | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://daniel-quezada.corea.is | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://blah.thevoiceexchange.com | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://secc.thevoiceexchange.com | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://idccc.utilmedica.pt | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://yeah.veranda.co.id | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 
 # Σ Sigma Games
 > [!NOTE]
@@ -54100,7 +54569,7 @@ Try out my newest project, the [Proxy Development Toolkit](https://github.com/yo
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Proxy/Games | captcha, tab-cloak, GDB:selenite | - | 195 |
+> | Proxy/Games | captcha, tab-cloak, GDB:selenite | - | 245 |
 > [!IMPORTANT]
 > This section has not been categorized or checked for protocol(s) and capabilities.
 
@@ -54496,6 +54965,56 @@ Try out my newest project, the [Proxy Development Toolkit](https://github.com/yo
 | | https://aeos.supadrop.site/ | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://rare-fur-syv6a.ship.place/ | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://truth-tiglon-5oyo6.ship.place/ | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://script.google.com/macros/s/AKfycbxLxOIe8ECyYNRTGK7QN2uQg9-8kq3b2qDb8BzPvhC8mLGW8L9X22AauHmZcBI6BMyj/exec?submission_id=845636643667&module_item_id=730&user_id=815611&download=1 | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://script.google.com/macros/s/AKfycbxLxOIe8ECyYNRTGK7QN2uQg9-8kq3b2qDb8BzPvhC8mLGW8L9X22AauHmZcBI6BMyj/exec?id=2&key=2 | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://script.google.com/macros/s/AKfycbxLxOIe8ECyYNRTGK7QN2uQg9-8kq3b2qDb8BzPvhC8mLGW8L9X22AauHmZcBI6BMyj/exec?usp=drive_web&authuser=6&resourcekey=QbwRcxSdy&id=3 | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://script.google.com/macros/s/AKfycbxLxOIe8ECyYNRTGK7QN2uQg9-8kq3b2qDb8BzPvhC8mLGW8L9X22AauHmZcBI6BMyj/exec?id=4&edge=cf_78dde6&v=0004 | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://script.google.com/macros/s/AKfycbxLxOIe8ECyYNRTGK7QN2uQg9-8kq3b2qDb8BzPvhC8mLGW8L9X22AauHmZcBI6BMyj/exec?authuser=58707245&resourcekey=gPoXw5&usp=sharing&assignment_id=7886668 | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://script.google.com/macros/s/AKfycbxLxOIe8ECyYNRTGK7QN2uQg9-8kq3b2qDb8BzPvhC8mLGW8L9X22AauHmZcBI6BMyj/exec?submission_id=32&module_item_id=847324487&user_id=682&download=1 | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://script.google.com/macros/s/AKfycbxLxOIe8ECyYNRTGK7QN2uQg9-8kq3b2qDb8BzPvhC8mLGW8L9X22AauHmZcBI6BMyj/exec?id=7&key=7 | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://script.google.com/macros/s/AKfycbxLxOIe8ECyYNRTGK7QN2uQg9-8kq3b2qDb8BzPvhC8mLGW8L9X22AauHmZcBI6BMyj/exec?usp=drive_web&authuser=729361893&resourcekey=TNHBvpjd7&id=8 | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://script.google.com/macros/s/AKfycbxLxOIe8ECyYNRTGK7QN2uQg9-8kq3b2qDb8BzPvhC8mLGW8L9X22AauHmZcBI6BMyj/exec?id=9&edge=cf_8ff347&v=0009 | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://script.google.com/macros/s/AKfycbxLxOIe8ECyYNRTGK7QN2uQg9-8kq3b2qDb8BzPvhC8mLGW8L9X22AauHmZcBI6BMyj/exec?authuser=428809&resourcekey=jrzHPX&usp=sharing&assignment_id=219047 | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://script.google.com/macros/s/AKfycbxLxOIe8ECyYNRTGK7QN2uQg9-8kq3b2qDb8BzPvhC8mLGW8L9X22AauHmZcBI6BMyj/exec?submission_id=16622658&module_item_id=368930755288&user_id=41063684&download=1 | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://script.google.com/macros/s/AKfycbxLxOIe8ECyYNRTGK7QN2uQg9-8kq3b2qDb8BzPvhC8mLGW8L9X22AauHmZcBI6BMyj/exec?id=12&key=12 | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://script.google.com/macros/s/AKfycbxLxOIe8ECyYNRTGK7QN2uQg9-8kq3b2qDb8BzPvhC8mLGW8L9X22AauHmZcBI6BMyj/exec?usp=drive_web&authuser=81962757396&resourcekey=WpSlOhKdG&id=13 | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://script.google.com/macros/s/AKfycbxLxOIe8ECyYNRTGK7QN2uQg9-8kq3b2qDb8BzPvhC8mLGW8L9X22AauHmZcBI6BMyj/exec?id=14&edge=cf_a708a7&v=0014 | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://script.google.com/macros/s/AKfycbxLxOIe8ECyYNRTGK7QN2uQg9-8kq3b2qDb8BzPvhC8mLGW8L9X22AauHmZcBI6BMyj/exec?authuser=9585&resourcekey=m3Kr8P&usp=sharing&assignment_id=57241682 | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://script.google.com/macros/s/AKfycbxLxOIe8ECyYNRTGK7QN2uQg9-8kq3b2qDb8BzPvhC8mLGW8L9X22AauHmZcBI6BMyj/exec?submission_id=9659011&module_item_id=35456240&user_id=35&download=1 | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://script.google.com/macros/s/AKfycbxLxOIe8ECyYNRTGK7QN2uQg9-8kq3b2qDb8BzPvhC8mLGW8L9X22AauHmZcBI6BMyj/exec?id=17&key=17 | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://script.google.com/macros/s/AKfycbxLxOIe8ECyYNRTGK7QN2uQg9-8kq3b2qDb8BzPvhC8mLGW8L9X22AauHmZcBI6BMyj/exec?usp=drive_web&authuser=77091&resourcekey=Z13579bdf&id=18 | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://script.google.com/macros/s/AKfycbxLxOIe8ECyYNRTGK7QN2uQg9-8kq3b2qDb8BzPvhC8mLGW8L9X22AauHmZcBI6BMyj/exec?id=19&edge=cf_be1e08&v=0019 | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://script.google.com/macros/s/AKfycbxLxOIe8ECyYNRTGK7QN2uQg9-8kq3b2qDb8BzPvhC8mLGW8L9X22AauHmZcBI6BMyj/exec?authuser=42035402516&resourcekey=pFVbrH&usp=sharing&assignment_id=2255 | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://script.google.com/macros/s/AKfycbxLxOIe8ECyYNRTGK7QN2uQg9-8kq3b2qDb8BzPvhC8mLGW8L9X22AauHmZcBI6BMyj/exec?submission_id=47224020782&module_item_id=72884310&user_id=261658202263&download=1 | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://script.google.com/macros/s/AKfycbxLxOIe8ECyYNRTGK7QN2uQg9-8kq3b2qDb8BzPvhC8mLGW8L9X22AauHmZcBI6BMyj/exec?id=22&key=22 | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://script.google.com/macros/s/AKfycbxLxOIe8ECyYNRTGK7QN2uQg9-8kq3b2qDb8BzPvhC8mLGW8L9X22AauHmZcBI6BMyj/exec?usp=drive_web&authuser=115308&resourcekey=2DePq1CdO&id=23 | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://script.google.com/macros/s/AKfycbxLxOIe8ECyYNRTGK7QN2uQg9-8kq3b2qDb8BzPvhC8mLGW8L9X22AauHmZcBI6BMyj/exec?id=24&edge=cf_d53368&v=0024 | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://script.google.com/macros/s/AKfycbxLxOIe8ECyYNRTGK7QN2uQg9-8kq3b2qDb8BzPvhC8mLGW8L9X22AauHmZcBI6BMyj/exec?authuser=4490&resourcekey=sh6VKz&usp=sharing&assignment_id=98824 | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://script.google.com/macros/s/AKfycbxLxOIe8ECyYNRTGK7QN2uQg9-8kq3b2qDb8BzPvhC8mLGW8L9X22AauHmZcBI6BMyj/exec?submission_id=5887043784&module_item_id=74&user_id=97525&download=1 | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://script.google.com/macros/s/AKfycbxLxOIe8ECyYNRTGK7QN2uQg9-8kq3b2qDb8BzPvhC8mLGW8L9X22AauHmZcBI6BMyj/exec?id=27&key=27 | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://script.google.com/macros/s/AKfycbxLxOIe8ECyYNRTGK7QN2uQg9-8kq3b2qDb8BzPvhC8mLGW8L9X22AauHmZcBI6BMyj/exec?usp=drive_web&authuser=2&resourcekey=5fpzJT3dn&id=28 | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://script.google.com/macros/s/AKfycbxLxOIe8ECyYNRTGK7QN2uQg9-8kq3b2qDb8BzPvhC8mLGW8L9X22AauHmZcBI6BMyj/exec?id=29&edge=cf_ec48c9&v=0029 | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://script.google.com/macros/s/AKfycbxLxOIe8ECyYNRTGK7QN2uQg9-8kq3b2qDb8BzPvhC8mLGW8L9X22AauHmZcBI6BMyj/exec?authuser=752522428964&resourcekey=vThF3r&usp=sharing&assignment_id=906919 | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://script.google.com/macros/s/AKfycbxLxOIe8ECyYNRTGK7QN2uQg9-8kq3b2qDb8BzPvhC8mLGW8L9X22AauHmZcBI6BMyj/exec?submission_id=201&module_item_id=121393&user_id=72&download=1 | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://script.google.com/macros/s/AKfycbxLxOIe8ECyYNRTGK7QN2uQg9-8kq3b2qDb8BzPvhC8mLGW8L9X22AauHmZcBI6BMyj/exec?id=32&key=32 | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://script.google.com/macros/s/AKfycbxLxOIe8ECyYNRTGK7QN2uQg9-8kq3b2qDb8BzPvhC8mLGW8L9X22AauHmZcBI6BMyj/exec?usp=drive_web&authuser=677915389&resourcekey=8RAj2LudW&id=33 | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://script.google.com/macros/s/AKfycbxLxOIe8ECyYNRTGK7QN2uQg9-8kq3b2qDb8BzPvhC8mLGW8L9X22AauHmZcBI6BMyj/exec?id=34&edge=cf_035e29&v=0034 | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://script.google.com/macros/s/AKfycbxLxOIe8ECyYNRTGK7QN2uQg9-8kq3b2qDb8BzPvhC8mLGW8L9X22AauHmZcBI6BMyj/exec?authuser=41013&resourcekey=yvspmj&usp=sharing&assignment_id=8374198190 | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://script.google.com/macros/s/AKfycbxLxOIe8ECyYNRTGK7QN2uQg9-8kq3b2qDb8BzPvhC8mLGW8L9X22AauHmZcBI6BMyj/exec?submission_id=509&module_item_id=3453641094&user_id=82758&download=1 | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://script.google.com/macros/s/AKfycbxLxOIe8ECyYNRTGK7QN2uQg9-8kq3b2qDb8BzPvhC8mLGW8L9X22AauHmZcBI6BMyj/exec?id=37&key=37 | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://script.google.com/macros/s/AKfycbxLxOIe8ECyYNRTGK7QN2uQg9-8kq3b2qDb8BzPvhC8mLGW8L9X22AauHmZcBI6BMyj/exec?usp=drive_web&authuser=437615425491&resourcekey=btL3lDVdv&id=38 | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://script.google.com/macros/s/AKfycbxLxOIe8ECyYNRTGK7QN2uQg9-8kq3b2qDb8BzPvhC8mLGW8L9X22AauHmZcBI6BMyj/exec?id=39&edge=cf_1a7389&v=0039 | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://script.google.com/macros/s/AKfycbxLxOIe8ECyYNRTGK7QN2uQg9-8kq3b2qDb8BzPvhC8mLGW8L9X22AauHmZcBI6BMyj/exec?authuser=448807987034&resourcekey=B7D9Fb&usp=sharing&assignment_id=37107297142 | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://script.google.com/macros/s/AKfycbxLxOIe8ECyYNRTGK7QN2uQg9-8kq3b2qDb8BzPvhC8mLGW8L9X22AauHmZcBI6BMyj/exec?submission_id=3776566&module_item_id=62493021685&user_id=578144848373&download=1 | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://script.google.com/macros/s/AKfycbxLxOIe8ECyYNRTGK7QN2uQg9-8kq3b2qDb8BzPvhC8mLGW8L9X22AauHmZcBI6BMyj/exec?id=42&key=42 | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://script.google.com/macros/s/AKfycbxLxOIe8ECyYNRTGK7QN2uQg9-8kq3b2qDb8BzPvhC8mLGW8L9X22AauHmZcBI6BMyj/exec?usp=drive_web&authuser=429&resourcekey=e5WNEvmd4&id=43 | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://script.google.com/macros/s/AKfycbxLxOIe8ECyYNRTGK7QN2uQg9-8kq3b2qDb8BzPvhC8mLGW8L9X22AauHmZcBI6BMyj/exec?id=44&edge=cf_3188ea&v=0044 | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://script.google.com/macros/s/AKfycbxLxOIe8ECyYNRTGK7QN2uQg9-8kq3b2qDb8BzPvhC8mLGW8L9X22AauHmZcBI6BMyj/exec?authuser=7182958&resourcekey=EJOTY3&usp=sharing&assignment_id=2354096906 | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://script.google.com/macros/s/AKfycbxLxOIe8ECyYNRTGK7QN2uQg9-8kq3b2qDb8BzPvhC8mLGW8L9X22AauHmZcBI6BMyj/exec?submission_id=80341547619&module_item_id=8242193&user_id=319099&download=1 | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://script.google.com/macros/s/AKfycbxLxOIe8ECyYNRTGK7QN2uQg9-8kq3b2qDb8BzPvhC8mLGW8L9X22AauHmZcBI6BMyj/exec?id=47&key=47 | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://script.google.com/macros/s/AKfycbxLxOIe8ECyYNRTGK7QN2uQg9-8kq3b2qDb8BzPvhC8mLGW8L9X22AauHmZcBI6BMyj/exec?usp=drive_web&authuser=277674870021&resourcekey=hH7xXnNdD&id=48 | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://script.google.com/macros/s/AKfycbxLxOIe8ECyYNRTGK7QN2uQg9-8kq3b2qDb8BzPvhC8mLGW8L9X22AauHmZcBI6BMyj/exec?id=49&edge=cf_489e4a&v=0049 | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://script.google.com/macros/s/AKfycbxLxOIe8ECyYNRTGK7QN2uQg9-8kq3b2qDb8BzPvhC8mLGW8L9X22AauHmZcBI6BMyj/exec?authuser=6&resourcekey=HlZDhV&usp=sharing&assignment_id=38446341 | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 
 # 🦇 Nyx
 > [!NOTE]
@@ -55822,7 +56341,7 @@ Try out my newest project, the [Proxy Development Toolkit](https://github.com/yo
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Proxy | bare, wisp, captcha, tab-cloak, panic | Ultraviolet | 6 |
+> | Proxy | bare, wisp, captcha, tab-cloak, panic | Ultraviolet | 8 |
 > [!IMPORTANT]
 > This section has not been categorized or checked for protocol(s) and capabilities.
 
@@ -55834,6 +56353,8 @@ Try out my newest project, the [Proxy Development Toolkit](https://github.com/yo
 | | https://s3.amazonaws.com/glimapp/index.html | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://s3.us-east-1.amazonaws.com/glimapp/index.html | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://s3.dualstack.us-east-1.amazonaws.com/glimapp/index.html | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://sbp0.z5.web.core.windows.net/ | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://gjsk.z21.web.core.windows.net/ | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 
 # 🎨 Achroma
 > [!NOTE]
@@ -55923,7 +56444,7 @@ Try out my newest project, the [Proxy Development Toolkit](https://github.com/yo
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | pending | - | - | 2 |
+> | pending | - | - | 47 |
 > [!IMPORTANT]
 > This section has not been categorized or checked for protocol(s) and capabilities.
 
@@ -55931,6 +56452,51 @@ Try out my newest project, the [Proxy Development Toolkit](https://github.com/yo
 | - | - | - | - | - | - |
 | | https://help-me-learn.govt.hu/ | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://learn-help-me.govt.hu/ | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://learninghelp.edu.pulsaudio.ro/ | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://ddfg.pulsaudio.ro/ | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://wefr.pulsaudio.ro/ | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://grammer.learning.geometry.math.pulsaudio.ro/ | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://timetodomymagic.thefilmdatabase.com/ | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://learning.clever.nondestructivetesting.ca/ | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://ixl.edu.nondestructivetesting.ca/ | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://superlearning.edu.streetdirectory.sg/ | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://cleverlearning.edu.nextcomm.com.ar/ | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://government.usa.gov.gov.nextcomm.com.ar/ | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://imps.rusticrivergear.com/ | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://newstudyguied.rusticrivergear.com/ | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://xyalora.rusticrivergear.com/ | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://cleverlearning.org.edu.sanjayparajuli.com.np/ | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://educational.edu.sanjayparajuli.com.np/ | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://supermath.org.sanjayparajuli.com.np/ | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://bullbestyoutuber.solidaritysafaris.com | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://w.to.bull.solidaritysafaris.com | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://learninghelp.c-abogados.com.ar/ | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://clever.ixl.learning.gov.nextcomm.com.ar/ | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://megalearning.nextcomm.com.ar/ | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://revault.nextcomm.com.ar/ | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://learninghelp.gmk.cl/ | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://learninghelp.n43.pw/ | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://learninghelp.lakeballs.fi/ | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://learninghelp.truefruit.tw/ | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://learninghelp.edu.truefruit.tw/ | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://learninghelp.sanjayparajuli.com.np/ | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://learninghelp.alte.ca/ | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://learninghelp.mindboggle.us/ | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://learninghelp.tribeoftwo.com/ | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://didyoumissme.dila.cl/ | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://theynotlikeus.dila.cl/ | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://imback.nextcomm.com.ar/ | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://learninghelp.nextcomm.com.ar/ | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://mathhelp.metropolitanstaffingsolutions.com | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://promo.rusticrivergear.com | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://supermath.org.rusticrivergear.com | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://w.bull.rusticrivergear.com | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://bull.da.goat.ngl.streetdirectory.sg | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://bull.promo.streetdirectory.sg | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://flexing.streetdirectory.sg | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://I.am.learning.streetdirectory.sg | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://megaultralearning.streetdirectory.sg | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://marker845339-saugatr.academinctools.pw | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 
 # 🎮 GNS
 > [!NOTE]
@@ -56183,7 +56749,7 @@ Try out my newest project, the [Proxy Development Toolkit](https://github.com/yo
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | pending | - | - | 121 |
+> | pending | - | - | 135 |
 > [!IMPORTANT]
 > This section has not been categorized or checked for protocol(s) and capabilities.
 
@@ -56310,6 +56876,20 @@ Try out my newest project, the [Proxy Development Toolkit](https://github.com/yo
 | | https://cdn.inksoft.com/images/clipart/svg/2570/designer2103988394847715328under/opium8fe7c.svg | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://cdn.inksoft.com/images/clipart/svg/2570/designer2103988394847715328under/opium10cd8.svg | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://objectstorage.us-sanjose-1.oraclecloud.com/n/axjcou67ax5a/b/mathlearning/o/singlefile.svg | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://cdn.jsdelivr.net/gh/opiumbest/bull33/index.svg | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://raw.esm.sh/gh/OpiumBest/bull33/index.svg | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://cdn.statically.io/gh/OpiumBest/bull33@main/index.svg | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://s3.amazonaws.com/opiumbull/index.html | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://storage.googleapis.com/opiumbull/index.html | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://opmf997.saintpauljinju.com/ | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://opm46c2.art-motel.com/ | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://opm9658.nabinshahi.com.np/ | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://opm26c0.techmaxasia.com/ | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://opmb1d1.ronginbari.com/ | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://opm8f7b.nacnepal.org.np/ | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://opm9d2e.fowlergo.org/ | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://www.brammersathletic.net/uploaded/files/product_options/20260928_232843_902866_singlefile.svg | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://opm.d2otav0547hwz0.amplifyapp.com/ | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 
 # 🎵 Otonic
 > [!NOTE]
@@ -56327,13 +56907,20 @@ Try out my newest project, the [Proxy Development Toolkit](https://github.com/yo
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | pending | - | - | 1 |
+> | pending | - | - | 8 |
 > [!IMPORTANT]
 > This section has not been categorized or checked for protocol(s) and capabilities.
 
 | Locked | Link | Found Date | Username | Password | Contributor |
 | - | - | - | - | - | - |
 | | https://dragonisbroke.lukestadem.com/start | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://mwdpp.govt.hu/ | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://lkx.govt.hu/ | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://wep.govt.hu/ | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://eytik.govt.hu/ | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://dzz.drbijaytamang.com.np/ | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://sffws.drbijaytamang.com.np/ | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://gxi.drbijaytamang.com.np/ | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 
 # 🔑 1key
 > [!NOTE]
@@ -56397,10 +56984,239 @@ Try out my newest project, the [Proxy Development Toolkit](https://github.com/yo
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | pending | - | - | 1 |
+> | pending | - | - | 20 |
 > [!IMPORTANT]
 > This section has not been categorized or checked for protocol(s) and capabilities.
 
 | Locked | Link | Found Date | Username | Password | Contributor |
 | - | - | - | - | - | - |
 | | http://yourcool.butimcooler.zyfliniscool.zyf.govt.hu/ | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://asd.nis3.ro/ | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://erf.nis3.ro/ | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://rtv.nis3.ro/ | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://565.nis3.ro/ | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://123.nis3.ro/ | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://123.tux.to/ | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://zad.tux.to/ | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://verylongsubdomain.tux.to/ | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://taco.tux.to/ | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://yes.pisi.cat/ | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://njty.pisi.cat/ | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://ope.pisi.cat/ | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://1.pisi.cat/ | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://a.pisi.cat/ | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://1.xcel.ch/ | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://2.xcel.ch/ | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://3.xcel.ch/ | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://4.xcel.ch/ | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://h3.xcel.ch/ | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+
+# Desync
+> [!NOTE]
+> | Category | Capabilities | Protocol(s) | Links |
+> | - | - | - | - |
+> | pending | pending | pending | 1 |
+> [!IMPORTANT]
+> This section has not been categorized or checked for protocol(s) and capabilities.
+
+| Locked | Link | Found Date | Username | Password | Contributor |
+| - | - | - | - | - | - |
+| | https://math.s3.amazonaws.com/index.html | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+
+# Reds Exploit Corner
+> [!NOTE]
+> | Category | Capabilities | Protocol(s) | Links |
+> | - | - | - | - |
+> | pending | pending | pending | 1 |
+> [!IMPORTANT]
+> This section has not been categorized or checked for protocol(s) and capabilities.
+
+| Locked | Link | Found Date | Username | Password | Contributor |
+| - | - | - | - | - | - |
+| | https://zhizhu.b-cdn.net/ | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+
+# Breeze
+> [!NOTE]
+> | Category | Capabilities | Protocol(s) | Links |
+> | - | - | - | - |
+> | pending | pending | pending | 47 |
+> [!IMPORTANT]
+> This section has not been categorized or checked for protocol(s) and capabilities.
+
+| Locked | Link | Found Date | Username | Password | Contributor |
+| - | - | - | - | - | - |
+| | https://cdn.jsdelivr.net/gh/breezeontop/svg@latest/index.svg | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://githubraw.com/unicyclevryt-tech/uniz-1/15809282aa26fb56007d6c1d80f1ff2e931a47de/hii-breeze-9-c3gy95.svg | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://htmlpreview.github.io/?https://raw.githubusercontent.com/unicyclevryt-tech/uniz-1/15809282aa26fb56007d6c1d80f1ff2e931a47de/breeze-hi-10-1m2uyj.svg | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://githubraw.com/unicyclevryt-tech/uniz-1/15809282aa26fb56007d6c1d80f1ff2e931a47de/breeze-hi-10-1m2uyj.svg | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://htmlpreview.github.io/?https://raw.githubusercontent.com/unicyclevryt-tech/uniz-1/15809282aa26fb56007d6c1d80f1ff2e931a47de/uniz-breeze-5-63714c.svg | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://htmlpreview.github.io/?https://raw.githubusercontent.com/unicyclevryt-tech/uniz-1/15809282aa26fb56007d6c1d80f1ff2e931a47de/hi-hi-8-3dad2f.svg | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://cdn.githubraw.com/unicyclevryt-tech/uniz-1/15809282aa26fb56007d6c1d80f1ff2e931a47de/hii-breeze-9-c3gy95.svg | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://cdn.githubraw.com/unicyclevryt-tech/uniz-1/15809282aa26fb56007d6c1d80f1ff2e931a47de/isthistuff-hi-4-br2f8e.svg | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://githubraw.com/unicyclevryt-tech/uniz-1/15809282aa26fb56007d6c1d80f1ff2e931a47de/isthistuff-hi-4-br2f8e.svg | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://htmlpreview.github.io/?https://raw.githubusercontent.com/unicyclevryt-tech/uniz-1/15809282aa26fb56007d6c1d80f1ff2e931a47de/tuff-hi-2-c74ihv.svg | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://cdn.githubraw.com/unicyclevryt-tech/uniz-1/15809282aa26fb56007d6c1d80f1ff2e931a47de/breeze-hi-10-1m2uyj.svg | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://cdn.githubraw.com/unicyclevryt-tech/uniz-1/15809282aa26fb56007d6c1d80f1ff2e931a47de/hi-hi-8-3dad2f.svg | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://githubraw.com/unicyclevryt-tech/uniz-1/15809282aa26fb56007d6c1d80f1ff2e931a47de/hi-hi-8-3dad2f.svg | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://htmlpreview.github.io/?https://raw.githubusercontent.com/unicyclevryt-tech/uniz-1/15809282aa26fb56007d6c1d80f1ff2e931a47de/hii-breeze-9-c3gy95.svg | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://githubraw.com/unicyclevryt-tech/uniz-1/15809282aa26fb56007d6c1d80f1ff2e931a47de/uniz-breeze-5-63714c.svg | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://htmlpreview.github.io/?https://raw.githubusercontent.com/unicyclevryt-tech/uniz-1/15809282aa26fb56007d6c1d80f1ff2e931a47de/isthistuff-hi-4-br2f8e.svg | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://cdn.githubraw.com/unicyclevryt-tech/uniz-1/15809282aa26fb56007d6c1d80f1ff2e931a47de/ubg-breeze-3-e70muf.svg | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://htmlpreview.github.io/?https://raw.githubusercontent.com/unicyclevryt-tech/uniz-1/15809282aa26fb56007d6c1d80f1ff2e931a47de/breeze-breeze-1-26b8xo.svg | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://cdn.githubraw.com/unicyclevryt-tech/uniz-1/15809282aa26fb56007d6c1d80f1ff2e931a47de/ok-breeze-7-adb6vy.svg | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://cdn.githubraw.com/unicyclevryt-tech/uniz-1/15809282aa26fb56007d6c1d80f1ff2e931a47de/uni-hi-6-fvueed.svg | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://githubraw.com/unicyclevryt-tech/uniz-1/15809282aa26fb56007d6c1d80f1ff2e931a47de/ubg-breeze-3-e70muf.svg | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://githubraw.com/unicyclevryt-tech/uniz-1/15809282aa26fb56007d6c1d80f1ff2e931a47de/uni-hi-6-fvueed.svg | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://cdn.githubraw.com/unicyclevryt-tech/uniz-1/15809282aa26fb56007d6c1d80f1ff2e931a47de/tuff-hi-2-c74ihv.svg | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://htmlpreview.github.io/?https://raw.githubusercontent.com/unicyclevryt-tech/uniz-1/15809282aa26fb56007d6c1d80f1ff2e931a47de/uni-hi-6-fvueed.svg | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://githubraw.com/unicyclevryt-tech/uniz-1/15809282aa26fb56007d6c1d80f1ff2e931a47de/ok-breeze-7-adb6vy.svg | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://cdn.githubraw.com/unicyclevryt-tech/uniz-1/15809282aa26fb56007d6c1d80f1ff2e931a47de/breeze-breeze-1-26b8xo.svg | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://cdn.githubraw.com/unicyclevryt-tech/uniz-1/15809282aa26fb56007d6c1d80f1ff2e931a47de/uniz-breeze-5-63714c.svg | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://githubraw.com/unicyclevryt-tech/uniz-1/15809282aa26fb56007d6c1d80f1ff2e931a47de/tuff-hi-2-c74ihv.svg | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://htmlpreview.github.io/?https://raw.githubusercontent.com/unicyclevryt-tech/uniz-1/15809282aa26fb56007d6c1d80f1ff2e931a47de/ok-breeze-7-adb6vy.svg | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://githubraw.com/unicyclevryt-tech/uniz-1/15809282aa26fb56007d6c1d80f1ff2e931a47de/breeze-breeze-1-26b8xo.svg | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://htmlpreview.github.io/?https://raw.githubusercontent.com/unicyclevryt-tech/uniz-1/15809282aa26fb56007d6c1d80f1ff2e931a47de/ubg-breeze-3-e70muf.svg | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://githubraw.com/unicyclevryt-tech/unizz-1/aa4b1d7d7bcbf76c8c550f15f45b7a285b68d483/breeze-game-1-7ww918.svg | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://cdn.githubraw.com/unicyclevryt-tech/unizz-1/aa4b1d7d7bcbf76c8c550f15f45b7a285b68d483/breeze-game-1-7ww918.svg | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://rawcdn.githack.com/unicyclevryt-tech/uniistuff-1/d09d690ea3944554114e49555a3daf6edd8260a4/ubg1-ubg3-3-8ashpe.html | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://rawcdn.githack.com/unicyclevryt-tech/uniistuff-1/d09d690ea3944554114e49555a3daf6edd8260a4/ubg2-game-4-jgdpm.html | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://cdn.githubraw.com/unicyclevryt-tech/uniistuff-1/d09d690ea3944554114e49555a3daf6edd8260a4/ubg4-ubg3-6-en3kn6.html | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://raw.githack.com/unicyclevryt-tech/uniistuff-1/d09d690ea3944554114e49555a3daf6edd8260a4/ubg3-view-5-as3vrf.html | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://githubraw.com/unicyclevryt-tech/uniistuff-1/d09d690ea3944554114e49555a3daf6edd8260a4/ilovebreeze-game-10-dwz426.html | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://raw.githack.com/unicyclevryt-tech/uniistuff-1/d09d690ea3944554114e49555a3daf6edd8260a4/ubg4-ubg3-6-en3kn6.html | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://htmlpreview.github.io/?https://raw.githubusercontent.com/unicyclevryt-tech/uniistuff-1/d09d690ea3944554114e49555a3daf6edd8260a4/breeze-game-1-aajpsv.html | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://cdn.githubraw.com/unicyclevryt-tech/uniistuff-1/d09d690ea3944554114e49555a3daf6edd8260a4/breeze-game-1-aajpsv.html | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://rawcdn.githack.com/unicyclevryt-tech/uniistuff-1/d09d690ea3944554114e49555a3daf6edd8260a4/ilovebreeze-game-10-dwz426.html | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://htmlpreview.github.io/?https://raw.githubusercontent.com/unicyclevryt-tech/uniistuff-1/d09d690ea3944554114e49555a3daf6edd8260a4/ubg1-ubg3-3-8ashpe.html | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://cdn.githubraw.com/unicyclevryt-tech/uniistuff-1/d09d690ea3944554114e49555a3daf6edd8260a4/ubg3-view-5-as3vrf.html | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://githubraw.com/unicyclevryt-tech/uniistuff-1/d09d690ea3944554114e49555a3daf6edd8260a4/ubg4-ubg3-6-en3kn6.html | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://htmlpreview.github.io/?https://raw.githubusercontent.com/unicyclevryt-tech/uniistuff-1/d09d690ea3944554114e49555a3daf6edd8260a4/ubg-view-2-9qewby.html | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://htmlpreview.github.io/?https://raw.githubusercontent.com/unicyclevryt-tech/uniistuff-1/d09d690ea3944554114e49555a3daf6edd8260a4/ilovebreeze-game-10-dwz426.html | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+
+# Abstract
+> [!NOTE]
+> | Category | Capabilities | Protocol(s) | Links |
+> | - | - | - | - |
+> | pending | pending | pending | 4 |
+> [!IMPORTANT]
+> This section has not been categorized or checked for protocol(s) and capabilities.
+
+| Locked | Link | Found Date | Username | Password | Contributor |
+| - | - | - | - | - | - |
+| | https://mathewteachesalgebra.site/ | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://s3.amazonaws.com/lightspeedfilters/index.html | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://artemata.it/ | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://estheticsbyabby.com | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+
+# 🪵 Tung Tung
+> [!NOTE]
+> | Category | Capabilities | Protocol(s) | Links |
+> | - | - | - | - |
+> | pending | pending | pending | 5 |
+> [!IMPORTANT]
+> This section has not been categorized or checked for protocol(s) and capabilities.
+
+| Locked | Link | Found Date | Username | Password | Contributor |
+| - | - | - | - | - | - |
+| | https://d3ss2g5w4f61xf.cloudfront.net/ | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://s3.amazonaws.com/cedarstudy/index.html | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://s3.amazonaws.com/tungnotes/index.html | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://tt.tvlibre.st | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://tt.mannzur.xyz | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+
+# Kite
+> [!NOTE]
+> | Category | Capabilities | Protocol(s) | Links |
+> | - | - | - | - |
+> | pending | pending | pending | 2 |
+> [!IMPORTANT]
+> This section has not been categorized or checked for protocol(s) and capabilities.
+
+| Locked | Link | Found Date | Username | Password | Contributor |
+| - | - | - | - | - | - |
+| | https://ykc6.z20.web.core.windows.net/ | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://xztx.z22.web.core.windows.net/ | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+
+# Doge
+> [!NOTE]
+> | Category | Capabilities | Protocol(s) | Links |
+> | - | - | - | - |
+> | pending | pending | pending | 3 |
+> [!IMPORTANT]
+> This section has not been categorized or checked for protocol(s) and capabilities.
+
+| Locked | Link | Found Date | Username | Password | Contributor |
+| - | - | - | - | - | - |
+| | https://doge.tvlibre.st | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://doge.rread.co.uk | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://doge.casaskrater.cl | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+
+# Flver
+> [!NOTE]
+> | Category | Capabilities | Protocol(s) | Links |
+> | - | - | - | - |
+> | pending | pending | pending | 3 |
+> [!IMPORTANT]
+> This section has not been categorized or checked for protocol(s) and capabilities.
+
+| Locked | Link | Found Date | Username | Password | Contributor |
+| - | - | - | - | - | - |
+| | https://fl.tvlibre.st | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://fl.rread.co.uk | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://fl.casaskrater.cl | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+
+# Rook
+> [!NOTE]
+> | Category | Capabilities | Protocol(s) | Links |
+> | - | - | - | - |
+> | pending | pending | pending | 3 |
+> [!IMPORTANT]
+> This section has not been categorized or checked for protocol(s) and capabilities.
+
+| Locked | Link | Found Date | Username | Password | Contributor |
+| - | - | - | - | - | - |
+| | https://rok.tvlibre.st | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://rok.rread.co.uk | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://rok.casaskrater.cl | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+
+# Aurora
+> [!NOTE]
+> | Category | Capabilities | Protocol(s) | Links |
+> | - | - | - | - |
+> | pending | pending | pending | 3 |
+> [!IMPORTANT]
+> This section has not been categorized or checked for protocol(s) and capabilities.
+
+| Locked | Link | Found Date | Username | Password | Contributor |
+| - | - | - | - | - | - |
+| | https://au.tvlibre.st | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://au.rread.co.uk | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://au.mannzur.xyz | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+
+# CINERA
+> [!NOTE]
+> | Category | Capabilities | Protocol(s) | Links |
+> | - | - | - | - |
+> | pending | pending | pending | 3 |
+> [!IMPORTANT]
+> This section has not been categorized or checked for protocol(s) and capabilities.
+
+| Locked | Link | Found Date | Username | Password | Contributor |
+| - | - | - | - | - | - |
+| | https://cin.tvlibre.st | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://cin.rread.co.uk | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://cin.casaskrater.cl | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+
+# Triple T HD
+> [!NOTE]
+> | Category | Capabilities | Protocol(s) | Links |
+> | - | - | - | - |
+> | pending | pending | pending | 3 |
+> [!IMPORTANT]
+> This section has not been categorized or checked for protocol(s) and capabilities.
+
+| Locked | Link | Found Date | Username | Password | Contributor |
+| - | - | - | - | - | - |
+| | https://hd.tvlibre.st | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://hd.rread.co.uk | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://hd.casaskrater.cl | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)

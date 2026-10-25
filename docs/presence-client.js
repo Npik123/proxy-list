@@ -1,5 +1,5 @@
 /**
- * Shared presence ping for User Statistics aggregates (Worker → Firestore).
+ * Shared presence ping for User Statistics aggregates (Worker → D1, with Firestore history).
  * Safe no-op when the Worker API is unavailable (e.g. plain GitHub Pages without fallback).
  *
  * Under Scramjet/Ultraviolet/etc., relative /api calls are rewritten and fail. We detect
@@ -44,7 +44,11 @@
   function hostIsLocalDev() {
     try {
       var host = String((global.location && global.location.hostname) || "").toLowerCase();
-      return host === "localhost" || host === "127.0.0.1" || host === "[::1]";
+      if (host !== "localhost" && host !== "127.0.0.1" && host !== "[::1]") return false;
+      // wrangler dev serves Worker APIs + assets together. Other local ports
+      // (e.g. python http.server on 8080) have no /api and must use production.
+      var port = String((global.location && global.location.port) || "");
+      return port === "8787";
     } catch (_) {
       return false;
     }
@@ -129,6 +133,224 @@
       return false;
     }
   }
+
+  /**
+   * Coarse OS / version / browser / RAM / cores / arch for presence stats.
+   * Independent of Sentry consent. Never stores the raw user-agent string.
+   */
+  var cachedPlatform = detectOsFromUa();
+  cachedPlatform.arch = detectArchFromUa();
+  cachedPlatform.browser = detectBrowserFromUa();
+
+  function detectArchFromUa(uaRaw) {
+    var ua = "";
+    try {
+      ua = String(uaRaw || (global.navigator && global.navigator.userAgent) || "");
+    } catch (_) {
+      ua = "";
+    }
+    if (/aarch64|arm64/i.test(ua)) return "arm64";
+    if (/\barm\b/i.test(ua)) return "arm";
+    if (/Win64|x86_64|amd64|\bx64\b/i.test(ua)) return "x64";
+    if (/WOW64|Win32|i686|i386|\bx86\b/i.test(ua)) return "x86";
+    return "unknown";
+  }
+
+  function browserFromBrands(brands) {
+    var names = [];
+    try {
+      (brands || []).forEach(function (b) {
+        names.push(String((b && b.brand) || "").toLowerCase());
+      });
+    } catch (_) {}
+    function has(part) {
+      return names.some(function (n) {
+        return n.indexOf(part) >= 0;
+      });
+    }
+    if (has("brave")) return "brave";
+    if (has("edge")) return "edge";
+    if (has("opera")) return "opera";
+    if (has("samsung")) return "samsung";
+    if (has("firefox")) return "firefox";
+    if (has("google chrome")) return "chrome";
+    if (has("safari") && !has("chrome") && !has("chromium")) return "safari";
+    if (has("chrome") || has("chromium")) return "chrome";
+    return "";
+  }
+
+  function detectBrowserFromUa(uaRaw) {
+    try {
+      if (global.navigator && global.navigator.brave) return "brave";
+    } catch (_) {}
+    try {
+      var uad = global.navigator && global.navigator.userAgentData;
+      var fromBrands = browserFromBrands(uad && uad.brands);
+      if (fromBrands) return fromBrands;
+    } catch (_) {}
+    var ua = "";
+    try {
+      ua = String(uaRaw || (global.navigator && global.navigator.userAgent) || "");
+    } catch (_) {
+      ua = "";
+    }
+    if (/Edg(?:e|A|iOS)?\/|EdgiOS/i.test(ua)) return "edge";
+    if (/\bOPR\/|\bOpera\b|\bOPiOS\//i.test(ua)) return "opera";
+    if (/SamsungBrowser/i.test(ua)) return "samsung";
+    if (/\bFirefox\/|\bFxiOS\//i.test(ua)) return "firefox";
+    if (/\bCriOS\/|\bChrome\/|\bChromium\//i.test(ua)) return "chrome";
+    if (/\bSafari\//i.test(ua) && /\bVersion\//i.test(ua)) return "safari";
+    return "other";
+  }
+
+  function detectHardware() {
+    var ram = "unknown";
+    try {
+      var dm = Number(global.navigator && global.navigator.deviceMemory);
+      if (Number.isFinite(dm) && dm > 0) {
+        // Chrome 147+ desktop reports 2/4/8/16/32 (32 is the top bucket). Older
+        // Chrome capped at 8. Do not collapse 16/32 into 8.
+        if (dm >= 32) ram = "32gb+";
+        else if (dm >= 16) ram = "16gb";
+        else if (dm >= 8) ram = "8gb";
+        else if (dm >= 4) ram = "4gb";
+        else if (dm >= 2) ram = "2gb";
+        else if (dm >= 1) ram = "1gb";
+        else ram = "under_1gb";
+      }
+    } catch (_) {}
+    var cores = "unknown";
+    try {
+      var c = Number(global.navigator && global.navigator.hardwareConcurrency);
+      if (Number.isFinite(c) && c >= 1) cores = String(Math.min(128, Math.round(c)));
+    } catch (_) {}
+    return {
+      ram: ram,
+      cores: cores,
+      arch: cachedPlatform.arch || detectArchFromUa() || "unknown",
+    };
+  }
+
+  function detectOsFromUa(uaRaw) {
+    var ua = "";
+    try {
+      ua = String(uaRaw || (global.navigator && global.navigator.userAgent) || "");
+    } catch (_) {
+      ua = "";
+    }
+    var maxTouch = 0;
+    try {
+      maxTouch = Number((global.navigator && global.navigator.maxTouchPoints) || 0);
+    } catch (_) {}
+
+    if (/\bAndroid\b/i.test(ua)) {
+      var android = ua.match(/Android[ \/](\d+(?:\.\d+)?)/i);
+      return { os: "android", osVersion: android ? android[1] : "unknown" };
+    }
+    var iosToken = /\b(?:iPhone|iPad|iPod)\b/i.test(ua);
+    var ipadOsDesktopUa = /\bMacintosh\b/i.test(ua) && maxTouch > 1;
+    if (iosToken || ipadOsDesktopUa) {
+      var ios = ua.match(/\bOS (\d+)[_.](\d+)/i);
+      return { os: "ios", osVersion: ios ? ios[1] + "." + ios[2] : "unknown" };
+    }
+    if (/\bCrOS\b/i.test(ua)) {
+      var cros = ua.match(/CrOS [^\s]+ (\d+(?:\.\d+)?)/i);
+      return { os: "chromeos", osVersion: cros ? cros[1] : "unknown" };
+    }
+    if (/\bWindows\b/i.test(ua)) {
+      var win = "unknown";
+      if (/Windows NT 10\.0/i.test(ua)) win = "10";
+      else if (/Windows NT 6\.3/i.test(ua)) win = "8.1";
+      else if (/Windows NT 6\.2/i.test(ua)) win = "8";
+      else if (/Windows NT 6\.1/i.test(ua)) win = "7";
+      else {
+        var wm = ua.match(/Windows NT (\d+\.\d+)/i);
+        if (wm) win = wm[1];
+      }
+      return { os: "windows", osVersion: win };
+    }
+    if (/\bMac OS X\b/i.test(ua) || /\bMacintosh\b/i.test(ua)) {
+      var mac = ua.match(/Mac OS X (\d+)[_.](\d+)/i);
+      return { os: "macos", osVersion: mac ? mac[1] + "." + mac[2] : "unknown" };
+    }
+    if (/\bLinux\b/i.test(ua)) {
+      return { os: "linux", osVersion: "unknown" };
+    }
+    return { os: "other", osVersion: "unknown" };
+  }
+
+  function applyClientHints(base, hints) {
+    var out = {
+      os: (base && base.os) || "other",
+      osVersion: (base && base.osVersion) || "unknown",
+      arch: (base && base.arch) || "unknown",
+      browser: (base && base.browser) || "other",
+    };
+    if (!hints) return out;
+    var platform = String(hints.platform || "").toLowerCase();
+    var pv = String(hints.platformVersion || "").trim();
+    var major = parseInt(String(pv.split(".")[0] || ""), 10);
+    if (platform === "windows" || out.os === "windows") {
+      out.os = "windows";
+      if (Number.isFinite(major)) {
+        if (major >= 13) out.osVersion = "11";
+        else if (major === 10) out.osVersion = "10";
+        else if (major > 0) out.osVersion = String(major);
+      }
+    } else if (platform === "macos" || platform === "mac os") {
+      out.os = "macos";
+      if (pv) out.osVersion = pv.split(".").slice(0, 2).join(".");
+    } else if (platform === "chrome os") {
+      out.os = "chromeos";
+      if (pv) out.osVersion = pv.split(".").slice(0, 2).join(".");
+    } else if (platform === "linux" && out.os !== "android") {
+      out.os = "linux";
+      if (pv && pv !== "0.0.0") out.osVersion = String(major || pv.split(".")[0] || "unknown");
+    }
+    var a = String((hints && hints.architecture) || "").toLowerCase();
+    var b = String((hints && hints.bitness) || "");
+    if (a === "arm" && b === "64") out.arch = "arm64";
+    else if (a === "arm") out.arch = b === "32" ? "arm" : "arm64";
+    else if (a === "x86" && b === "64") out.arch = "x64";
+    else if (a === "x86") out.arch = "x86";
+    var brandList = (hints && (hints.fullVersionList || hints.brands)) || [];
+    var hinted = browserFromBrands(brandList);
+    if (hinted) out.browser = hinted;
+    return out;
+  }
+
+  function refreshPlatformFromHints() {
+    try {
+      var uad = global.navigator && global.navigator.userAgentData;
+      if (!uad) return;
+      try {
+        if (uad.platform) {
+          cachedPlatform = applyClientHints(cachedPlatform, { platform: uad.platform });
+        }
+      } catch (_) {}
+      if (typeof uad.getHighEntropyValues !== "function") return;
+      uad
+        .getHighEntropyValues(["platform", "platformVersion", "architecture", "bitness", "fullVersionList"])
+        .then(function (hints) {
+          cachedPlatform = applyClientHints(cachedPlatform, hints || {});
+        })
+        .catch(function () {});
+    } catch (_) {}
+  }
+
+  function getPlatformInfo() {
+    var hw = detectHardware();
+    return {
+      os: cachedPlatform.os || "other",
+      osVersion: cachedPlatform.osVersion || "unknown",
+      browser: cachedPlatform.browser || detectBrowserFromUa() || "other",
+      ram: hw.ram,
+      cores: hw.cores,
+      arch: cachedPlatform.arch || hw.arch || "unknown",
+    };
+  }
+
+  refreshPlatformFromHints();
 
   /** Match workers/site.js normalizeUrl — used for link_clicks doc ids. */
   function normalizeClickUrl(raw) {
@@ -304,7 +526,7 @@
       return fetch(url, opts).then(function (res) {
         // HTML error pages / opaque proxy failures → treat as soft failure for retry.
         var ct = String(res.headers && res.headers.get && res.headers.get("content-type") || "");
-        if (!res.ok && res.status >= 500) {
+        if (!res.ok && (res.status >= 500 || res.status === 404 || res.status === 405 || res.status === 501)) {
           var err = new Error("http_" + res.status);
           err.response = res;
           throw err;
@@ -348,6 +570,15 @@
       anonymous: !!opts.anonymous,
       displayName: opts.displayName ? String(opts.displayName).slice(0, 32) : "",
     };
+    if (hardwareSurveyEnabled()) {
+      var platform = getPlatformInfo();
+      body.os = platform.os;
+      body.osVersion = platform.osVersion;
+      body.browser = platform.browser;
+      body.ram = platform.ram;
+      body.cores = platform.cores;
+      body.arch = platform.arch;
+    }
 
     // keepalive POSTs often 404/fail under Scramjet/Ultraviolet; skip when proxied.
     var useKeepalive = !looksLikeWebProxy();
@@ -431,11 +662,227 @@
     return resolveApiUrl(path);
   }
 
+  var HW_CONSENT_KEY = "proxyList_hardwareConsent_v1";
+  var HW_DIALOG_ID = "proxyListHardwareConsentBackdrop";
+  var HW_STYLE_ID = "proxyListHardwareConsentStyles";
+
+  function readHardwareConsent() {
+    try {
+      var v = String(global.localStorage.getItem(HW_CONSENT_KEY) || "");
+      if (v === "enabled" || v === "disabled") return v;
+    } catch (_) {}
+    return "";
+  }
+
+  function writeHardwareConsent(value) {
+    try {
+      global.localStorage.setItem(HW_CONSENT_KEY, value);
+    } catch (_) {}
+  }
+
+  function hardwareSurveyEnabled() {
+    return readHardwareConsent() === "enabled";
+  }
+
+  function hardwareHasChoice() {
+    var v = readHardwareConsent();
+    return v === "enabled" || v === "disabled";
+  }
+
+  function emitHardwareConsent(value) {
+    try {
+      global.dispatchEvent(new CustomEvent("proxy-list-hardware-consent", { detail: { value: value } }));
+    } catch (_) {}
+  }
+
+  function isEmbedMode() {
+    try {
+      if (document.documentElement.classList.contains("embed-mode")) return true;
+      var params = new URLSearchParams(location.search || "");
+      if (params.get("embed") === "1" || params.get("embed") === "true") return true;
+    } catch (_) {}
+    return false;
+  }
+
+  function sentryConsentStillPending() {
+    try {
+      if (global.ProxyListSentry && typeof global.ProxyListSentry.hasChoice === "function") {
+        return !global.ProxyListSentry.hasChoice();
+      }
+    } catch (_) {}
+    return false;
+  }
+
+  function statsUsersHref() {
+    var prefix = nestedDocsRelativePrefix();
+    if (prefix === ".") return "stats/#users";
+    return prefix + "/stats/#users";
+  }
+
+  function hideHardwareDialog() {
+    var el = document.getElementById(HW_DIALOG_ID);
+    if (el && el.parentNode) el.parentNode.removeChild(el);
+  }
+
+  function ensureHardwareStyles() {
+    if (document.getElementById(HW_STYLE_ID)) return;
+    var css = document.createElement("style");
+    css.id = HW_STYLE_ID;
+    css.textContent =
+      "#" + HW_DIALOG_ID + "{" +
+        "position:fixed;inset:0;z-index:81;display:flex;align-items:center;justify-content:center;" +
+        "padding:1rem;background:rgba(7,10,14,.72);" +
+      "}" +
+      "#" + HW_DIALOG_ID + " .pl-hw-modal{" +
+        "width:min(560px,100%);max-height:92vh;overflow:auto;display:flex;flex-direction:column;" +
+        "background:var(--surface,#141414);color:var(--text,#e8e8e8);" +
+        "border:1px solid var(--border,#2e2e2e);border-radius:10px;" +
+        "box-shadow:0 16px 36px rgba(0,0,0,.45);" +
+      "}" +
+      "#" + HW_DIALOG_ID + " .pl-hw-head{" +
+        "padding:.9rem 1rem;border-bottom:1px solid var(--border,#2e2e2e);flex-shrink:0;" +
+      "}" +
+      "#" + HW_DIALOG_ID + " .pl-hw-title{font-size:1rem;margin:0;font-weight:650;}" +
+      "#" + HW_DIALOG_ID + " .pl-hw-body{padding:.9rem 1rem 1.05rem;display:flex;flex-direction:column;gap:.75rem;}" +
+      "#" + HW_DIALOG_ID + " .pl-hw-body p{margin:0;color:var(--muted,#9a9a9a);line-height:1.55;font-size:.92rem;}" +
+      "#" + HW_DIALOG_ID + " .pl-hw-body a{color:var(--accent,#6cb3ff);}" +
+      "#" + HW_DIALOG_ID + " .pl-hw-actions{display:flex;flex-wrap:wrap;gap:.45rem;margin-top:.2rem;}" +
+      "#" + HW_DIALOG_ID + " .pl-hw-btn{" +
+        "display:inline-flex;align-items:center;justify-content:center;padding:.38rem .7rem;" +
+        "font-family:inherit;font-size:.82rem;font-weight:500;border-radius:6px;cursor:pointer;" +
+        "border:1px solid var(--border,#2e2e2e);background:var(--surface,#1a1a1a);color:var(--text,#e8e8e8);" +
+      "}" +
+      "#" + HW_DIALOG_ID + " .pl-hw-btn:hover{border-color:var(--accent,#6cb3ff);color:var(--accent,#6cb3ff);}" +
+      "#" + HW_DIALOG_ID + " .pl-hw-btn-primary{" +
+        "background:#2a2a2a;border-color:#2d5588;color:var(--accent,#6cb3ff);" +
+      "}" +
+      "#" + HW_DIALOG_ID + " .pl-hw-btn-primary:hover{background:#333;color:#9fd4ff;}";
+    (document.head || document.documentElement).appendChild(css);
+  }
+
+  function setHardwareConsent(value) {
+    var next = value === "enabled" ? "enabled" : "disabled";
+    writeHardwareConsent(next);
+    hideHardwareDialog();
+    emitHardwareConsent(next);
+    if (next === "enabled") {
+      try {
+        ping({ force: true, anonymous: true });
+      } catch (_) {}
+    }
+    return next;
+  }
+
+  function showHardwareDialog() {
+    if (hardwareHasChoice() || isEmbedMode()) return;
+    if (document.getElementById(HW_DIALOG_ID)) return;
+    ensureHardwareStyles();
+    var backdrop = document.createElement("div");
+    backdrop.id = HW_DIALOG_ID;
+    backdrop.setAttribute("role", "dialog");
+    backdrop.setAttribute("aria-modal", "true");
+    backdrop.setAttribute("aria-labelledby", "proxyListHardwareConsentTitle");
+
+    var modal = document.createElement("section");
+    modal.className = "pl-hw-modal";
+
+    var head = document.createElement("div");
+    head.className = "pl-hw-head";
+    var title = document.createElement("h2");
+    title.className = "pl-hw-title";
+    title.id = "proxyListHardwareConsentTitle";
+    title.textContent = "Hardware Survey";
+    head.appendChild(title);
+
+    var body = document.createElement("div");
+    body.className = "pl-hw-body";
+
+    var p1 = document.createElement("p");
+    p1.textContent =
+      "The Hardware Survey collects basic, non-identifiable info about your device and displays it publicly. Info that is collected is your operating system, operating system version, browser, estimated RAM capacity, estimated CPU cores, and CPU architecture. We use this data to know what types of devices our userbase is accessing the site on and lets us know how the site should be optimized to ensure the best experience for all of our users.";
+
+    var p2 = document.createElement("p");
+    p2.appendChild(
+      document.createTextNode(
+        "This is optional and not at all required, it just helps make development easier and improves the experience for everyone. You can see public statistics for all users at "
+      )
+    );
+    var statsLink = document.createElement("a");
+    statsLink.href = statsUsersHref();
+    statsLink.textContent = "Statistics > Users";
+    p2.appendChild(statsLink);
+    p2.appendChild(document.createTextNode(" and scrolling down to find them."));
+
+    var p3 = document.createElement("p");
+    p3.textContent = "This setting can be changed at any time in Settings.";
+
+    var actions = document.createElement("div");
+    actions.className = "pl-hw-actions";
+
+    var enableBtn = document.createElement("button");
+    enableBtn.type = "button";
+    enableBtn.className = "pl-hw-btn pl-hw-btn-primary";
+    enableBtn.textContent = "Opt-into collection of hardware data";
+    enableBtn.addEventListener("click", function () {
+      setHardwareConsent("enabled");
+    });
+
+    var disableBtn = document.createElement("button");
+    disableBtn.type = "button";
+    disableBtn.className = "pl-hw-btn";
+    disableBtn.textContent = "Opt-out";
+    disableBtn.addEventListener("click", function () {
+      setHardwareConsent("disabled");
+    });
+
+    actions.appendChild(enableBtn);
+    actions.appendChild(disableBtn);
+    body.appendChild(p1);
+    body.appendChild(p2);
+    body.appendChild(p3);
+    body.appendChild(actions);
+    modal.appendChild(head);
+    modal.appendChild(body);
+    backdrop.appendChild(modal);
+    (document.body || document.documentElement).appendChild(backdrop);
+    try {
+      enableBtn.focus();
+    } catch (_) {}
+  }
+
+  function maybeShowHardwareDialog() {
+    if (hardwareHasChoice() || isEmbedMode()) return;
+    if (sentryConsentStillPending()) {
+      if (global.__proxyListHardwareWaitingOnSentry) return;
+      global.__proxyListHardwareWaitingOnSentry = true;
+      global.addEventListener("proxy-list-sentry-consent", function onSentryForHardware() {
+        global.removeEventListener("proxy-list-sentry-consent", onSentryForHardware);
+        global.__proxyListHardwareWaitingOnSentry = false;
+        maybeShowHardwareDialog();
+      });
+      return;
+    }
+    showHardwareDialog();
+  }
+
+  function onHardwareReady(fn) {
+    if (document.body) {
+      fn();
+      return;
+    }
+    if (document.readyState === "loading") {
+      document.addEventListener("DOMContentLoaded", fn);
+      return;
+    }
+    fn();
+  }
+
   global.ProxyListPresence = {
     ping: ping,
     fetchActiveCount: fetchActiveCount,
     startActiveCountPolling: startActiveCountPolling,
     getSessionId: getSessionId,
+    getPlatformInfo: getPlatformInfo,
     apiUrl: apiUrl,
     looksLikeWebProxy: looksLikeWebProxy,
     normalizeClickUrl: normalizeClickUrl,
@@ -443,4 +890,15 @@
     clickUrlVariants: clickUrlVariants,
     DEFAULT_WORKER_ORIGIN: DEFAULT_WORKER_ORIGIN,
   };
+
+  global.ProxyListHardware = {
+    CONSENT_KEY: HW_CONSENT_KEY,
+    hasChoice: hardwareHasChoice,
+    getConsent: readHardwareConsent,
+    setConsent: setHardwareConsent,
+  };
+
+  if (!hardwareHasChoice() && !isEmbedMode()) {
+    onHardwareReady(maybeShowHardwareDialog);
+  }
 })(typeof window !== "undefined" ? window : globalThis);

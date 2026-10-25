@@ -15,13 +15,10 @@
    (ratings show 0/0 on the Worker host until the referrer is allowed, though the
    Worker also exposes POST /api/link-ratings/get as a read fallback).
 
-   For "Most opened", deploy docs/firestore.rules (client writes to link_clicks are denied).
-   Statistics provider open-over-time charts read click_daily/{yyyy-mm-dd} (Worker writes counts.{hash}).
-   Clicks go through the Cloudflare Worker at POST /api/link-click with a per-IP rate limit
-   (40/hour). Set Worker secrets for Firestore admin writes:
-     FIREBASE_PROJECT_ID, FIREBASE_CLIENT_EMAIL, FIREBASE_PRIVATE_KEY
-   (service account with Cloud Datastore User). Without secrets, the Worker still rate-limits
-   and stores edge counters (Cloudflare-only) — presence/stats will NOT update in Firestore.
+   Lifetime clicks, community ratings, and click rollups live in Cloudflare D1
+   (STATS_STORE=d1). The Worker serves POST /api/link-click, /api/link-clicks/get,
+   /api/link-ratings/get, POST /api/link-rating, /api/top-opens, and /api/click-stats/*.
+   Auth, saved folders, submissions, and presence still use Firebase.
 
    GitHub Pages hosts the static site; the Worker lives at
    https://proxy-list.jasonthegamer48.workers.dev
@@ -42,11 +39,12 @@
    - users/{uid} profile writes require non-anonymous auth and field size limits.
    - In Firestore, create document config/submissions with field adminUids (array of Firebase Auth UIDs
      for accounts that may approve/reject/ban). Example: { "adminUids": ["abc123uid"] }.
-   - Set window.__SUBMISSION_ADMIN_GITHUB__ in this file for GitHub admins (UI access).
-   - Both the GitHub username AND adminUids entry are required for full admin actions.
+   - Admin UI access is decided by GET /api/admin/me on the Worker (SUBMISSION_ADMIN_UIDS secret),
+     not by a client-side UID/GitHub list. Firestore rules remain the write gate.
 
    Enable Authentication → Sign-in method → Anonymous, GitHub (OAuth app in Firebase Console),
-   Google, and Email/Password.
+   Google, and Email/Password. For authenticator 2FA, upgrade to Identity Platform and enable
+   TOTP multi-factor (Authentication → Sign-in method → Advanced → Multi-factor).
 
    Mobile / in-app browsers block third-party cookies, so signInWithRedirect cannot finish when
    authDomain is *.firebaseapp.com while the site is on GitHub Pages. The login page bridges
@@ -77,6 +75,7 @@
        }
      }
    } */
+/** Public Firebase web config (API key is a client identifier, not a secret). */
 window.__FIREBASE_CONFIG__ = {
   apiKey: "AIzaSyBPXPOxZeezDBn2YtgzTsj-Dxje62lYYOQ",
   authDomain: "proxy-list-c06ea.firebaseapp.com",
@@ -87,9 +86,3 @@ window.__FIREBASE_CONFIG__ = {
   appId: "1:31862303655:web:d3e93df7a86ce31cf1e482",
   measurementId: "G-P51BKTLW18",
 };
-
-/** GitHub usernames allowed to open docs/admin/submissions.html (UI gate). */
-window.__SUBMISSION_ADMIN_GITHUB__ = ["yourworstnightmare1"];
-
-/** Firebase Auth UIDs with Firestore write access for submissions (must match config/submissions.adminUids). */
-window.__SUBMISSION_ADMIN_UIDS__ = ["OiMY32eTKcSnEX73W6oBUKgT6pG3"];

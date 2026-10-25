@@ -11,7 +11,7 @@
  * Usage:
  *   node scripts/migrate_firestore_stats_to_d1.mjs
  *   node scripts/migrate_firestore_stats_to_d1.mjs --dry-run
- *   node scripts/migrate_firestore_stats_to_d1.mjs --db proxy-list-stats-preview
+ *   node scripts/migrate_firestore_stats_to_d1.mjs --db proxy-list-stats
  *   node scripts/migrate_firestore_stats_to_d1.mjs --api https://proxy-list.jasonthegamer48.workers.dev
  */
 import { spawnSync } from "node:child_process";
@@ -24,7 +24,7 @@ const __dirname = dirname(fileURLToPath(import.meta.url));
 const ROOT = join(__dirname, "..");
 const OUT_DIR = join(__dirname, "_migrate_out");
 const PROJECT = process.env.FIREBASE_PROJECT_ID || "proxy-list-c06ea";
-const DB_NAME = argValue("--db") || "proxy-list-stats-preview";
+const DB_NAME = argValue("--db") || "proxy-list-stats";
 const API_BASE = (argValue("--api") || "https://proxy-list.jasonthegamer48.workers.dev").replace(
   /\/+$/,
   ""

@@ -381,15 +381,21 @@
     return DEFAULT_CDN;
   }
 
+  function httpError(status, url) {
+    var err = new Error("HTTP " + status + " for " + url);
+    err.status = status;
+    return err;
+  }
+
   async function fetchText(url) {
     var res = await fetch(url, { mode: "cors", credentials: "omit" });
-    if (!res.ok) throw new Error("HTTP " + res.status + " for " + url);
+    if (!res.ok) throw httpError(res.status, url);
     return res.text();
   }
 
   async function fetchJson(url) {
     var res = await fetch(url, { mode: "cors", credentials: "omit" });
-    if (!res.ok) throw new Error("HTTP " + res.status + " for " + url);
+    if (!res.ok) throw httpError(res.status, url);
     return res.json();
   }
 
@@ -406,6 +412,7 @@
         return data;
       } catch (err) {
         errors.push(String(err && err.message ? err.message : err));
+        if (err && err.status === 404) break;
       }
     }
     throw new Error(errors.join("; ") || "All CDN fetches failed");
@@ -424,6 +431,7 @@
         return text;
       } catch (err) {
         errors.push(String(err && err.message ? err.message : err));
+        if (err && err.status === 404) break;
       }
     }
     throw new Error(errors.join("; ") || "All CDN fetches failed");
@@ -469,24 +477,33 @@
     );
   }
 
-  async function loadNoah() {
-    try {
-      var d = await fetchViaCdns("/gh/NoahsAmazingTutoringHelp/Noahs-Calculus-Tutor@master/games.json");
-      var rows = Array.isArray(d) ? d : d && Array.isArray(d.games) ? d.games : [];
-      var names = uniqueNames(
-        rows.map(function (g) {
-          return g.title || g.name;
-        })
-      );
-      if (names.length) return names;
-    } catch (_) {}
+  var NOAH_GAMES_JS_URLS = [
+    "https://noahs-calculus-tutor.pages.dev/js/games.js",
+  ];
+  var NOAH_ASSET_ORIGIN = "https://noahs-calculus-tutor.pages.dev";
 
-    var text = await fetchTextViaCdns("/gh/NoahsAmazingTutoringHelp/Noahs-Calculus-Tutor@master/games.js");
-    var names = [];
-    var re = /title:\s*["'](.+?)["']/g;
-    var m;
-    while ((m = re.exec(text))) names.push(m[1]);
-    return uniqueNames(names);
+  async function loadNoah() {
+    var i;
+    for (i = 0; i < NOAH_GAMES_JS_URLS.length; i++) {
+      try {
+        var text = await fetchText(NOAH_GAMES_JS_URLS[i]);
+        var rows = [];
+        var re = /\{\s*title:\s*["']([^"']+)["'][\s\S]*?image:\s*["']([^"']+)["']/g;
+        var m;
+        while ((m = re.exec(text))) {
+          rows.push({
+            title: m[1],
+            image: resolveAssetUrl(m[2], NOAH_ASSET_ORIGIN),
+          });
+        }
+        if (!rows.length) {
+          re = /title:\s*["']([^"']+)["']/g;
+          while ((m = re.exec(text))) rows.push({ title: m[1] });
+        }
+        if (rows.length) return rows;
+      } catch (_) {}
+    }
+    return [];
   }
 
   async function loadElite() {

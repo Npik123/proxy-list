@@ -23,15 +23,17 @@
   ],
   "vars": {
     "ENVIRONMENT": "production",
-    "FIREBASE_PROJECT_ID_PUBLIC": "proxy-list-c06ea"
+    "FIREBASE_PROJECT_ID_PUBLIC": "proxy-list-c06ea",
+    "FIREBASE_WEB_API_KEY": "AIzaSyBPXPOxZeezDBn2YtgzTsj-Dxje62lYYOQ",
+    // Lifetime clicks, ratings, and click rollups live in D1 (not Firestore).
+    "STATS_STORE": "d1"
   },
-  // Bound for wrangler d1 CLI / future cutover. Production code only uses D1 when
-  // STATS_STORE=d1 (set under previews below). Auth + saved folders stay on Firebase.
+  // Auth, saved folders, submissions, and presence stay on Firebase.
   "d1_databases": [
     {
       "binding": "DB",
-      "database_name": "proxy-list-stats-preview",
-      "database_id": "81a9f279-4608-4901-af44-09cc806357cb",
+      "database_name": "proxy-list-stats",
+      "database_id": "4e86662e-cfbf-4ead-b654-de02c878ae8f",
       "migrations_dir": "migrations"
     }
   ],

@@ -41,6 +41,8 @@
     presenceDaily: null,
     presenceMonthly: null,
     presenceYearly: null,
+    presenceOs: null,
+    presenceHardware: null,
     clickMonthly: null,
     clickYearly: null,
     usersSpan: "7d",
@@ -68,7 +70,7 @@
     users: {
       title: "Users",
       sub:
-        "Active visitors over time from presence heartbeats, busiest UTC hours, and monthly uniques.",
+        "Active visitors over time from presence heartbeats, busiest UTC hours, monthly uniques, and operating systems.",
     },
     games: {
       title: "Game databases",
@@ -104,6 +106,15 @@
 
   function normalizeUrlKey(u) {
     return normalizeUrlForHash(u);
+  }
+
+  function statsApiUrl(path) {
+    try {
+      if (typeof window.ProxyListPresence !== "undefined" && typeof window.ProxyListPresence.apiUrl === "function") {
+        return window.ProxyListPresence.apiUrl(path);
+      }
+    } catch (_) {}
+    return "../" + String(path || "").replace(/^\//, "");
   }
 
   /** Match Worker normalizeUrl used for link_clicks / click_daily doc ids. */
@@ -1196,12 +1207,6 @@
   }
 
   async function loadAndRenderOpenArchives(db) {
-    if (!db) {
-      state.clickMonthly = [];
-      state.clickYearly = [];
-      renderOpenArchiveCharts();
-      return;
-    }
     try {
       await Promise.all([loadClickMonthly(db), loadClickYearly(db)]);
       renderOpenArchiveCharts();
@@ -1957,6 +1962,29 @@
   async function loadDailyClickDocs(db) {
     if (state.dailyCache) return state.dailyCache;
     var days = utcDayIds(DAILY_LOOKBACK_DAYS);
+    try {
+      var res = await fetch(statsApiUrl("/api/click-stats/daily?days=" + DAILY_LOOKBACK_DAYS), { mode: "cors" });
+      if (res.ok) {
+        var payload = await res.json();
+        if (payload && payload.ok && payload.via === "d1" && Array.isArray(payload.days)) {
+          var byDate = {};
+          payload.days.forEach(function (row) {
+            if (row && row.date) byDate[row.date] = Number(row.total) || 0;
+          });
+          state.dailyVia = "d1";
+          state.dailyCache = days.map(function (date) {
+            return { date: date, counts: {}, total: byDate[date] || 0 };
+          });
+          return state.dailyCache;
+        }
+      }
+    } catch (_) {}
+    if (!db) {
+      state.dailyCache = days.map(function (date) {
+        return { date: date, counts: {}, total: 0 };
+      });
+      return state.dailyCache;
+    }
     var snaps = [];
     for (var i = 0; i < days.length; i += 8) {
       var part = days.slice(i, i + 8);
@@ -1978,10 +2006,39 @@
     return state.dailyCache;
   }
 
+  async function loadDailyClickDocsForHashes(hashes) {
+    var days = utcDayIds(DAILY_LOOKBACK_DAYS);
+    if (!hashes.length) {
+      return days.map(function (date) {
+        return { date: date, counts: {} };
+      });
+    }
+    try {
+      var res = await fetch(statsApiUrl("/api/click-stats/daily"), {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ hashes: hashes, days: DAILY_LOOKBACK_DAYS }),
+        mode: "cors",
+      });
+      if (res.ok) {
+        var payload = await res.json();
+        if (payload && payload.ok && payload.via === "d1" && Array.isArray(payload.days)) {
+          return payload.days.map(function (row) {
+            return {
+              date: row && row.date ? row.date : "",
+              counts: row && row.counts && typeof row.counts === "object" ? row.counts : {},
+            };
+          });
+        }
+      }
+    } catch (_) {}
+    return loadDailyClickDocs(state.db);
+  }
+
   async function lifetimeOpensForHashes(db, hashes) {
     if (!hashes.length) return 0;
     var hashSet = new Set(hashes);
-    var daily = await loadDailyClickDocs(db);
+    var daily = await loadDailyClickDocsForHashes(hashes);
     var total = 0;
     daily.forEach(function (day) {
       Object.keys(day.counts || {}).forEach(function (h) {
@@ -2055,27 +2112,25 @@
     var openLabels = [];
     var openValues = [];
     var openTimes = [];
-    if (state.db) {
-      try {
-        opensTotal = await lifetimeOpensForHashes(state.db, hashes);
-        var daily = await loadDailyClickDocs(state.db);
-        daily.forEach(function (day) {
-          var sum = 0;
-          Object.keys(day.counts || {}).forEach(function (h) {
-            if (!hashSet.has(h)) return;
-            var n = Number(day.counts[h]);
-            if (Number.isFinite(n)) sum += n;
-          });
-          openLabels.push(day.date.slice(5));
-          openValues.push(sum);
-          var ts = Date.parse(day.date + "T00:00:00Z");
-          openTimes.push(Number.isFinite(ts) ? ts : null);
+    try {
+      opensTotal = await lifetimeOpensForHashes(state.db, hashes);
+      var daily = await loadDailyClickDocsForHashes(hashes);
+      daily.forEach(function (day) {
+        var sum = 0;
+        Object.keys(day.counts || {}).forEach(function (h) {
+          if (!hashSet.has(h)) return;
+          var n = Number(day.counts[h]);
+          if (Number.isFinite(n)) sum += n;
         });
-      } catch (err) {
-        console.warn("[stats] provider opens failed", err);
-      }
+        openLabels.push(day.date.slice(5));
+        openValues.push(sum);
+        var ts = Date.parse(day.date + "T00:00:00Z");
+        openTimes.push(Number.isFinite(ts) ? ts : null);
+      });
+    } catch (err) {
+      console.warn("[stats] provider opens failed", err);
     }
-    setText("detailOpens", state.db ? formatInt(opensTotal) : "—");
+    setText("detailOpens", formatInt(opensTotal));
     state.providerOpensSeries = {
       labels: openLabels,
       values: openValues,
@@ -2315,20 +2370,7 @@
         }
       }
     } catch (_) {}
-    // Empty Worker answer = its Firestore read failed (usually quota); only query
-    // directly when the Worker itself is unreachable.
-    if (!db || workerAnswered) return [];
-    var snap = await db.collection("link_clicks").orderBy("count", "desc").limit(cap).get();
-    return snap.docs
-      .map(function (doc) {
-        var d = doc.data() || {};
-        var url = d.url != null ? String(d.url).trim() : "";
-        var count = Number(d.count);
-        return { url: url, count: Number.isFinite(count) ? count : 0 };
-      })
-      .filter(function (x) {
-        return x.url && x.count > 0;
-      });
+    return [];
   }
 
   function utcMonthIds(lookback) {
@@ -2353,6 +2395,31 @@
   async function loadClickMonthly(db) {
     if (state.clickMonthly) return state.clickMonthly;
     var months = utcMonthIds(CLICK_MONTHLY_LOOKBACK);
+    try {
+      var res = await fetch(
+        statsApiUrl("/api/click-stats/period?kind=month&lookback=" + CLICK_MONTHLY_LOOKBACK),
+        { mode: "cors" }
+      );
+      if (res.ok) {
+        var payload = await res.json();
+        if (payload && payload.ok && payload.via === "d1" && Array.isArray(payload.periods)) {
+          var byPeriod = {};
+          payload.periods.forEach(function (row) {
+            if (row && row.period) byPeriod[row.period] = Number(row.total) || 0;
+          });
+          state.clickMonthly = months.map(function (month) {
+            return { month: month, total: byPeriod[month] || 0 };
+          });
+          return state.clickMonthly;
+        }
+      }
+    } catch (_) {}
+    if (!db) {
+      state.clickMonthly = months.map(function (month) {
+        return { month: month, total: 0 };
+      });
+      return state.clickMonthly;
+    }
     var snaps = await Promise.all(
       months.map(function (month) {
         return db.collection("click_monthly").doc(month).get();
@@ -2368,6 +2435,31 @@
   async function loadClickYearly(db) {
     if (state.clickYearly) return state.clickYearly;
     var years = utcYearIds(CLICK_YEARLY_LOOKBACK);
+    try {
+      var res = await fetch(
+        statsApiUrl("/api/click-stats/period?kind=year&lookback=" + CLICK_YEARLY_LOOKBACK),
+        { mode: "cors" }
+      );
+      if (res.ok) {
+        var payload = await res.json();
+        if (payload && payload.ok && payload.via === "d1" && Array.isArray(payload.periods)) {
+          var byPeriod = {};
+          payload.periods.forEach(function (row) {
+            if (row && row.period) byPeriod[row.period] = Number(row.total) || 0;
+          });
+          state.clickYearly = years.map(function (year) {
+            return { year: year, total: byPeriod[year] || 0 };
+          });
+          return state.clickYearly;
+        }
+      }
+    } catch (_) {}
+    if (!db) {
+      state.clickYearly = years.map(function (year) {
+        return { year: year, total: 0 };
+      });
+      return state.clickYearly;
+    }
     var snaps = await Promise.all(
       years.map(function (year) {
         return db.collection("click_yearly").doc(year).get();
@@ -2380,21 +2472,107 @@
     return state.clickYearly;
   }
 
+  function mergeHourMaps(a, b) {
+    var out = {};
+    var src;
+    for (src of [a, b]) {
+      if (!src || typeof src !== "object") continue;
+      Object.keys(src).forEach(function (k) {
+        out[k] = Math.max(Number(out[k]) || 0, Number(src[k]) || 0);
+      });
+    }
+    return out;
+  }
+
+  function mergePresenceDayRow(a, b) {
+    var left = a || {};
+    var right = b || {};
+    return {
+      date: left.date || right.date,
+      uniqueVisitors: Math.max(Number(left.uniqueVisitors) || 0, Number(right.uniqueVisitors) || 0),
+      heartbeats: Math.max(Number(left.heartbeats) || 0, Number(right.heartbeats) || 0),
+      signedInUniques: Math.max(Number(left.signedInUniques) || 0, Number(right.signedInUniques) || 0),
+      hourHeartbeats: mergeHourMaps(left.hourHeartbeats, right.hourHeartbeats),
+      hourUniques: mergeHourMaps(left.hourUniques, right.hourUniques),
+    };
+  }
+
+  async function fetchPresenceDailyFromWorker() {
+    try {
+      var res = await fetch(statsApiUrl("/api/presence-stats/daily?days=" + PRESENCE_DAILY_LOOKBACK), {
+        mode: "cors",
+      });
+      if (!res.ok) return null;
+      var payload = await res.json();
+      if (!(payload && payload.ok && payload.via === "d1" && Array.isArray(payload.days))) return null;
+      return payload.days.map(function (row) {
+        return {
+          date: row && row.date ? row.date : "",
+          uniqueVisitors: Number(row && row.uniqueVisitors) || 0,
+          heartbeats: Number(row && row.heartbeats) || 0,
+          signedInUniques: Number(row && row.signedInUniques) || 0,
+          hourHeartbeats: row && row.hourHeartbeats && typeof row.hourHeartbeats === "object" ? row.hourHeartbeats : {},
+          hourUniques: row && row.hourUniques && typeof row.hourUniques === "object" ? row.hourUniques : {},
+        };
+      });
+    } catch (_) {
+      return null;
+    }
+  }
+
+  async function fetchPresencePeriodFromWorker(kind, lookback) {
+    try {
+      var res = await fetch(
+        statsApiUrl("/api/presence-stats/period?kind=" + encodeURIComponent(kind) + "&lookback=" + lookback),
+        { mode: "cors" }
+      );
+      if (!res.ok) return null;
+      var payload = await res.json();
+      if (!(payload && payload.ok && payload.via === "d1" && Array.isArray(payload.periods))) return null;
+      return payload.periods;
+    } catch (_) {
+      return null;
+    }
+  }
+
   async function loadPresenceYearly(db) {
     if (state.presenceYearly) return state.presenceYearly;
     var years = utcYearIds(PRESENCE_YEARLY_LOOKBACK);
-    var snaps = await Promise.all(
-      years.map(function (year) {
-        return db.collection("presence_yearly").doc(year).get();
-      })
-    );
-    state.presenceYearly = snaps.map(function (snap, i) {
-      var data = snap.exists ? snap.data() || {} : {};
-      return {
-        year: years[i],
-        uniqueVisitors: Number(data.uniqueVisitors) || 0,
-        heartbeats: Number(data.heartbeats) || 0,
-      };
+    var fromWorker = await fetchPresencePeriodFromWorker("year", PRESENCE_YEARLY_LOOKBACK);
+    var byYear = {};
+    if (fromWorker) {
+      fromWorker.forEach(function (row) {
+        if (row && row.period) {
+          byYear[row.period] = {
+            uniqueVisitors: Number(row.uniqueVisitors) || 0,
+            heartbeats: Number(row.heartbeats) || 0,
+          };
+        }
+      });
+    }
+    if (db) {
+      try {
+        var snaps = await Promise.all(
+          years.map(function (year) {
+            return db.collection("presence_yearly").doc(year).get();
+          })
+        );
+        snaps.forEach(function (snap, i) {
+          var data = snap.exists ? snap.data() || {} : {};
+          var year = years[i];
+          var prev = byYear[year] || { uniqueVisitors: 0, heartbeats: 0 };
+          byYear[year] = {
+            uniqueVisitors: Math.max(prev.uniqueVisitors, Number(data.uniqueVisitors) || 0),
+            heartbeats: Math.max(prev.heartbeats, Number(data.heartbeats) || 0),
+          };
+        });
+      } catch (err) {
+        console.warn("[stats] presence_yearly Firestore merge skipped", err);
+      }
+    }
+    state.presenceYearly = years.map(function (year) {
+      var rec = byYear[year] || { uniqueVisitors: 0, heartbeats: 0 };
+      return { year: year, uniqueVisitors: rec.uniqueVisitors, heartbeats: rec.heartbeats };
     });
     return state.presenceYearly;
   }
@@ -2411,21 +2589,47 @@
   async function loadPresenceDaily(db) {
     if (state.presenceDaily) return state.presenceDaily;
     var days = utcDayIds(PRESENCE_DAILY_LOOKBACK);
-    var snaps = await Promise.all(
-      days.map(function (day) {
-        return db.collection("presence_daily").doc(day).get();
-      })
-    );
-    state.presenceDaily = snaps.map(function (snap, i) {
-      var data = snap.exists ? snap.data() || {} : {};
-      return {
-        date: days[i],
-        uniqueVisitors: Number(data.uniqueVisitors) || 0,
-        heartbeats: Number(data.heartbeats) || 0,
-        signedInUniques: Number(data.signedInUniques) || 0,
-        hourHeartbeats: data.hourHeartbeats && typeof data.hourHeartbeats === "object" ? data.hourHeartbeats : {},
-        hourUniques: data.hourUniques && typeof data.hourUniques === "object" ? data.hourUniques : {},
-      };
+    var byDate = {};
+    var fromWorker = await fetchPresenceDailyFromWorker();
+    if (fromWorker) {
+      fromWorker.forEach(function (row) {
+        if (row && row.date) byDate[row.date] = row;
+      });
+    }
+    if (db) {
+      try {
+        var snaps = await Promise.all(
+          days.map(function (day) {
+            return db.collection("presence_daily").doc(day).get();
+          })
+        );
+        snaps.forEach(function (snap, i) {
+          var data = snap.exists ? snap.data() || {} : {};
+          var fsRow = {
+            date: days[i],
+            uniqueVisitors: Number(data.uniqueVisitors) || 0,
+            heartbeats: Number(data.heartbeats) || 0,
+            signedInUniques: Number(data.signedInUniques) || 0,
+            hourHeartbeats: data.hourHeartbeats && typeof data.hourHeartbeats === "object" ? data.hourHeartbeats : {},
+            hourUniques: data.hourUniques && typeof data.hourUniques === "object" ? data.hourUniques : {},
+          };
+          byDate[days[i]] = mergePresenceDayRow(byDate[days[i]], fsRow);
+        });
+      } catch (err) {
+        console.warn("[stats] presence_daily Firestore merge skipped", err);
+      }
+    }
+    state.presenceDaily = days.map(function (date) {
+      return (
+        byDate[date] || {
+          date: date,
+          uniqueVisitors: 0,
+          heartbeats: 0,
+          signedInUniques: 0,
+          hourHeartbeats: {},
+          hourUniques: {},
+        }
+      );
     });
     return state.presenceDaily;
   }
@@ -2433,18 +2637,41 @@
   async function loadPresenceMonthly(db) {
     if (state.presenceMonthly) return state.presenceMonthly;
     var months = utcMonthIds(PRESENCE_MONTHLY_LOOKBACK);
-    var snaps = await Promise.all(
-      months.map(function (month) {
-        return db.collection("presence_monthly").doc(month).get();
-      })
-    );
-    state.presenceMonthly = snaps.map(function (snap, i) {
-      var data = snap.exists ? snap.data() || {} : {};
-      return {
-        month: months[i],
-        uniqueVisitors: Number(data.uniqueVisitors) || 0,
-        heartbeats: Number(data.heartbeats) || 0,
-      };
+    var byMonth = {};
+    var fromWorker = await fetchPresencePeriodFromWorker("month", PRESENCE_MONTHLY_LOOKBACK);
+    if (fromWorker) {
+      fromWorker.forEach(function (row) {
+        if (row && row.period) {
+          byMonth[row.period] = {
+            uniqueVisitors: Number(row.uniqueVisitors) || 0,
+            heartbeats: Number(row.heartbeats) || 0,
+          };
+        }
+      });
+    }
+    if (db) {
+      try {
+        var snaps = await Promise.all(
+          months.map(function (month) {
+            return db.collection("presence_monthly").doc(month).get();
+          })
+        );
+        snaps.forEach(function (snap, i) {
+          var data = snap.exists ? snap.data() || {} : {};
+          var month = months[i];
+          var prev = byMonth[month] || { uniqueVisitors: 0, heartbeats: 0 };
+          byMonth[month] = {
+            uniqueVisitors: Math.max(prev.uniqueVisitors, Number(data.uniqueVisitors) || 0),
+            heartbeats: Math.max(prev.heartbeats, Number(data.heartbeats) || 0),
+          };
+        });
+      } catch (err) {
+        console.warn("[stats] presence_monthly Firestore merge skipped", err);
+      }
+    }
+    state.presenceMonthly = months.map(function (month) {
+      var rec = byMonth[month] || { uniqueVisitors: 0, heartbeats: 0 };
+      return { month: month, uniqueVisitors: rec.uniqueVisitors, heartbeats: rec.heartbeats };
     });
     return state.presenceMonthly;
   }
@@ -2594,6 +2821,355 @@
     );
   }
 
+  var OS_LABELS = {
+    windows: "Windows",
+    macos: "macOS",
+    ios: "iOS",
+    android: "Android",
+    chromeos: "Chrome OS",
+    linux: "Linux",
+    other: "Other",
+  };
+
+  function osFamilyLabel(os) {
+    return OS_LABELS[String(os || "")] || "Other";
+  }
+
+  function osVersionLabel(ver) {
+    var v = String(ver || "").trim();
+    if (!v || v === "unknown") return "Unknown version";
+    return v;
+  }
+
+  async function loadPresenceOs() {
+    if (state.presenceOs) return state.presenceOs;
+    try {
+      var res = await fetch(statsApiUrl("/api/presence-stats/os?days=" + PRESENCE_DAILY_LOOKBACK), {
+        mode: "cors",
+      });
+      if (!res.ok) {
+        state.presenceOs = { totals: [] };
+        return state.presenceOs;
+      }
+      var payload = await res.json();
+      var totals = payload && payload.ok && Array.isArray(payload.totals) ? payload.totals : [];
+      state.presenceOs = {
+        totals: totals.map(function (row) {
+          return {
+            os: row && row.os ? String(row.os) : "other",
+            osVersion: row && row.osVersion ? String(row.osVersion) : "unknown",
+            uniqueVisitors: Number(row && row.uniqueVisitors) || 0,
+            heartbeats: Number(row && row.heartbeats) || 0,
+          };
+        }),
+      };
+    } catch (_) {
+      state.presenceOs = { totals: [] };
+    }
+    return state.presenceOs;
+  }
+
+  function renderOsStats() {
+    var totals = (state.presenceOs && state.presenceOs.totals) || [];
+    var familyMap = new Map();
+    var uniqueSum = 0;
+    totals.forEach(function (row) {
+      var uniques = Number(row.uniqueVisitors) || 0;
+      var beats = Number(row.heartbeats) || 0;
+      var n = uniques > 0 ? uniques : beats;
+      if (n <= 0) return;
+      uniqueSum += n;
+      var key = row.os || "other";
+      familyMap.set(key, (familyMap.get(key) || 0) + n);
+    });
+    var familyRows = Array.from(familyMap.entries()).sort(function (a, b) {
+      return b[1] - a[1] || String(a[0]).localeCompare(String(b[0]));
+    });
+    var hasData = familyRows.length > 0 && uniqueSum > 0;
+    makeChart(
+      $("usersOsChart"),
+      {
+        type: "doughnut",
+        data: {
+          labels: hasData
+            ? familyRows.map(function (r) {
+                return osFamilyLabel(r[0]);
+              })
+            : ["No data"],
+          datasets: [
+            {
+              data: hasData
+                ? familyRows.map(function (r) {
+                    return r[1];
+                  })
+                : [1],
+              backgroundColor: hasData
+                ? familyRows.map(function (_, i) {
+                    return CHART_COLORS[i % CHART_COLORS.length];
+                  })
+                : ["#2a2a2a"],
+              borderColor: "#1a1a1a",
+              borderWidth: 2,
+            },
+          ],
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          plugins: {
+            legend: {
+              position: "bottom",
+              labels: { boxWidth: 12, padding: 10, font: { size: 11 } },
+            },
+            subtitle: hasData
+              ? undefined
+              : emptySubtitle("OS share appears after presence pings with platform info."),
+          },
+        },
+      },
+      userCharts
+    );
+
+    var body = $("usersOsTableBody");
+    if (!body) return;
+    var versionRows = totals
+      .filter(function (row) {
+        return (Number(row.uniqueVisitors) || 0) > 0 || (Number(row.heartbeats) || 0) > 0;
+      })
+      .slice()
+      .sort(function (a, b) {
+        var an = (Number(a.uniqueVisitors) || 0) || (Number(a.heartbeats) || 0);
+        var bn = (Number(b.uniqueVisitors) || 0) || (Number(b.heartbeats) || 0);
+        return bn - an || String(a.os).localeCompare(String(b.os));
+      });
+    if (!versionRows.length) {
+      body.innerHTML = '<tr><td class="muted" colspan="5">No OS data yet — visit the main list to start collecting.</td></tr>';
+      return;
+    }
+    body.innerHTML = versionRows
+      .map(function (row) {
+        var n = (Number(row.uniqueVisitors) || 0) || (Number(row.heartbeats) || 0);
+        var share = uniqueSum ? Math.round((n / uniqueSum) * 1000) / 10 : 0;
+        return (
+          "<tr><td>" +
+          escapeHtml(osFamilyLabel(row.os)) +
+          "</td><td>" +
+          escapeHtml(osVersionLabel(row.osVersion)) +
+          '</td><td class="num">' +
+          formatInt(row.uniqueVisitors) +
+          '</td><td class="num">' +
+          formatInt(row.heartbeats) +
+          '</td><td class="num">' +
+          share.toFixed(1) +
+          "%</td></tr>"
+        );
+      })
+      .join("");
+  }
+
+  var BROWSER_LABELS = {
+    chrome: "Chrome",
+    edge: "Edge",
+    safari: "Safari",
+    firefox: "Firefox",
+    opera: "Opera",
+    brave: "Brave",
+    samsung: "Samsung Internet",
+    other: "Other",
+  };
+
+  function browserFamilyLabel(name) {
+    return BROWSER_LABELS[String(name || "")] || "Other";
+  }
+
+  function renderBrowserStats() {
+    var hw = state.presenceHardware || { browser: [] };
+    var rows = hardwareRows(hw.browser).slice().sort(function (a, b) {
+      return hardwareCount(b) - hardwareCount(a) || String(a.value).localeCompare(String(b.value));
+    });
+    var total = rows.reduce(function (s, row) {
+      return s + hardwareCount(row);
+    }, 0);
+    var hasData = rows.length > 0 && total > 0;
+    makeChart(
+      $("usersBrowserChart"),
+      {
+        type: "doughnut",
+        data: {
+          labels: hasData
+            ? rows.map(function (row) {
+                return browserFamilyLabel(row.value);
+              })
+            : ["No data"],
+          datasets: [
+            {
+              data: hasData
+                ? rows.map(function (row) {
+                    return hardwareCount(row);
+                  })
+                : [1],
+              backgroundColor: hasData
+                ? rows.map(function (_, i) {
+                    return CHART_COLORS[i % CHART_COLORS.length];
+                  })
+                : ["#2a2a2a"],
+              borderColor: "#1a1a1a",
+              borderWidth: 2,
+            },
+          ],
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          plugins: {
+            legend: {
+              position: "bottom",
+              labels: { boxWidth: 12, padding: 10, font: { size: 11 } },
+            },
+            subtitle: hasData
+              ? undefined
+              : emptySubtitle("Browser share appears after presence pings with platform info."),
+          },
+        },
+      },
+      userCharts
+    );
+  }
+
+  var RAM_LABELS = {
+    under_1gb: "Under 1 GB",
+    "1gb": "1 GB",
+    "2gb": "2 GB",
+    "4gb": "4 GB",
+    "8gb": "8 GB",
+    "8gb+": "8 GB+",
+    "16gb": "16 GB",
+    "32gb+": "32 GB+",
+    unknown: "Unknown",
+  };
+  var ARCH_LABELS = {
+    x64: "x64",
+    x86: "x86",
+    arm64: "ARM64",
+    arm: "ARM",
+    unknown: "Unknown",
+  };
+
+  function hardwareCount(row) {
+    var uniques = Number(row && row.uniqueVisitors) || 0;
+    var beats = Number(row && row.heartbeats) || 0;
+    return uniques > 0 ? uniques : beats;
+  }
+
+  function hardwareRows(list) {
+    return (list || []).filter(function (row) {
+      return hardwareCount(row) > 0;
+    });
+  }
+
+  async function loadPresenceHardware() {
+    if (state.presenceHardware) return state.presenceHardware;
+    var empty = { ram: [], cores: [], arch: [], browser: [] };
+    try {
+      var res = await fetch(statsApiUrl("/api/presence-stats/hardware?days=" + PRESENCE_DAILY_LOOKBACK), {
+        mode: "cors",
+      });
+      if (!res.ok) {
+        state.presenceHardware = empty;
+        return state.presenceHardware;
+      }
+      var payload = await res.json();
+      var mapKind = function (rows) {
+        return (Array.isArray(rows) ? rows : []).map(function (row) {
+          return {
+            value: row && row.value ? String(row.value) : "unknown",
+            uniqueVisitors: Number(row && row.uniqueVisitors) || 0,
+            heartbeats: Number(row && row.heartbeats) || 0,
+          };
+        });
+      };
+      state.presenceHardware = {
+        ram: mapKind(payload && payload.ram),
+        cores: mapKind(payload && payload.cores),
+        arch: mapKind(payload && payload.arch),
+        browser: mapKind(payload && payload.browser),
+      };
+    } catch (_) {
+      state.presenceHardware = empty;
+    }
+    return state.presenceHardware;
+  }
+
+  function renderHardwareBar(canvasId, rows, labelFn, emptyText, colorIndex) {
+    var hasData = rows.length > 0;
+    makeChart(
+      $(canvasId),
+      {
+        type: "bar",
+        data: {
+          labels: hasData ? rows.map(labelFn) : ["No data"],
+          datasets: [
+            {
+              label: "Visitors",
+              data: hasData
+                ? rows.map(function (row) {
+                    return hardwareCount(row);
+                  })
+                : [0],
+              backgroundColor: CHART_COLORS[colorIndex % CHART_COLORS.length],
+              borderRadius: 4,
+            },
+          ],
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          plugins: {
+            legend: { display: false },
+            subtitle: hasData ? undefined : emptySubtitle(emptyText),
+          },
+          scales: {
+            x: { ticks: { maxRotation: 0, autoSkip: false } },
+            y: { beginAtZero: true, ticks: { precision: 0 } },
+          },
+        },
+      },
+      userCharts
+    );
+  }
+
+  function renderHardwareStats() {
+    var hw = state.presenceHardware || { ram: [], cores: [], arch: [] };
+    renderHardwareBar(
+      "usersRamChart",
+      hardwareRows(hw.ram),
+      function (row) {
+        return RAM_LABELS[row.value] || row.value;
+      },
+      "RAM buckets appear after Chrome/Edge presence pings.",
+      2
+    );
+    renderHardwareBar(
+      "usersCoresChart",
+      hardwareRows(hw.cores),
+      function (row) {
+        if (row.value === "unknown") return "Unknown";
+        return row.value === "1" ? "1 core" : row.value + " cores";
+      },
+      "CPU core counts appear after presence pings.",
+      3
+    );
+    renderHardwareBar(
+      "usersArchChart",
+      hardwareRows(hw.arch),
+      function (row) {
+        return ARCH_LABELS[row.value] || row.value;
+      },
+      "CPU architecture appears after presence pings.",
+      5
+    );
+  }
+
   function renderUserStatsCharts() {
     destroyChartList(userCharts);
     renderUsersOverTimeChart();
@@ -2673,6 +3249,10 @@
       },
       userCharts
     );
+
+    renderOsStats();
+    renderBrowserStats();
+    renderHardwareStats();
   }
 
   function updateUsersKpis() {
@@ -2709,16 +3289,14 @@
 
   async function loadAndRenderUserStats(db) {
     wireUsersRangeToggle();
-    if (!db) {
-      setText("statUsersToday", "—");
-      setText("statUsers7d", "—");
-      setText("statUsersMonth", "—");
-      setText("statUsersPeakHour", "—");
-      renderUserStatsCharts();
-      return;
-    }
     try {
-      await Promise.all([loadPresenceDaily(db), loadPresenceMonthly(db), loadPresenceYearly(db)]);
+      await Promise.all([
+        loadPresenceDaily(db),
+        loadPresenceMonthly(db),
+        loadPresenceYearly(db),
+        loadPresenceOs(),
+        loadPresenceHardware(),
+      ]);
       updateUsersKpis();
       renderUserStatsCharts();
     } catch (err) {

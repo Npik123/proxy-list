@@ -217,44 +217,97 @@
     return out;
   }
 
-  function fetchWithTimeout(url, init, timeoutMs) {
+  function looksLikeWebProxy() {
+    try {
+      if (global.ProxyListPresence && typeof global.ProxyListPresence.looksLikeWebProxy === "function") {
+        return !!global.ProxyListPresence.looksLikeWebProxy();
+      }
+    } catch (_) {}
+    try {
+      var loc = global.location || {};
+      return /\/uv\/|ultraviolet|\/scramjet|\/sj\/|bare-mux|\/service\/|\/proxy\/|\/eclipse\//i.test(
+        String(loc.href || "") + String(loc.pathname || "") + String(loc.search || "")
+      );
+    } catch (_) {
+      return false;
+    }
+  }
+
+  function abortError(ms) {
+    var err = new Error("timeout after " + ms + "ms");
+    err.name = "TimeoutError";
+    return err;
+  }
+
+  function bindAbortSignal(fetchInit, ctrl) {
+    var init = fetchInit ? Object.assign({}, fetchInit) : {};
+    if (!ctrl) return init;
+    if (init.signal) {
+      var outer = init.signal;
+      if (outer.aborted) ctrl.abort();
+      else {
+        outer.addEventListener("abort", function () {
+          try {
+            ctrl.abort();
+          } catch (_) {}
+        });
+      }
+    }
+    init.signal = ctrl.signal;
+    return init;
+  }
+
+  /**
+   * Time out both the response headers and the body. Ultraviolet + libcurl often
+   * returns HTTP 200 quickly, then hangs while rewriting the 5MB JSON body.
+   */
+  async function fetchWithTimeout(url, init, timeoutMs) {
     var ms = timeoutMs > 0 ? timeoutMs : 0;
     if (!ms) return fetch(url, init || {});
     var ctrl = typeof AbortController === "function" ? new AbortController() : null;
-    var fetchInit = init ? Object.assign({}, init) : {};
-    if (ctrl) {
-      if (fetchInit.signal) {
-        var outer = fetchInit.signal;
-        if (outer.aborted) ctrl.abort();
-        else {
-          outer.addEventListener("abort", function () {
-            try {
-              ctrl.abort();
-            } catch (_) {}
-          });
-        }
-      }
-      fetchInit.signal = ctrl.signal;
-    }
+    var fetchInit = bindAbortSignal(init, ctrl);
     var timer;
     var timedOut = new Promise(function (_, reject) {
       timer = setTimeout(function () {
         try {
           if (ctrl) ctrl.abort();
         } catch (_) {}
-        reject(new Error("timeout after " + ms + "ms"));
+        reject(abortError(ms));
       }, ms);
     });
-    return Promise.race([fetch(url, fetchInit), timedOut]).then(
-      function (res) {
-        clearTimeout(timer);
-        return res;
-      },
-      function (err) {
-        clearTimeout(timer);
-        throw err;
-      }
-    );
+    try {
+      return await Promise.race([fetch(url, fetchInit), timedOut]);
+    } catch (err) {
+      if (ctrl && ctrl.signal && ctrl.signal.aborted) throw abortError(ms);
+      throw err;
+    } finally {
+      clearTimeout(timer);
+    }
+  }
+
+  async function readResponseWithTimeout(res, read, timeoutMs) {
+    var ms = timeoutMs > 0 ? timeoutMs : 0;
+    var work = Promise.resolve().then(function () {
+      return read(res);
+    });
+    if (!ms) return work;
+    var timer;
+    var timedOut = new Promise(function (_, reject) {
+      timer = setTimeout(function () {
+        try {
+          if (typeof res.cancel === "function") res.cancel();
+        } catch (_) {}
+        try {
+          if (res.body && typeof res.body.cancel === "function") res.body.cancel();
+        } catch (_) {}
+        reject(abortError(ms));
+      }, ms);
+    });
+    try {
+      return await Promise.race([work, timedOut]);
+    } finally {
+      clearTimeout(timer);
+    }
   }
 
   function expandAllLinks(payload, options) {
@@ -328,13 +381,15 @@
     if (opts.remoteFallback !== false) candidates = candidates.concat(remoteAssetUrlCandidates(name));
     for (var i = 0; i < candidates.length; i++) {
       var url = candidates[i];
+      var started = Date.now();
       try {
         var res = await fetchWithTimeout(url, opts.fetchInit || {}, timeoutMs);
         if (!res.ok) {
           errors.push(url + " HTTP " + res.status);
           continue;
         }
-        return await read(res);
+        var remain = timeoutMs > 0 ? Math.max(1500, timeoutMs - (Date.now() - started)) : 0;
+        return await readResponseWithTimeout(res, read, remain);
       } catch (err) {
         errors.push(url + ": " + (err && err.message ? err.message : String(err)));
       }
@@ -377,15 +432,24 @@
   async function fetchListPayload(options) {
     var opts = options || {};
     var base = opts.baseUrl != null ? opts.baseUrl : listAssetBaseUrl();
-    var timeoutMs = opts.timeoutMs != null ? opts.timeoutMs : 20000;
-    // Prefer plain JSON for maximum host compatibility; gzip is an optional fast path.
-    var files = opts.preferCompressed
-      ? ["data.json.gz", "data.json.br", "data.json"]
-      : ["data.json", "data.json.gz", "data.json.br"];
+    var onProxy = looksLikeWebProxy();
+    var timeoutMs = opts.timeoutMs != null ? opts.timeoutMs : onProxy ? 30000 : 20000;
+    var canDecompress = typeof DecompressionStream === "function";
+    // Ultraviolet rewrites URLs inside application/json. That turns the 5MB list into a
+    // multi-minute hang on libcurl. Gzip is binary (~280KB) so UV leaves it alone.
+    var preferCompressed = opts.preferCompressed != null ? !!opts.preferCompressed : onProxy && canDecompress;
+    var files = preferCompressed
+      ? canDecompress
+        ? ["data.json.gz", "data.json"]
+        : ["data.json"]
+      : canDecompress
+        ? ["data.json", "data.json.gz"]
+        : ["data.json"];
     var errors = [];
     var MISS = {};
 
     async function tryFile(file, fetchUrl) {
+      var started = Date.now();
       try {
         if (typeof opts.onAttempt === "function") {
           try {
@@ -397,12 +461,19 @@
           errors.push(fetchUrl + " HTTP " + res.status);
           return MISS;
         }
+        var remain = timeoutMs > 0 ? Math.max(1500, timeoutMs - (Date.now() - started)) : 0;
         if (file.endsWith(".gz") || file.endsWith(".br")) {
-          var buf = await res.arrayBuffer();
+          var buf = await readResponseWithTimeout(
+            res,
+            function (r) {
+              return r.arrayBuffer();
+            },
+            remain
+          );
           if (file.endsWith(".gz")) {
             return await parseJsonBytes(buf);
           }
-          if (typeof DecompressionStream !== "function") {
+          if (!canDecompress) {
             errors.push(fetchUrl + " (brotli unsupported)");
             return MISS;
           }
@@ -410,7 +481,7 @@
           var streamBr = new Response(new Blob([buf]).stream().pipeThrough(dsBr));
           return await readJsonResponse(streamBr);
         }
-        return await readJsonResponse(res);
+        return await readResponseWithTimeout(res, readJsonResponse, remain);
       } catch (err) {
         errors.push(fetchUrl + ": " + (err && err.message ? err.message : String(err)));
         return MISS;
@@ -456,5 +527,6 @@
     listAssetUrlCandidates: listAssetUrlCandidates,
     remoteAssetUrlCandidates: remoteAssetUrlCandidates,
     fetchListPayload: fetchListPayload,
+    looksLikeWebProxy: looksLikeWebProxy,
   };
 })(typeof window !== "undefined" ? window : globalThis);

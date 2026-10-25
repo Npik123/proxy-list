@@ -46,12 +46,20 @@
       var KEEP_KEYS = {
         "proxyList_saved_links_v1": 1,
         "proxyList_welcomeTour_v1": 1,
+        "proxyList_sentryConsent_v1": 1,
+        "proxyList_hardwareConsent_v1": 1,
         "proxylist:last-seen-version": 1,
         "proxylist:last-seen-banner-stamp": 1
       };
       var IDB_NAMES = ["proxyListSettings"];
       var AUTO_RESET_AFTER = 2;
-      var WATCHDOG_MS = 45000;
+      var onProxy = false;
+      try {
+        onProxy = /\/uv\/|ultraviolet|\/scramjet|\/sj\/|bare-mux|\/service\/|\/proxy\/|\/eclipse\//i.test(
+          String(location.href || "") + String(location.pathname || "")
+        );
+      } catch (_) {}
+      var WATCHDOG_MS = onProxy ? 90000 : 45000;
       var HELP_URL = "fix-loading/";
       var done = false;
       var cardEl = null;
@@ -284,9 +292,8 @@
   </script>
   <title>Proxy list</title>
   <link rel="icon" type="image/png" href="favicon.png" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Quicksand:wght@500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="fonts/site-fonts.css" />
+  <script src="sentry-init.js"></script>
   <style>
     :root,
     html[data-theme="dark"] {
@@ -3305,7 +3312,8 @@
     html.embed-mode #siteUpdateBanner,
     html.embed-mode .account-corner,
     html.embed-mode .embed-hide,
-    html.embed-mode #welcomeTourBackdrop { display: none !important; }
+    html.embed-mode #welcomeTourBackdrop,
+    html.embed-mode #proxyListSentryConsentBackdrop { display: none !important; }
     html.embed-mode header { padding: 0.65rem 1rem; }
     html.embed-mode #headerSub { display: none; }
     html.embed-mode .site-footer { padding: 0.65rem 1rem; font-size: 0.88rem; }
@@ -3990,6 +3998,28 @@
             </p>
             <button class="btn" id="settingsSaveDataExportBtn" type="button">Export</button>
           </div>
+          <div class="settings-field">
+            <label for="settingsSentryConsentSelect">Analytics Collection</label>
+            <p class="settings-desc">
+              Optional Sentry reports for crashes, errors, and site performance. Not required for the site to work.
+              Used on stable and preview links. See <a href="https://sentry.io" target="_blank" rel="noopener noreferrer">sentry.io</a>.
+            </p>
+            <select id="settingsSentryConsentSelect" aria-label="Analytics collection">
+              <option value="disabled">Opt-out</option>
+              <option value="enabled">Opt-into sending analytic data</option>
+            </select>
+          </div>
+          <div class="settings-field">
+            <label for="settingsHardwareConsentSelect">Hardware Survey</label>
+            <p class="settings-desc">
+              Optional, non-identifiable device info (operating system, browser, estimated RAM, CPU cores, and architecture)
+              shown on Statistics → Users. Not required for the site to work.
+            </p>
+            <select id="settingsHardwareConsentSelect" aria-label="Hardware survey">
+              <option value="disabled">Opt-out</option>
+              <option value="enabled">Opt-into collection of hardware data</option>
+            </select>
+          </div>
         </div>
         <div class="settings-section">
           <h3>Debug</h3>
@@ -4370,6 +4400,7 @@
     })();
   </script>
   <script src="presence-client.js"></script>
+  <script src="auth-security.js"></script>
   <script src="submission-utils.js"></script>
   <script defer src="site-notifications.js"></script>
   <!-- Local copy: CDN + integrity hashes break when a web proxy rewrites the script. -->
@@ -4548,7 +4579,6 @@
     const GITHUB_REPO_OWNER = "yourworstnightmare1";
     const GITHUB_REPO_NAME = "proxy-list";
     const GITHUB_REPO_SLUG = GITHUB_REPO_OWNER + "/" + GITHUB_REPO_NAME;
-    const GITHUB_TOKEN_SESSION_KEY = "proxyList_github_access_token";
     const GITHUB_NOTIFICATIONS_SEEN_KEY = "proxyList_github_notifications_seen_v1";
 
     const LS_APP_SETTINGS_KEY = "proxyList_app_settings_v1";
@@ -4780,6 +4810,16 @@
 
     function maybeShowMobileAutoResizeNotice() {
       if (typeof isEmbedMode === "function" && isEmbedMode()) return;
+      if (typeof firstVisitConsentPending === "function" && firstVisitConsentPending()) {
+        if (!window.__proxyListMobileNoticeWaitingOnConsent) {
+          window.__proxyListMobileNoticeWaitingOnConsent = true;
+          whenFirstVisitConsentDone(function () {
+            window.__proxyListMobileNoticeWaitingOnConsent = false;
+            maybeShowMobileAutoResizeNotice();
+          });
+        }
+        return;
+      }
       if (hasDismissedMobileAutoResizeNotice()) return;
       if ((appSettings.deviceSizing || "auto") !== "auto") return;
       if (!parseClientPlatform().isMobile) return;
@@ -5204,8 +5244,55 @@
       });
     }
 
+    function sentryConsentPending() {
+      try {
+        if (window.ProxyListSentry && typeof window.ProxyListSentry.hasChoice === "function") {
+          return !window.ProxyListSentry.hasChoice();
+        }
+      } catch (_) {}
+      return false;
+    }
+
+    function hardwareConsentPending() {
+      try {
+        if (window.ProxyListHardware && typeof window.ProxyListHardware.hasChoice === "function") {
+          return !window.ProxyListHardware.hasChoice();
+        }
+      } catch (_) {}
+      return false;
+    }
+
+    function firstVisitConsentPending() {
+      return sentryConsentPending() || hardwareConsentPending();
+    }
+
+    function whenFirstVisitConsentDone(cb) {
+      if (!firstVisitConsentPending()) {
+        cb();
+        return;
+      }
+      function onChoice() {
+        if (firstVisitConsentPending()) return;
+        window.removeEventListener("proxy-list-sentry-consent", onChoice);
+        window.removeEventListener("proxy-list-hardware-consent", onChoice);
+        cb();
+      }
+      window.addEventListener("proxy-list-sentry-consent", onChoice);
+      window.addEventListener("proxy-list-hardware-consent", onChoice);
+    }
+
     function maybeStartWelcomeTour() {
       if (typeof isEmbedMode === "function" && isEmbedMode()) return;
+      if (firstVisitConsentPending()) {
+        if (!window.__proxyListWelcomeTourWaitingOnConsent) {
+          window.__proxyListWelcomeTourWaitingOnConsent = true;
+          whenFirstVisitConsentDone(function () {
+            window.__proxyListWelcomeTourWaitingOnConsent = false;
+            maybeStartWelcomeTour();
+          });
+        }
+        return;
+      }
       try {
         const params = new URLSearchParams(window.location.search || "");
         if (params.get("welcomeTour") === "1" || params.get("welcomeTour") === "true") {
@@ -5990,6 +6077,26 @@
       if (clickSel) clickSel.value = appSettings.grabLinkClicksPerChunk || "per_chunk";
       const saveSel = $("settingsSaveLocalSelect");
       if (saveSel) saveSel.value = appSettings.saveSettingsLocally ? "enabled" : "disabled";
+      const sentrySel = $("settingsSentryConsentSelect");
+      if (sentrySel) {
+        let sentryConsent = "disabled";
+        try {
+          if (window.ProxyListSentry && typeof window.ProxyListSentry.getConsent === "function") {
+            sentryConsent = window.ProxyListSentry.getConsent() || "disabled";
+          }
+        } catch (_) {}
+        sentrySel.value = sentryConsent === "enabled" ? "enabled" : "disabled";
+      }
+      const hardwareSel = $("settingsHardwareConsentSelect");
+      if (hardwareSel) {
+        let hardwareConsent = "disabled";
+        try {
+          if (window.ProxyListHardware && typeof window.ProxyListHardware.getConsent === "function") {
+            hardwareConsent = window.ProxyListHardware.getConsent() || "disabled";
+          }
+        } catch (_) {}
+        hardwareSel.value = hardwareConsent === "enabled" ? "enabled" : "disabled";
+      }
       syncGdbSettingsList();
       const chunkDesc = $("settingsChunkSizeDesc");
       if (chunkDesc) {
@@ -6907,40 +7014,15 @@
       return !!(authUser && (authUser.providerData || []).some((p) => p.providerId === "github.com"));
     }
 
-    function getGithubAccessToken() {
-      try {
-        const local = localStorage.getItem(GITHUB_TOKEN_SESSION_KEY);
-        if (local) return local;
-        const session = sessionStorage.getItem(GITHUB_TOKEN_SESSION_KEY);
-        if (session) {
-          // Migrate older session-only tokens so update reloads keep GitHub extras.
-          try {
-            localStorage.setItem(GITHUB_TOKEN_SESSION_KEY, session);
-          } catch (_) {}
-          return session;
-        }
-        return "";
-      } catch (_) {
-        return "";
-      }
-    }
-
-    function storeGithubAccessToken(token) {
-      if (!token) return;
-      try {
-        localStorage.setItem(GITHUB_TOKEN_SESSION_KEY, token);
-      } catch (_) {}
-      try {
-        sessionStorage.setItem(GITHUB_TOKEN_SESSION_KEY, token);
-      } catch (_) {}
-    }
-
     function clearGithubAccessToken() {
+      if (window.ProxyListAuthSecurity && typeof window.ProxyListAuthSecurity.clearGithubAccessToken === "function") {
+        void window.ProxyListAuthSecurity.clearGithubAccessToken();
+      }
       try {
-        localStorage.removeItem(GITHUB_TOKEN_SESSION_KEY);
+        localStorage.removeItem("proxyList_github_access_token");
       } catch (_) {}
       try {
-        sessionStorage.removeItem(GITHUB_TOKEN_SESSION_KEY);
+        sessionStorage.removeItem("proxyList_github_access_token");
       } catch (_) {}
     }
 
@@ -6983,9 +7065,16 @@
       const sidebarAppealLink = $("sidebarAppealLink");
       const cluster = $("accountSignedInCluster");
       if (!btn && !signInLink && !sidebarSignInLink) return;
-      const isAdmin =
-        !!(window.SubmissionUtils && window.SubmissionUtils.isSubmissionAdminUser(authUser));
-      if (sidebarAdminLink) sidebarAdminLink.hidden = !(isSignedInUser() && isAdmin);
+      if (sidebarAdminLink) {
+        const cachedAdmin =
+          !!(window.SubmissionUtils && window.SubmissionUtils.isSubmissionAdminUser(authUser));
+        sidebarAdminLink.hidden = !(isSignedInUser() && cachedAdmin);
+        if (isSignedInUser() && window.SubmissionUtils && window.SubmissionUtils.checkSubmissionAdmin) {
+          window.SubmissionUtils.checkSubmissionAdmin(authUser).then(function (ok) {
+            if (sidebarAdminLink) sidebarAdminLink.hidden = !ok;
+          });
+        }
+      }
       if (sidebarAppealLink && !isSignedInUser()) sidebarAppealLink.hidden = true;
       if (isSignedInUser()) {
         if (btn) {
@@ -7666,47 +7755,16 @@
         updateAccountUI();
         return;
       }
-      const token = getGithubAccessToken();
-      if (!token) {
+      if (!window.ProxyListAuthSecurity || typeof window.ProxyListAuthSecurity.fetchGithubExtras !== "function") {
         githubRepoStarred = false;
         updateAccountUI();
         return;
       }
-      const ghHeaders = {
-        Authorization: "Bearer " + token,
-        Accept: "application/vnd.github+json",
-        "X-GitHub-Api-Version": "2022-11-28",
-      };
-      let authFailed = false;
       try {
-        const starRes = await fetch(
-          "https://api.github.com/user/starred/" + GITHUB_REPO_OWNER + "/" + GITHUB_REPO_NAME,
-          { headers: ghHeaders }
-        );
-        if (starRes.status === 401) {
-          authFailed = true;
-          githubRepoStarred = false;
-        } else {
-          githubRepoStarred = starRes.status === 204;
-        }
-      } catch (_) {
-        githubRepoStarred = false;
-      }
-      if (authFailed) {
-        clearGithubAccessToken();
-        if (githubNotificationsPollTimer) {
-          clearInterval(githubNotificationsPollTimer);
-          githubNotificationsPollTimer = null;
-        }
-        updateAccountUI();
-        return;
-      }
-      try {
-        const notifRes = await fetch("https://api.github.com/notifications?participating=true", {
-          headers: ghHeaders,
-        });
-        if (notifRes.status === 401) {
+        const extras = await window.ProxyListAuthSecurity.fetchGithubExtras();
+        if (extras && extras.unauthorized) {
           clearGithubAccessToken();
+          githubRepoStarred = false;
           if (githubNotificationsPollTimer) {
             clearInterval(githubNotificationsPollTimer);
             githubNotificationsPollTimer = null;
@@ -7714,44 +7772,22 @@
           updateAccountUI();
           return;
         }
-        if (notifRes.ok) {
-          const notifications = await notifRes.json();
-          const seen = readGithubNotificationsSeen();
-          const fresh = [];
-          for (const note of notifications || []) {
-            const repo = note.repository && note.repository.full_name;
-            if (repo !== GITHUB_REPO_SLUG) continue;
-            const subject = note.subject || {};
-            const type = String(subject.type || "").toLowerCase();
-            if (type !== "pullrequest" && type !== "issue" && type !== "commit") continue;
-            const reason = String(note.reason || "").toLowerCase();
-            if (
-              reason !== "state_change" &&
-              reason !== "author" &&
-              reason !== "subscribed" &&
-              reason !== "comment" &&
-              reason !== "mention"
-            ) {
-              continue;
-            }
-            const id = String(note.id || note.updated_at || "");
-            if (!id || seen[id]) continue;
-            seen[id] = Date.now();
-            let classified = null;
-            if (window.SiteNotifications && window.SiteNotifications.classifyGithubNote) {
-              classified = await window.SiteNotifications.classifyGithubNote(note, token);
-            }
-            if (classified) fresh.push(classified);
-          }
+        githubRepoStarred = !!(extras && extras.starred);
+        const seen = readGithubNotificationsSeen();
+        const fresh = [];
+        for (const note of (extras && extras.notifications) || []) {
+          const id = String(note.githubId || note.id || "");
+          if (!id || seen[id]) continue;
+          seen[id] = Date.now();
+          fresh.push(note);
+        }
+        if (fresh.length) {
           writeGithubNotificationsSeen(seen);
           renderGithubNotifications(fresh);
-        } else if (notifRes.status === 403) {
-          console.warn(
-            "[proxy-list] GitHub notifications forbidden — re-sign in with GitHub to grant the notifications scope."
-          );
         }
       } catch (err) {
-        console.warn("[proxy-list] GitHub notifications unavailable", err);
+        console.warn("[proxy-list] GitHub extras unavailable", err);
+        githubRepoStarred = false;
       }
       updateAccountUI();
     }
@@ -8515,10 +8551,11 @@
       const sharedApiAvailable =
         typeof window.ProxyListPresence !== "undefined" &&
         typeof window.ProxyListPresence.apiUrl === "function";
-      if (!sharedApiAvailable || !rawNorms.length) return false;
+      if (!sharedApiAvailable || !rawNorms.length) return { fetchedAny: false, via: "" };
       // Keep batches small: Worker Cache API + Firestore batchGet hit subrequest limits around ~50.
       const WORKER_RATING_BATCH = 25;
       let fetchedAny = false;
+      let via = "";
       for (let offset = 0; offset < rawNorms.length; offset += WORKER_RATING_BATCH) {
         const batch = rawNorms.slice(offset, offset + WORKER_RATING_BATCH);
         try {
@@ -8539,10 +8576,13 @@
           if (!res.ok) continue;
           const data = await res.json();
           if (!(data && data.ok && data.ratings && typeof data.ratings === "object")) continue;
+          const workerVia = String(data.via || "");
           const ratingKeys = Object.keys(data.ratings);
           // Empty object usually means Worker Firebase read failed (quota/token) — don't treat as success.
-          if (!ratingKeys.length) continue;
+          // D1 always returns a key per URL (including confirmed 0/0).
+          if (!ratingKeys.length && workerVia !== "d1") continue;
           fetchedAny = true;
+          if (workerVia) via = workerVia;
           if (data.self && typeof data.self === "object") {
             for (const [selfNorm, voteRaw] of Object.entries(data.self)) {
               const vote = Number(voteRaw) || 0;
@@ -8574,7 +8614,10 @@
               const r = data.ratings[workerKey];
               best = { up: Number(r.up) || 0, down: Number(r.down) || 0 };
             }
-            if (!best) continue;
+            if (!best) {
+              if (workerVia === "d1") best = { up: 0, down: 0 };
+              else continue;
+            }
             let primaryHash = normToHashCache.get(n);
             if (!primaryHash) {
               primaryHash = await sha256Hex(n);
@@ -8606,7 +8649,7 @@
         }
         persistLinkRatingAggDiskCache(stamp, hashes);
       }
-      return fetchedAny;
+      return { fetchedAny, via };
     }
 
     async function prefetchLinkRatingsForNorms(normsList, opts) {
@@ -8651,42 +8694,19 @@
         };
         const normsNeedingFetch = rawNorms.filter((n) => (normToHashList.get(n) || []).some(hashNeedsFetch));
 
-        const needsWorkerFallback =
-          !firebaseDb || isFirestoreReadCooled();
-
-        // Client Firebase Auth is blocked on workers.dev (API key HTTP referrer),
-        // so ratings must come from the Worker Admin proxy (or disk cache).
-        if (needsWorkerFallback) {
-          if (normsNeedingFetch.length) await fetchLinkRatingsViaWorker(normsNeedingFetch, stamp);
-          // Fill gaps so UI does not keep spinning; prefer disk/worker over inventing zeros early.
-          hashes.forEach((h) => {
-            if (!linkRatingAggByHash.has(h)) linkRatingAggByHash.set(h, { up: 0, down: 0 });
-          });
-          return;
-        }
-
-        // Prefer the Worker (its per-batch edge cache is shared by every visitor);
-        // only read docs directly for whatever it could not confirm.
+        // Clicks/ratings live on the Worker D1 store. Do not .get() linkRatings or
+        // linkRatingVotes — those per-row reads were the bulk of Spark quota.
         if (normsNeedingFetch.length) {
           try {
             await fetchLinkRatingsViaWorker(normsNeedingFetch, stamp);
           } catch (_) {}
         }
 
-        // Fetch ALL variant hashes (modern + legacy). Do not stamp modern misses as
-        // 0/0 before legacy reads — ratings often live only on the legacy hash doc.
-        const toFetchAgg = hashes.filter(hashNeedsFetch);
-        await parallelFirestoreDocGets("linkRatings", toFetchAgg, (h, snap) => {
-          if (snap.exists) {
-            const d = snap.data() || {};
-            linkRatingAggByHash.set(h, { up: Number(d.up) || 0, down: Number(d.down) || 0 });
-          } else {
-            linkRatingAggByHash.set(h, { up: 0, down: 0 });
-          }
+        hashes.forEach((h) => {
+          if (!linkRatingAggByHash.has(h)) linkRatingAggByHash.set(h, { up: 0, down: 0 });
           markLinkRatingConfirmed(h);
         });
 
-        // Copy best aggregate onto the modern norm key when only a legacy doc exists.
         for (const n of rawNorms) {
           const list = normToHashList.get(n) || [];
           let best = null;
@@ -8703,25 +8723,13 @@
           opts && opts.skipLinkSaveCounts
             ? []
             : [...new Set(modernHashes)].filter((h) => !linkSaveCountByHash.has(h));
-        await parallelFirestoreDocGets("linkSaveCounts", toFetchSave, (h, snap) => {
-          if (snap.exists) {
-            const d = snap.data() || {};
-            linkSaveCountByHash.set(h, Number(d.count) || 0);
-          } else {
-            linkSaveCountByHash.set(h, 0);
-          }
-        });
-
-        const user = firebase.auth().currentUser;
-        if (user && !user.isAnonymous && !isFirestoreReadCooled() && opts && opts.prefetchSelfVotes) {
-          const toFetchSelf = [...new Set(modernHashes)].filter((h) => !linkRatingSelfByHash.has(h));
-          await parallelFirestoreDocGets("linkRatingVotes", toFetchSelf.map((h) => user.uid + "_" + h), (docId, snap) => {
-            const h = docId.slice(user.uid.length + 1);
+        if (toFetchSave.length && firebaseDb && !isFirestoreReadCooled()) {
+          await parallelFirestoreDocGets("linkSaveCounts", toFetchSave, (h, snap) => {
             if (snap.exists) {
-              const v = Number(snap.data().vote);
-              linkRatingSelfByHash.set(h, v === 1 ? 1 : v === -1 ? -1 : 0);
+              const d = snap.data() || {};
+              linkSaveCountByHash.set(h, Number(d.count) || 0);
             } else {
-              linkRatingSelfByHash.set(h, 0);
+              linkSaveCountByHash.set(h, 0);
             }
           });
         }
@@ -8733,24 +8741,21 @@
       } catch (err) {
         if (isFirestorePermissionDenied(err)) {
           console.warn(
-            "[proxy-list] Link ratings skipped: Firestore permission denied. Deploy the rules in docs/firestore.rules (linkRatings, linkRatingVotes, linkSaveCounts, folderRatings, folderRatingVotes) to the same Firebase project as this site.",
+            "[proxy-list] Link save counts skipped: Firestore permission denied. Deploy the rules in docs/firestore.rules (linkSaveCounts) to the same Firebase project as this site.",
             err
           );
         } else if (isFirestoreResourceExhausted(err)) {
           tripFirestoreReadCooldown(3 * 60 * 1000);
           console.warn(
-            "[proxy-list] Link ratings prefetch hit Firestore quota/rate limits; pausing bulk reads so likes can still save. Falling back to Worker ratings API.",
+            "[proxy-list] Link save-count prefetch hit Firestore quota/rate limits; pausing bulk reads.",
             err
           );
-          try {
-            await fetchLinkRatingsViaWorker(rawNorms, stamp);
-          } catch (_) {}
         } else {
           console.warn("[proxy-list] Link ratings prefetch failed; trying Worker ratings API", err);
-          try {
-            await fetchLinkRatingsViaWorker(rawNorms, stamp);
-          } catch (_) {}
         }
+        try {
+          await fetchLinkRatingsViaWorker(rawNorms, stamp);
+        } catch (_) {}
       }
     }
 
@@ -9431,6 +9436,11 @@
       ) {
         void window.ProxyListPresence.fetchActiveCount().then(applyWorkerActive);
       }
+      window.addEventListener("proxy-list-hardware-consent", function (ev) {
+        try {
+          if (ev && ev.detail && ev.detail.value === "enabled") presencePingToWorker(true);
+        } catch (_) {}
+      });
     }
 
     function presenceHeartbeat() {
@@ -9884,31 +9894,7 @@
           }
         }
       } catch (_) {}
-      // An empty Worker answer means its own Firestore read failed (usually quota) —
-      // a client-side 200-doc query would only burn the same quota again.
-      if (workerAnswered || !firebaseDb || isFirestoreReadCooled()) return topOpenedDocsCache.docs || [];
-      try {
-        // Fetch extra docs so legacy/modern hash pairs can be merged client-side.
-        const snap = await firebaseDb
-          .collection("link_clicks")
-          .orderBy("count", "desc")
-          .limit(Math.min(120, Math.max(cap * 2, 60)))
-          .get();
-        const docs = snap.docs.map((doc) => {
-          const d = doc.data() || {};
-          const url = d.url != null ? String(d.url).trim() : "";
-          const count = Number(d.count);
-          return { url, count: Number.isFinite(count) ? count : 0 };
-        }).filter((x) => x.url && x.count > 0);
-        if (docs.length) setTopOpenedDocsCache(docs);
-        return docs;
-      } catch (e) {
-        console.warn(
-          "Most opened: Firestore query failed (ensure rules allow read for authenticated users and index exists on link_clicks.count).",
-          e
-        );
-        return topOpenedDocsCache.docs || [];
-      }
+      return topOpenedDocsCache.docs || [];
     }
 
     function popularLinksFallbackCandidates(links, byNorm) {
@@ -14355,6 +14341,16 @@
     }
 
     function maybeShowUpdateModal(meta) {
+      if (typeof firstVisitConsentPending === "function" && firstVisitConsentPending()) {
+        if (!window.__proxyListUpdateModalWaitingOnConsent) {
+          window.__proxyListUpdateModalWaitingOnConsent = true;
+          whenFirstVisitConsentDone(function () {
+            window.__proxyListUpdateModalWaitingOnConsent = false;
+            maybeShowUpdateModal(meta);
+          });
+        }
+        return;
+      }
       const current = versionOnly(meta);
       if (!current) return;
       const stored = readSeenVersion();
@@ -14785,9 +14781,8 @@
     });
     const listPayload = window.ProxyListData && window.ProxyListData.fetchListPayload
       ? window.ProxyListData.fetchListPayload({
-          timeoutMs: 20000,
-          onAttempt: function () {
-            reportContentLoadingProgress(12, "Getting data...");
+          onAttempt: function (file) {
+            reportContentLoadingProgress(12, file && /\.gz$/.test(file) ? "Getting data (compressed)..." : "Getting data...");
           },
         })
       : fetch("data.json").then((r) => {
@@ -14808,6 +14803,7 @@
       .then(([, json, checkedDomainsText]) => {
         reportContentLoadingProgress(35, "Getting data...");
         return normalizePayloadAsync(json).then((normalized) => {
+        if (window.__proxyListBootGuard) window.__proxyListBootGuard.ok();
         initFolderReportModal();
         reportContentLoadingProgress(55, "Preparing list…");
         const { meta, link_check, links } = normalized;
@@ -15263,6 +15259,26 @@
           settingsSaveLocalSelect.addEventListener("change", () => {
             appSettingsIdbPromise = null;
             void updateAppSetting({ saveSettingsLocally: settingsSaveLocalSelect.value === "enabled" });
+          });
+        }
+        const settingsSentryConsentSelect = $("settingsSentryConsentSelect");
+        if (settingsSentryConsentSelect) {
+          settingsSentryConsentSelect.addEventListener("change", () => {
+            try {
+              if (window.ProxyListSentry && typeof window.ProxyListSentry.setConsent === "function") {
+                window.ProxyListSentry.setConsent(settingsSentryConsentSelect.value);
+              }
+            } catch (_) {}
+          });
+        }
+        const settingsHardwareConsentSelect = $("settingsHardwareConsentSelect");
+        if (settingsHardwareConsentSelect) {
+          settingsHardwareConsentSelect.addEventListener("change", () => {
+            try {
+              if (window.ProxyListHardware && typeof window.ProxyListHardware.setConsent === "function") {
+                window.ProxyListHardware.setConsent(settingsHardwareConsentSelect.value);
+              }
+            } catch (_) {}
           });
         }
         const settingsSaveDataExportBtn = $("settingsSaveDataExportBtn");

@@ -1,8 +1,12 @@
 {
-  "checked_at": "2026-10-24T20:15:32Z",
-  "checked_at_display": "2026-10-24 20:15 UTC",
+  "checked_at": "2026-10-25T03:00:34Z",
+  "checked_at_display": "2026-10-25 03:00 UTC",
   "added_count": 0,
-  "removed_count": 0,
+  "removed_count": 3,
   "added_links": [],
-  "removed_links": []
+  "removed_links": [
+    "https://volt2.lacustre.cl",
+    "https://frogies23445980.airlinemeals.net",
+    "https://doge452238.airlinemeals.net"
+  ]
 }

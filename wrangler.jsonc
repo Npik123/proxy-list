@@ -20,5 +20,36 @@
   },
   "compatibility_flags": [
     "nodejs_compat"
-  ]
+  ],
+  "vars": {
+    "ENVIRONMENT": "production",
+    "FIREBASE_PROJECT_ID_PUBLIC": "proxy-list-c06ea",
+    "FIREBASE_WEB_API_KEY": "AIzaSyBPXPOxZeezDBn2YtgzTsj-Dxje62lYYOQ",
+    // Lifetime clicks, ratings, and click rollups live in D1 (not Firestore).
+    "STATS_STORE": "d1"
+  },
+  // Auth, saved folders, submissions, and presence stay on Firebase.
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "proxy-list-stats",
+      "database_id": "4e86662e-cfbf-4ead-b654-de02c878ae8f",
+      "migrations_dir": "migrations"
+    }
+  ],
+  "previews": {
+    "vars": {
+      "ENVIRONMENT": "preview",
+      "FIREBASE_PROJECT_ID_PUBLIC": "proxy-list-c06ea",
+      "STATS_STORE": "d1"
+    },
+    "d1_databases": [
+      {
+        "binding": "DB",
+        "database_name": "proxy-list-stats-preview",
+        "database_id": "81a9f279-4608-4901-af44-09cc806357cb",
+        "migrations_dir": "migrations"
+      }
+    ]
+  }
 }

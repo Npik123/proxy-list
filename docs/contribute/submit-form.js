@@ -745,7 +745,8 @@
 
     if (signInPrompt) signInPrompt.hidden = true;
     showNotice(loadingNotice, "Checking your account…", "");
-    setAdminButtonsVisible(SU.isSubmissionAdminUser(user));
+    setAdminButtonsVisible(false);
+    SU.checkSubmissionAdmin(user).then(setAdminButtonsVisible);
 
     if (!firebaseDb) {
       hideNotice(loadingNotice);
@@ -805,7 +806,8 @@
       hideNotice(loadingNotice);
       if (formEl) formEl.hidden = false;
       prefillContributorFields(user, userProfile);
-      setAdminButtonsVisible(SU.isSubmissionAdminUser(user));
+      setAdminButtonsVisible(false);
+    SU.checkSubmissionAdmin(user).then(setAdminButtonsVisible);
       await loadSubmitHistory(user.uid);
     } catch (err) {
       hideNotice(loadingNotice);
@@ -816,7 +818,8 @@
         "Could not fully verify your account, but you can try submitting. If it fails, the site maintainer may still be deploying submission support.",
         "warn"
       );
-      setAdminButtonsVisible(SU.isSubmissionAdminUser(user));
+      setAdminButtonsVisible(false);
+    SU.checkSubmissionAdmin(user).then(setAdminButtonsVisible);
     }
   }
 

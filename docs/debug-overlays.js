@@ -3,6 +3,32 @@
  * Reads proxyList_app_settings_v1 from localStorage (and IndexedDB when present).
  * On the main list page, call ProxyListDebug.applySettings(appSettings) after settings load/change.
  */
+(function loadSentryFromOverlays(global) {
+  "use strict";
+  try {
+    if (global.__PROXY_LIST_SENTRY__ || global.__PROXY_LIST_SENTRY_SCRIPT__) return;
+    var scripts = document.getElementsByTagName("script");
+    for (var i = 0; i < scripts.length; i++) {
+      if (/sentry-init\.js(\?|$)/i.test(scripts[i].src || "")) return;
+    }
+    var base = "";
+    var cur = document.currentScript && document.currentScript.src;
+    if (cur) base = cur.replace(/[^/]+$/, "");
+    var s = document.createElement("script");
+    s.src = base + "sentry-init.js";
+    s.async = true;
+    s.onerror = function () {
+      try {
+        var fallback = document.createElement("script");
+        fallback.src = "https://proxy-list.jasonthegamer48.workers.dev/sentry-init.js";
+        fallback.async = true;
+        (document.head || document.documentElement).appendChild(fallback);
+      } catch (_) {}
+    };
+    (document.head || document.documentElement).appendChild(s);
+  } catch (_) {}
+})(typeof window !== "undefined" ? window : globalThis);
+
 (function (global) {
   "use strict";
 

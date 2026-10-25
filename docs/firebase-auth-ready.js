@@ -39,9 +39,38 @@
    * Prepare auth for this page: LOCAL persistence, then wait until IndexedDB
    * restore finishes. Safe to call multiple times.
    */
+  function stripLocalStorageAuthTokens() {
+    if (global.ProxyListAuthSecurity && typeof global.ProxyListAuthSecurity.stripLocalStorageAuthTokens === "function") {
+      global.ProxyListAuthSecurity.stripLocalStorageAuthTokens();
+      return;
+    }
+    var stores = [];
+    try {
+      if (global.localStorage) stores.push(global.localStorage);
+    } catch (_) {}
+    try {
+      if (global.sessionStorage) stores.push(global.sessionStorage);
+    } catch (_) {}
+    stores.forEach(function (store) {
+      try {
+        var keys = [];
+        for (var i = 0; i < store.length; i++) keys.push(store.key(i));
+        keys.forEach(function (k) {
+          if (!k) return;
+          if (k === "proxyList_github_access_token" || /^firebase:(authUser|host|redirectUser):/i.test(k)) {
+            store.removeItem(k);
+          }
+        });
+      } catch (_) {}
+    });
+  }
+
   function prepare(auth) {
+    stripLocalStorageAuthTokens();
     return setLocalPersistence(auth).then(function () {
-      return waitForAuthReady(auth);
+      return waitForAuthReady(auth).then(function () {
+        stripLocalStorageAuthTokens();
+      });
     });
   }
 

@@ -15,6 +15,7 @@ DEFAULT_INPUT = Path(__file__).resolve().parent / "batch_links_aug17_2026.txt"
 
 DATE = "8/17/2026"
 CONTRIB = "[yourworstnightmare1](https://github.com/yourworstnightmare1)"
+ALLOW_BUNNYCDN = False
 
 FILTER_LABELS = re.compile(
     r"\b(Lightspeed|Linewize|GoGuardian|Securly|Fortiguard|FortiGuard|"
@@ -102,8 +103,56 @@ SECTION_ALIASES: dict[str, str] = {
     "fern": "🪴 Fern",
     "zodiac": "♈ Zodiac",
     "nocturne": "🌙 Nocturne",
+    "nocturne v2": "🌙 Nocturne",
     "polaris": "⭐ Polaris",
     "c00lkidtech": "🧊 C00lkidtech",
+    "noahs tutoring": "🟨 Noahs Tutoring",
+    "noahs": "🟨 Noahs Tutoring",
+    "overcloaked": "🏴 OverCloaked",
+    "over cloaked": "🏴 OverCloaked",
+    "parcoil": "🌀 Parcoil",
+    "parcoil lunaar": "🌀 Parcoil",
+    "lunaar": "🌘 Lunaar",
+    "void network": "🖤 Void Network",
+    "void": "🖤 Void Network",
+    "desync": "Desync",
+    "reds exploit corner": "Reds Exploit Corner",
+    "reds exploit": "Reds Exploit Corner",
+    "aeos": "⚙️ Aeos",
+    "breeze": "Breeze",
+    "more cherri": "🌸 Cherri",
+    "lucide": "🤍 Lucide",
+    "opium": "💊 Opium",
+    "astra": "🌟 Astra",
+    "abstract": "Abstract",
+    "revault": "Revault",
+    "glim": "✨ Glim",
+    "kite": "Kite",
+    "daydream x": "⭐ DayDream X",
+    "daydreamx": "⭐ DayDream X",
+    "doge": "Doge",
+    "flver": "Flver",
+    "rook": "Rook",
+    "aurora": "Aurora",
+    "cinera": "CINERA",
+    "solaraos": "☀️ Solara",
+    "solara os": "☀️ Solara",
+    "triple t hd": "Triple T HD",
+    "interstellar": "🌠 Interstellar",
+    "stroberri": "🍓 Strawberri",
+    "steobrri": "🍓 Strawberri",
+    "yukios": "❄️ Yuki",
+    "yuki os": "❄️ Yuki",
+    "luna": "🌕 Luna",
+    "nebula": "🚀 Nebulo",
+    "bull": "🐂 Bull",
+    "bull33": "🐂 Bull",
+    "bull 33": "🐂 Bull",
+    "bull-33": "🐂 Bull",
+    "rayzhusz": "🐂 Bull",
+    "rayzhusz links": "🐂 Bull",
+    "material": "🧱 Material",
+    "tungtung": "🪵 Tung Tung",
 }
 
 # Longest-first for scanning
@@ -136,7 +185,8 @@ def norm_url(u: str) -> str:
         path = path[:-1] if path.endswith("/") else path[:-2]
         if not path:
             break
-    return host + path
+    query = p.query or ""
+    return host + path + (("?" + query) if query else "")
 
 
 def host_of(u: str) -> str:
@@ -168,8 +218,10 @@ def should_skip_url(u: str) -> str | None:
     h = host_of(u)
     if not h or "." not in h:
         return "invalid"
-    if h == "b-cdn.net" or h.endswith(".b-cdn.net"):
+    if not ALLOW_BUNNYCDN and (h == "b-cdn.net" or h.endswith(".b-cdn.net")):
         return "bunnycdn"
+    if h.endswith("chesscomfiles.com") or h == "chess.com":
+        return "garbage"
     if h == "registry.npmjs.org":
         return "npm-registry"
     if "<" in u or "br<" in u:
@@ -220,7 +272,7 @@ def match_section_at(words: list[str], i: int) -> tuple[str, int] | None:
 
 def is_pure_section_header(line: str) -> bool:
     line = line.strip()
-    if not line or len(line) > 40:
+    if not line or len(line) > 80:
         return False
     if NOISE_RE.search(line):
         return False
@@ -247,6 +299,12 @@ def should_skip_entire_line(line: str) -> bool:
     if re.match(r"^Library/[^\s]+\.txt$", stripped, re.I):
         return True
     if stripped in {"Announcements", "|"} or re.match(r"^\d+$", stripped):
+        return True
+    if re.fullmatch(r"[_=-]{3,}", stripped):
+        return True
+    if re.search(r"cdn and script slop", stripped, re.I):
+        return True
+    if re.search(r"not working rn", stripped, re.I) and "http" not in stripped.lower():
         return True
     if re.match(r"^Avatar of ", stripped, re.I):
         return True
@@ -481,6 +539,8 @@ def make_pending_section(name: str, items: list[str]) -> str:
 def main() -> None:
     import argparse
 
+    global DATE, ALLOW_BUNNYCDN
+
     if hasattr(sys.stdout, "reconfigure"):
         sys.stdout.reconfigure(encoding="utf-8", errors="replace")
 
@@ -491,7 +551,19 @@ def main() -> None:
         default=str(DEFAULT_INPUT),
         help="Batch paste file (default: scripts/batch_links_aug17_2026.txt)",
     )
+    parser.add_argument(
+        "--date",
+        default=DATE,
+        help="Found Date for new rows (M/D/YYYY)",
+    )
+    parser.add_argument(
+        "--allow-bunny",
+        action="store_true",
+        help="Keep *.b-cdn.net URLs instead of skipping them",
+    )
     args = parser.parse_args()
+    DATE = args.date
+    ALLOW_BUNNYCDN = bool(args.allow_bunny)
     input_path = Path(args.input)
     if not input_path.is_file():
         print(f"Input file not found: {input_path}", file=sys.stderr)

@@ -8,12 +8,13 @@ const assert = require("assert");
 
 const code = fs.readFileSync(path.join(__dirname, "..", "docs", "data-loader.js"), "utf8");
 
-function loadLoader(documentLike) {
+function loadLoader(documentLike, locationLike) {
   const sandbox = {
     document: documentLike,
     window: {},
     URL,
     globalThis: {},
+    location: locationLike || { href: "https://example.com/", pathname: "/", hostname: "example.com", search: "" },
   };
   sandbox.window = sandbox;
   sandbox.globalThis = sandbox;
@@ -86,6 +87,23 @@ function run() {
   assert.strictEqual(relative.isRelativeUrl("//cdn.example/x"), false);
   assert.strictEqual(relative.directoryOfSrc("../data-loader.js"), "../");
   assert.strictEqual(relative.directoryOfSrc("data-loader.js"), "");
+  assert.strictEqual(relative.looksLikeWebProxy(), false);
+
+  const uvLoader = loadLoader(
+    {
+      getElementsByTagName: function () {
+        return [scriptEl("data-loader.js", "http://127.0.0.1:3000/uv/service/hvtr/data-loader.js")];
+      },
+      baseURI: "http://127.0.0.1:3000/uv/service/hvtrs8/-example.com/",
+    },
+    {
+      href: "http://127.0.0.1:3000/uv/service/hvtrs8/-example.com/",
+      pathname: "/uv/service/hvtrs8/-example.com/",
+      hostname: "127.0.0.1",
+      search: "",
+    }
+  );
+  assert.strictEqual(uvLoader.looksLikeWebProxy(), true);
 
   console.log("ok");
 }

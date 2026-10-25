@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="utf-8" />
+    <script src="../sentry-init.js"></script>
     <script src="../debug-overlays.js"></script>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Sign in | Proxy list</title>
@@ -299,6 +300,42 @@
       font-size: 0.88rem;
     }
     a { color: var(--accent); }
+    .age-gate {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.55rem;
+      margin: 0 0 1rem;
+      padding: 0.7rem 0.8rem;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      background: #141414;
+      font-size: 0.9rem;
+    }
+    .age-gate[hidden] {
+      display: none !important;
+    }
+    .age-gate input {
+      margin-top: 0.2rem;
+      width: 1.05rem;
+      height: 1.05rem;
+      flex-shrink: 0;
+    }
+    .pw-hint {
+      margin: 0;
+      font-size: 0.8rem;
+      color: var(--muted);
+    }
+    .pw-hint--ok { color: var(--ok); }
+    .pw-hint--err { color: #ff9b9b; }
+    .mfa-secret {
+      font-family: ui-monospace, Consolas, monospace;
+      word-break: break-all;
+      font-size: 0.85rem;
+    }
+    #mfaPanel[hidden],
+    #mfaEnrollWrap[hidden] {
+      display: none !important;
+    }
 
 
   </style>
@@ -323,8 +360,9 @@
         </label>
         <label>
           Password
-          <input type="password" id="passwordInput" name="password" autocomplete="current-password" minlength="6" required />
+          <input type="password" id="passwordInput" name="password" autocomplete="current-password" minlength="10" required />
         </label>
+        <p class="pw-hint" id="passwordHint">New accounts need 10+ characters with upper, lower, and a number. We also block leaked passwords.</p>
         <div class="email-mode" role="group" aria-label="Email account mode">
           <button type="button" class="email-mode-btn email-mode-btn--active" id="emailModeSignInBtn" aria-pressed="true">
             Sign in
@@ -333,10 +371,30 @@
             Create account
           </button>
         </div>
+        <label class="age-gate" id="ageGate" hidden>
+          <input type="checkbox" id="over13Check" name="over13" />
+          <span>Are you over 13? You must check this box to create an account.</span>
+        </label>
         <div class="actions">
           <button type="submit" class="btn btn-primary" id="emailSubmitBtn">Continue with email</button>
+          <button type="button" class="btn" id="forgotPasswordBtn">Forgot password</button>
         </div>
       </form>
+
+      <div id="mfaPanel" hidden>
+        <h2>Two-factor authentication</h2>
+        <p class="muted">Enter the 6-digit code from your authenticator app.</p>
+        <form class="email-form" id="mfaForm">
+          <label>
+            Authenticator code
+            <input type="text" id="mfaCodeInput" name="mfa" inputmode="numeric" autocomplete="one-time-code" maxlength="8" required />
+          </label>
+          <div class="actions">
+            <button type="submit" class="btn btn-primary" id="mfaSubmitBtn">Verify</button>
+            <button type="button" class="btn" id="mfaCancelBtn">Cancel</button>
+          </div>
+        </form>
+      </div>
 
       <hr class="auth-divider" />
       <p class="auth-divider-label" id="otherSignInLabel">Other sign-in options</p>
@@ -380,6 +438,22 @@
         <div class="actions">
           <a class="btn btn-primary" href="../" id="openListBtn">Open proxy list</a>
           <button type="button" class="btn" id="signOutBtn">Sign out</button>
+        </div>
+        <div id="mfaEnrollWrap" style="margin-top:1rem;">
+          <h2>Two-factor authentication</h2>
+          <p class="muted">Add an authenticator app so a stolen password is not enough to sign in.</p>
+          <p class="status" id="mfaEnrollStatus"></p>
+          <p class="mfa-secret" id="mfaSecretDisplay" hidden></p>
+          <form class="email-form" id="mfaEnrollForm" hidden>
+            <label>
+              Authenticator code
+              <input type="text" id="mfaEnrollCode" inputmode="numeric" autocomplete="one-time-code" maxlength="8" />
+            </label>
+          </form>
+          <div class="actions">
+            <button type="button" class="btn btn-primary" id="mfaStartEnrollBtn">Set up 2FA</button>
+            <button type="button" class="btn" id="mfaConfirmEnrollBtn" hidden>Confirm 2FA</button>
+          </div>
         </div>
       </div>
       <div id="profileSetupWrap" hidden>
@@ -447,6 +521,7 @@
   <script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-firestore-compat.js"></script>
   <script src="../firebase-config.example.js"></script>
   <script src="../firebase-config.local.js"></script>
+  <script src="../auth-security.js"></script>
   <script src="../firebase-auth-ready.js"></script>
   <script>
     (function () {
@@ -470,6 +545,13 @@
         if (emailModeCreateBtn) {
           emailModeCreateBtn.classList.toggle("email-mode-btn--active", emailAccountMode === "create");
           emailModeCreateBtn.setAttribute("aria-pressed", emailAccountMode === "create" ? "true" : "false");
+        }
+        const pw = document.getElementById("passwordInput");
+        if (pw) pw.setAttribute("autocomplete", emailAccountMode === "create" ? "new-password" : "current-password");
+        const ageGate = document.getElementById("ageGate");
+        if (ageGate) ageGate.hidden = emailAccountMode !== "create";
+        if (emailAccountMode === "create") {
+          setPasswordHint("New accounts need 10+ characters with upper, lower, and a number. We also block leaked passwords.", "");
         }
       }
       const signOutBtn = document.getElementById("signOutBtn");
@@ -518,15 +600,57 @@
       const profileSetupSaveBtn = document.getElementById("profileSetupSaveBtn");
       const profileSetupSignOutBtn = document.getElementById("profileSetupSignOutBtn");
 
+      const forgotPasswordBtn = document.getElementById("forgotPasswordBtn");
+      const over13Check = document.getElementById("over13Check");
+      const passwordHint = document.getElementById("passwordHint");
+      const mfaPanel = document.getElementById("mfaPanel");
+      const mfaForm = document.getElementById("mfaForm");
+      const mfaCodeInput = document.getElementById("mfaCodeInput");
+      const mfaSubmitBtn = document.getElementById("mfaSubmitBtn");
+      const mfaCancelBtn = document.getElementById("mfaCancelBtn");
+      const mfaStartEnrollBtn = document.getElementById("mfaStartEnrollBtn");
+      const mfaConfirmEnrollBtn = document.getElementById("mfaConfirmEnrollBtn");
+      const mfaEnrollStatus = document.getElementById("mfaEnrollStatus");
+      const mfaSecretDisplay = document.getElementById("mfaSecretDisplay");
+      const mfaEnrollForm = document.getElementById("mfaEnrollForm");
+      const mfaEnrollCode = document.getElementById("mfaEnrollCode");
+      let mfaResolver = null;
+      let totpSecretPending = null;
+      const AuthSec = window.ProxyListAuthSecurity;
+
       const authButtons = [
         githubSignInBtn,
         googleSignInBtn,
         emailSubmitBtn,
         emailModeSignInBtn,
         emailModeCreateBtn,
+        forgotPasswordBtn,
         profileSetupSaveBtn,
         profileSetupSignOutBtn,
+        mfaSubmitBtn,
+        mfaCancelBtn,
+        mfaStartEnrollBtn,
+        mfaConfirmEnrollBtn,
       ];
+
+      function requireOver13() {
+        if (over13Check && over13Check.checked) return true;
+        setStatus("Confirm you are over 13 to continue.", "error");
+        if (over13Check) over13Check.focus();
+        return false;
+      }
+
+      function setPasswordHint(message, kind) {
+        if (!passwordHint) return;
+        passwordHint.textContent = message || "";
+        passwordHint.className = "pw-hint" + (kind ? " pw-hint--" + kind : "");
+      }
+
+      function setMfaEnrollStatus(message, kind) {
+        if (!mfaEnrollStatus) return;
+        mfaEnrollStatus.textContent = message || "";
+        mfaEnrollStatus.className = "status" + (kind ? " status--" + kind : "");
+      }
 
       const USERNAME_RE = /^[a-zA-Z0-9_]{3,20}$/;
       const PROFILE_PHOTO_MAX_CHARS = 125000;
@@ -838,7 +962,6 @@
         });
       }
 
-      const GITHUB_TOKEN_SESSION_KEY = "proxyList_github_access_token";
       const OAUTH_PENDING_KEY = "proxyList_oauth_pending";
       // Already authorized in Firebase with OAuth redirect URIs (auth-bridge-host via Hosting).
       const AUTH_BRIDGE_ORIGIN = "https://proxy-list-c06ea.firebaseapp.com";
@@ -1043,6 +1166,10 @@
           })
           .catch((err) => {
             setOauthPending(false);
+            if (err && err.code === "auth/multi-factor-auth-required") {
+              showMfaChallenge(err);
+              return true;
+            }
             const info = authErrorMessage(err);
             setStatus(info.message, info.kind);
             return true;
@@ -1057,26 +1184,19 @@
           token = String(cred.accessToken);
         }
         if (!token) {
-          // Avoid leaving a stale token after a GitHub sign-in that did not yield a new one.
           if (cred && cred.providerId === "github.com") clearGithubAccessToken();
           return false;
         }
-        try {
-          localStorage.setItem(GITHUB_TOKEN_SESSION_KEY, token);
-        } catch (_) {}
-        try {
-          sessionStorage.setItem(GITHUB_TOKEN_SESSION_KEY, token);
-        } catch (_) {}
+        if (AuthSec && typeof AuthSec.storeGithubAccessToken === "function") {
+          void AuthSec.storeGithubAccessToken(token);
+        }
         return true;
       }
 
       function clearGithubAccessToken() {
-        try {
-          localStorage.removeItem(GITHUB_TOKEN_SESSION_KEY);
-        } catch (_) {}
-        try {
-          sessionStorage.removeItem(GITHUB_TOKEN_SESSION_KEY);
-        } catch (_) {}
+        if (AuthSec && typeof AuthSec.clearGithubAccessToken === "function") {
+          void AuthSec.clearGithubAccessToken();
+        }
       }
 
       function authErrorMessage(err) {
@@ -1098,7 +1218,9 @@
           return { message: "That email already has an account. Use Sign in instead.", kind: "error" };
         }
         if (code === "auth/invalid-email") return { message: "Enter a valid email address.", kind: "error" };
-        if (code === "auth/weak-password") return { message: "Password must be at least 6 characters.", kind: "error" };
+        if (code === "auth/weak-password") return { message: "Password is too weak. Use 10+ characters with mixed case and a number.", kind: "error" };
+        if (code === "auth/too-many-requests") return { message: "Too many attempts. Wait a few minutes and try again.", kind: "error" };
+        if (code === "auth/multi-factor-auth-required") return { message: "Enter your authenticator code to finish signing in.", kind: "" };
         if (code === "auth/wrong-password" || code === "auth/invalid-credential") {
           return { message: "Email or password is incorrect.", kind: "error" };
         }
@@ -1194,6 +1316,10 @@
             return afterSignIn(auth, db, true);
           })
           .catch((err) => {
+            if (err && err.code === "auth/multi-factor-auth-required") {
+              showMfaChallenge(err);
+              return;
+            }
             if (isPopupBlockedError(err)) {
               setStatus("Popup blocked — continuing with full-page sign-in…", "");
               return signInWithRedirectProvider(auth, provider);
@@ -1350,6 +1476,10 @@
               }
             }
             setOauthPending(false);
+            if (err && err.code === "auth/multi-factor-auth-required") {
+              showMfaChallenge(err);
+              return;
+            }
             const info = authErrorMessage(err);
             setStatus(info.message, info.kind);
           })
@@ -1360,37 +1490,218 @@
         return emailAccountMode === "create" ? "create" : "signin";
       }
 
+      function showMfaChallenge(err) {
+        try {
+          mfaResolver = firebase.auth.getMultiFactorResolver(auth, err);
+        } catch (_) {
+          mfaResolver = null;
+        }
+        if (!mfaResolver) {
+          setStatus("Two-factor authentication is required, but this browser could not continue.", "error");
+          return;
+        }
+        if (mfaPanel) mfaPanel.hidden = false;
+        if (emailAuthForm) emailAuthForm.hidden = true;
+        setStatus("Enter the 6-digit code from your authenticator app.", "");
+        if (mfaCodeInput) {
+          mfaCodeInput.value = "";
+          mfaCodeInput.focus();
+        }
+      }
+
+      function hideMfaChallenge() {
+        mfaResolver = null;
+        if (mfaPanel) mfaPanel.hidden = true;
+        if (emailAuthForm) emailAuthForm.hidden = false;
+      }
+
+      function handleMfaVerify() {
+        const code = String((mfaCodeInput && mfaCodeInput.value) || "").trim().replace(/\s/g, "");
+        if (!mfaResolver || !code) {
+          setStatus("Enter your authenticator code.", "error");
+          return Promise.resolve();
+        }
+        let assertion;
+        try {
+          const hint = (mfaResolver.hints || []).find(function (h) {
+            return h && h.factorId === firebase.auth.TotpMultiFactorGenerator.FACTOR_ID;
+          }) || mfaResolver.hints[0];
+          if (!hint) throw new Error("No authenticator is enrolled on this account.");
+          assertion = firebase.auth.TotpMultiFactorGenerator.assertionForSignIn(hint.uid, code);
+        } catch (err) {
+          setStatus(err && err.message ? err.message : "Could not verify that code.", "error");
+          return Promise.resolve();
+        }
+        setAuthBusy(true);
+        setStatus("Verifying…", "");
+        return mfaResolver
+          .resolveSignIn(assertion)
+          .then(() => {
+            hideMfaChallenge();
+            return afterSignIn(auth, db, true);
+          })
+          .catch((err) => {
+            const info = authErrorMessage(err);
+            setStatus(info.message, info.kind);
+          })
+          .finally(() => setAuthBusy(false));
+      }
+
+      async function startTotpEnroll() {
+        const user = auth.currentUser;
+        if (!user || user.isAnonymous) {
+          setMfaEnrollStatus("Sign in first to set up 2FA.", "error");
+          return;
+        }
+        if (!firebase.auth.TotpMultiFactorGenerator) {
+          setMfaEnrollStatus("This browser cannot enroll authenticator 2FA.", "error");
+          return;
+        }
+        setMfaEnrollStatus("Starting authenticator setup…", "");
+        try {
+          const session = await user.multiFactor.getSession();
+          totpSecretPending = await firebase.auth.TotpMultiFactorGenerator.generateSecret(session);
+          const secret = totpSecretPending.secretKey || totpSecretPending.sharedSecretKey || "";
+          const account = user.email || user.uid;
+          let otpauth = "";
+          try {
+            if (typeof totpSecretPending.generateQrCodeUrl === "function") {
+              otpauth = totpSecretPending.generateQrCodeUrl(account, "Proxy list");
+            }
+          } catch (_) {}
+          if (mfaSecretDisplay) {
+            mfaSecretDisplay.hidden = false;
+            mfaSecretDisplay.textContent = secret
+              ? "Add this key in your authenticator app: " + secret + (otpauth ? "\n" + otpauth : "")
+              : "Open your authenticator app and add a new TOTP account, then enter a code below.";
+          }
+          if (mfaEnrollForm) mfaEnrollForm.hidden = false;
+          if (mfaConfirmEnrollBtn) mfaConfirmEnrollBtn.hidden = false;
+          setMfaEnrollStatus("Enter a code from the app to finish setup.", "");
+        } catch (err) {
+          const code = err && err.code ? String(err.code) : "";
+          if (/second-factor-already-in-use|already exists/i.test(code + " " + (err && err.message))) {
+            setMfaEnrollStatus("2FA is already enabled on this account.", "ok");
+          } else {
+            setMfaEnrollStatus(
+              "Could not start 2FA. Enable TOTP multi-factor in Firebase Authentication, then try again.",
+              "error"
+            );
+          }
+        }
+      }
+
+      async function confirmTotpEnroll() {
+        const user = auth.currentUser;
+        const code = String((mfaEnrollCode && mfaEnrollCode.value) || "").trim().replace(/\s/g, "");
+        if (!user || !totpSecretPending || !code) {
+          setMfaEnrollStatus("Enter the 6-digit authenticator code.", "error");
+          return;
+        }
+        setMfaEnrollStatus("Confirming…", "");
+        try {
+          const assertion = firebase.auth.TotpMultiFactorGenerator.assertionForEnrollment(totpSecretPending, code);
+          await user.multiFactor.enroll(assertion, "Authenticator");
+          totpSecretPending = null;
+          if (mfaSecretDisplay) mfaSecretDisplay.hidden = true;
+          if (mfaEnrollForm) mfaEnrollForm.hidden = true;
+          if (mfaConfirmEnrollBtn) mfaConfirmEnrollBtn.hidden = true;
+          setMfaEnrollStatus("Two-factor authentication is on.", "ok");
+        } catch (err) {
+          setMfaEnrollStatus(err && err.message ? err.message : "That code was not accepted.", "error");
+        }
+      }
+
       function handleEmailAuth(auth, db) {
         const email = String(document.getElementById("emailInput").value || "").trim();
         const password = String(document.getElementById("passwordInput").value || "");
         const mode = selectedEmailMode();
+        if (mode === "create" && !requireOver13()) return Promise.resolve();
         if (!email || !password) {
           setStatus("Enter an email and password.", "error");
           return Promise.resolve();
         }
-        if (password.length < 6) {
-          setStatus("Password must be at least 6 characters.", "error");
-          return Promise.resolve();
-        }
 
         setAuthBusy(true);
-        setStatus(mode === "create" ? "Creating account…" : "Signing in…", "");
-        const credential = firebase.auth.EmailAuthProvider.credential(email, password);
-        return ensureAnonymousSession(auth)
-          .then((user) => {
-            if (mode === "create") {
-              if (user.isAnonymous) return user.linkWithCredential(credential);
-              return auth.createUserWithEmailAndPassword(email, password);
+        setStatus(mode === "create" ? "Checking password…" : "Signing in…", "");
+        const kind = mode === "create" ? "signup" : "login";
+        const preflight = AuthSec && AuthSec.guardAuth
+          ? AuthSec.guardAuth(kind, email)
+          : Promise.resolve({ ok: true });
+        return preflight
+          .then((guard) => {
+            if (!guard.ok) {
+              setStatus(guard.message || "Too many attempts. Try again later.", "error");
+              return null;
             }
-            if (user.isAnonymous) {
-              return user.linkWithCredential(credential).catch(() => auth.signInWithEmailAndPassword(email, password));
+            if (mode !== "create") return { ok: true };
+            if (!AuthSec || !AuthSec.checkPassword) {
+              if (password.length < 10) {
+                setStatus("Password must be at least 10 characters.", "error");
+                return null;
+              }
+              return { ok: true };
             }
-            return auth.signInWithEmailAndPassword(email, password);
+            return AuthSec.checkPassword(password, email).then((check) => {
+              if (!check.ok) {
+                setStatus(AuthSec.passwordCheckMessage(check), "error");
+                setPasswordHint(AuthSec.passwordCheckMessage(check), "err");
+                return null;
+              }
+              setPasswordHint("Password looks strong.", "ok");
+              return { ok: true };
+            });
           })
-          .then(() => afterSignIn(auth, db, true))
+          .then((allowed) => {
+            if (!allowed) return null;
+            setStatus(mode === "create" ? "Creating account…" : "Signing in…", "");
+            const credential = firebase.auth.EmailAuthProvider.credential(email, password);
+            return ensureAnonymousSession(auth).then((user) => {
+              if (mode === "create") {
+                if (user.isAnonymous) return user.linkWithCredential(credential);
+                return auth.createUserWithEmailAndPassword(email, password);
+              }
+              if (user.isAnonymous) {
+                return user.linkWithCredential(credential).catch(() => auth.signInWithEmailAndPassword(email, password));
+              }
+              return auth.signInWithEmailAndPassword(email, password);
+            });
+          })
+          .then((cred) => {
+            if (!cred) return;
+            return afterSignIn(auth, db, true);
+          })
           .catch((err) => {
+            const code = err && err.code ? String(err.code) : "";
+            if (code === "auth/multi-factor-auth-required") {
+              showMfaChallenge(err);
+              return;
+            }
             const info = authErrorMessage(err);
             setStatus(info.message, info.kind);
+          })
+          .finally(() => setAuthBusy(false));
+      }
+
+      function handleForgotPassword() {
+        const email = String(document.getElementById("emailInput").value || "").trim();
+        if (!email) {
+          setStatus("Enter your email, then click Forgot password.", "error");
+          return;
+        }
+        if (!AuthSec || !AuthSec.requestPasswordReset) {
+          setStatus("Password reset is unavailable on this host.", "error");
+          return;
+        }
+        setAuthBusy(true);
+        setStatus("Sending reset email…", "");
+        AuthSec.requestPasswordReset(email)
+          .then((res) => {
+            if (!res.ok) {
+              setStatus(res.message || "Could not send a reset email.", "error");
+              return;
+            }
+            setStatus("If that email has an account, a reset link is on the way.", "ok");
           })
           .finally(() => setAuthBusy(false));
       }
@@ -1455,6 +1766,43 @@
         ev.preventDefault();
         void handleEmailAuth(auth, db);
       });
+      if (forgotPasswordBtn) {
+        forgotPasswordBtn.addEventListener("click", () => handleForgotPassword());
+      }
+      if (mfaForm) {
+        mfaForm.addEventListener("submit", (ev) => {
+          ev.preventDefault();
+          void handleMfaVerify();
+        });
+      }
+      if (mfaCancelBtn) {
+        mfaCancelBtn.addEventListener("click", () => {
+          hideMfaChallenge();
+          setStatus("Sign-in cancelled.", "");
+        });
+      }
+      if (mfaStartEnrollBtn) {
+        mfaStartEnrollBtn.addEventListener("click", () => void startTotpEnroll());
+      }
+      if (mfaConfirmEnrollBtn) {
+        mfaConfirmEnrollBtn.addEventListener("click", () => void confirmTotpEnroll());
+      }
+      const passwordInput = document.getElementById("passwordInput");
+      const emailInput = document.getElementById("emailInput");
+      let pwCheckTimer = 0;
+      if (passwordInput) {
+        passwordInput.addEventListener("input", () => {
+          if (selectedEmailMode() !== "create" || !AuthSec || !AuthSec.checkPassword) return;
+          window.clearTimeout(pwCheckTimer);
+          pwCheckTimer = window.setTimeout(() => {
+            const pw = passwordInput.value || "";
+            if (pw.length < 8) return;
+            AuthSec.checkPassword(pw, emailInput && emailInput.value).then((check) => {
+              setPasswordHint(AuthSec.passwordCheckMessage(check), check.ok ? "ok" : "err");
+            });
+          }, 450);
+        });
+      }
       if (profileSetupSaveBtn) {
         profileSetupSaveBtn.addEventListener("click", () => void saveFirstProfileFromLogin());
       }

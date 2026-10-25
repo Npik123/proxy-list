@@ -145,28 +145,33 @@
     return !!(user && !user.isAnonymous);
   }
 
-  function submissionAdminGithubLogins() {
-    var cfg = global.__SUBMISSION_ADMIN_GITHUB__ || global.__SUBMISSION_ADMIN_GITHUB_LOGINS__;
-    return Array.isArray(cfg) ? cfg.map(function (s) {
-      return String(s).trim().toLowerCase();
-    }).filter(Boolean) : ["yourworstnightmare1"];
-  }
-
-  function submissionAdminUids() {
-    var cfg = global.__SUBMISSION_ADMIN_UIDS__;
-    return Array.isArray(cfg) ? cfg.map(String).filter(Boolean) : [];
-  }
+  var adminCheckCache = { uid: "", admin: false, at: 0 };
+  var ADMIN_CACHE_MS = 60 * 1000;
 
   function isSubmissionAdminUser(user) {
     if (!isSignedInNonAnonymous(user)) return false;
-    // Firestore admin writes require UID in config/submissions.adminUids — match that for UI.
-    var uids = submissionAdminUids();
-    if (uids.length && uids.indexOf(user.uid) !== -1) return true;
-    if (!uids.length) {
-      var gh = githubLoginFromUser(user).toLowerCase();
-      if (gh && submissionAdminGithubLogins().indexOf(gh) !== -1) return true;
+    if (adminCheckCache.uid === user.uid && Date.now() - adminCheckCache.at < 5 * 60 * 1000) {
+      return adminCheckCache.admin;
     }
     return false;
+  }
+
+  function checkSubmissionAdmin(user) {
+    if (!isSignedInNonAnonymous(user)) return Promise.resolve(false);
+    if (adminCheckCache.uid === user.uid && Date.now() - adminCheckCache.at < ADMIN_CACHE_MS) {
+      return Promise.resolve(adminCheckCache.admin);
+    }
+    var sec = global.ProxyListAuthSecurity;
+    var fetchMe = sec && typeof sec.fetchAdminMe === "function" ? sec.fetchAdminMe : null;
+    if (!fetchMe) return Promise.resolve(false);
+    return fetchMe(user)
+      .then(function (ok) {
+        adminCheckCache = { uid: user.uid, admin: !!ok, at: Date.now() };
+        return adminCheckCache.admin;
+      })
+      .catch(function () {
+        return false;
+      });
   }
 
   function submitterLabelFromUser(user, profileDoc) {
@@ -236,6 +241,7 @@
     contributorMdFromFields: contributorMdFromFields,
     isSignedInNonAnonymous: isSignedInNonAnonymous,
     isSubmissionAdminUser: isSubmissionAdminUser,
+    checkSubmissionAdmin: checkSubmissionAdmin,
     submitterLabelFromUser: submitterLabelFromUser,
     contributorMdFromUser: contributorMdFromUser,
     formatListMdRow: formatListMdRow,

@@ -65,7 +65,7 @@ Try out my newest project, the [Proxy Development Toolkit](https://github.com/yo
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Proxy/Games | captcha | Scramjet | 70 |
+> | Proxy/Games | captcha | Scramjet | 79 |
 
 | Locked | Link | Found Date | Username | Password | Contributor |
 | - | - | - | - | - | - |
@@ -153,7 +153,7 @@ Try out my newest project, the [Proxy Development Toolkit](https://github.com/yo
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Games | GDB:gn-math | N/A | 111 |
+> | Games | GDB:gn-math | N/A | 188 |
 
 > [!IMPORTANT]
 > if the link loads a page saying "user gn-math is blocked" or no games appear on screen, you are using an old version of gn-math that no longer works, please use another link. i also recommend reporting this on our GitHub issues page to prevent other users from running into this issue -> https://github.com/yourworstnightmare1/proxy-list/issues
@@ -353,7 +353,7 @@ Try out my newest project, the [Proxy Development Toolkit](https://github.com/yo
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Proxy/Games | captcha, GDB:frogies-arcade | Ultraviolet | 31 |
+> | Proxy/Games | captcha, GDB:frogies-arcade | Ultraviolet | 89 |
 
 > [!IMPORTANT]
 > on some networks, the proxy will load a white screen or an ultraviolet error page, if this happens try using another link as that is known to fix this issue
@@ -595,7 +595,7 @@ Try out my newest project, the [Proxy Development Toolkit](https://github.com/yo
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Proxy/Games | epoxy, libcurl, GDB:gn-math | Scramjet, Ultraviolet, Eclipse | 14 |
+> | Proxy/Games | epoxy, libcurl, GDB:gn-math | Scramjet, Ultraviolet, Eclipse | 15 |
 
 > [!IMPORTANT]
 > Nebulo does not have CAPTCHA support. Websites that require human verification (like YouTube) will not work or display properly.
@@ -622,7 +622,7 @@ Try out my newest project, the [Proxy Development Toolkit](https://github.com/yo
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Proxy/Games | epoxy, libcurl, wisp, GDB:space | Scramjet, Ultraviolet | 20 |
+> | Proxy/Games | epoxy, libcurl, wisp, GDB:space | Scramjet, Ultraviolet | 21 |
 
 > [!IMPORTANT]
 > some space links have a similar problem like daydream where it will be very slow for some reason. if you are on a link and nothing loads or loads very slowly, try another link and make sure that if it is a jsdelivr domain, you choose the fastest option based on your location.
@@ -655,7 +655,7 @@ Try out my newest project, the [Proxy Development Toolkit](https://github.com/yo
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Proxy/Games | GDB:luminsdk | Scramjet, Ultraviolet | 430 |
+> | Proxy/Games | GDB:luminsdk | Scramjet, Ultraviolet | 567 |
 > [!IMPORTANT]
 > site has a bunch of ad popup windows, you can close these. it's recommended you use uBlock Origin to view this site without those popups
 
@@ -1511,7 +1511,7 @@ Try out my newest project, the [Proxy Development Toolkit](https://github.com/yo
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Proxy/Games | GDB:boredom | Scramjet | 6 |
+> | Proxy/Games | GDB:boredom | Scramjet | 165 |
 
 > [!IMPORTANT]
 > Boredom does not have CAPTCHA support. Websites that require human verification (like YouTube) will not work or display properly.
@@ -1742,7 +1742,7 @@ Try out my newest project, the [Proxy Development Toolkit](https://github.com/yo
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Proxy/Games | wisp, GDB:dogeub | Scramjet, Ultraviolet | 154 |
+> | Proxy/Games | wisp, GDB:dogeub | Scramjet, Ultraviolet | 166 |
 
 > [!IMPORTANT]
 > when visiting dogeub on a google script (script.google.com) domain, the proxy won't load and if it does it's just a white screen. most games are unaffected
@@ -1920,7 +1920,7 @@ Try out my newest project, the [Proxy Development Toolkit](https://github.com/yo
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Proxy/Games | wisp, GDB:lucide | Scramjet, Ultraviolet | 44 |
+> | Proxy/Games | wisp, GDB:lucide | Scramjet, Ultraviolet | 48 |
 
 > [!IMPORTANT]
 > Lunar does not have CAPTCHA support. Websites that require human verification (like YouTube) will not work or display properly.
@@ -2116,7 +2116,7 @@ Try out my newest project, the [Proxy Development Toolkit](https://github.com/yo
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Proxy/Games | GDB:petezah | Scramjet | 35 |
+> | Proxy/Games | GDB:petezah | Scramjet | 102 |
 
 > [!IMPORTANT]
 > PetZah does not have CAPTCHA support. Websites that require human verification (like YouTube) will not work or display properly.
@@ -2244,7 +2244,7 @@ Try out my newest project, the [Proxy Development Toolkit](https://github.com/yo
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Proxy/Games | epoxy, libcurl, wisp, GDB:gn-math | Scramjet | 360 |
+> | Proxy/Games | epoxy, libcurl, wisp, GDB:gn-math | Scramjet | 367 |
 
 > [!IMPORTANT]
 > some of these links load a black screen
@@ -2685,7 +2685,7 @@ Try out my newest project, the [Proxy Development Toolkit](https://github.com/yo
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Proxy/Games | captcha, tab-cloak, GDB:gn-math, GDB:duckmath | - | 77 |
+> | Proxy/Games | captcha, tab-cloak, GDB:gn-math, GDB:duckmath | - | 78 |
 
 > [!IMPORTANT]
 > This section has not been categorized or checked for protocol(s) and capabilities.
@@ -2813,7 +2813,7 @@ Try out my newest project, the [Proxy Development Toolkit](https://github.com/yo
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Proxy/Games | GDB:gn-math, GDB:Seraph | unknown | 92 |
+> | Proxy/Games | GDB:gn-math, GDB:Seraph | unknown | 96 |
 
 > [!IMPORTANT]
 > StudyHub does not have CAPTCHA support. Websites that require human verification (like YouTube) will not work or display properly.
@@ -2921,7 +2921,7 @@ Try out my newest project, the [Proxy Development Toolkit](https://github.com/yo
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Proxy | tab-cloak, panic | Ultraviolet, Rammerhead | 36 |
+> | Proxy | tab-cloak, panic | Ultraviolet, Rammerhead | 42 |
 > [!IMPORTANT]
 > if you were looking for ford links, ford no longer exists and all of its links are now strawberri links
 
@@ -2974,7 +2974,7 @@ Try out my newest project, the [Proxy Development Toolkit](https://github.com/yo
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Proxy/Games | unknown | unknown | 5 |
+> | Proxy/Games | unknown | unknown | 7 |
 
 > [!IMPORTANT]
 > for some reason the developers put a 4 tab limit on free users (3 if you have adblock, 8+ if you pay). if you need multitasking use another proxy
@@ -3001,7 +3001,7 @@ Try out my newest project, the [Proxy Development Toolkit](https://github.com/yo
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Proxy/Games | GDB:utopia | Ultraviolet | 26 |
+> | Proxy/Games | GDB:utopia | Ultraviolet | 27 |
 > [!IMPORTANT]
 > this site uses highly detectable domains, very likely all of these are blocked for you
 
@@ -3039,7 +3039,7 @@ Try out my newest project, the [Proxy Development Toolkit](https://github.com/yo
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Proxy/Games | captcha, GDB:lucide | Scramjet | 152 |
+> | Proxy/Games | captcha, GDB:lucide | Scramjet | 154 |
 
 | Locked | Link | Found Date | Username | Password | Contributor |
 | - | - | - | - | - | - |
@@ -3272,7 +3272,7 @@ Try out my newest project, the [Proxy Development Toolkit](https://github.com/yo
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Games | GDB:gn-math | N/A | 90 |
+> | Games | GDB:gn-math | N/A | 291 |
 
 | Locked | Link | Found Date | Username | Password | Contributor |
 | - | - | - | - | - | - |
@@ -3572,7 +3572,7 @@ Try out my newest project, the [Proxy Development Toolkit](https://github.com/yo
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Proxy/Games | GDB:gn-math, GDB:elite-games, GDB:ultimate-game-stash, GDB:Seraph, GDB:chicken-kings-vault | unknown | 66 |
+> | Proxy/Games | GDB:gn-math, GDB:elite-games, GDB:ultimate-game-stash, GDB:Seraph, GDB:chicken-kings-vault | unknown | 67 |
 
 | Locked | Link | Found Date | Username | Password | Contributor |
 | - | - | - | - | - | - |
@@ -3648,7 +3648,7 @@ Try out my newest project, the [Proxy Development Toolkit](https://github.com/yo
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Games | tab-cloak, GDB:noahs-tutoring | N/A | 147 |
+> | Games | tab-cloak, GDB:noahs-tutoring | N/A | 148 |
 
 | Locked | Link | Found Date | Username | Password | Contributor |
 | - | - | - | - | - | - |
@@ -21548,7 +21548,7 @@ Try out my newest project, the [Proxy Development Toolkit](https://github.com/yo
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Proxy/Games | unknown | unknown | 16717 |
+> | Proxy/Games | unknown | unknown | 17422 |
 
 | Locked | Link | Found Date | Username | Password | Contributor |
 | - | - | - | - | - | - |
@@ -39001,7 +39001,7 @@ Try out my newest project, the [Proxy Development Toolkit](https://github.com/yo
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Proxy/Games | unknown | unknown | 79 |
+> | Proxy/Games | unknown | unknown | 181 |
 
 | Locked | Link | Found Date | Username | Password | Contributor |
 | - | - | - | - | - | - |
@@ -39235,7 +39235,7 @@ Try out my newest project, the [Proxy Development Toolkit](https://github.com/yo
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Proxy/Games | wisp, epoxy, libcurl | Scramjet, Tor | 395 |
+> | Proxy/Games | wisp, epoxy, libcurl | Scramjet, Tor | 496 |
 | Locked | Link | Found Date | Username | Password | Contributor |
 | - | - | - | - | - | - |
 | | https://interesting-articles.pages.dev | 5/22/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
@@ -39739,7 +39739,7 @@ Try out my newest project, the [Proxy Development Toolkit](https://github.com/yo
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Proxy/Games | - | Eclipse | 1 |
+> | Proxy/Games | - | Eclipse | 4 |
 > [!IMPORTANT]
 > This section has not been categorized or checked for protocol(s) and capabilities.
 
@@ -39754,7 +39754,7 @@ Try out my newest project, the [Proxy Development Toolkit](https://github.com/yo
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Proxy/Games | wisp, epoxy, libcurl, user-agent | Unknown | 8996 |
+> | Proxy/Games | wisp, epoxy, libcurl, user-agent | Unknown | 9084 |
 | Locked | Link | Found Date | Username | Password | Contributor |
 | - | - | - | - | - | - |
 | | https://awidjawjfofaaa.educationlearningcollege.lovestoblog.com | 8/1/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
@@ -48899,7 +48899,7 @@ Try out my newest project, the [Proxy Development Toolkit](https://github.com/yo
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Proxy/Games | Unknown | Ultraviolet | 125 |
+> | Proxy/Games | Unknown | Ultraviolet | 126 |
 | Locked | Link | Found Date | Username | Password | Contributor |
 | - | - | - | - | - | - |
 | | https://cdn.jsdelivr.net/gh/AetherGamesOfficial/math@0ad1abf/studyhub.svg | 6/7/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
@@ -49065,7 +49065,7 @@ Try out my newest project, the [Proxy Development Toolkit](https://github.com/yo
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Games | GDB:gn-math, GDB:unblockedzone, GDB:noahs-tutoring, GDB:luminsdk, GDB:ultimate-game-stash, GDB:elite-games, GDB:Seraph, GDB:chicken-kings-vault | N/A | 460 |
+> | Games | GDB:gn-math, GDB:unblockedzone, GDB:noahs-tutoring, GDB:luminsdk, GDB:ultimate-game-stash, GDB:elite-games, GDB:Seraph, GDB:chicken-kings-vault | N/A | 548 |
 > [!IMPORTANT]
 > if you see a block screen it's likely fake, wait a few seconds and it will disappear
 
@@ -49651,7 +49651,7 @@ Try out my newest project, the [Proxy Development Toolkit](https://github.com/yo
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Proxy/Games | libcurl, epoxy | Scramjet | 1510 |
+> | Proxy/Games | libcurl, epoxy | Scramjet | 1671 |
 | Locked | Link | Found Date | Username | Password | Contributor |
 | - | - | - | - | - | - |
 | | https://catclass.brtk.eu | 8/1/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
@@ -51330,7 +51330,7 @@ Try out my newest project, the [Proxy Development Toolkit](https://github.com/yo
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Proxy/Games | tab-cloak, GDB:gn-math | Scramjet, Ultraviolet, Tor | 61 |
+> | Proxy/Games | tab-cloak, GDB:gn-math | Scramjet, Ultraviolet, Tor | 96 |
 > [!IMPORTANT]
 > site has fake nasa popup, wait a few seconds and it should disappear
 >
@@ -51439,7 +51439,7 @@ Try out my newest project, the [Proxy Development Toolkit](https://github.com/yo
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Proxy | wisp | Unknown | 6 |
+> | Proxy | wisp | Unknown | 7 |
 | Locked | Link | Found Date | Username | Password | Contributor |
 | - | - | - | - | - | - |
 | | https://script.google.com/macros/s/AKfycbyBpXVWW5SVdx91Ve2LniAMUx6raXMpGq8jK5nmeomRkbGRmfaVVl78ytbt2mocu3oszQ/exec | 8/1/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
@@ -51454,7 +51454,7 @@ Try out my newest project, the [Proxy Development Toolkit](https://github.com/yo
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Games | - | N/A | 33 |
+> | Games | - | N/A | 91 |
 | Locked | Link | Found Date | Username | Password | Contributor |
 | - | - | - | - | - | - |
 | | https://cdn.imageurlgenerator.com/uploads/ca803644-49df-4030-81fc-6fe1748033c6.svg | 8/1/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
@@ -51618,7 +51618,7 @@ Try out my newest project, the [Proxy Development Toolkit](https://github.com/yo
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Games | N/A | N/A | 1 |
+> | Games | N/A | N/A | 4 |
 > [!IMPORTANT]
 > This section has not been fully categorized or checked for protocol(s) and capabilities. Submitter note: mainly games.
 
@@ -51627,12 +51627,13 @@ Try out my newest project, the [Proxy Development Toolkit](https://github.com/yo
 | | https://pgis3.vercel.app | 8/9/2026 | N/A | N/A | [0800](https://github.com/0800WebDev)
 |  | https://homework555.netlify.app/ | 8/20/2026 | N/A | N/A | [0800](https://github.com/0800WebDev)
 |  | https://math.bumon.ar | 8/20/2026 | N/A | N/A | [0800](https://github.com/0800WebDev)
+|  | http://edu.meridiano.com.br/ | 10/2/2026 | N/A | N/A | [0800](https://github.com/0800WebDev)
 
 # 🪨 Zinc
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Proxy/Games | epoxy, libcurl, bare, tab-cloak, captcha, GDB:petezah | Scramjet | 1 |
+> | Proxy/Games | epoxy, libcurl, bare, tab-cloak, captcha, GDB:petezah | Scramjet | 5 |
 > [!IMPORTANT]
 > This section has not been fully categorized or checked for protocol(s) and capabilities.
 
@@ -52074,7 +52075,7 @@ Try out my newest project, the [Proxy Development Toolkit](https://github.com/yo
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Games | tab-cloak, captcha | N/A | 49 |
+> | Games | tab-cloak, captcha | N/A | 51 |
 > [!IMPORTANT]
 > if you closed the initial tab cloak message, you can always enable tab cloak again by clicking the text under the "open games" button on the homepage
 >
@@ -52166,7 +52167,7 @@ Try out my newest project, the [Proxy Development Toolkit](https://github.com/yo
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Proxy | libcurl, tab-cloak | - | 10 |
+> | Proxy | libcurl, tab-cloak | - | 11 |
 > [!IMPORTANT]
 > This section has not been categorized or checked for protocol(s) and capabilities.
 
@@ -52188,7 +52189,7 @@ Try out my newest project, the [Proxy Development Toolkit](https://github.com/yo
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Proxy/Games | bare | Ultraviolet | 91 |
+> | Proxy/Games | bare | Ultraviolet | 143 |
 > [!IMPORTANT]
 > probably wont load anything when you click unblock
 
@@ -53535,7 +53536,7 @@ Try out my newest project, the [Proxy Development Toolkit](https://github.com/yo
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Proxy | tab-cloak | Scramjet | 67 |
+> | Proxy | tab-cloak | Scramjet | 77 |
 > [!IMPORTANT]
 > This section has not been categorized or checked for protocol(s) and capabilities.
 
@@ -53623,7 +53624,7 @@ Try out my newest project, the [Proxy Development Toolkit](https://github.com/yo
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Proxy/Games | tab-cloak, panic, GDB:luminsdk | - | 118 |
+> | Proxy/Games | tab-cloak, panic, GDB:luminsdk | - | 124 |
 > [!IMPORTANT]
 > This section has not been categorized or checked for protocol(s) and capabilities.
 
@@ -53758,7 +53759,7 @@ Try out my newest project, the [Proxy Development Toolkit](https://github.com/yo
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Proxy/Games | epoxy, libcurl, bare, GDB:selenite | Scramjet, Ultraviolet | 70 |
+> | Proxy/Games | epoxy, libcurl, bare, GDB:selenite | Scramjet, Ultraviolet | 78 |
 > [!IMPORTANT]
 > This section has not been categorized or checked for protocol(s) and capabilities.
 
@@ -53970,7 +53971,7 @@ Try out my newest project, the [Proxy Development Toolkit](https://github.com/yo
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Proxy/Games | captcha, tab-cloak, GDB:selenite | - | 245 |
+> | Proxy/Games | captcha, tab-cloak, GDB:selenite | - | 440 |
 > [!IMPORTANT]
 > This section has not been categorized or checked for protocol(s) and capabilities.
 
@@ -54650,7 +54651,7 @@ Try out my newest project, the [Proxy Development Toolkit](https://github.com/yo
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Games | tab-cloak, GDB:gn-math, GDB:truffled | N/A | 626 |
+> | Games | tab-cloak, GDB:gn-math, GDB:truffled | N/A | 628 |
 > [!IMPORTANT]
 > This section has not been categorized or checked for protocol(s) and capabilities.
 
@@ -55541,7 +55542,7 @@ Try out my newest project, the [Proxy Development Toolkit](https://github.com/yo
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Games | GDB:zane | N/A | 76 |
+> | Games | GDB:zane | N/A | 77 |
 > [!IMPORTANT]
 > This section has not been categorized or checked for protocol(s) and capabilities.
 
@@ -56511,7 +56512,7 @@ Try out my newest project, the [Proxy Development Toolkit](https://github.com/yo
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | pending | pending | pending | 5 |
+> | pending | pending | pending | 6 |
 > [!IMPORTANT]
 > This section has not been categorized or checked for protocol(s) and capabilities.
 
@@ -56522,6 +56523,7 @@ Try out my newest project, the [Proxy Development Toolkit](https://github.com/yo
 | | https://s3.amazonaws.com/tungnotes/index.html | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://tt.tvlibre.st | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://tt.mannzur.xyz | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+|  | https://math.edu.port0.org | 10/2/2026 | N/A | N/A | [0800](https://github.com/0800WebDev)
 
 # Kite
 > [!NOTE]
@@ -56619,3 +56621,44 @@ Try out my newest project, the [Proxy Development Toolkit](https://github.com/yo
 | | https://hd.tvlibre.st | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://hd.rread.co.uk | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://hd.casaskrater.cl | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+
+# ⚽️ c00lkiddtech
+> [!NOTE]
+> | Category | Capabilities | Protocol(s) | Links |
+> | - | - | - | - |
+> | pending | N/A | N/A | 5 |
+
+> [!IMPORTANT]
+> This section has not been fully categorized or checked for protocol(s) and capabilities. Submitter note: proxy sometimes breaks, but mostly overall good in general
+
+| Locked | Link | Found Date | Username | Password | Contributor |
+| - | - | - | - | - | - |
+|  | https://learning-hub.getyourchildtoread.online/ | 10/11/2026 | N/A | N/A | c00lkiddtech
+|  | https://bobby-hung-comparative-ram.trycloudflare.com/ | 10/11/2026 | N/A | N/A | c00lkiddtech
+|  | https://c00lkiddtech.live | 10/11/2026 | N/A | N/A | c00lkiddtech
+|  | https://learninghub.studypath.academy/ | 10/11/2026 | N/A | N/A | c00lkiddtech
+|  | https://edu-is-possible.learningisfun.website/ | 10/11/2026 | N/A | N/A | c00lkiddtech
+for heaven learning urls, username: c00lkiddtech
+password: ubgdevs
+
+| Locked | Link | Found Date | Username | Password | Contributor |
+| - | - | - | - | - | - |
+
+# CantBlockThis
+> [!NOTE]
+> | Category | Capabilities | Protocol(s) | Links |
+> | - | - | - | - |
+> | pending | N/A | N/A | 2 |
+
+> [!IMPORTANT]
+> This section has not been fully categorized or checked for protocol(s) and capabilities. Submitter note: When you go on this it looks like Google just hit the Google logo to access the real site
+
+
+| Locked | Link | Found Date | Username | Password | Contributor |
+| - | - | - | - | - | - |
+|  | https://cantblockthis.vercel.app/ | 10/24/2026 | N/A | N/A | CantBlockThis
+|  | https://thisblockcant.vercel.app/ | 10/24/2026 | N/A | N/A | CantBlockThis
+| Locked | Link | Found Date | Username | Password | Contributor |
+| - | - | - | - | - | - |
+
+

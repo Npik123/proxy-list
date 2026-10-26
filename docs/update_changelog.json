@@ -3,8 +3,8 @@
   "entries": [
     {
       "version": "v8.0",
-      "revision": "r310",
-      "released": "October 24, 2026",
+      "revision": "r313",
+      "released": "October 25, 2026",
       "update_notice": "### New\n- Increased security of accounts and logins/signups\n- Made changes to sign up flow to comply with legal regulations\n- Added analytic collection powered by Sentry to collect error logs\n- Added hardware data collection to improve development flow\n- Moved fonts locally instead of loading them directly from Google's servers\n- Added 600+ new links (no filter data yet)\n\n### Fixed\n- Fixed bug on Ultraviolet when using the libcurl transport method that caused the list data to not load, causing the site to time out and throw an error\n- Fixed bug where Noah's Tutoring GDB was throwing a 404 because its original jsDelivr mirror did not exist; it has now been replaced with a working domain"
     },
     {

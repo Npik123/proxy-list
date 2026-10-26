@@ -1,7 +1,7 @@
 {
   "contributors": {
     "0800": {
-      "links_total": 8,
+      "links_total": 10,
       "contributor_url": "https://github.com/0800WebDev"
     },
     "1NobleCyber": {
@@ -10,6 +10,14 @@
     },
     "Anonymous Contributor": {
       "links_total": 3,
+      "contributor_url": null
+    },
+    "c00lkiddtech": {
+      "links_total": 5,
+      "contributor_url": null
+    },
+    "CantBlockThis": {
+      "links_total": 2,
       "contributor_url": null
     },
     "Info_Broker": {

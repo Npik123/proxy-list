@@ -65,7 +65,7 @@ Try out my newest project, the [Proxy Development Toolkit](https://github.com/yo
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Proxy/Games | captcha | Scramjet | 79 |
+> | Proxy/Games | captcha | Scramjet | 70 |
 
 | Locked | Link | Found Date | Username | Password | Contributor |
 | - | - | - | - | - | - |
@@ -153,7 +153,7 @@ Try out my newest project, the [Proxy Development Toolkit](https://github.com/yo
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Games | GDB:gn-math | N/A | 188 |
+> | Games | GDB:gn-math | N/A | 111 |
 
 > [!IMPORTANT]
 > if the link loads a page saying "user gn-math is blocked" or no games appear on screen, you are using an old version of gn-math that no longer works, please use another link. i also recommend reporting this on our GitHub issues page to prevent other users from running into this issue -> https://github.com/yourworstnightmare1/proxy-list/issues
@@ -353,7 +353,7 @@ Try out my newest project, the [Proxy Development Toolkit](https://github.com/yo
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Proxy/Games | captcha, GDB:frogies-arcade | Ultraviolet | 89 |
+> | Proxy/Games | captcha, GDB:frogies-arcade | Ultraviolet | 31 |
 
 > [!IMPORTANT]
 > on some networks, the proxy will load a white screen or an ultraviolet error page, if this happens try using another link as that is known to fix this issue
@@ -595,7 +595,7 @@ Try out my newest project, the [Proxy Development Toolkit](https://github.com/yo
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Proxy/Games | epoxy, libcurl, GDB:gn-math | Scramjet, Ultraviolet, Eclipse | 15 |
+> | Proxy/Games | epoxy, libcurl, GDB:gn-math | Scramjet, Ultraviolet, Eclipse | 14 |
 
 > [!IMPORTANT]
 > Nebulo does not have CAPTCHA support. Websites that require human verification (like YouTube) will not work or display properly.
@@ -622,7 +622,7 @@ Try out my newest project, the [Proxy Development Toolkit](https://github.com/yo
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Proxy/Games | epoxy, libcurl, wisp, GDB:space | Scramjet, Ultraviolet | 21 |
+> | Proxy/Games | epoxy, libcurl, wisp, GDB:space | Scramjet, Ultraviolet | 20 |
 
 > [!IMPORTANT]
 > some space links have a similar problem like daydream where it will be very slow for some reason. if you are on a link and nothing loads or loads very slowly, try another link and make sure that if it is a jsdelivr domain, you choose the fastest option based on your location.
@@ -655,7 +655,7 @@ Try out my newest project, the [Proxy Development Toolkit](https://github.com/yo
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Proxy/Games | GDB:luminsdk | Scramjet, Ultraviolet | 567 |
+> | Proxy/Games | GDB:luminsdk | Scramjet, Ultraviolet | 430 |
 > [!IMPORTANT]
 > site has a bunch of ad popup windows, you can close these. it's recommended you use uBlock Origin to view this site without those popups
 
@@ -1511,7 +1511,7 @@ Try out my newest project, the [Proxy Development Toolkit](https://github.com/yo
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Proxy/Games | GDB:boredom | Scramjet | 165 |
+> | Proxy/Games | GDB:boredom | Scramjet | 6 |
 
 > [!IMPORTANT]
 > Boredom does not have CAPTCHA support. Websites that require human verification (like YouTube) will not work or display properly.
@@ -1742,7 +1742,7 @@ Try out my newest project, the [Proxy Development Toolkit](https://github.com/yo
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Proxy/Games | wisp, GDB:dogeub | Scramjet, Ultraviolet | 166 |
+> | Proxy/Games | wisp, GDB:dogeub | Scramjet, Ultraviolet | 154 |
 
 > [!IMPORTANT]
 > when visiting dogeub on a google script (script.google.com) domain, the proxy won't load and if it does it's just a white screen. most games are unaffected
@@ -1920,7 +1920,7 @@ Try out my newest project, the [Proxy Development Toolkit](https://github.com/yo
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Proxy/Games | wisp, GDB:lucide | Scramjet, Ultraviolet | 48 |
+> | Proxy/Games | wisp, GDB:lucide | Scramjet, Ultraviolet | 44 |
 
 > [!IMPORTANT]
 > Lunar does not have CAPTCHA support. Websites that require human verification (like YouTube) will not work or display properly.
@@ -2116,7 +2116,7 @@ Try out my newest project, the [Proxy Development Toolkit](https://github.com/yo
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Proxy/Games | GDB:petezah | Scramjet | 102 |
+> | Proxy/Games | GDB:petezah | Scramjet | 35 |
 
 > [!IMPORTANT]
 > PetZah does not have CAPTCHA support. Websites that require human verification (like YouTube) will not work or display properly.
@@ -2244,7 +2244,7 @@ Try out my newest project, the [Proxy Development Toolkit](https://github.com/yo
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Proxy/Games | epoxy, libcurl, wisp, GDB:gn-math | Scramjet | 367 |
+> | Proxy/Games | epoxy, libcurl, wisp, GDB:gn-math | Scramjet | 360 |
 
 > [!IMPORTANT]
 > some of these links load a black screen
@@ -2685,7 +2685,7 @@ Try out my newest project, the [Proxy Development Toolkit](https://github.com/yo
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Proxy/Games | captcha, tab-cloak, GDB:gn-math, GDB:duckmath | - | 78 |
+> | Proxy/Games | captcha, tab-cloak, GDB:gn-math, GDB:duckmath | - | 77 |
 
 > [!IMPORTANT]
 > This section has not been categorized or checked for protocol(s) and capabilities.
@@ -2813,7 +2813,7 @@ Try out my newest project, the [Proxy Development Toolkit](https://github.com/yo
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Proxy/Games | GDB:gn-math, GDB:Seraph | unknown | 96 |
+> | Proxy/Games | GDB:gn-math, GDB:Seraph | unknown | 92 |
 
 > [!IMPORTANT]
 > StudyHub does not have CAPTCHA support. Websites that require human verification (like YouTube) will not work or display properly.
@@ -2921,7 +2921,7 @@ Try out my newest project, the [Proxy Development Toolkit](https://github.com/yo
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Proxy | tab-cloak, panic | Ultraviolet, Rammerhead | 42 |
+> | Proxy | tab-cloak, panic | Ultraviolet, Rammerhead | 36 |
 > [!IMPORTANT]
 > if you were looking for ford links, ford no longer exists and all of its links are now strawberri links
 
@@ -2974,7 +2974,7 @@ Try out my newest project, the [Proxy Development Toolkit](https://github.com/yo
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Proxy/Games | unknown | unknown | 7 |
+> | Proxy/Games | unknown | unknown | 5 |
 
 > [!IMPORTANT]
 > for some reason the developers put a 4 tab limit on free users (3 if you have adblock, 8+ if you pay). if you need multitasking use another proxy
@@ -3001,7 +3001,7 @@ Try out my newest project, the [Proxy Development Toolkit](https://github.com/yo
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Proxy/Games | GDB:utopia | Ultraviolet | 27 |
+> | Proxy/Games | GDB:utopia | Ultraviolet | 26 |
 > [!IMPORTANT]
 > this site uses highly detectable domains, very likely all of these are blocked for you
 
@@ -3039,7 +3039,7 @@ Try out my newest project, the [Proxy Development Toolkit](https://github.com/yo
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Proxy/Games | captcha, GDB:lucide | Scramjet | 154 |
+> | Proxy/Games | captcha, GDB:lucide | Scramjet | 152 |
 
 | Locked | Link | Found Date | Username | Password | Contributor |
 | - | - | - | - | - | - |
@@ -3272,7 +3272,7 @@ Try out my newest project, the [Proxy Development Toolkit](https://github.com/yo
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Games | GDB:gn-math | N/A | 291 |
+> | Games | GDB:gn-math | N/A | 90 |
 
 | Locked | Link | Found Date | Username | Password | Contributor |
 | - | - | - | - | - | - |
@@ -3572,7 +3572,7 @@ Try out my newest project, the [Proxy Development Toolkit](https://github.com/yo
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Proxy/Games | GDB:gn-math, GDB:elite-games, GDB:ultimate-game-stash, GDB:Seraph, GDB:chicken-kings-vault | unknown | 67 |
+> | Proxy/Games | GDB:gn-math, GDB:elite-games, GDB:ultimate-game-stash, GDB:Seraph, GDB:chicken-kings-vault | unknown | 66 |
 
 | Locked | Link | Found Date | Username | Password | Contributor |
 | - | - | - | - | - | - |
@@ -3648,7 +3648,7 @@ Try out my newest project, the [Proxy Development Toolkit](https://github.com/yo
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Games | tab-cloak, GDB:noahs-tutoring | N/A | 148 |
+> | Games | tab-cloak, GDB:noahs-tutoring | N/A | 133 |
 
 | Locked | Link | Found Date | Username | Password | Contributor |
 | - | - | - | - | - | - |
@@ -3745,60 +3745,46 @@ Try out my newest project, the [Proxy Development Toolkit](https://github.com/yo
 | | https://quantil.jsdelivr.net/gh/username9927282/svg@main/svg.svg?5 | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://originfastly.jsdelivr.net/gh/username9927282/svg@main/svg.svg?5 | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://testingcf.jsdelivr.net/gh/username9927282/svg@main/svg.svg?5 | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://unpkg.com/username9927282/svg/svg.svg?5 | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://cdn.jsdelivr.net/gh/username9927282/svg@main/svg.svg?6 | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://fastly.jsdelivr.net/gh/username9927282/svg@main/svg.svg?6 | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://gcore.jsdelivr.net/gh/username9927282/svg@main/svg.svg?6 | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://quantil.jsdelivr.net/gh/username9927282/svg@main/svg.svg?6 | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://originfastly.jsdelivr.net/gh/username9927282/svg@main/svg.svg?6 | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://testingcf.jsdelivr.net/gh/username9927282/svg@main/svg.svg?6 | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://rawcdn.jsdelivr.net/gh/username9927282/svg@main/svg.svg?6 | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://unpkg.com/username9927282/svg/svg.svg?6 | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://cdn.jsdelivr.net/gh/username9927282/svg@main/svg.svg?7 | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://fastly.jsdelivr.net/gh/username9927282/svg@main/svg.svg?7 | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://gcore.jsdelivr.net/gh/username9927282/svg@main/svg.svg?7 | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://quantil.jsdelivr.net/gh/username9927282/svg@main/svg.svg?7 | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://originfastly.jsdelivr.net/gh/username9927282/svg@main/svg.svg?7 | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://testingcf.jsdelivr.net/gh/username9927282/svg@main/svg.svg?7 | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://rawcdn.jsdelivr.net/gh/username9927282/svg@main/svg.svg?7 | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://unpkg.com/username9927282/svg/svg.svg?7 | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://cdn.jsdelivr.net/gh/username9927282/svg@main/svg.svg?8 | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://fastly.jsdelivr.net/gh/username9927282/svg@main/svg.svg?8 | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://gcore.jsdelivr.net/gh/username9927282/svg@main/svg.svg?8 | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://quantil.jsdelivr.net/gh/username9927282/svg@main/svg.svg?8 | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://originfastly.jsdelivr.net/gh/username9927282/svg@main/svg.svg?8 | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://testingcf.jsdelivr.net/gh/username9927282/svg@main/svg.svg?8 | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://rawcdn.jsdelivr.net/gh/username9927282/svg@main/svg.svg?8 | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://unpkg.com/username9927282/svg/svg.svg?8 | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://cdn.jsdelivr.net/gh/username9927282/svg@main/svg.svg?9 | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://fastly.jsdelivr.net/gh/username9927282/svg@main/svg.svg?9 | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://gcore.jsdelivr.net/gh/username9927282/svg@main/svg.svg?9 | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://quantil.jsdelivr.net/gh/username9927282/svg@main/svg.svg?9 | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://originfastly.jsdelivr.net/gh/username9927282/svg@main/svg.svg?9 | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://testingcf.jsdelivr.net/gh/username9927282/svg@main/svg.svg?9 | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://rawcdn.jsdelivr.net/gh/username9927282/svg@main/svg.svg?9 | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://unpkg.com/username9927282/svg/svg.svg?9 | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://cdn.jsdelivr.net/gh/username9927282/svg@main/svg.svg?10 | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://fastly.jsdelivr.net/gh/username9927282/svg@main/svg.svg?10 | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://gcore.jsdelivr.net/gh/username9927282/svg@main/svg.svg?10 | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://quantil.jsdelivr.net/gh/username9927282/svg@main/svg.svg?10 | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://originfastly.jsdelivr.net/gh/username9927282/svg@main/svg.svg?10 | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://testingcf.jsdelivr.net/gh/username9927282/svg@main/svg.svg?10 | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://rawcdn.jsdelivr.net/gh/username9927282/svg@main/svg.svg?10 | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://unpkg.com/username9927282/svg/svg.svg?10 | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://cdn.jsdelivr.net/gh/username9927282/svg@main/svg.svg?11 | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://fastly.jsdelivr.net/gh/username9927282/svg@main/svg.svg?11 | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://gcore.jsdelivr.net/gh/username9927282/svg@main/svg.svg?11 | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://quantil.jsdelivr.net/gh/username9927282/svg@main/svg.svg?11 | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://originfastly.jsdelivr.net/gh/username9927282/svg@main/svg.svg?11 | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://testingcf.jsdelivr.net/gh/username9927282/svg@main/svg.svg?11 | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://rawcdn.jsdelivr.net/gh/username9927282/svg@main/svg.svg?11 | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://unpkg.com/username9927282/svg/svg.svg?11 | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://cdn.jsdelivr.net/gh/username9927282/svg@main/svg.svg?12 | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://cdn.kpores.ru/ | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://education.mannzur.xyz/ | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://edu.projectos3d.com/ | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://freetutoring.rread.co.uk/ | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://more-cdn.b-cdn.net/ | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 
 # 🧡 Nexora
@@ -3825,7 +3811,7 @@ Try out my newest project, the [Proxy Development Toolkit](https://github.com/yo
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Games | captcha, GDB:duckmath, GDB:totally-science | N/A | 17656 |
+> | Games | captcha, GDB:duckmath, GDB:totally-science | N/A | 17630 |
 
 > [!IMPORTANT]
 > if you are prompted to download an svg/html file, download it as it contains the website since this site mainly uses singlefile over individual domains for distribution
@@ -21441,32 +21427,6 @@ Try out my newest project, the [Proxy Development Toolkit](https://github.com/yo
 | | https://fastly.jsdelivr.net/gh/Pufferboii/Yukiiii-Snipershotttt-3@main/yukiismyoc-cloud-2367.svg?id=98&key=98 | 9/13/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://gcore.jsdelivr.net/gh/Pufferboii/Yukiiii-Snipershotttt-3@main/yukiismyoc-cloud-2367.svg?id=99&key=99 | 9/13/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://testingcf.jsdelivr.net/gh/Pufferboii/Yukiiii-Snipershotttt-3@main/yukiismyoc-cloud-2367.svg?id=100&key=100 | 9/13/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://cdn.jsdelivr.net/gh/donoEla/SAT-Prep-1@1232a4c/v0001/DuckMath.svg?submission_id=886968593842&module_item_id=77584035102&user_id=808231&download=1 | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://cdn.jsdelivr.net/gh/donoEla/SAT-Prep-1@1232a4c/v0002/DuckMath.svg?submission_id=6638724&module_item_id=46&user_id=3033&download=1 | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://cdn.jsdelivr.net/gh/donoEla/SAT-Prep-1@1232a4c/v0003/DuckMath.svg?submission_id=4058&module_item_id=389192500&user_id=272316953661&download=1 | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://cdn.jsdelivr.net/gh/donoEla/SAT-Prep-1@1232a4c/v0004/DuckMath.svg?submission_id=36&module_item_id=29494369156&user_id=42590&download=1 | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://cdn.jsdelivr.net/gh/donoEla/SAT-Prep-1@1232a4c/v0005/DuckMath.svg?submission_id=26428703&module_item_id=521&user_id=76&download=1 | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://cdn.jsdelivr.net/gh/donoEla/SAT-Prep-1@1232a4c/v0006/DuckMath.svg?submission_id=82&module_item_id=911982677&user_id=690&download=1 | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://cdn.jsdelivr.net/gh/donoEla/SAT-Prep-1@1232a4c/v0007/DuckMath.svg?submission_id=96747882&module_item_id=369628971&user_id=36001239482&download=1 | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://cdn.jsdelivr.net/gh/donoEla/SAT-Prep-1@1232a4c/v0008/DuckMath.svg?submission_id=617&module_item_id=50476&user_id=85&download=1 | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://cdn.jsdelivr.net/gh/donoEla/SAT-Prep-1@1232a4c/v0009/DuckMath.svg?submission_id=110440762587&module_item_id=56062137&user_id=1&download=1 | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://cdn.jsdelivr.net/gh/donoEla/SAT-Prep-1@1232a4c/v0010/DuckMath.svg?submission_id=92258&module_item_id=30226&user_id=331949240442&download=1 | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://cdn.jsdelivr.net/gh/donoEla/SAT-Prep-1@1232a4c/v0011/DuckMath.svg?submission_id=41&module_item_id=11984&user_id=9399&download=1 | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://cdn.jsdelivr.net/gh/donoEla/SAT-Prep-1@1232a4c/v0012/DuckMath.svg?submission_id=79785&module_item_id=42547708786&user_id=15565995197&download=1 | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://cdn.jsdelivr.net/gh/donoEla/SAT-Prep-1@1232a4c/v0013/DuckMath.svg?submission_id=4&module_item_id=2377&user_id=35430900&download=1 | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://cdn.jsdelivr.net/gh/donoEla/SAT-Prep-1@1232a4c/v0014/DuckMath.svg?submission_id=73706692&module_item_id=119467&user_id=2&download=1 | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://cdn.jsdelivr.net/gh/donoEla/SAT-Prep-1@1232a4c/v0015/DuckMath.svg?submission_id=94&module_item_id=215857770591&user_id=845282&download=1 | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://cdn.jsdelivr.net/gh/donoEla/SAT-Prep-1@1232a4c/v0016/DuckMath.svg?submission_id=333545044407&module_item_id=858767771&user_id=90671725455&download=1 | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://cdn.jsdelivr.net/gh/donoEla/SAT-Prep-1@1232a4c/v0017/DuckMath.svg?submission_id=4390&module_item_id=5901425&user_id=714598028161&download=1 | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://cdn.jsdelivr.net/gh/donoEla/SAT-Prep-1@1232a4c/v0018/DuckMath.svg?submission_id=37314301&module_item_id=6508&user_id=84448332&download=1 | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://cdn.jsdelivr.net/gh/donoEla/SAT-Prep-1@1232a4c/v0019/DuckMath.svg?submission_id=89233163&module_item_id=8510893258&user_id=8&download=1 | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://cdn.jsdelivr.net/gh/donoEla/SAT-Prep-1@1232a4c/v0020/DuckMath.svg?submission_id=870880&module_item_id=525564537&user_id=650611&download=1 | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://cdn.jsdelivr.net/gh/donoEla/SAT-Prep-1@1232a4c/v0021/DuckMath.svg?submission_id=602197936514&module_item_id=843095522&user_id=474609&download=1 | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://cdn.jsdelivr.net/gh/donoEla/SAT-Prep-1@1232a4c/v0022/DuckMath.svg?submission_id=392&module_item_id=8&user_id=164759615566&download=1 | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://cdn.jsdelivr.net/gh/donoEla/SAT-Prep-1@1232a4c/v0023/DuckMath.svg?submission_id=8596902&module_item_id=3141&user_id=550863082&download=1 | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://cdn.jsdelivr.net/gh/donoEla/SAT-Prep-1@1232a4c/v0024/DuckMath.svg?submission_id=3&module_item_id=5342&user_id=7844&download=1 | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://cdn.jsdelivr.net/gh/donoEla/SAT-Prep-1@1232a4c/v0025/DuckMath.svg?submission_id=7&module_item_id=74841576&user_id=7094&download=1 | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://objectstorage.us-sanjose-1.oraclecloud.com/n/axjcou67ax5a/b/mathlearning/o/duckmath.svg | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://cdn.jsdelivr.net/gh/obamamegagon/linkmaker@main/DuckMath.svg?1000 | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://cdn.jsdelivr.net/gh/obamamegagon/linkmaker@main/DuckMath.svg?1001 | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://cdn.jsdelivr.net/gh/obamamegagon/linkmaker@main/DuckMath.svg?1002 | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
@@ -21524,11 +21484,10 @@ Try out my newest project, the [Proxy Development Toolkit](https://github.com/yo
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Proxy/Games | tab-cloak | Ultraviolet | 15 |
+> | Proxy/Games | tab-cloak | Ultraviolet | 14 |
 
 | Locked | Link | Found Date | Username | Password | Contributor |
 | - | - | - | - | - | - |
-| | https://finleyisabum.vixenlights.com/ | 4/30/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
 | | https://luna.govt.hu/ | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://haven-learning.dikpalkc.com.np/ | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://essay-writing.govt.hu/ | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
@@ -21548,7 +21507,7 @@ Try out my newest project, the [Proxy Development Toolkit](https://github.com/yo
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Proxy/Games | unknown | unknown | 17422 |
+> | Proxy/Games | unknown | unknown | 16717 |
 
 | Locked | Link | Found Date | Username | Password | Contributor |
 | - | - | - | - | - | - |
@@ -39001,7 +38960,7 @@ Try out my newest project, the [Proxy Development Toolkit](https://github.com/yo
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Proxy/Games | unknown | unknown | 181 |
+> | Proxy/Games | unknown | unknown | 79 |
 
 | Locked | Link | Found Date | Username | Password | Contributor |
 | - | - | - | - | - | - |
@@ -39235,7 +39194,7 @@ Try out my newest project, the [Proxy Development Toolkit](https://github.com/yo
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Proxy/Games | wisp, epoxy, libcurl | Scramjet, Tor | 496 |
+> | Proxy/Games | wisp, epoxy, libcurl | Scramjet, Tor | 395 |
 | Locked | Link | Found Date | Username | Password | Contributor |
 | - | - | - | - | - | - |
 | | https://interesting-articles.pages.dev | 5/22/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
@@ -39739,7 +39698,7 @@ Try out my newest project, the [Proxy Development Toolkit](https://github.com/yo
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Proxy/Games | - | Eclipse | 4 |
+> | Proxy/Games | - | Eclipse | 1 |
 > [!IMPORTANT]
 > This section has not been categorized or checked for protocol(s) and capabilities.
 
@@ -39754,7 +39713,7 @@ Try out my newest project, the [Proxy Development Toolkit](https://github.com/yo
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Proxy/Games | wisp, epoxy, libcurl, user-agent | Unknown | 9084 |
+> | Proxy/Games | wisp, epoxy, libcurl, user-agent | Unknown | 8973 |
 | Locked | Link | Found Date | Username | Password | Contributor |
 | - | - | - | - | - | - |
 | | https://awidjawjfofaaa.educationlearningcollege.lovestoblog.com | 8/1/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
@@ -48738,7 +48697,6 @@ Try out my newest project, the [Proxy Development Toolkit](https://github.com/yo
 | | https://jsd.onmicrosoft.cn/gh/lurexh/svg@4875022e1ff5bc2b166dcc75ff9f6cac711f5e65/index.svg | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://jsd.onmicrosoft.cn/gh/lurexh/svg@3664f8e715363360dac3babda8dc584a9a0c574b/index.svg | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://jsd.onmicrosoft.cn/gh/lurexh/svg@bc6d572950a0069bb3ea6baef211c22293530d4a/index.svg | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://jsd.onmicrosoft.cn/gh/lurexh/svg@9db | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://objectstorage.us-sanjose-1.oraclecloud.com/n/axjcou67ax5a/b/mathlearning/o/index.svg | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://objectstorage.us-sanjose-1.oraclecloud.com/n/axjcou67ax5a/b/ilovecherri/o/index.svg | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://cdn.jsdelivr.net/gh/username9927282/cherrisvg@main/index.svg?1 | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
@@ -48748,8 +48706,6 @@ Try out my newest project, the [Proxy Development Toolkit](https://github.com/yo
 | | https://jsdelivr.b-cdn.net/gh/username9927282/cherrisvg@main/index.svg?1 | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://originfastly.jsdelivr.net/gh/username9927282/cherrisvg@main/index.svg?1 | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://testingcf.jsdelivr.net/gh/username9927282/cherrisvg@main/index.svg?1 | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://rawcdn.jsdelivr.net/gh/username9927282/cherrisvg@main/index.svg?1 | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://unpkg.com/username9927282/cherrisvg/index.svg?1 | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://cdn.jsdelivr.net/gh/username9927282/cherrisvg@main/index.svg?2 | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://fastly.jsdelivr.net/gh/username9927282/cherrisvg@main/index.svg?2 | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://gcore.jsdelivr.net/gh/username9927282/cherrisvg@main/index.svg?2 | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
@@ -48757,8 +48713,6 @@ Try out my newest project, the [Proxy Development Toolkit](https://github.com/yo
 | | https://jsdelivr.b-cdn.net/gh/username9927282/cherrisvg@main/index.svg?2 | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://originfastly.jsdelivr.net/gh/username9927282/cherrisvg@main/index.svg?2 | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://testingcf.jsdelivr.net/gh/username9927282/cherrisvg@main/index.svg?2 | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://rawcdn.jsdelivr.net/gh/username9927282/cherrisvg@main/index.svg?2 | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://unpkg.com/username9927282/cherrisvg/index.svg?2 | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://cdn.jsdelivr.net/gh/username9927282/cherrisvg@main/index.svg?3 | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://fastly.jsdelivr.net/gh/username9927282/cherrisvg@main/index.svg?3 | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://gcore.jsdelivr.net/gh/username9927282/cherrisvg@main/index.svg?3 | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
@@ -48766,8 +48720,6 @@ Try out my newest project, the [Proxy Development Toolkit](https://github.com/yo
 | | https://jsdelivr.b-cdn.net/gh/username9927282/cherrisvg@main/index.svg?3 | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://originfastly.jsdelivr.net/gh/username9927282/cherrisvg@main/index.svg?3 | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://testingcf.jsdelivr.net/gh/username9927282/cherrisvg@main/index.svg?3 | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://rawcdn.jsdelivr.net/gh/username9927282/cherrisvg@main/index.svg?3 | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://unpkg.com/username9927282/cherrisvg/index.svg?3 | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://cdn.jsdelivr.net/gh/username9927282/cherrisvg@main/index.svg?4 | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://fastly.jsdelivr.net/gh/username9927282/cherrisvg@main/index.svg?4 | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://gcore.jsdelivr.net/gh/username9927282/cherrisvg@main/index.svg?4 | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
@@ -48775,8 +48727,6 @@ Try out my newest project, the [Proxy Development Toolkit](https://github.com/yo
 | | https://jsdelivr.b-cdn.net/gh/username9927282/cherrisvg@main/index.svg?4 | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://originfastly.jsdelivr.net/gh/username9927282/cherrisvg@main/index.svg?4 | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://testingcf.jsdelivr.net/gh/username9927282/cherrisvg@main/index.svg?4 | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://rawcdn.jsdelivr.net/gh/username9927282/cherrisvg@main/index.svg?4 | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://unpkg.com/username9927282/cherrisvg/index.svg?4 | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://cdn.jsdelivr.net/gh/username9927282/cherrisvg@main/index.svg?5 | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://fastly.jsdelivr.net/gh/username9927282/cherrisvg@main/index.svg?5 | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://gcore.jsdelivr.net/gh/username9927282/cherrisvg@main/index.svg?5 | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
@@ -48784,8 +48734,6 @@ Try out my newest project, the [Proxy Development Toolkit](https://github.com/yo
 | | https://jsdelivr.b-cdn.net/gh/username9927282/cherrisvg@main/index.svg?5 | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://originfastly.jsdelivr.net/gh/username9927282/cherrisvg@main/index.svg?5 | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://testingcf.jsdelivr.net/gh/username9927282/cherrisvg@main/index.svg?5 | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://rawcdn.jsdelivr.net/gh/username9927282/cherrisvg@main/index.svg?5 | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://unpkg.com/username9927282/cherrisvg/index.svg?5 | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://cdn.jsdelivr.net/gh/username9927282/cherrisvg@main/index.svg?6 | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://fastly.jsdelivr.net/gh/username9927282/cherrisvg@main/index.svg?6 | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://gcore.jsdelivr.net/gh/username9927282/cherrisvg@main/index.svg?6 | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
@@ -48793,8 +48741,6 @@ Try out my newest project, the [Proxy Development Toolkit](https://github.com/yo
 | | https://jsdelivr.b-cdn.net/gh/username9927282/cherrisvg@main/index.svg?6 | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://originfastly.jsdelivr.net/gh/username9927282/cherrisvg@main/index.svg?6 | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://testingcf.jsdelivr.net/gh/username9927282/cherrisvg@main/index.svg?6 | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://rawcdn.jsdelivr.net/gh/username9927282/cherrisvg@main/index.svg?6 | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://unpkg.com/username9927282/cherrisvg/index.svg?6 | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://cdn.jsdelivr.net/gh/username9927282/cherrisvg@main/index.svg?7 | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://fastly.jsdelivr.net/gh/username9927282/cherrisvg@main/index.svg?7 | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://gcore.jsdelivr.net/gh/username9927282/cherrisvg@main/index.svg?7 | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
@@ -48802,8 +48748,6 @@ Try out my newest project, the [Proxy Development Toolkit](https://github.com/yo
 | | https://jsdelivr.b-cdn.net/gh/username9927282/cherrisvg@main/index.svg?7 | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://originfastly.jsdelivr.net/gh/username9927282/cherrisvg@main/index.svg?7 | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://testingcf.jsdelivr.net/gh/username9927282/cherrisvg@main/index.svg?7 | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://rawcdn.jsdelivr.net/gh/username9927282/cherrisvg@main/index.svg?7 | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://unpkg.com/username9927282/cherrisvg/index.svg?7 | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://cdn.jsdelivr.net/gh/username9927282/cherrisvg@main/index.svg?8 | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://fastly.jsdelivr.net/gh/username9927282/cherrisvg@main/index.svg?8 | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://gcore.jsdelivr.net/gh/username9927282/cherrisvg@main/index.svg?8 | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
@@ -48811,8 +48755,6 @@ Try out my newest project, the [Proxy Development Toolkit](https://github.com/yo
 | | https://jsdelivr.b-cdn.net/gh/username9927282/cherrisvg@main/index.svg?8 | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://originfastly.jsdelivr.net/gh/username9927282/cherrisvg@main/index.svg?8 | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://testingcf.jsdelivr.net/gh/username9927282/cherrisvg@main/index.svg?8 | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://rawcdn.jsdelivr.net/gh/username9927282/cherrisvg@main/index.svg?8 | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://unpkg.com/username9927282/cherrisvg/index.svg?8 | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://cdn.jsdelivr.net/gh/username9927282/cherrisvg@main/index.svg?9 | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://fastly.jsdelivr.net/gh/username9927282/cherrisvg@main/index.svg?9 | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://gcore.jsdelivr.net/gh/username9927282/cherrisvg@main/index.svg?9 | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
@@ -48820,8 +48762,6 @@ Try out my newest project, the [Proxy Development Toolkit](https://github.com/yo
 | | https://jsdelivr.b-cdn.net/gh/username9927282/cherrisvg@main/index.svg?9 | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://originfastly.jsdelivr.net/gh/username9927282/cherrisvg@main/index.svg?9 | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://testingcf.jsdelivr.net/gh/username9927282/cherrisvg@main/index.svg?9 | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://rawcdn.jsdelivr.net/gh/username9927282/cherrisvg@main/index.svg?9 | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://unpkg.com/username9927282/cherrisvg/index.svg?9 | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://cdn.jsdelivr.net/gh/username9927282/cherrisvg@main/index.svg?10 | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://fastly.jsdelivr.net/gh/username9927282/cherrisvg@main/index.svg?10 | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://gcore.jsdelivr.net/gh/username9927282/cherrisvg@main/index.svg?10 | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
@@ -48829,8 +48769,6 @@ Try out my newest project, the [Proxy Development Toolkit](https://github.com/yo
 | | https://jsdelivr.b-cdn.net/gh/username9927282/cherrisvg@main/index.svg?10 | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://originfastly.jsdelivr.net/gh/username9927282/cherrisvg@main/index.svg?10 | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://testingcf.jsdelivr.net/gh/username9927282/cherrisvg@main/index.svg?10 | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://rawcdn.jsdelivr.net/gh/username9927282/cherrisvg@main/index.svg?10 | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://unpkg.com/username9927282/cherrisvg/index.svg?10 | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://cdn.jsdelivr.net/gh/username9927282/cherrisvg@main/index.svg?11 | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://fastly.jsdelivr.net/gh/username9927282/cherrisvg@main/index.svg?11 | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://gcore.jsdelivr.net/gh/username9927282/cherrisvg@main/index.svg?11 | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
@@ -48838,15 +48776,13 @@ Try out my newest project, the [Proxy Development Toolkit](https://github.com/yo
 | | https://jsdelivr.b-cdn.net/gh/username9927282/cherrisvg@main/index.svg?11 | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://originfastly.jsdelivr.net/gh/username9927282/cherrisvg@main/index.svg?11 | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://testingcf.jsdelivr.net/gh/username9927282/cherrisvg@main/index.svg?11 | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://rawcdn.jsdelivr.net/gh/username9927282/cherrisvg@main/index.svg?11 | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://unpkg.com/username9927282/cherrisvg/index.svg?11 | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://8t14.s3.dualstack.us-east-1.amazonaws.com/index.html | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 
 # 🌠 Interstellar
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Proxy/Games | epoxy, libcurl, tab-cloak, panic | Scramjet, Ultraviolet | 18 |
+> | Proxy/Games | epoxy, libcurl, tab-cloak, panic | Scramjet, Ultraviolet | 16 |
 > [!IMPORTANT]
 > bunch of popups, be cautious
 
@@ -48867,8 +48803,6 @@ Try out my newest project, the [Proxy Development Toolkit](https://github.com/yo
 | | https://s3.dualstack.us-east-1.amazonaws.com/brightloft/index.html | 9/2/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://sz8p.z20.web.core.windows.net/ | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://xtiy.z14.web.core.windows.net/ | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://inter.tvlibre.st | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://inter.rread.co.uk | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://inter.casaskrater.cl | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 
 # ☁️ Xcloud
@@ -48899,7 +48833,7 @@ Try out my newest project, the [Proxy Development Toolkit](https://github.com/yo
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Proxy/Games | Unknown | Ultraviolet | 126 |
+> | Proxy/Games | Unknown | Ultraviolet | 114 |
 | Locked | Link | Found Date | Username | Password | Contributor |
 | - | - | - | - | - | - |
 | | https://cdn.jsdelivr.net/gh/AetherGamesOfficial/math@0ad1abf/studyhub.svg | 6/7/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
@@ -49014,17 +48948,6 @@ Try out my newest project, the [Proxy Development Toolkit](https://github.com/yo
 | | https://niigo.s3.us-east-1.amazonaws.com/index.html | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://s3.us-east-1.amazonaws.com/niigo/index.html | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://niigo.s3-fips.dualstack.us-east-1.amazonaws.com/index.html | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://aetherk12.s3-fips.us-east-1.amazonaws.com/study.html | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://aetherk12.s3-fips.dualstack.us-east-1.amazonaws.com/study.html | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://advancedalg2.s3-fips.us-east-1.amazonaws.com/study.html | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://advancedalg2.s3-fips.dualstack.us-east-1.amazonaws.com/study.html | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://schoolcdn.s3-fips.us-east-1.amazonaws.com/study.html | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://schoolcdn.s3-fips.dualstack.us-east-1.amazonaws.com/study.html | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://satguide.s3-fips.us-east-1.amazonaws.com/study.html | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://satguide.s3-fips.dualstack.us-east-1.amazonaws.com/study.html | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://s3.dualstack.us-east-1.amazonaws.com/aetherk12/study.html | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://s3.dualstack.us-east-1.amazonaws.com/satguide/study.html | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://pencil236030-saugatr.dratify.com | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://storage.googleapis.com/yubico/study.html | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://storage.googleapis.com/synthv/study.html | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://caddyprep.s3.amazonaws.com/index.html | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
@@ -49065,7 +48988,7 @@ Try out my newest project, the [Proxy Development Toolkit](https://github.com/yo
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Games | GDB:gn-math, GDB:unblockedzone, GDB:noahs-tutoring, GDB:luminsdk, GDB:ultimate-game-stash, GDB:elite-games, GDB:Seraph, GDB:chicken-kings-vault | N/A | 548 |
+> | Games | GDB:gn-math, GDB:unblockedzone, GDB:noahs-tutoring, GDB:luminsdk, GDB:ultimate-game-stash, GDB:elite-games, GDB:Seraph, GDB:chicken-kings-vault | N/A | 460 |
 > [!IMPORTANT]
 > if you see a block screen it's likely fake, wait a few seconds and it will disappear
 
@@ -49624,7 +49547,7 @@ Try out my newest project, the [Proxy Development Toolkit](https://github.com/yo
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Proxy/Games | epoxy, bare, tab-cloak, panic, captcha | Ultraviolet, Scramjet | 18 |
+> | Proxy/Games | epoxy, bare, tab-cloak, panic, captcha | Ultraviolet, Scramjet | 17 |
 
 | Locked | Link | Found Date | Username | Password | Contributor |
 | - | - | - | - | - | - |
@@ -49643,7 +49566,6 @@ Try out my newest project, the [Proxy Development Toolkit](https://github.com/yo
 | | https://hunter.berugy.hu/ | 8/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://questionu.deepee.com | 8/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://canbe.deepee.com | 8/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://voya.tvlibre.st | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://voya.mannzur.xyz | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://voya.casaskrater.cl | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 
@@ -49651,7 +49573,7 @@ Try out my newest project, the [Proxy Development Toolkit](https://github.com/yo
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Proxy/Games | libcurl, epoxy | Scramjet | 1671 |
+> | Proxy/Games | libcurl, epoxy | Scramjet | 1475 |
 | Locked | Link | Found Date | Username | Password | Contributor |
 | - | - | - | - | - | - |
 | | https://catclass.brtk.eu | 8/1/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
@@ -50927,8 +50849,6 @@ Try out my newest project, the [Proxy Development Toolkit](https://github.com/yo
 | | https://cattitude-byte94.fukushimastudy.org | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://cdn.esm.sh/gh/task4z/classroom-15x@06756d7defe336614ed15f20125268b5e094d02c/files/catclass/index.svg | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://cdn.esm.sh/gh/task4z/classroom-15x@06756d7defe336614ed15f20125268b5e094d02c/files/catclass/logo.svg | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://cdn.jsdeliver.us/gh/task4z/classroom-15x@06756d7defe336614ed15f20125268b5e094d02c/files/catclass/index.svg | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://cdn.jsdeliver.us/gh/task4z/classroom-15x@06756d7defe336614ed15f20125268b5e094d02c/files/catclass/logo.svg | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://cdn.jsdelivr.net.cn/gh/task4z/classroom-15x@06756d7defe336614ed15f20125268b5e094d02c/files/catclass/index.svg | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://cdn.jsdelivr.net.cn/gh/task4z/classroom-15x@06756d7defe336614ed15f20125268b5e094d02c/files/catclass/logo.svg | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://cdn.jsdelivr.net/gh/task4z/classroom-15x@06756d7defe336614ed15f20125268b5e094d02c/files/catclass/index.svg | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
@@ -50948,12 +50868,9 @@ Try out my newest project, the [Proxy Development Toolkit](https://github.com/yo
 | | https://gcore.jsdelivr.net/gh/task4z/classroom-15x@06756d7defe336614ed15f20125268b5e094d02c/files/catclass/logo.svg | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://grade-sum30.becasuniversitarias.org | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://hiss-scratch40.mathmatics.ccwu.cc | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://jsd-proxy.ygxz.in/gh/task4z/classroom-15x/files/catclass/index.svg | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://jsd.cdn.zzko.cn/gh/task4z/classroom-15x@06756d7defe336614ed15f20125268b5e094d02c/files/catclass/index.svg | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://jsd.cdn.zzko.cn/gh/task4z/classroom-15x@06756d7defe336614ed15f20125268b5e094d02c/files/catclass/logo.svg | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://jsd.onmicrosoft.cn/gh/task4z/classroom-15x/files/catclass/index.svg | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://jsdelivr.cdn.net/gh/task4z/classroom-15x@06756d7defe336614ed15f20125268b5e094d02c/files/catclass/index.svg | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://jsdelivr.cdn.net/gh/task4z/classroom-15x@06756d7defe336614ed15f20125268b5e094d02c/files/catclass/logo.svg | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://keenbook3884.cascadesterling.com/ | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://originfastly.jsdelivr.net/gh/task4z/classroom-15x@06756d7defe336614ed15f20125268b5e094d02c/files/catclass/index.svg | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://originfastly.jsdelivr.net/gh/task4z/classroom-15x@06756d7defe336614ed15f20125268b5e094d02c/files/catclass/logo.svg | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
@@ -51076,8 +50993,6 @@ Try out my newest project, the [Proxy Development Toolkit](https://github.com/yo
 | | https://cdn.jsdelivr.net/gh/username9927282/catclass@main/index.svg?100 | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://cdn.esm.sh/gh/task4z/classroom-15x@0a3d16a0a531fcdec1a172e849049047e15eac0c/files/catclass/index.svg | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://cdn.esm.sh/gh/task4z/classroom-15x@0a3d16a0a531fcdec1a172e849049047e15eac0c/files/catclass/logo.svg | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://cdn.jsdeliver.us/gh/task4z/classroom-15x@0a3d16a0a531fcdec1a172e849049047e15eac0c/files/catclass/index.svg | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://cdn.jsdeliver.us/gh/task4z/classroom-15x@0a3d16a0a531fcdec1a172e849049047e15eac0c/files/catclass/logo.svg | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://cdn.jsdelivr.net.cn/gh/task4z/classroom-15x@0a3d16a0a531fcdec1a172e849049047e15eac0c/files/catclass/index.svg | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://cdn.jsdelivr.net.cn/gh/task4z/classroom-15x@0a3d16a0a531fcdec1a172e849049047e15eac0c/files/catclass/logo.svg | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://cdn.jsdelivr.net/gh/task4z/classroom-15x@0a3d16a0a531fcdec1a172e849049047e15eac0c/files/catclass/index.svg | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
@@ -51097,8 +51012,6 @@ Try out my newest project, the [Proxy Development Toolkit](https://github.com/yo
 | | https://institute-geometry18.bridgeportmath.org | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://jsd.cdn.zzko.cn/gh/task4z/classroom-15x@0a3d16a0a531fcdec1a172e849049047e15eac0c/files/catclass/index.svg | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://jsd.cdn.zzko.cn/gh/task4z/classroom-15x@0a3d16a0a531fcdec1a172e849049047e15eac0c/files/catclass/logo.svg | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://jsdelivr.cdn.net/gh/task4z/classroom-15x@0a3d16a0a531fcdec1a172e849049047e15eac0c/files/catclass/index.svg | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://jsdelivr.cdn.net/gh/task4z/classroom-15x@0a3d16a0a531fcdec1a172e849049047e15eac0c/files/catclass/logo.svg | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://originfastly.jsdelivr.net/gh/task4z/classroom-15x@0a3d16a0a531fcdec1a172e849049047e15eac0c/files/catclass/index.svg | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://originfastly.jsdelivr.net/gh/task4z/classroom-15x@0a3d16a0a531fcdec1a172e849049047e15eac0c/files/catclass/logo.svg | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://quantil.jsdelivr.net/gh/task4z/classroom-15x@0a3d16a0a531fcdec1a172e849049047e15eac0c/files/catclass/index.svg | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
@@ -51118,7 +51031,6 @@ Try out my newest project, the [Proxy Development Toolkit](https://github.com/yo
 | | https://catnip-purr31.mathmatics.ccwu.cc | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://cdn.esm.sh/gh/task4z/classroom-15x@71a842db20f5de393d31cbc9a2605a6b808bf71e/files/catclass/index.html | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://cdn.esm.sh/gh/task4z/classroom-15x@71a842db20f5de393d31cbc9a2605a6b808bf71e/files/catclass/logo.svg | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://cdn.jsdeliver.us/gh/task4z/classroom-15x@71a842db20f5de393d31cbc9a2605a6b808bf71e/files/catclass/logo.svg | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://cdn.jsdelivr.net.cn/gh/task4z/classroom-15x@71a842db20f5de393d31cbc9a2605a6b808bf71e/files/catclass/logo.svg | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://cdn.jsdelivr.net/gh/task4z/classroom-15x@71a842db20f5de393d31cbc9a2605a6b808bf71e/files/catclass/logo.svg | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://cdn.statically.io/gh/task4z/classroom-15x@71a842db20f5de393d31cbc9a2605a6b808bf71e/files/catclass/logo.svg | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
@@ -51129,7 +51041,6 @@ Try out my newest project, the [Proxy Development Toolkit](https://github.com/yo
 | | https://fastly.jsdelivr.net/gh/task4z/classroom-15x@71a842db20f5de393d31cbc9a2605a6b808bf71e/files/catclass/logo.svg | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://gcore.jsdelivr.net/gh/task4z/classroom-15x@71a842db20f5de393d31cbc9a2605a6b808bf71e/files/catclass/logo.svg | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://jsd.cdn.zzko.cn/gh/task4z/classroom-15x@71a842db20f5de393d31cbc9a2605a6b808bf71e/files/catclass/logo.svg | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://jsdelivr.cdn.net/gh/task4z/classroom-15x@71a842db20f5de393d31cbc9a2605a6b808bf71e/files/catclass/logo.svg | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://learn-syllabus16.becasuniversitarias.org | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://originfastly.jsdelivr.net/gh/task4z/classroom-15x@71a842db20f5de393d31cbc9a2605a6b808bf71e/files/catclass/logo.svg | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://quantil.jsdelivr.net/gh/task4z/classroom-15x@71a842db20f5de393d31cbc9a2605a6b808bf71e/files/catclass/logo.svg | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
@@ -51144,7 +51055,6 @@ Try out my newest project, the [Proxy Development Toolkit](https://github.com/yo
 | | https://theory-meow41.bridgeportmath.org | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://cdn.esm.sh/gh/task4z/classroom-15x@27f01e06ffa68bd68d5cd9b45c6bc899cb055af0/files/catclass/index.html | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://cdn.esm.sh/gh/task4z/classroom-15x@27f01e06ffa68bd68d5cd9b45c6bc899cb055af0/files/catclass/index.svg | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://cdn.jsdeliver.us/gh/task4z/classroom-15x@27f01e06ffa68bd68d5cd9b45c6bc899cb055af0/files/catclass/index.svg | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://cdn.jsdelivr.net.cn/gh/task4z/classroom-15x@27f01e06ffa68bd68d5cd9b45c6bc899cb055af0/files/catclass/index.svg | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://cdn.jsdelivr.net/gh/task4z/classroom-15x@27f01e06ffa68bd68d5cd9b45c6bc899cb055af0/files/catclass/index.svg | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://cdn.statically.io/gh/task4z/classroom-15x@27f01e06ffa68bd68d5cd9b45c6bc899cb055af0/files/catclass/index.svg | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
@@ -51157,7 +51067,6 @@ Try out my newest project, the [Proxy Development Toolkit](https://github.com/yo
 | | https://geometry-lab75.becasuniversitarias.org | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://homework-dean63.fukushimastudy.org | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://jsd.cdn.zzko.cn/gh/task4z/classroom-15x@27f01e06ffa68bd68d5cd9b45c6bc899cb055af0/files/catclass/index.svg | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://jsdelivr.cdn.net/gh/task4z/classroom-15x@27f01e06ffa68bd68d5cd9b45c6bc899cb055af0/files/catclass/index.svg | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://originfastly.jsdelivr.net/gh/task4z/classroom-15x@27f01e06ffa68bd68d5cd9b45c6bc899cb055af0/files/catclass/index.svg | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://prof-college40.mathmatics.ccwu.cc | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://quantil.jsdelivr.net/gh/task4z/classroom-15x@27f01e06ffa68bd68d5cd9b45c6bc899cb055af0/files/catclass/index.svg | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
@@ -51171,7 +51080,6 @@ Try out my newest project, the [Proxy Development Toolkit](https://github.com/yo
 | | https://testingcf.jsdelivr.net/gh/task4z/classroom-15x@27f01e06ffa68bd68d5cd9b45c6bc899cb055af0/files/catclass/index.svg | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://cdn.esm.sh/gh/task4z/classroom-15x@69a5da3744441f0521212e0524bb88242388c1de/files/catclass/index.html | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://cdn.esm.sh/gh/task4z/classroom-15x@69a5da3744441f0521212e0524bb88242388c1de/files/catclass/logo.svg | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://cdn.jsdeliver.us/gh/task4z/classroom-15x@69a5da3744441f0521212e0524bb88242388c1de/files/catclass/logo.svg | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://cdn.jsdelivr.net.cn/gh/task4z/classroom-15x@69a5da3744441f0521212e0524bb88242388c1de/files/catclass/logo.svg | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://cdn.jsdelivr.net/gh/task4z/classroom-15x@69a5da3744441f0521212e0524bb88242388c1de/files/catclass/logo.svg | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://cdn.statically.io/gh/task4z/classroom-15x@69a5da3744441f0521212e0524bb88242388c1de/files/catclass/logo.svg | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
@@ -51184,10 +51092,7 @@ Try out my newest project, the [Proxy Development Toolkit](https://github.com/yo
 | | https://formula-energy82.becasuniversitarias.org | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://gcore.jsdelivr.net/gh/task4z/classroom-15x@69a5da3744441f0521212e0524bb88242388c1de/files/catclass/logo.svg | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://jsd.cdn.zzko.cn/gh/task4z/classroom-15x@69a5da3744441f0521212e0524bb88242388c1de/files/catclass/logo.svg | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://jsdelivr.cdn.net/gh/task4z/classroom-15x@69a5da3744441f0521212e0524bb88242388c1de/files/catclass/logo.svg | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://originfastly.jsdelivr.net/gh/task4z/classroom-15x@69a5da3744441f0521212e0524bb88242388c1de/files/catclass/logo.svg | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://primebeam7944.whenagentsrule.org/ | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://puretutor9287.whenagentsrule.org/ | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://quantil.jsdelivr.net/gh/task4z/classroom-15x@69a5da3744441f0521212e0524bb88242388c1de/files/catclass/logo.svg | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://raw.esm.sh/gh/task4z/classroom-15x@69a5da3744441f0521212e0524bb88242388c1de/files/catclass/index.html | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://raw.esm.sh/gh/task4z/classroom-15x@69a5da3744441f0521212e0524bb88242388c1de/files/catclass/logo.svg | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
@@ -51197,22 +51102,13 @@ Try out my newest project, the [Proxy Development Toolkit](https://github.com/yo
 | | https://school-equation26.mathmatics.ccwu.cc | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://script.google.com/macros/s/AKfycbyACzDXCUqCxu8q0nEWFvx_tyK3bWdHM1_mVRvmk5aBE6x70P6gMaDThjZmz6xspHUy/exec?id=PTMmQT6889 | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://script.google.com/macros/s/AKfycbyACzDXCUqCxu8q0nEWFvx_tyK3bWdHM1_mVRvmk5aBE6x70P6gMaDThjZmz6xspHUy/exec?id=usryzb7264 | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://sharpprep8016.whenagentsrule.org/ | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://simplelab3400.whenagentsrule.org/ | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://smartfocus7703.whenagentsrule.org/ | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://testingcf.jsdelivr.net/gh/task4z/classroom-15x@69a5da3744441f0521212e0524bb88242388c1de/files/catclass/logo.svg | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://keensite4601.whenagentsrule.org/ | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://crispstudy7681.whenagentsrule.org/ | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://primemind8821.whenagentsrule.org/ | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://freshroom8438.whenagentsrule.org/ | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://deeplearn9323.whenagentsrule.org/ | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://quickmind8233.mannzur.xyz/ | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://puretutor1052.mannzur.xyz/ | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://solidpath2204.mannzur.xyz/ | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://quietzone3469.mannzur.xyz/ | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://boldroom5392.mannzur.xyz/ | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://cdn.esm.sh/gh/task4z/classroom-15x@9bcc6db6e5d4046811588d61ed0f1a6ed8d5dd9c/files/catclass/index.svg | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://cdn.jsdeliver.us/gh/task4z/classroom-15x@9bcc6db6e5d4046811588d61ed0f1a6ed8d5dd9c/files/catclass/index.svg | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://cdn.jsdelivr.net.cn/gh/task4z/classroom-15x@9bcc6db6e5d4046811588d61ed0f1a6ed8d5dd9c/files/catclass/index.svg | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://cdn.jsdelivr.net/gh/task4z/classroom-15x@9bcc6db6e5d4046811588d61ed0f1a6ed8d5dd9c/files/catclass/index.svg | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://cdn.statically.io/gh/task4z/classroom-15x@9bcc6db6e5d4046811588d61ed0f1a6ed8d5dd9c/files/catclass/index.svg | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
@@ -51222,7 +51118,6 @@ Try out my newest project, the [Proxy Development Toolkit](https://github.com/yo
 | | https://gcore.jsdelivr.net/gh/task4z/classroom-15x@9bcc6db6e5d4046811588d61ed0f1a6ed8d5dd9c/files/catclass/index.svg | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://jsd.cdn.zzko.cn/gh/task4z/classroom-15x@9bcc6db6e5d4046811588d61ed0f1a6ed8d5dd9c/files/catclass/index.svg | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://jsdelivr.b-cdn.net/gh/task4z/classroom-15x@9bcc6db6e5d4046811588d61ed0f1a6ed8d5dd9c/files/catclass/index.svg | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://jsdelivr.cdn.net/gh/task4z/classroom-15x@9bcc6db6e5d4046811588d61ed0f1a6ed8d5dd9c/files/catclass/index.svg | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://originfastly.jsdelivr.net/gh/task4z/classroom-15x@9bcc6db6e5d4046811588d61ed0f1a6ed8d5dd9c/files/catclass/index.svg | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://quantil.jsdelivr.net/gh/task4z/classroom-15x@9bcc6db6e5d4046811588d61ed0f1a6ed8d5dd9c/files/catclass/index.svg | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://raw.esm.sh/gh/task4z/classroom-15x@9bcc6db6e5d4046811588d61ed0f1a6ed8d5dd9c/files/catclass/index.svg | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
@@ -51230,7 +51125,6 @@ Try out my newest project, the [Proxy Development Toolkit](https://github.com/yo
 | | https://rawcdn.githack.com/task4z/classroom-15x/9bcc6db6e5d4046811588d61ed0f1a6ed8d5dd9c/files/catclass/index.svg | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://testingcf.jsdelivr.net/gh/task4z/classroom-15x@9bcc6db6e5d4046811588d61ed0f1a6ed8d5dd9c/files/catclass/index.svg | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://cdn.esm.sh/gh/task4z/classroom-15x@9bcc6db6e5d4046811588d61ed0f1a6ed8d5dd9c/files/catclass/logo.svg | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://cdn.jsdeliver.us/gh/task4z/classroom-15x@9bcc6db6e5d4046811588d61ed0f1a6ed8d5dd9c/files/catclass/logo.svg | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://cdn.jsdelivr.net.cn/gh/task4z/classroom-15x@9bcc6db6e5d4046811588d61ed0f1a6ed8d5dd9c/files/catclass/logo.svg | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://cdn.jsdelivr.net/gh/task4z/classroom-15x@9bcc6db6e5d4046811588d61ed0f1a6ed8d5dd9c/files/catclass/logo.svg | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://cdn.statically.io/gh/task4z/classroom-15x@9bcc6db6e5d4046811588d61ed0f1a6ed8d5dd9c/files/catclass/logo.svg | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
@@ -51240,7 +51134,6 @@ Try out my newest project, the [Proxy Development Toolkit](https://github.com/yo
 | | https://gcore.jsdelivr.net/gh/task4z/classroom-15x@9bcc6db6e5d4046811588d61ed0f1a6ed8d5dd9c/files/catclass/logo.svg | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://jsd.cdn.zzko.cn/gh/task4z/classroom-15x@9bcc6db6e5d4046811588d61ed0f1a6ed8d5dd9c/files/catclass/logo.svg | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://jsdelivr.b-cdn.net/gh/task4z/classroom-15x@9bcc6db6e5d4046811588d61ed0f1a6ed8d5dd9c/files/catclass/logo.svg | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://jsdelivr.cdn.net/gh/task4z/classroom-15x@9bcc6db6e5d4046811588d61ed0f1a6ed8d5dd9c/files/catclass/logo.svg | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://originfastly.jsdelivr.net/gh/task4z/classroom-15x@9bcc6db6e5d4046811588d61ed0f1a6ed8d5dd9c/files/catclass/logo.svg | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://quantil.jsdelivr.net/gh/task4z/classroom-15x@9bcc6db6e5d4046811588d61ed0f1a6ed8d5dd9c/files/catclass/logo.svg | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://raw.esm.sh/gh/task4z/classroom-15x@9bcc6db6e5d4046811588d61ed0f1a6ed8d5dd9c/files/catclass/logo.svg | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
@@ -51248,7 +51141,6 @@ Try out my newest project, the [Proxy Development Toolkit](https://github.com/yo
 | | https://rawcdn.githack.com/task4z/classroom-15x/9bcc6db6e5d4046811588d61ed0f1a6ed8d5dd9c/files/catclass/logo.svg | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://testingcf.jsdelivr.net/gh/task4z/classroom-15x@9bcc6db6e5d4046811588d61ed0f1a6ed8d5dd9c/files/catclass/logo.svg | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://cdn.esm.sh/gh/task4z/classroom-15x@79f6ae9010e5204726f3b85022e509449d939e1c/files/catclass/index.svg | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://cdn.jsdeliver.us/gh/task4z/classroom-15x@79f6ae9010e5204726f3b85022e509449d939e1c/files/catclass/index.svg | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://cdn.jsdelivr.net.cn/gh/task4z/classroom-15x@79f6ae9010e5204726f3b85022e509449d939e1c/files/catclass/index.svg | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://cdn.jsdelivr.net/gh/task4z/classroom-15x@79f6ae9010e5204726f3b85022e509449d939e1c/files/catclass/index.svg | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://cdn.statically.io/gh/task4z/classroom-15x@79f6ae9010e5204726f3b85022e509449d939e1c/files/catclass/index.svg | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
@@ -51258,7 +51150,6 @@ Try out my newest project, the [Proxy Development Toolkit](https://github.com/yo
 | | https://gcore.jsdelivr.net/gh/task4z/classroom-15x@79f6ae9010e5204726f3b85022e509449d939e1c/files/catclass/index.svg | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://jsd.cdn.zzko.cn/gh/task4z/classroom-15x@79f6ae9010e5204726f3b85022e509449d939e1c/files/catclass/index.svg | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://jsdelivr.b-cdn.net/gh/task4z/classroom-15x@79f6ae9010e5204726f3b85022e509449d939e1c/files/catclass/index.svg | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://jsdelivr.cdn.net/gh/task4z/classroom-15x@79f6ae9010e5204726f3b85022e509449d939e1c/files/catclass/index.svg | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://originfastly.jsdelivr.net/gh/task4z/classroom-15x@79f6ae9010e5204726f3b85022e509449d939e1c/files/catclass/index.svg | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://quantil.jsdelivr.net/gh/task4z/classroom-15x@79f6ae9010e5204726f3b85022e509449d939e1c/files/catclass/index.svg | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://raw.esm.sh/gh/task4z/classroom-15x@79f6ae9010e5204726f3b85022e509449d939e1c/files/catclass/index.svg | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
@@ -51266,7 +51157,6 @@ Try out my newest project, the [Proxy Development Toolkit](https://github.com/yo
 | | https://rawcdn.githack.com/task4z/classroom-15x/79f6ae9010e5204726f3b85022e509449d939e1c/files/catclass/index.svg | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://testingcf.jsdelivr.net/gh/task4z/classroom-15x@79f6ae9010e5204726f3b85022e509449d939e1c/files/catclass/index.svg | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://cdn.esm.sh/gh/task4z/classroom-15x@79f6ae9010e5204726f3b85022e509449d939e1c/files/catclass/logo.svg | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://cdn.jsdeliver.us/gh/task4z/classroom-15x@79f6ae9010e5204726f3b85022e509449d939e1c/files/catclass/logo.svg | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://cdn.jsdelivr.net.cn/gh/task4z/classroom-15x@79f6ae9010e5204726f3b85022e509449d939e1c/files/catclass/logo.svg | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://cdn.jsdelivr.net/gh/task4z/classroom-15x@79f6ae9010e5204726f3b85022e509449d939e1c/files/catclass/logo.svg | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://cdn.statically.io/gh/task4z/classroom-15x@79f6ae9010e5204726f3b85022e509449d939e1c/files/catclass/logo.svg | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
@@ -51276,7 +51166,6 @@ Try out my newest project, the [Proxy Development Toolkit](https://github.com/yo
 | | https://gcore.jsdelivr.net/gh/task4z/classroom-15x@79f6ae9010e5204726f3b85022e509449d939e1c/files/catclass/logo.svg | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://jsd.cdn.zzko.cn/gh/task4z/classroom-15x@79f6ae9010e5204726f3b85022e509449d939e1c/files/catclass/logo.svg | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://jsdelivr.b-cdn.net/gh/task4z/classroom-15x@79f6ae9010e5204726f3b85022e509449d939e1c/files/catclass/logo.svg | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://jsdelivr.cdn.net/gh/task4z/classroom-15x@79f6ae9010e5204726f3b85022e509449d939e1c/files/catclass/logo.svg | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://originfastly.jsdelivr.net/gh/task4z/classroom-15x@79f6ae9010e5204726f3b85022e509449d939e1c/files/catclass/logo.svg | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://quantil.jsdelivr.net/gh/task4z/classroom-15x@79f6ae9010e5204726f3b85022e509449d939e1c/files/catclass/logo.svg | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://raw.esm.sh/gh/task4z/classroom-15x@79f6ae9010e5204726f3b85022e509449d939e1c/files/catclass/logo.svg | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
@@ -51284,7 +51173,6 @@ Try out my newest project, the [Proxy Development Toolkit](https://github.com/yo
 | | https://rawcdn.githack.com/task4z/classroom-15x/79f6ae9010e5204726f3b85022e509449d939e1c/files/catclass/logo.svg | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://testingcf.jsdelivr.net/gh/task4z/classroom-15x@79f6ae9010e5204726f3b85022e509449d939e1c/files/catclass/logo.svg | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://cdn.esm.sh/gh/task4z/classroom-15x@6709e51a41b1e596ad9e8ee5d6309aee867ac765/files/catclass/index.svg | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://cdn.jsdeliver.us/gh/task4z/classroom-15x@6709e51a41b1e596ad9e8ee5d6309aee867ac765/files/catclass/index.svg | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://cdn.jsdelivr.net.cn/gh/task4z/classroom-15x@6709e51a41b1e596ad9e8ee5d6309aee867ac765/files/catclass/index.svg | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://cdn.jsdelivr.net/gh/task4z/classroom-15x@6709e51a41b1e596ad9e8ee5d6309aee867ac765/files/catclass/index.svg | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://cdn.statically.io/gh/task4z/classroom-15x@6709e51a41b1e596ad9e8ee5d6309aee867ac765/files/catclass/index.svg | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
@@ -51294,7 +51182,6 @@ Try out my newest project, the [Proxy Development Toolkit](https://github.com/yo
 | | https://gcore.jsdelivr.net/gh/task4z/classroom-15x@6709e51a41b1e596ad9e8ee5d6309aee867ac765/files/catclass/index.svg | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://jsd.cdn.zzko.cn/gh/task4z/classroom-15x@6709e51a41b1e596ad9e8ee5d6309aee867ac765/files/catclass/index.svg | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://jsdelivr.b-cdn.net/gh/task4z/classroom-15x@6709e51a41b1e596ad9e8ee5d6309aee867ac765/files/catclass/index.svg | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://jsdelivr.cdn.net/gh/task4z/classroom-15x@6709e51a41b1e596ad9e8ee5d6309aee867ac765/files/catclass/index.svg | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://originfastly.jsdelivr.net/gh/task4z/classroom-15x@6709e51a41b1e596ad9e8ee5d6309aee867ac765/files/catclass/index.svg | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://quantil.jsdelivr.net/gh/task4z/classroom-15x@6709e51a41b1e596ad9e8ee5d6309aee867ac765/files/catclass/index.svg | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://raw.esm.sh/gh/task4z/classroom-15x@6709e51a41b1e596ad9e8ee5d6309aee867ac765/files/catclass/index.svg | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
@@ -51330,7 +51217,7 @@ Try out my newest project, the [Proxy Development Toolkit](https://github.com/yo
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Proxy/Games | tab-cloak, GDB:gn-math | Scramjet, Ultraviolet, Tor | 96 |
+> | Proxy/Games | tab-cloak, GDB:gn-math | Scramjet, Ultraviolet, Tor | 61 |
 > [!IMPORTANT]
 > site has fake nasa popup, wait a few seconds and it should disappear
 >
@@ -51439,7 +51326,7 @@ Try out my newest project, the [Proxy Development Toolkit](https://github.com/yo
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Proxy | wisp | Unknown | 7 |
+> | Proxy | wisp | Unknown | 6 |
 | Locked | Link | Found Date | Username | Password | Contributor |
 | - | - | - | - | - | - |
 | | https://script.google.com/macros/s/AKfycbyBpXVWW5SVdx91Ve2LniAMUx6raXMpGq8jK5nmeomRkbGRmfaVVl78ytbt2mocu3oszQ/exec | 8/1/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
@@ -51454,7 +51341,7 @@ Try out my newest project, the [Proxy Development Toolkit](https://github.com/yo
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Games | - | N/A | 91 |
+> | Games | - | N/A | 31 |
 | Locked | Link | Found Date | Username | Password | Contributor |
 | - | - | - | - | - | - |
 | | https://cdn.imageurlgenerator.com/uploads/ca803644-49df-4030-81fc-6fe1748033c6.svg | 8/1/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
@@ -51542,18 +51429,16 @@ Try out my newest project, the [Proxy Development Toolkit](https://github.com/yo
 |  | https://raw.githubusercontent.com/seattleschools/media/main/batch/Linklet/hourly/20261001030014612/b6731b7bbc3fbb10.svg | 10/5/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 |  | https://cdn.jsdelivr.net/gh/seattleschools/media@main/batch/Linklet/hourly/20261001030014612/b6731b7bbc3fbb10.svg | 10/5/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://whatthesigmund.govt.hu/ | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://hfe8080.timechamber.cl/ | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://hf5948e.eclipsecastello.net/ | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://hf37beb.gsemma.com/ | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://h6b9916.crazyboulder.org/ | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://blooketassets.s3.us-east-2.amazonaws.com/index.html | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://saugatrnocturne-gtqb.ask4tree.com | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 
 # 🔮 Xylora
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Proxy/Games | tab-cloak, panic | Scramjet, Ultraviolet | 54 |
+> | Proxy/Games | tab-cloak, panic | Scramjet, Ultraviolet | 49 |
 > [!IMPORTANT]
 > popups and ads in the bottom left
 
@@ -51607,18 +51492,13 @@ Try out my newest project, the [Proxy Development Toolkit](https://github.com/yo
 | | https://alicechuhazel.topmoto.pl | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://muffinsinfo4school.iiiii.info | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://zyfchessstudying.govt.hu | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://xylora.customiseta.com/ | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://light.streetdirectory.sg/ | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://xylora.bostoncareercounselor.com/ | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://xylora.d3.ro/ | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://xylora.hjshop.net/ | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://buyingmo.buymojatom.com/ | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 
 # ⚡ PGIS 3
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Games | N/A | N/A | 4 |
+> | Games | N/A | N/A | 1 |
 > [!IMPORTANT]
 > This section has not been fully categorized or checked for protocol(s) and capabilities. Submitter note: mainly games.
 
@@ -51633,7 +51513,7 @@ Try out my newest project, the [Proxy Development Toolkit](https://github.com/yo
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Proxy/Games | epoxy, libcurl, bare, tab-cloak, captcha, GDB:petezah | Scramjet | 5 |
+> | Proxy/Games | epoxy, libcurl, bare, tab-cloak, captcha, GDB:petezah | Scramjet | 1 |
 > [!IMPORTANT]
 > This section has not been fully categorized or checked for protocol(s) and capabilities.
 
@@ -51785,7 +51665,7 @@ Try out my newest project, the [Proxy Development Toolkit](https://github.com/yo
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Proxy/Games | tab-cloak, panic, epoxy, libcurl | Scramjet, Ultraviolet | 9 |
+> | Proxy/Games | tab-cloak, panic, epoxy, libcurl | Scramjet, Ultraviolet | 7 |
 > [!IMPORTANT]
 > has popups, cursor is also laggy
 
@@ -51797,8 +51677,6 @@ Try out my newest project, the [Proxy Development Toolkit](https://github.com/yo
 | | https://hu.berugy.hu | 8/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://cow.deepee.com/ | 8/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://verymuch.deepee.com | 8/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://os.tvlibre.st | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://os.rread.co.uk | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://os.casaskrater.cl | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 
 # ⚡ Hyperion Hub
@@ -51820,7 +51698,7 @@ Try out my newest project, the [Proxy Development Toolkit](https://github.com/yo
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Proxy/Games | - | - | 106 |
+> | Proxy/Games | - | - | 104 |
 > [!IMPORTANT]
 > proxy is slow + links suck and are blocked instantly
 
@@ -51910,9 +51788,7 @@ Try out my newest project, the [Proxy Development Toolkit](https://github.com/yo
 | | https://verygood.consuladoinn.com/ | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://verygood.tribeoftwo.com/ | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://verygood.wib.ro/ | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://verygood.revitcity.com/ | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://verygood.bamastuff.com/ | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://verygood.smacs.net/ | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://verygood.ilogica-soluciones.cl/ | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://verygood.joyitasparejas.com/ | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://verygood.allysports.com.ar/ | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
@@ -52075,7 +51951,7 @@ Try out my newest project, the [Proxy Development Toolkit](https://github.com/yo
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Games | tab-cloak, captcha | N/A | 51 |
+> | Games | tab-cloak, captcha | N/A | 49 |
 > [!IMPORTANT]
 > if you closed the initial tab cloak message, you can always enable tab cloak again by clicking the text under the "open games" button on the homepage
 >
@@ -52167,7 +52043,7 @@ Try out my newest project, the [Proxy Development Toolkit](https://github.com/yo
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Proxy | libcurl, tab-cloak | - | 11 |
+> | Proxy | libcurl, tab-cloak | - | 10 |
 > [!IMPORTANT]
 > This section has not been categorized or checked for protocol(s) and capabilities.
 
@@ -52189,7 +52065,7 @@ Try out my newest project, the [Proxy Development Toolkit](https://github.com/yo
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Proxy/Games | bare | Ultraviolet | 143 |
+> | Proxy/Games | bare | Ultraviolet | 91 |
 > [!IMPORTANT]
 > probably wont load anything when you click unblock
 
@@ -53536,7 +53412,7 @@ Try out my newest project, the [Proxy Development Toolkit](https://github.com/yo
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Proxy | tab-cloak | Scramjet | 77 |
+> | Proxy | tab-cloak | Scramjet | 67 |
 > [!IMPORTANT]
 > This section has not been categorized or checked for protocol(s) and capabilities.
 
@@ -53624,7 +53500,7 @@ Try out my newest project, the [Proxy Development Toolkit](https://github.com/yo
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Proxy/Games | tab-cloak, panic, GDB:luminsdk | - | 124 |
+> | Proxy/Games | tab-cloak, panic, GDB:luminsdk | - | 118 |
 > [!IMPORTANT]
 > This section has not been categorized or checked for protocol(s) and capabilities.
 
@@ -53759,7 +53635,7 @@ Try out my newest project, the [Proxy Development Toolkit](https://github.com/yo
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Proxy/Games | epoxy, libcurl, bare, GDB:selenite | Scramjet, Ultraviolet | 78 |
+> | Proxy/Games | epoxy, libcurl, bare, GDB:selenite | Scramjet, Ultraviolet | 70 |
 > [!IMPORTANT]
 > This section has not been categorized or checked for protocol(s) and capabilities.
 
@@ -53971,7 +53847,7 @@ Try out my newest project, the [Proxy Development Toolkit](https://github.com/yo
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Proxy/Games | captcha, tab-cloak, GDB:selenite | - | 440 |
+> | Proxy/Games | captcha, tab-cloak, GDB:selenite | - | 244 |
 > [!IMPORTANT]
 > This section has not been categorized or checked for protocol(s) and capabilities.
 
@@ -54364,7 +54240,6 @@ Try out my newest project, the [Proxy Development Toolkit](https://github.com/yo
 | | https://aeos-site.yapp.page/ | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://aeos.statichost.page/ | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://aeos.droply.id/ | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://aeos.supadrop.site/ | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://rare-fur-syv6a.ship.place/ | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://truth-tiglon-5oyo6.ship.place/ | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://script.google.com/macros/s/AKfycbxLxOIe8ECyYNRTGK7QN2uQg9-8kq3b2qDb8BzPvhC8mLGW8L9X22AauHmZcBI6BMyj/exec?submission_id=845636643667&module_item_id=730&user_id=815611&download=1 | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
@@ -54651,7 +54526,7 @@ Try out my newest project, the [Proxy Development Toolkit](https://github.com/yo
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Games | tab-cloak, GDB:gn-math, GDB:truffled | N/A | 628 |
+> | Games | tab-cloak, GDB:gn-math, GDB:truffled | N/A | 501 |
 > [!IMPORTANT]
 > This section has not been categorized or checked for protocol(s) and capabilities.
 
@@ -54735,72 +54610,7 @@ Try out my newest project, the [Proxy Development Toolkit](https://github.com/yo
 | | https://quantil.jsdelivr.net/gh/dorianhagar506-coder/idk-1tlupq@main/DarkNUX-9-sttg.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 |  | https://u1.padletusercontent.com/uploads/padlet-uploads-usc1/6201856624/18dbb6bf9d1842fbd2fa9eb30541fd7e/DarkNUX.svg?expiry_token=5WaHZRdGG3LkUVQGy3SZ-zdRtq89aJeottSBaF_Hii8dmxJqYDvE2-MDbblcM-ZrVekXW99RReKkJFIoMoKio28vaguHqr5o9Dy9EYkUj-xfkhj8VQroN-9F3I9nT1ibEU3eXMFa0A0anFBy8O2ICgQfxC4m0DA85iWoKBkZxkDMCBzflfHgluoa_puMBPDKFgyD3h2m4g6lsJgQSIbesg==darknux | 10/5/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 |  | https://u1.padletusercontent.com/uploads/padlet-uploads-usc1/6201856624/fb6426227dfe1fe95929d4f9bf594f16/windows10background.svg?expiry_token=5WaHZRdGG3LkUVQGy3SZ-zdRtq89aJeottSBaF_Hii8dmxJqYDvE2-MDbblcM-ZrVekXW99RReKkJFIoMoKio28vaguHqr5o9Dy9EYkUj-wVSbS1_9S6WGEiIdamcHlwR0GUVKbSHSbo4t1ryY2K7nIqGrZxXOdKrbf-0xK3hld8GgcshnLXFTWgLWYQ4OZ2e8a3Do34M7tKrcwDmqHUWDHgxfSoBIgjAzXFT7rqSuI= | 10/5/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://cdn.jsdelivr.net/gh/donoEla/SAT-Prep-1@1232a4c/v0001/DarkNUX.svg?submission_id=593&module_item_id=8&user_id=68935294101&download=1 | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://cdn.jsdelivr.net/gh/donoEla/SAT-Prep-1@1232a4c/v0002/DarkNUX.svg?submission_id=9704&module_item_id=888&user_id=8328107&download=1 | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://cdn.jsdelivr.net/gh/donoEla/SAT-Prep-1@1232a4c/v0003/DarkNUX.svg?submission_id=9460431475&module_item_id=756432109185&user_id=47056610&download=1 | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://cdn.jsdelivr.net/gh/donoEla/SAT-Prep-1@1232a4c/v0004/DarkNUX.svg?submission_id=65491779&module_item_id=47887243&user_id=315901063055&download=1 | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://cdn.jsdelivr.net/gh/donoEla/SAT-Prep-1@1232a4c/v0005/DarkNUX.svg?submission_id=3574975&module_item_id=66975040305&user_id=65&download=1 | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://cdn.jsdelivr.net/gh/donoEla/SAT-Prep-1@1232a4c/v0006/DarkNUX.svg?submission_id=814168126&module_item_id=703136245&user_id=8&download=1 | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://cdn.jsdelivr.net/gh/donoEla/SAT-Prep-1@1232a4c/v0007/DarkNUX.svg?submission_id=985355354&module_item_id=8063&user_id=694229653154&download=1 | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://cdn.jsdelivr.net/gh/donoEla/SAT-Prep-1@1232a4c/v0008/DarkNUX.svg?submission_id=7118&module_item_id=31975064328&user_id=515031597&download=1 | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://cdn.jsdelivr.net/gh/donoEla/SAT-Prep-1@1232a4c/v0009/DarkNUX.svg?submission_id=9841484&module_item_id=42915&user_id=548476&download=1 | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://cdn.jsdelivr.net/gh/donoEla/SAT-Prep-1@1232a4c/v0010/DarkNUX.svg?submission_id=7548610&module_item_id=407493&user_id=587&download=1 | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://cdn.jsdelivr.net/gh/donoEla/SAT-Prep-1@1232a4c/v0011/DarkNUX.svg?submission_id=57393396&module_item_id=776841311&user_id=636663196&download=1 | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://cdn.jsdelivr.net/gh/donoEla/SAT-Prep-1@1232a4c/v0012/DarkNUX.svg?submission_id=20645365690&module_item_id=4&user_id=1&download=1 | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://cdn.jsdelivr.net/gh/donoEla/SAT-Prep-1@1232a4c/v0013/DarkNUX.svg?submission_id=9&module_item_id=12533&user_id=312606&download=1 | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://cdn.jsdelivr.net/gh/donoEla/SAT-Prep-1@1232a4c/v0014/DarkNUX.svg?submission_id=62533&module_item_id=1731&user_id=1130894617&download=1 | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://cdn.jsdelivr.net/gh/donoEla/SAT-Prep-1@1232a4c/v0015/DarkNUX.svg?submission_id=71111&module_item_id=15&user_id=750906841997&download=1 | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://cdn.jsdelivr.net/gh/donoEla/SAT-Prep-1@1232a4c/v0016/DarkNUX.svg?submission_id=878&module_item_id=269&user_id=2745&download=1 | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://cdn.jsdelivr.net/gh/donoEla/SAT-Prep-1@1232a4c/v0017/DarkNUX.svg?submission_id=8163116431&module_item_id=942547248306&user_id=4149&download=1 | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://cdn.jsdelivr.net/gh/donoEla/SAT-Prep-1@1232a4c/v0018/DarkNUX.svg?submission_id=973879915&module_item_id=2623936&user_id=165&download=1 | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://cdn.jsdelivr.net/gh/donoEla/SAT-Prep-1@1232a4c/v0019/DarkNUX.svg?submission_id=1248400&module_item_id=73&user_id=986127910669&download=1 | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://cdn.jsdelivr.net/gh/donoEla/SAT-Prep-1@1232a4c/v0020/DarkNUX.svg?submission_id=5667&module_item_id=75659&user_id=5107817&download=1 | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://cdn.jsdelivr.net/gh/donoEla/SAT-Prep-1@1232a4c/v0021/DarkNUX.svg?submission_id=9908839&module_item_id=592389958&user_id=12361028&download=1 | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://cdn.jsdelivr.net/gh/donoEla/SAT-Prep-1@1232a4c/v0022/DarkNUX.svg?submission_id=628641840&module_item_id=4867519&user_id=8991&download=1 | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://cdn.jsdelivr.net/gh/donoEla/SAT-Prep-1@1232a4c/v0023/DarkNUX.svg?submission_id=9505673&module_item_id=3557611214&user_id=857667&download=1 | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://cdn.jsdelivr.net/gh/donoEla/SAT-Prep-1@1232a4c/v0024/DarkNUX.svg?submission_id=408908861&module_item_id=14333789&user_id=7&download=1 | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://cdn.jsdelivr.net/gh/donoEla/SAT-Prep-1@1232a4c/v0025/DarkNUX.svg?submission_id=816751057&module_item_id=56&user_id=759789362728&download=1 | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://cdn.jsdelivr.net/gh/donoEla/SAT-Prep-1@1232a4c/v0026/DarkNUX.svg?submission_id=46&module_item_id=221361632369&user_id=7580167844&download=1 | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://cdn.jsdelivr.net/gh/donoEla/SAT-Prep-1@1232a4c/v0027/DarkNUX.svg?submission_id=93476911235&module_item_id=562971591113&user_id=46&download=1 | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://cdn.jsdelivr.net/gh/donoEla/SAT-Prep-1@1232a4c/v0028/DarkNUX.svg?submission_id=200480558&module_item_id=412&user_id=3169211115&download=1 | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://cdn.jsdelivr.net/gh/donoEla/SAT-Prep-1@1232a4c/v0029/DarkNUX.svg?submission_id=33357063321&module_item_id=259794419865&user_id=7&download=1 | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://cdn.jsdelivr.net/gh/donoEla/SAT-Prep-1@1232a4c/v0030/DarkNUX.svg?submission_id=43274&module_item_id=47177854890&user_id=3367577775&download=1 | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://cdn.jsdelivr.net/gh/donoEla/SAT-Prep-1@1232a4c/v0031/DarkNUX.svg?submission_id=962203210&module_item_id=4786&user_id=8&download=1 | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://cdn.jsdelivr.net/gh/donoEla/SAT-Prep-1@1232a4c/v0032/DarkNUX.svg?submission_id=7772119&module_item_id=9&user_id=8404337308&download=1 | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://cdn.jsdelivr.net/gh/donoEla/SAT-Prep-1@1232a4c/v0033/DarkNUX.svg?submission_id=82&module_item_id=6397&user_id=86490&download=1 | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://cdn.jsdelivr.net/gh/donoEla/SAT-Prep-1@1232a4c/v0034/DarkNUX.svg?submission_id=66965&module_item_id=50590438&user_id=242526287&download=1 | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://cdn.jsdelivr.net/gh/donoEla/SAT-Prep-1@1232a4c/v0035/DarkNUX.svg?submission_id=68285197898&module_item_id=6&user_id=9210&download=1 | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://cdn.jsdelivr.net/gh/donoEla/SAT-Prep-1@1232a4c/v0036/DarkNUX.svg?submission_id=6803&module_item_id=918410020321&user_id=7&download=1 | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://cdn.jsdelivr.net/gh/donoEla/SAT-Prep-1@1232a4c/v0037/DarkNUX.svg?submission_id=687940&module_item_id=8601&user_id=1&download=1 | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://cdn.jsdelivr.net/gh/donoEla/SAT-Prep-1@1232a4c/v0038/DarkNUX.svg?submission_id=581693&module_item_id=66&user_id=520597&download=1 | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://cdn.jsdelivr.net/gh/donoEla/SAT-Prep-1@1232a4c/v0039/DarkNUX.svg?submission_id=1795858143&module_item_id=78571165&user_id=5859165716&download=1 | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://cdn.jsdelivr.net/gh/donoEla/SAT-Prep-1@1232a4c/v0040/DarkNUX.svg?submission_id=798971274667&module_item_id=83571076&user_id=436341036106&download=1 | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://cdn.jsdelivr.net/gh/donoEla/SAT-Prep-1@1232a4c/v0041/DarkNUX.svg?submission_id=27708000572&module_item_id=439&user_id=54235&download=1 | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://cdn.jsdelivr.net/gh/donoEla/SAT-Prep-1@1232a4c/v0042/DarkNUX.svg?submission_id=9738&module_item_id=9785271&user_id=418411837108&download=1 | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://cdn.jsdelivr.net/gh/donoEla/SAT-Prep-1@1232a4c/v0043/DarkNUX.svg?submission_id=27&module_item_id=405528351804&user_id=866791&download=1 | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://cdn.jsdelivr.net/gh/donoEla/SAT-Prep-1@1232a4c/v0044/DarkNUX.svg?submission_id=55739509&module_item_id=212667485&user_id=1610673&download=1 | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://cdn.jsdelivr.net/gh/donoEla/SAT-Prep-1@1232a4c/v0045/DarkNUX.svg?submission_id=133060663&module_item_id=41833075462&user_id=995532351017&download=1 | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://cdn.jsdelivr.net/gh/donoEla/SAT-Prep-1@1232a4c/v0046/DarkNUX.svg?submission_id=4&module_item_id=690948&user_id=8&download=1 | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://cdn.jsdelivr.net/gh/donoEla/SAT-Prep-1@1232a4c/v0047/DarkNUX.svg?submission_id=17&module_item_id=228966668&user_id=5265819&download=1 | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://cdn.jsdelivr.net/gh/donoEla/SAT-Prep-1@1232a4c/v0048/DarkNUX.svg?submission_id=8426712&module_item_id=85&user_id=14&download=1 | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://cdn.jsdelivr.net/gh/donoEla/SAT-Prep-1@1232a4c/v0049/DarkNUX.svg?submission_id=80161259707&module_item_id=3&user_id=9&download=1 | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://cdn.jsdelivr.net/gh/donoEla/SAT-Prep-1@1232a4c/v0050/DarkNUX.svg?submission_id=35486&module_item_id=6509332963&user_id=71062530&download=1 | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://cdn.jsdelivr.net/gh/donoEla/SAT-Prep-1@1232a4c/v0051/DarkNUX.svg?submission_id=69694&module_item_id=6925307&user_id=395&download=1 | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://cdn.jsdelivr.net/gh/donoEla/SAT-Prep-1@1232a4c/v0052/DarkNUX.svg?submission_id=9178&module_item_id=16220640121&user_id=52248163&download=1 | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://cdn.jsdelivr.net/gh/donoEla/SAT-Prep-1@1232a4c/v0053/DarkNUX.svg?submission_id=868883656&module_item_id=8144455638&user_id=9&download=1 | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://cdn.jsdelivr.net/gh/donoEla/SAT-Prep-1@1232a4c/v0054/DarkNUX.svg?submission_id=42385927153&module_item_id=14738260701&user_id=95174407573&download=1 | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://cdn.jsdelivr.net/gh/donoEla/SAT-Prep-1@1232a4c/v0055/DarkNUX.svg?submission_id=8897727578&module_item_id=192014162992&user_id=607&download=1 | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://cdn.jsdelivr.net/gh/donoEla/SAT-Prep-1@1232a4c/v0056/DarkNUX.svg?submission_id=4218&module_item_id=80&user_id=191404&download=1 | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://cdn.jsdelivr.net/gh/donoEla/SAT-Prep-1@1232a4c/v0057/DarkNUX.svg?submission_id=982578&module_item_id=39&user_id=196&download=1 | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://cdn.jsdelivr.net/gh/donoEla/SAT-Prep-1@1232a4c/v0058/DarkNUX.svg?submission_id=575716&module_item_id=751872705174&user_id=283944906711&download=1 | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://cdn.jsdelivr.net/gh/donoEla/SAT-Prep-1@1232a4c/v0059/DarkNUX.svg?submission_id=17456785&module_item_id=862332911226&user_id=1045872697&download=1 | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://cdn.jsdelivr.net/gh/donoEla/SAT-Prep-1@1232a4c/v0060/DarkNUX.svg?submission_id=14&module_item_id=7&user_id=363&download=1 | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://cdn.jsdelivr.net/gh/donoEla/SAT-Prep-1@1232a4c/v0061/DarkNUX.svg?submission_id=828&module_item_id=666&user_id=7005365&download=1 | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://cdn.jsdelivr.net/gh/donoEla/SAT-Prep-1@1232a4c/v0062/DarkNUX.svg?submission_id=7059224510&module_item_id=9683150&user_id=4&download=1 | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://cdn.jsdelivr.net/gh/donoEla/SAT-Prep-1@1232a4c/v0063/DarkNUX.svg?submission_id=14380836&module_item_id=71866&user_id=90310714339&download=1 | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://originfastly.jsdelivr.net/gh/dorianhagar506-coder/svgbulk-0449l4@main/DarkNUX-3501-clsq.svg | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://testingcdn.jsdelivr.net/gh/dorianhagar506-coder/svgbulk-0449l4@main/DarkNUX-3501-clsq.svg | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://rawcdn.jsdelivr.net/gh/dorianhagar506-coder/svgbulk-0449l4@main/DarkNUX-3501-clsq.svg | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://cdn.statically.io/gh/dorianhagar506-coder/svgbulk-0449l4/main/DarkNUX-3501-clsq.svg | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://raw.githack.com/dorianhagar506-coder/svgbulk-0449l4/main/DarkNUX-3501-clsq.svg | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://rawcdn.githack.com/dorianhagar506-coder/svgbulk-0449l4/main/DarkNUX-3501-clsq.svg | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
@@ -54810,8 +54620,6 @@ Try out my newest project, the [Proxy Development Toolkit](https://github.com/yo
 | | https://gcore.jsdelivr.net/gh/dorianhagar506-coder/svgbulk-0449l4@main/DarkNUX-3502-sttf.svg | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://quantil.jsdelivr.net/gh/dorianhagar506-coder/svgbulk-0449l4@main/DarkNUX-3502-sttf.svg | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://originfastly.jsdelivr.net/gh/dorianhagar506-coder/svgbulk-0449l4@main/DarkNUX-3502-sttf.svg | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://testingcdn.jsdelivr.net/gh/dorianhagar506-coder/svgbulk-0449l4@main/DarkNUX-3502-sttf.svg | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://rawcdn.jsdelivr.net/gh/dorianhagar506-coder/svgbulk-0449l4@main/DarkNUX-3502-sttf.svg | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://cdn.statically.io/gh/dorianhagar506-coder/svgbulk-0449l4/main/DarkNUX-3502-sttf.svg | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://raw.githack.com/dorianhagar506-coder/svgbulk-0449l4/main/DarkNUX-3502-sttf.svg | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://rawcdn.githack.com/dorianhagar506-coder/svgbulk-0449l4/main/DarkNUX-3502-sttf.svg | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
@@ -54821,8 +54629,6 @@ Try out my newest project, the [Proxy Development Toolkit](https://github.com/yo
 | | https://gcore.jsdelivr.net/gh/dorianhagar506-coder/svgbulk-0449l4@main/DarkNUX-3503-ajeq.svg | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://quantil.jsdelivr.net/gh/dorianhagar506-coder/svgbulk-0449l4@main/DarkNUX-3503-ajeq.svg | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://originfastly.jsdelivr.net/gh/dorianhagar506-coder/svgbulk-0449l4@main/DarkNUX-3503-ajeq.svg | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://testingcdn.jsdelivr.net/gh/dorianhagar506-coder/svgbulk-0449l4@main/DarkNUX-3503-ajeq.svg | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://rawcdn.jsdelivr.net/gh/dorianhagar506-coder/svgbulk-0449l4@main/DarkNUX-3503-ajeq.svg | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://cdn.statically.io/gh/dorianhagar506-coder/svgbulk-0449l4/main/DarkNUX-3503-ajeq.svg | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://raw.githack.com/dorianhagar506-coder/svgbulk-0449l4/main/DarkNUX-3503-ajeq.svg | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://rawcdn.githack.com/dorianhagar506-coder/svgbulk-0449l4/main/DarkNUX-3503-ajeq.svg | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
@@ -54832,8 +54638,6 @@ Try out my newest project, the [Proxy Development Toolkit](https://github.com/yo
 | | https://gcore.jsdelivr.net/gh/dorianhagar506-coder/svgbulk-0449l4@main/DarkNUX-3504-g264.svg | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://quantil.jsdelivr.net/gh/dorianhagar506-coder/svgbulk-0449l4@main/DarkNUX-3504-g264.svg | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://originfastly.jsdelivr.net/gh/dorianhagar506-coder/svgbulk-0449l4@main/DarkNUX-3504-g264.svg | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://testingcdn.jsdelivr.net/gh/dorianhagar506-coder/svgbulk-0449l4@main/DarkNUX-3504-g264.svg | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://rawcdn.jsdelivr.net/gh/dorianhagar506-coder/svgbulk-0449l4@main/DarkNUX-3504-g264.svg | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://cdn.statically.io/gh/dorianhagar506-coder/svgbulk-0449l4/main/DarkNUX-3504-g264.svg | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://raw.githack.com/dorianhagar506-coder/svgbulk-0449l4/main/DarkNUX-3504-g264.svg | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://rawcdn.githack.com/dorianhagar506-coder/svgbulk-0449l4/main/DarkNUX-3504-g264.svg | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
@@ -54843,8 +54647,6 @@ Try out my newest project, the [Proxy Development Toolkit](https://github.com/yo
 | | https://gcore.jsdelivr.net/gh/dorianhagar506-coder/svgbulk-0449l4@main/DarkNUX-3505-mmmv.svg | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://quantil.jsdelivr.net/gh/dorianhagar506-coder/svgbulk-0449l4@main/DarkNUX-3505-mmmv.svg | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://originfastly.jsdelivr.net/gh/dorianhagar506-coder/svgbulk-0449l4@main/DarkNUX-3505-mmmv.svg | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://testingcdn.jsdelivr.net/gh/dorianhagar506-coder/svgbulk-0449l4@main/DarkNUX-3505-mmmv.svg | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://rawcdn.jsdelivr.net/gh/dorianhagar506-coder/svgbulk-0449l4@main/DarkNUX-3505-mmmv.svg | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://cdn.statically.io/gh/dorianhagar506-coder/svgbulk-0449l4/main/DarkNUX-3505-mmmv.svg | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://raw.githack.com/dorianhagar506-coder/svgbulk-0449l4/main/DarkNUX-3505-mmmv.svg | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://rawcdn.githack.com/dorianhagar506-coder/svgbulk-0449l4/main/DarkNUX-3505-mmmv.svg | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
@@ -54854,8 +54656,6 @@ Try out my newest project, the [Proxy Development Toolkit](https://github.com/yo
 | | https://gcore.jsdelivr.net/gh/dorianhagar506-coder/svgbulk-0449l4@main/DarkNUX-3506-i8yc.svg | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://quantil.jsdelivr.net/gh/dorianhagar506-coder/svgbulk-0449l4@main/DarkNUX-3506-i8yc.svg | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://originfastly.jsdelivr.net/gh/dorianhagar506-coder/svgbulk-0449l4@main/DarkNUX-3506-i8yc.svg | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://testingcdn.jsdelivr.net/gh/dorianhagar506-coder/svgbulk-0449l4@main/DarkNUX-3506-i8yc.svg | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://rawcdn.jsdelivr.net/gh/dorianhagar506-coder/svgbulk-0449l4@main/DarkNUX-3506-i8yc.svg | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://cdn.statically.io/gh/dorianhagar506-coder/svgbulk-0449l4/main/DarkNUX-3506-i8yc.svg | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://raw.githack.com/dorianhagar506-coder/svgbulk-0449l4/main/DarkNUX-3506-i8yc.svg | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://rawcdn.githack.com/dorianhagar506-coder/svgbulk-0449l4/main/DarkNUX-3506-i8yc.svg | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
@@ -54865,8 +54665,6 @@ Try out my newest project, the [Proxy Development Toolkit](https://github.com/yo
 | | https://gcore.jsdelivr.net/gh/dorianhagar506-coder/svgbulk-0449l4@main/DarkNUX-3507-1zdo.svg | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://quantil.jsdelivr.net/gh/dorianhagar506-coder/svgbulk-0449l4@main/DarkNUX-3507-1zdo.svg | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://originfastly.jsdelivr.net/gh/dorianhagar506-coder/svgbulk-0449l4@main/DarkNUX-3507-1zdo.svg | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://testingcdn.jsdelivr.net/gh/dorianhagar506-coder/svgbulk-0449l4@main/DarkNUX-3507-1zdo.svg | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://rawcdn.jsdelivr.net/gh/dorianhagar506-coder/svgbulk-0449l4@main/DarkNUX-3507-1zdo.svg | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://cdn.statically.io/gh/dorianhagar506-coder/svgbulk-0449l4/main/DarkNUX-3507-1zdo.svg | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://raw.githack.com/dorianhagar506-coder/svgbulk-0449l4/main/DarkNUX-3507-1zdo.svg | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://rawcdn.githack.com/dorianhagar506-coder/svgbulk-0449l4/main/DarkNUX-3507-1zdo.svg | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
@@ -54876,8 +54674,6 @@ Try out my newest project, the [Proxy Development Toolkit](https://github.com/yo
 | | https://gcore.jsdelivr.net/gh/dorianhagar506-coder/svgbulk-0449l4@main/DarkNUX-3508-57yr.svg | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://quantil.jsdelivr.net/gh/dorianhagar506-coder/svgbulk-0449l4@main/DarkNUX-3508-57yr.svg | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://originfastly.jsdelivr.net/gh/dorianhagar506-coder/svgbulk-0449l4@main/DarkNUX-3508-57yr.svg | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://testingcdn.jsdelivr.net/gh/dorianhagar506-coder/svgbulk-0449l4@main/DarkNUX-3508-57yr.svg | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://rawcdn.jsdelivr.net/gh/dorianhagar506-coder/svgbulk-0449l4@main/DarkNUX-3508-57yr.svg | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://cdn.statically.io/gh/dorianhagar506-coder/svgbulk-0449l4/main/DarkNUX-3508-57yr.svg | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://raw.githack.com/dorianhagar506-coder/svgbulk-0449l4/main/DarkNUX-3508-57yr.svg | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://rawcdn.githack.com/dorianhagar506-coder/svgbulk-0449l4/main/DarkNUX-3508-57yr.svg | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
@@ -54887,8 +54683,6 @@ Try out my newest project, the [Proxy Development Toolkit](https://github.com/yo
 | | https://gcore.jsdelivr.net/gh/dorianhagar506-coder/svgbulk-0449l4@main/DarkNUX-3509-i2j3.svg | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://quantil.jsdelivr.net/gh/dorianhagar506-coder/svgbulk-0449l4@main/DarkNUX-3509-i2j3.svg | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://originfastly.jsdelivr.net/gh/dorianhagar506-coder/svgbulk-0449l4@main/DarkNUX-3509-i2j3.svg | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://testingcdn.jsdelivr.net/gh/dorianhagar506-coder/svgbulk-0449l4@main/DarkNUX-3509-i2j3.svg | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://rawcdn.jsdelivr.net/gh/dorianhagar506-coder/svgbulk-0449l4@main/DarkNUX-3509-i2j3.svg | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://cdn.statically.io/gh/dorianhagar506-coder/svgbulk-0449l4/main/DarkNUX-3509-i2j3.svg | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://raw.githack.com/dorianhagar506-coder/svgbulk-0449l4/main/DarkNUX-3509-i2j3.svg | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://rawcdn.githack.com/dorianhagar506-coder/svgbulk-0449l4/main/DarkNUX-3509-i2j3.svg | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
@@ -54898,8 +54692,6 @@ Try out my newest project, the [Proxy Development Toolkit](https://github.com/yo
 | | https://gcore.jsdelivr.net/gh/dorianhagar506-coder/svgbulk-0449l4@main/DarkNUX-3510-17ya.svg | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://quantil.jsdelivr.net/gh/dorianhagar506-coder/svgbulk-0449l4@main/DarkNUX-3510-17ya.svg | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://originfastly.jsdelivr.net/gh/dorianhagar506-coder/svgbulk-0449l4@main/DarkNUX-3510-17ya.svg | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://testingcdn.jsdelivr.net/gh/dorianhagar506-coder/svgbulk-0449l4@main/DarkNUX-3510-17ya.svg | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://rawcdn.jsdelivr.net/gh/dorianhagar506-coder/svgbulk-0449l4@main/DarkNUX-3510-17ya.svg | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://cdn.statically.io/gh/dorianhagar506-coder/svgbulk-0449l4/main/DarkNUX-3510-17ya.svg | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://raw.githack.com/dorianhagar506-coder/svgbulk-0449l4/main/DarkNUX-3510-17ya.svg | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://rawcdn.githack.com/dorianhagar506-coder/svgbulk-0449l4/main/DarkNUX-3510-17ya.svg | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
@@ -54909,8 +54701,6 @@ Try out my newest project, the [Proxy Development Toolkit](https://github.com/yo
 | | https://gcore.jsdelivr.net/gh/dorianhagar506-coder/svgbulk-0449l4@main/DarkNUX-3511-je8p.svg | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://quantil.jsdelivr.net/gh/dorianhagar506-coder/svgbulk-0449l4@main/DarkNUX-3511-je8p.svg | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://originfastly.jsdelivr.net/gh/dorianhagar506-coder/svgbulk-0449l4@main/DarkNUX-3511-je8p.svg | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://testingcdn.jsdelivr.net/gh/dorianhagar506-coder/svgbulk-0449l4@main/DarkNUX-3511-je8p.svg | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://rawcdn.jsdelivr.net/gh/dorianhagar506-coder/svgbulk-0449l4@main/DarkNUX-3511-je8p.svg | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://cdn.statically.io/gh/dorianhagar506-coder/svgbulk-0449l4/main/DarkNUX-3511-je8p.svg | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://raw.githack.com/dorianhagar506-coder/svgbulk-0449l4/main/DarkNUX-3511-je8p.svg | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://rawcdn.githack.com/dorianhagar506-coder/svgbulk-0449l4/main/DarkNUX-3511-je8p.svg | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
@@ -54920,8 +54710,6 @@ Try out my newest project, the [Proxy Development Toolkit](https://github.com/yo
 | | https://gcore.jsdelivr.net/gh/dorianhagar506-coder/svgbulk-0449l4@main/DarkNUX-3512-9pp0.svg | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://quantil.jsdelivr.net/gh/dorianhagar506-coder/svgbulk-0449l4@main/DarkNUX-3512-9pp0.svg | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://originfastly.jsdelivr.net/gh/dorianhagar506-coder/svgbulk-0449l4@main/DarkNUX-3512-9pp0.svg | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://testingcdn.jsdelivr.net/gh/dorianhagar506-coder/svgbulk-0449l4@main/DarkNUX-3512-9pp0.svg | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://rawcdn.jsdelivr.net/gh/dorianhagar506-coder/svgbulk-0449l4@main/DarkNUX-3512-9pp0.svg | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://cdn.statically.io/gh/dorianhagar506-coder/svgbulk-0449l4/main/DarkNUX-3512-9pp0.svg | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://raw.githack.com/dorianhagar506-coder/svgbulk-0449l4/main/DarkNUX-3512-9pp0.svg | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://rawcdn.githack.com/dorianhagar506-coder/svgbulk-0449l4/main/DarkNUX-3512-9pp0.svg | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
@@ -54931,8 +54719,6 @@ Try out my newest project, the [Proxy Development Toolkit](https://github.com/yo
 | | https://gcore.jsdelivr.net/gh/dorianhagar506-coder/svgbulk-0449l4@main/DarkNUX-3513-yio0.svg | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://quantil.jsdelivr.net/gh/dorianhagar506-coder/svgbulk-0449l4@main/DarkNUX-3513-yio0.svg | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://originfastly.jsdelivr.net/gh/dorianhagar506-coder/svgbulk-0449l4@main/DarkNUX-3513-yio0.svg | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://testingcdn.jsdelivr.net/gh/dorianhagar506-coder/svgbulk-0449l4@main/DarkNUX-3513-yio0.svg | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://rawcdn.jsdelivr.net/gh/dorianhagar506-coder/svgbulk-0449l4@main/DarkNUX-3513-yio0.svg | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://cdn.statically.io/gh/dorianhagar506-coder/svgbulk-0449l4/main/DarkNUX-3513-yio0.svg | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://raw.githack.com/dorianhagar506-coder/svgbulk-0449l4/main/DarkNUX-3513-yio0.svg | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://rawcdn.githack.com/dorianhagar506-coder/svgbulk-0449l4/main/DarkNUX-3513-yio0.svg | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
@@ -54942,8 +54728,6 @@ Try out my newest project, the [Proxy Development Toolkit](https://github.com/yo
 | | https://gcore.jsdelivr.net/gh/dorianhagar506-coder/svgbulk-0449l4@main/DarkNUX-3514-6bhg.svg | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://quantil.jsdelivr.net/gh/dorianhagar506-coder/svgbulk-0449l4@main/DarkNUX-3514-6bhg.svg | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://originfastly.jsdelivr.net/gh/dorianhagar506-coder/svgbulk-0449l4@main/DarkNUX-3514-6bhg.svg | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://testingcdn.jsdelivr.net/gh/dorianhagar506-coder/svgbulk-0449l4@main/DarkNUX-3514-6bhg.svg | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://rawcdn.jsdelivr.net/gh/dorianhagar506-coder/svgbulk-0449l4@main/DarkNUX-3514-6bhg.svg | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://cdn.statically.io/gh/dorianhagar506-coder/svgbulk-0449l4/main/DarkNUX-3514-6bhg.svg | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://raw.githack.com/dorianhagar506-coder/svgbulk-0449l4/main/DarkNUX-3514-6bhg.svg | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://rawcdn.githack.com/dorianhagar506-coder/svgbulk-0449l4/main/DarkNUX-3514-6bhg.svg | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
@@ -54953,8 +54737,6 @@ Try out my newest project, the [Proxy Development Toolkit](https://github.com/yo
 | | https://gcore.jsdelivr.net/gh/dorianhagar506-coder/svgbulk-0449l4@main/DarkNUX-3515-x7dw.svg | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://quantil.jsdelivr.net/gh/dorianhagar506-coder/svgbulk-0449l4@main/DarkNUX-3515-x7dw.svg | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://originfastly.jsdelivr.net/gh/dorianhagar506-coder/svgbulk-0449l4@main/DarkNUX-3515-x7dw.svg | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://testingcdn.jsdelivr.net/gh/dorianhagar506-coder/svgbulk-0449l4@main/DarkNUX-3515-x7dw.svg | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://rawcdn.jsdelivr.net/gh/dorianhagar506-coder/svgbulk-0449l4@main/DarkNUX-3515-x7dw.svg | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://cdn.statically.io/gh/dorianhagar506-coder/svgbulk-0449l4/main/DarkNUX-3515-x7dw.svg | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://raw.githack.com/dorianhagar506-coder/svgbulk-0449l4/main/DarkNUX-3515-x7dw.svg | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://rawcdn.githack.com/dorianhagar506-coder/svgbulk-0449l4/main/DarkNUX-3515-x7dw.svg | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
@@ -54964,8 +54746,6 @@ Try out my newest project, the [Proxy Development Toolkit](https://github.com/yo
 | | https://gcore.jsdelivr.net/gh/dorianhagar506-coder/svgbulk-0449l4@main/DarkNUX-3516-pzye.svg | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://quantil.jsdelivr.net/gh/dorianhagar506-coder/svgbulk-0449l4@main/DarkNUX-3516-pzye.svg | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://originfastly.jsdelivr.net/gh/dorianhagar506-coder/svgbulk-0449l4@main/DarkNUX-3516-pzye.svg | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://testingcdn.jsdelivr.net/gh/dorianhagar506-coder/svgbulk-0449l4@main/DarkNUX-3516-pzye.svg | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://rawcdn.jsdelivr.net/gh/dorianhagar506-coder/svgbulk-0449l4@main/DarkNUX-3516-pzye.svg | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://cdn.statically.io/gh/dorianhagar506-coder/svgbulk-0449l4/main/DarkNUX-3516-pzye.svg | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://raw.githack.com/dorianhagar506-coder/svgbulk-0449l4/main/DarkNUX-3516-pzye.svg | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://rawcdn.githack.com/dorianhagar506-coder/svgbulk-0449l4/main/DarkNUX-3516-pzye.svg | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
@@ -54975,8 +54755,6 @@ Try out my newest project, the [Proxy Development Toolkit](https://github.com/yo
 | | https://gcore.jsdelivr.net/gh/dorianhagar506-coder/svgbulk-0449l4@main/DarkNUX-3517-5mun.svg | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://quantil.jsdelivr.net/gh/dorianhagar506-coder/svgbulk-0449l4@main/DarkNUX-3517-5mun.svg | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://originfastly.jsdelivr.net/gh/dorianhagar506-coder/svgbulk-0449l4@main/DarkNUX-3517-5mun.svg | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://testingcdn.jsdelivr.net/gh/dorianhagar506-coder/svgbulk-0449l4@main/DarkNUX-3517-5mun.svg | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://rawcdn.jsdelivr.net/gh/dorianhagar506-coder/svgbulk-0449l4@main/DarkNUX-3517-5mun.svg | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://cdn.statically.io/gh/dorianhagar506-coder/svgbulk-0449l4/main/DarkNUX-3517-5mun.svg | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://raw.githack.com/dorianhagar506-coder/svgbulk-0449l4/main/DarkNUX-3517-5mun.svg | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://rawcdn.githack.com/dorianhagar506-coder/svgbulk-0449l4/main/DarkNUX-3517-5mun.svg | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
@@ -54986,8 +54764,6 @@ Try out my newest project, the [Proxy Development Toolkit](https://github.com/yo
 | | https://gcore.jsdelivr.net/gh/dorianhagar506-coder/svgbulk-0449l4@main/DarkNUX-3518-eick.svg | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://quantil.jsdelivr.net/gh/dorianhagar506-coder/svgbulk-0449l4@main/DarkNUX-3518-eick.svg | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://originfastly.jsdelivr.net/gh/dorianhagar506-coder/svgbulk-0449l4@main/DarkNUX-3518-eick.svg | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://testingcdn.jsdelivr.net/gh/dorianhagar506-coder/svgbulk-0449l4@main/DarkNUX-3518-eick.svg | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://rawcdn.jsdelivr.net/gh/dorianhagar506-coder/svgbulk-0449l4@main/DarkNUX-3518-eick.svg | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://cdn.statically.io/gh/dorianhagar506-coder/svgbulk-0449l4/main/DarkNUX-3518-eick.svg | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://raw.githack.com/dorianhagar506-coder/svgbulk-0449l4/main/DarkNUX-3518-eick.svg | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://rawcdn.githack.com/dorianhagar506-coder/svgbulk-0449l4/main/DarkNUX-3518-eick.svg | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
@@ -54997,8 +54773,6 @@ Try out my newest project, the [Proxy Development Toolkit](https://github.com/yo
 | | https://gcore.jsdelivr.net/gh/dorianhagar506-coder/svgbulk-0449l4@main/DarkNUX-3519-1mnr.svg | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://quantil.jsdelivr.net/gh/dorianhagar506-coder/svgbulk-0449l4@main/DarkNUX-3519-1mnr.svg | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://originfastly.jsdelivr.net/gh/dorianhagar506-coder/svgbulk-0449l4@main/DarkNUX-3519-1mnr.svg | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://testingcdn.jsdelivr.net/gh/dorianhagar506-coder/svgbulk-0449l4@main/DarkNUX-3519-1mnr.svg | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://rawcdn.jsdelivr.net/gh/dorianhagar506-coder/svgbulk-0449l4@main/DarkNUX-3519-1mnr.svg | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://cdn.statically.io/gh/dorianhagar506-coder/svgbulk-0449l4/main/DarkNUX-3519-1mnr.svg | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://raw.githack.com/dorianhagar506-coder/svgbulk-0449l4/main/DarkNUX-3519-1mnr.svg | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://rawcdn.githack.com/dorianhagar506-coder/svgbulk-0449l4/main/DarkNUX-3519-1mnr.svg | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
@@ -55008,8 +54782,6 @@ Try out my newest project, the [Proxy Development Toolkit](https://github.com/yo
 | | https://gcore.jsdelivr.net/gh/dorianhagar506-coder/svgbulk-0449l4@main/DarkNUX-3520-sypv.svg | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://quantil.jsdelivr.net/gh/dorianhagar506-coder/svgbulk-0449l4@main/DarkNUX-3520-sypv.svg | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://originfastly.jsdelivr.net/gh/dorianhagar506-coder/svgbulk-0449l4@main/DarkNUX-3520-sypv.svg | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://testingcdn.jsdelivr.net/gh/dorianhagar506-coder/svgbulk-0449l4@main/DarkNUX-3520-sypv.svg | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://rawcdn.jsdelivr.net/gh/dorianhagar506-coder/svgbulk-0449l4@main/DarkNUX-3520-sypv.svg | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://cdn.statically.io/gh/dorianhagar506-coder/svgbulk-0449l4/main/DarkNUX-3520-sypv.svg | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://raw.githack.com/dorianhagar506-coder/svgbulk-0449l4/main/DarkNUX-3520-sypv.svg | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://rawcdn.githack.com/dorianhagar506-coder/svgbulk-0449l4/main/DarkNUX-3520-sypv.svg | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
@@ -55019,8 +54791,6 @@ Try out my newest project, the [Proxy Development Toolkit](https://github.com/yo
 | | https://gcore.jsdelivr.net/gh/dorianhagar506-coder/svgbulk-0449l4@main/DarkNUX-3521-oke5.svg | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://quantil.jsdelivr.net/gh/dorianhagar506-coder/svgbulk-0449l4@main/DarkNUX-3521-oke5.svg | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://originfastly.jsdelivr.net/gh/dorianhagar506-coder/svgbulk-0449l4@main/DarkNUX-3521-oke5.svg | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://testingcdn.jsdelivr.net/gh/dorianhagar506-coder/svgbulk-0449l4@main/DarkNUX-3521-oke5.svg | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://rawcdn.jsdelivr.net/gh/dorianhagar506-coder/svgbulk-0449l4@main/DarkNUX-3521-oke5.svg | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://cdn.statically.io/gh/dorianhagar506-coder/svgbulk-0449l4/main/DarkNUX-3521-oke5.svg | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://raw.githack.com/dorianhagar506-coder/svgbulk-0449l4/main/DarkNUX-3521-oke5.svg | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://rawcdn.githack.com/dorianhagar506-coder/svgbulk-0449l4/main/DarkNUX-3521-oke5.svg | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
@@ -55030,8 +54800,6 @@ Try out my newest project, the [Proxy Development Toolkit](https://github.com/yo
 | | https://gcore.jsdelivr.net/gh/dorianhagar506-coder/svgbulk-0449l4@main/DarkNUX-3522-t5tn.svg | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://quantil.jsdelivr.net/gh/dorianhagar506-coder/svgbulk-0449l4@main/DarkNUX-3522-t5tn.svg | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://originfastly.jsdelivr.net/gh/dorianhagar506-coder/svgbulk-0449l4@main/DarkNUX-3522-t5tn.svg | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://testingcdn.jsdelivr.net/gh/dorianhagar506-coder/svgbulk-0449l4@main/DarkNUX-3522-t5tn.svg | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://rawcdn.jsdelivr.net/gh/dorianhagar506-coder/svgbulk-0449l4@main/DarkNUX-3522-t5tn.svg | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://cdn.statically.io/gh/dorianhagar506-coder/svgbulk-0449l4/main/DarkNUX-3522-t5tn.svg | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://raw.githack.com/dorianhagar506-coder/svgbulk-0449l4/main/DarkNUX-3522-t5tn.svg | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://rawcdn.githack.com/dorianhagar506-coder/svgbulk-0449l4/main/DarkNUX-3522-t5tn.svg | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
@@ -55041,8 +54809,6 @@ Try out my newest project, the [Proxy Development Toolkit](https://github.com/yo
 | | https://gcore.jsdelivr.net/gh/dorianhagar506-coder/svgbulk-0449l4@main/DarkNUX-3523-k05h.svg | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://quantil.jsdelivr.net/gh/dorianhagar506-coder/svgbulk-0449l4@main/DarkNUX-3523-k05h.svg | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://originfastly.jsdelivr.net/gh/dorianhagar506-coder/svgbulk-0449l4@main/DarkNUX-3523-k05h.svg | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://testingcdn.jsdelivr.net/gh/dorianhagar506-coder/svgbulk-0449l4@main/DarkNUX-3523-k05h.svg | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://rawcdn.jsdelivr.net/gh/dorianhagar506-coder/svgbulk-0449l4@main/DarkNUX-3523-k05h.svg | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://cdn.statically.io/gh/dorianhagar506-coder/svgbulk-0449l4/main/DarkNUX-3523-k05h.svg | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://raw.githack.com/dorianhagar506-coder/svgbulk-0449l4/main/DarkNUX-3523-k05h.svg | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://rawcdn.githack.com/dorianhagar506-coder/svgbulk-0449l4/main/DarkNUX-3523-k05h.svg | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
@@ -55052,8 +54818,6 @@ Try out my newest project, the [Proxy Development Toolkit](https://github.com/yo
 | | https://gcore.jsdelivr.net/gh/dorianhagar506-coder/svgbulk-0449l4@main/DarkNUX-3524-mejb.svg | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://quantil.jsdelivr.net/gh/dorianhagar506-coder/svgbulk-0449l4@main/DarkNUX-3524-mejb.svg | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://originfastly.jsdelivr.net/gh/dorianhagar506-coder/svgbulk-0449l4@main/DarkNUX-3524-mejb.svg | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://testingcdn.jsdelivr.net/gh/dorianhagar506-coder/svgbulk-0449l4@main/DarkNUX-3524-mejb.svg | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://rawcdn.jsdelivr.net/gh/dorianhagar506-coder/svgbulk-0449l4@main/DarkNUX-3524-mejb.svg | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://cdn.statically.io/gh/dorianhagar506-coder/svgbulk-0449l4/main/DarkNUX-3524-mejb.svg | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://raw.githack.com/dorianhagar506-coder/svgbulk-0449l4/main/DarkNUX-3524-mejb.svg | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://rawcdn.githack.com/dorianhagar506-coder/svgbulk-0449l4/main/DarkNUX-3524-mejb.svg | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
@@ -55063,8 +54827,6 @@ Try out my newest project, the [Proxy Development Toolkit](https://github.com/yo
 | | https://gcore.jsdelivr.net/gh/dorianhagar506-coder/svgbulk-0449l4@main/DarkNUX-3525-clb3.svg | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://quantil.jsdelivr.net/gh/dorianhagar506-coder/svgbulk-0449l4@main/DarkNUX-3525-clb3.svg | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://originfastly.jsdelivr.net/gh/dorianhagar506-coder/svgbulk-0449l4@main/DarkNUX-3525-clb3.svg | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://testingcdn.jsdelivr.net/gh/dorianhagar506-coder/svgbulk-0449l4@main/DarkNUX-3525-clb3.svg | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://rawcdn.jsdelivr.net/gh/dorianhagar506-coder/svgbulk-0449l4@main/DarkNUX-3525-clb3.svg | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://cdn.statically.io/gh/dorianhagar506-coder/svgbulk-0449l4/main/DarkNUX-3525-clb3.svg | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://raw.githack.com/dorianhagar506-coder/svgbulk-0449l4/main/DarkNUX-3525-clb3.svg | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://rawcdn.githack.com/dorianhagar506-coder/svgbulk-0449l4/main/DarkNUX-3525-clb3.svg | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
@@ -55074,8 +54836,6 @@ Try out my newest project, the [Proxy Development Toolkit](https://github.com/yo
 | | https://gcore.jsdelivr.net/gh/dorianhagar506-coder/svgbulk-0449l4@main/DarkNUX-3526-akc7.svg | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://quantil.jsdelivr.net/gh/dorianhagar506-coder/svgbulk-0449l4@main/DarkNUX-3526-akc7.svg | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://originfastly.jsdelivr.net/gh/dorianhagar506-coder/svgbulk-0449l4@main/DarkNUX-3526-akc7.svg | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://testingcdn.jsdelivr.net/gh/dorianhagar506-coder/svgbulk-0449l4@main/DarkNUX-3526-akc7.svg | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://rawcdn.jsdelivr.net/gh/dorianhagar506-coder/svgbulk-0449l4@main/DarkNUX-3526-akc7.svg | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://cdn.statically.io/gh/dorianhagar506-coder/svgbulk-0449l4/main/DarkNUX-3526-akc7.svg | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://raw.githack.com/dorianhagar506-coder/svgbulk-0449l4/main/DarkNUX-3526-akc7.svg | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://rawcdn.githack.com/dorianhagar506-coder/svgbulk-0449l4/main/DarkNUX-3526-akc7.svg | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
@@ -55085,8 +54845,6 @@ Try out my newest project, the [Proxy Development Toolkit](https://github.com/yo
 | | https://gcore.jsdelivr.net/gh/dorianhagar506-coder/svgbulk-0449l4@main/DarkNUX-3527-7qlq.svg | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://quantil.jsdelivr.net/gh/dorianhagar506-coder/svgbulk-0449l4@main/DarkNUX-3527-7qlq.svg | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://originfastly.jsdelivr.net/gh/dorianhagar506-coder/svgbulk-0449l4@main/DarkNUX-3527-7qlq.svg | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://testingcdn.jsdelivr.net/gh/dorianhagar506-coder/svgbulk-0449l4@main/DarkNUX-3527-7qlq.svg | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://rawcdn.jsdelivr.net/gh/dorianhagar506-coder/svgbulk-0449l4@main/DarkNUX-3527-7qlq.svg | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://cdn.statically.io/gh/dorianhagar506-coder/svgbulk-0449l4/main/DarkNUX-3527-7qlq.svg | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://raw.githack.com/dorianhagar506-coder/svgbulk-0449l4/main/DarkNUX-3527-7qlq.svg | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://rawcdn.githack.com/dorianhagar506-coder/svgbulk-0449l4/main/DarkNUX-3527-7qlq.svg | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
@@ -55096,8 +54854,6 @@ Try out my newest project, the [Proxy Development Toolkit](https://github.com/yo
 | | https://gcore.jsdelivr.net/gh/dorianhagar506-coder/svgbulk-0449l4@main/DarkNUX-3528-firr.svg | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://quantil.jsdelivr.net/gh/dorianhagar506-coder/svgbulk-0449l4@main/DarkNUX-3528-firr.svg | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://originfastly.jsdelivr.net/gh/dorianhagar506-coder/svgbulk-0449l4@main/DarkNUX-3528-firr.svg | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://testingcdn.jsdelivr.net/gh/dorianhagar506-coder/svgbulk-0449l4@main/DarkNUX-3528-firr.svg | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://rawcdn.jsdelivr.net/gh/dorianhagar506-coder/svgbulk-0449l4@main/DarkNUX-3528-firr.svg | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://cdn.statically.io/gh/dorianhagar506-coder/svgbulk-0449l4/main/DarkNUX-3528-firr.svg | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://raw.githack.com/dorianhagar506-coder/svgbulk-0449l4/main/DarkNUX-3528-firr.svg | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://rawcdn.githack.com/dorianhagar506-coder/svgbulk-0449l4/main/DarkNUX-3528-firr.svg | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
@@ -55107,8 +54863,6 @@ Try out my newest project, the [Proxy Development Toolkit](https://github.com/yo
 | | https://gcore.jsdelivr.net/gh/dorianhagar506-coder/svgbulk-0449l4@main/DarkNUX-3529-qsmx.svg | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://quantil.jsdelivr.net/gh/dorianhagar506-coder/svgbulk-0449l4@main/DarkNUX-3529-qsmx.svg | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://originfastly.jsdelivr.net/gh/dorianhagar506-coder/svgbulk-0449l4@main/DarkNUX-3529-qsmx.svg | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://testingcdn.jsdelivr.net/gh/dorianhagar506-coder/svgbulk-0449l4@main/DarkNUX-3529-qsmx.svg | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://rawcdn.jsdelivr.net/gh/dorianhagar506-coder/svgbulk-0449l4@main/DarkNUX-3529-qsmx.svg | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://cdn.statically.io/gh/dorianhagar506-coder/svgbulk-0449l4/main/DarkNUX-3529-qsmx.svg | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://raw.githack.com/dorianhagar506-coder/svgbulk-0449l4/main/DarkNUX-3529-qsmx.svg | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://rawcdn.githack.com/dorianhagar506-coder/svgbulk-0449l4/main/DarkNUX-3529-qsmx.svg | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
@@ -55118,8 +54872,6 @@ Try out my newest project, the [Proxy Development Toolkit](https://github.com/yo
 | | https://gcore.jsdelivr.net/gh/dorianhagar506-coder/svgbulk-0449l4@main/DarkNUX-3530-w5hd.svg | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://quantil.jsdelivr.net/gh/dorianhagar506-coder/svgbulk-0449l4@main/DarkNUX-3530-w5hd.svg | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://originfastly.jsdelivr.net/gh/dorianhagar506-coder/svgbulk-0449l4@main/DarkNUX-3530-w5hd.svg | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://testingcdn.jsdelivr.net/gh/dorianhagar506-coder/svgbulk-0449l4@main/DarkNUX-3530-w5hd.svg | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://rawcdn.jsdelivr.net/gh/dorianhagar506-coder/svgbulk-0449l4@main/DarkNUX-3530-w5hd.svg | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://cdn.statically.io/gh/dorianhagar506-coder/svgbulk-0449l4/main/DarkNUX-3530-w5hd.svg | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://raw.githack.com/dorianhagar506-coder/svgbulk-0449l4/main/DarkNUX-3530-w5hd.svg | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://rawcdn.githack.com/dorianhagar506-coder/svgbulk-0449l4/main/DarkNUX-3530-w5hd.svg | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
@@ -55129,8 +54881,6 @@ Try out my newest project, the [Proxy Development Toolkit](https://github.com/yo
 | | https://gcore.jsdelivr.net/gh/dorianhagar506-coder/svgbulk-0449l4@main/DarkNUX-3531-xlbz.svg | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://quantil.jsdelivr.net/gh/dorianhagar506-coder/svgbulk-0449l4@main/DarkNUX-3531-xlbz.svg | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://originfastly.jsdelivr.net/gh/dorianhagar506-coder/svgbulk-0449l4@main/DarkNUX-3531-xlbz.svg | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://testingcdn.jsdelivr.net/gh/dorianhagar506-coder/svgbulk-0449l4@main/DarkNUX-3531-xlbz.svg | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://rawcdn.jsdelivr.net/gh/dorianhagar506-coder/svgbulk-0449l4@main/DarkNUX-3531-xlbz.svg | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://cdn.statically.io/gh/dorianhagar506-coder/svgbulk-0449l4/main/DarkNUX-3531-xlbz.svg | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://raw.githack.com/dorianhagar506-coder/svgbulk-0449l4/main/DarkNUX-3531-xlbz.svg | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://rawcdn.githack.com/dorianhagar506-coder/svgbulk-0449l4/main/DarkNUX-3531-xlbz.svg | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
@@ -55542,7 +55292,7 @@ Try out my newest project, the [Proxy Development Toolkit](https://github.com/yo
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Games | GDB:zane | N/A | 77 |
+> | Games | GDB:zane | N/A | 76 |
 > [!IMPORTANT]
 > This section has not been categorized or checked for protocol(s) and capabilities.
 
@@ -56512,7 +56262,7 @@ Try out my newest project, the [Proxy Development Toolkit](https://github.com/yo
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | pending | pending | pending | 6 |
+> | pending | pending | pending | 5 |
 > [!IMPORTANT]
 > This section has not been categorized or checked for protocol(s) and capabilities.
 
@@ -56621,44 +56371,3 @@ Try out my newest project, the [Proxy Development Toolkit](https://github.com/yo
 | | https://hd.tvlibre.st | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://hd.rread.co.uk | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://hd.casaskrater.cl | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-
-# ⚽️ c00lkiddtech
-> [!NOTE]
-> | Category | Capabilities | Protocol(s) | Links |
-> | - | - | - | - |
-> | pending | N/A | N/A | 5 |
-
-> [!IMPORTANT]
-> This section has not been fully categorized or checked for protocol(s) and capabilities. Submitter note: proxy sometimes breaks, but mostly overall good in general
-
-| Locked | Link | Found Date | Username | Password | Contributor |
-| - | - | - | - | - | - |
-|  | https://learning-hub.getyourchildtoread.online/ | 10/11/2026 | N/A | N/A | c00lkiddtech
-|  | https://bobby-hung-comparative-ram.trycloudflare.com/ | 10/11/2026 | N/A | N/A | c00lkiddtech
-|  | https://c00lkiddtech.live | 10/11/2026 | N/A | N/A | c00lkiddtech
-|  | https://learninghub.studypath.academy/ | 10/11/2026 | N/A | N/A | c00lkiddtech
-|  | https://edu-is-possible.learningisfun.website/ | 10/11/2026 | N/A | N/A | c00lkiddtech
-for heaven learning urls, username: c00lkiddtech
-password: ubgdevs
-
-| Locked | Link | Found Date | Username | Password | Contributor |
-| - | - | - | - | - | - |
-
-# CantBlockThis
-> [!NOTE]
-> | Category | Capabilities | Protocol(s) | Links |
-> | - | - | - | - |
-> | pending | N/A | N/A | 2 |
-
-> [!IMPORTANT]
-> This section has not been fully categorized or checked for protocol(s) and capabilities. Submitter note: When you go on this it looks like Google just hit the Google logo to access the real site
-
-
-| Locked | Link | Found Date | Username | Password | Contributor |
-| - | - | - | - | - | - |
-|  | https://cantblockthis.vercel.app/ | 10/24/2026 | N/A | N/A | CantBlockThis
-|  | https://thisblockcant.vercel.app/ | 10/24/2026 | N/A | N/A | CantBlockThis
-| Locked | Link | Found Date | Username | Password | Contributor |
-| - | - | - | - | - | - |
-
-

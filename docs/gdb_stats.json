@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-10-27T11:47:37Z",
+  "generated_at": "2026-10-27T17:28:39Z",
   "snapshot_date": "2026-10-27",
   "catalog_count": 33,
-  "total_entries": 35874,
+  "total_entries": 35871,
   "unique_games": 28695,
   "catalogs": [
     {
@@ -74,7 +74,7 @@
     {
       "tag": "gdb:ccported",
       "label": "CCPorted",
-      "count": 22,
+      "count": 19,
       "empty": false
     },
     {
@@ -2056,7 +2056,7 @@
         "gdb:lucide": 846,
         "gdb:sdxp": 0,
         "gdb:duckmath": 498,
-        "gdb:ccported": 22,
+        "gdb:ccported": 19,
         "gdb:selenite": 266,
         "gdb:radon": 302,
         "gdb:truffled": 0,
@@ -2079,7 +2079,7 @@
         "gdb:diesmos": 1175,
         "gdb:fyinx": 0
       },
-      "total_entries": 35874,
+      "total_entries": 35871,
       "unique_games": 28695
     }
   ],
@@ -2189,9 +2189,13 @@
       "gdb:ccported": {
         "label": "CCPorted",
         "added": [],
-        "removed": [],
+        "removed": [
+          "Burrito Bison",
+          "Riddle Transfer",
+          "Soccer Random"
+        ],
         "added_count": 0,
-        "removed_count": 0,
+        "removed_count": 3,
         "added_truncated": 0,
         "removed_truncated": 0
       },
@@ -2387,9 +2391,25 @@
     },
     "all": {
       "added": [],
-      "removed": [],
+      "removed": [
+        {
+          "name": "Burrito Bison",
+          "tag": "gdb:ccported",
+          "label": "CCPorted"
+        },
+        {
+          "name": "Riddle Transfer",
+          "tag": "gdb:ccported",
+          "label": "CCPorted"
+        },
+        {
+          "name": "Soccer Random",
+          "tag": "gdb:ccported",
+          "label": "CCPorted"
+        }
+      ],
       "added_count": 0,
-      "removed_count": 0,
+      "removed_count": 3,
       "added_truncated": 0,
       "removed_truncated": 0
     }
@@ -2398,10 +2418,19 @@
     {
       "date": "2026-10-27",
       "kind": "diff",
-      "catalogs_touched": [],
+      "catalogs_touched": [
+        "gdb:ccported"
+      ],
       "added": 0,
-      "removed": 0,
-      "by_catalog": []
+      "removed": 3,
+      "by_catalog": [
+        {
+          "tag": "gdb:ccported",
+          "label": "CCPorted",
+          "added": 0,
+          "removed": 3
+        }
+      ]
     },
     {
       "date": "2026-10-26",

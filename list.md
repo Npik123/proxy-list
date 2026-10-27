@@ -353,7 +353,7 @@ Try out my newest project, the [Proxy Development Toolkit](https://github.com/yo
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Proxy/Games | captcha, GDB:frogies-arcade | Ultraviolet | 31 |
+> | Proxy/Games | captcha, GDB:frogies-arcade | Ultraviolet | 30 |
 
 > [!IMPORTANT]
 > on some networks, the proxy will load a white screen or an ultraviolet error page, if this happens try using another link as that is known to fix this issue
@@ -364,7 +364,6 @@ Try out my newest project, the [Proxy Development Toolkit](https://github.com/yo
 | | https://vallejocharterschool.org | 2/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://highschoolmathteachers.com | 2/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://larp.now | 2/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://gegmbayzka.monedita.cl/ | 4/18/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://tetosarcade.win/ | 4/18/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://h2aihbtm.frogseducation.com/ | 4/18/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://ynlfqehb.stmpreschool.org/ | 4/18/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
@@ -1701,7 +1700,7 @@ Try out my newest project, the [Proxy Development Toolkit](https://github.com/yo
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Proxy/Games | bare, captcha, tab-cloak | Ultraviolet | 28 |
+> | Proxy/Games | bare, captcha, tab-cloak | Ultraviolet | 27 |
 
 > [!IMPORTANT]
 > Shadow does not have CAPTCHA support. Websites that require human verification (like YouTube) will not work or display properly.
@@ -1715,7 +1714,6 @@ Try out my newest project, the [Proxy Development Toolkit](https://github.com/yo
 | | https://visit.epsteinisland.fiveorseven.japan.goonsquad.fritsche.org | 5/1/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
 | | https://brightgeo.reformarchive.com | 5/2/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)|
 | | https://truelogic.reformarchive.com | 5/2/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)|
-| | https://keengrammar.reformarchive.com | 5/2/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)|
 | | https://alphagrammar.recreatinganew.com | 5/2/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)|
 | | https://clevercoding.recreatinganew.com | 5/2/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)|
 | | https://sharpgeo.airlinemeals.net/ | 5/9/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
@@ -2625,22 +2623,13 @@ Try out my newest project, the [Proxy Development Toolkit](https://github.com/yo
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Proxy/Games | GDB:luminsdk | Scramjet | 37 |
+> | Proxy/Games | GDB:luminsdk | Scramjet | 28 |
 
 > [!IMPORTANT]
 > Imp Proxy does not have CAPTCHA support. Websites that require human verification (like YouTube) will not work or display properly.
 > 
 | Locked | Link | Found Date | Username | Password | Contributor |
 | - | - | - | - | - | - |
-| | https://dpsgy.albrightscycling.com/ | 4/18/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://ofkn.eastcountywireless.com/ | 4/18/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://yvhv.luxuryroig.com/ | 4/18/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://xcwuz.myfdistribuidora.com.ar/ | 4/18/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://wcgcn.tiatex.com/ | 4/18/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://jkzc.flextron.xyz/ | 4/18/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://rify.hospitaldelninodif.gob.mx/ | 4/18/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://vwwko.monedita.cl/ | 4/18/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://zkyhb.monedita.cl/ | 4/18/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://math.next-education-learning.sbs/ | 4/18/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://ela.next-education-learning.sbs/ | 4/18/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://tbma.gressvikbmx.no/ | 4/21/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
@@ -3001,14 +2990,13 @@ Try out my newest project, the [Proxy Development Toolkit](https://github.com/yo
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Proxy/Games | GDB:utopia | Ultraviolet | 26 |
+> | Proxy/Games | GDB:utopia | Ultraviolet | 25 |
 > [!IMPORTANT]
 > this site uses highly detectable domains, very likely all of these are blocked for you
 
 | Locked | Link | Found Date | Username | Password | Contributor |
 | - | - | - | - | - | - |
 | | https://alexlol.mooo.com/ | 4/30/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://this-is-the-future.casadotricolor.com.br/ | 4/30/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://bum.education/ | 4/30/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://sub.to.square-hippo.fritsche.org | 5/1/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
 | | https://educationlessons.crabdance.com | 5/2/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)|
@@ -3648,7 +3636,7 @@ Try out my newest project, the [Proxy Development Toolkit](https://github.com/yo
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Games | tab-cloak, GDB:noahs-tutoring | N/A | 133 |
+> | Games | tab-cloak, GDB:noahs-tutoring | N/A | 132 |
 
 | Locked | Link | Found Date | Username | Password | Contributor |
 | - | - | - | - | - | - |
@@ -3784,7 +3772,6 @@ Try out my newest project, the [Proxy Development Toolkit](https://github.com/yo
 | | https://cdn.jsdelivr.net/gh/username9927282/svg@main/svg.svg?12 | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://cdn.kpores.ru/ | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://education.mannzur.xyz/ | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://edu.projectos3d.com/ | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://more-cdn.b-cdn.net/ | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 
 # 🧡 Nexora
@@ -56193,7 +56180,6 @@ Try out my newest project, the [Proxy Development Toolkit](https://github.com/yo
 | | https://s3.amazonaws.com/cedarstudy/index.html | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://s3.amazonaws.com/tungnotes/index.html | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://tt.mannzur.xyz | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-|  | https://math.edu.port0.org | 10/2/2026 | N/A | N/A | [0800](https://github.com/0800WebDev)
 
 # Kite
 > [!NOTE]

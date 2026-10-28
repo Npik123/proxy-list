@@ -1,8 +1,10 @@
 {
-  "checked_at": "2026-10-27T22:00:29Z",
-  "checked_at_display": "2026-10-27 22:00 UTC",
+  "checked_at": "2026-10-28T03:51:56Z",
+  "checked_at_display": "2026-10-28 03:51 UTC",
   "added_count": 0,
-  "removed_count": 0,
+  "removed_count": 1,
   "added_links": [],
-  "removed_links": []
+  "removed_links": [
+    "https://arsarestaurante.es"
+  ]
 }

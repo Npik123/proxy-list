@@ -49492,7 +49492,7 @@ Try out my newest project, the [Proxy Development Toolkit](https://github.com/yo
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Proxy/Games | libcurl, epoxy | Scramjet | 1474 |
+> | Proxy/Games | libcurl, epoxy | Scramjet | 1473 |
 | Locked | Link | Found Date | Username | Password | Contributor |
 | - | - | - | - | - | - |
 | | https://catclass.brtk.eu | 8/1/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
@@ -50205,7 +50205,6 @@ Try out my newest project, the [Proxy Development Toolkit](https://github.com/yo
 | | https://force-feline99.becasuniversitarias.org | 8/29/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://force-series89.becasuniversitarias.org | 8/29/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://function-grad63.becasuniversitarias.org | 8/29/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://function-modulo64.becasuniversitarias.org | 8/29/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://geo-ratio41.becasuniversitarias.org | 8/29/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://grammar-kitty18.becasuniversitarias.org | 8/29/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://honors-research33.becasuniversitarias.org | 8/29/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
@@ -55138,7 +55137,7 @@ Try out my newest project, the [Proxy Development Toolkit](https://github.com/yo
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Proxy/Games | libcurl, GDB:luminsdk, GDB:melonsoda | - | 29 |
+> | Proxy/Games | libcurl, GDB:luminsdk, GDB:melonsoda | - | 28 |
 > [!IMPORTANT]
 > This section has not been categorized or checked for protocol(s) and capabilities.
 
@@ -55157,7 +55156,6 @@ Try out my newest project, the [Proxy Development Toolkit](https://github.com/yo
 | | https://jsdelivr.codeqihan.com/gh/seattleschools/media@main/batch/originallyut/20260916205141/eeaa45a6d847abfe.html | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://jsd.proxy.aks.moe/gh/seattleschools/media@main/batch/originallyut/20260916205141/eeaa45a6d847abfe.html | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://cdn.jsdmirror.com/gh/seattleschools/media/batch/originallyut/20260916205141/eeaa45a6d847abfe.html | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://cdn.jsdmirror.cn/gh/seattleschools/media@main/batch/originallyut/20260916205141/eeaa45a6d847abfe.html | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://jsd.cdn.zzko.cn/gh/seattleschools/media@main/batch/originallyut/20260916205141/eeaa45a6d847abfe.html | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://jsd.onmicrosoft.cn/gh/seattleschools/media/batch/originallyut/20260916205141/eeaa45a6d847abfe.html | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://cdn.onmicrosoft.cn/gh/seattleschools/media@main/batch/originallyut/20260916205141/eeaa45a6d847abfe.html | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
